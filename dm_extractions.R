@@ -29,7 +29,7 @@ list_articles_to_do <- read_csv(file.path(dir_data, "/inclusion_articles/include
 # articles done -----------------------------------------------------------
 
 followup <- extraction_df %>%
-  select(`DOI of the article`, `Initials of the reviewer filling the form`, `Original Timestamp`, itc_number) %>%
+  select(`DOI of the article`, `Initials of the reviewer filling the form`, itc_number) %>%
   filter(!is.na(itc_number)) %>%
   select(!itc_number) %>%
   rename(doi = `DOI of the article`,
@@ -202,7 +202,7 @@ long_results_dm <- bind_rows(general_information_dm, study_information_dm, metho
   pivot_wider(names_from = reviewer, values_from = answers) %>%
   mutate(identical = ASL == BZ,
          decision = if_else(identical, BZ, NA_character_)) %>%
-  replace_na(replace = list(n_itc = "", study_number = "", BZ = "", ASL = "", decision =  "", identical = "")) %>%
+  replace_na(replace = list(n_itc = "", study_number = "", BZ = "", ASL = "", decision =  "")) %>%
   rename(`Individual Studies Number` = study_number,
          `ITC Number` = n_itc
   ) %>%
@@ -225,11 +225,13 @@ for (initials in c("DH", "JL")) {
   result_reviewer <- long_results_dm %>%
     filter(reviewer == initials & both)
   for (pmid in unique(result_reviewer$PMID)) {
+    file_name <- file.path(dir_results, paste0(pmid, ".tsv"))
+    if (file.exists(file_name))
     result_reviewer %>%
       filter(PMID == pmid) %>%
       select(!both) %>%
       select(!reviewer) %>%
-      write_tsv(file = file.path(dir_results, paste0(pmid, ".tsv")))
+      write_tsv(file = file_name)
   }
 }
 
