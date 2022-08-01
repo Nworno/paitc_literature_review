@@ -7,7 +7,7 @@ library(tibble)
 library(flextable)
 library(purrr)
 
-source("../code_snippets/R_snippets/R_snippets.R")
+source("R_snippets.R")
 
 ## ---- echo=FALSE---------------------------------------------------------------------
 knitr::opts_chunk$set(eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE)
@@ -15,12 +15,36 @@ knitr::opts_chunk$set(eval = TRUE, echo = FALSE, message = FALSE, warning = FALS
 
 ## ----message=FALSE, include=FALSE----------------------------------------------------
 # responses_old_form <- read_csv("data/pubv1/extraction_articles/test_comparison_responses.csv")
+dir_data <- "data/literature_search_pubv1"
 
 extraction_df <- read_csv(
-  "C:/Users/aserret-larmande/git_repos/paic_literature_review/data/literature_search_pubv1/extraction_articles/current_extraction_responses.csv",
+  file.path(dir_data, "/extraction_articles/current_extraction_responses.csv"),
   name_repair = "minimal"
 )
 
+list_articles_to_do <- read_csv(file.path(dir_data, "/inclusion_articles/included_articles_final.csv")) %>%
+  mutate(PMID = as.character(PMID))
+
+
+# articles done -----------------------------------------------------------
+
+followup <- extraction_df %>%
+  select(`DOI of the article`, `Initials of the reviewer filling the form`, `Original Timestamp`, itc_number) %>%
+  filter(!is.na(itc_number)) %>%
+  select(!itc_number) %>%
+  rename(doi = `DOI of the article`,
+         reviewer = `Initials of the reviewer filling the form`) %>%
+  distinct(doi, reviewer) %>%
+  mutate(counter = TRUE) %>%
+  pivot_wider(names_from = reviewer, values_from = counter, values_fill = FALSE) %>%
+  mutate(both = BZ & ASL) %>%
+  filter(both)
+
+done <- list_articles_to_do[, c("DOI", "PMID")] %>%
+  mutate(reviewer = rep_len(c("DH", "JL"), length.out = n())) %>%
+  full_join(followup, by = c("DOI" = "doi"))
+
+View(done)
 
 ## ----Renaming sections---------------------------------------------------------------
 source("questions_sections.R")
@@ -112,32 +136,51 @@ rows_id_to_discard <- c(
 )
 
 general_information_dm <- general_information %>%
-  filter(!row_id %in% rows_id_to_discard)
+  filter(!row_id %in% rows_id_to_discard) %>%
+  select(!n_itc)
 
 # study_information -------------------------------------------------------
 
 wide_study_information <- study_information %>%
   select(all_of(c(id_names, "section", "answers", "questions"))) %>%
-  separate(questions, into = c("questions", "number"),
+  separate(questions,
+           into = c("questions", "number"),
            sep = "_(?=[0-9]$)",
            fill = "right") %>%
   pivot_wider(names_from = "questions", values_from = "answers")
 
 wide_study_information %>%
-  get_all_duplicated_pipe(row_id, study_number) %>%
+  get_all_duplicated_pipe(doi, reviewer, study_number) %>%
+  arrange(doi, reviewer, study_number) %>%
   View()
 
+rows_id_to_discard <- c(
+  "10.1210/clinem/dgab905_2_BZ",
+  "10.1016/j.ejcsup.2021.06.002_3_BZ",
+  "10.2147/CMAR.S325043_2_BZ"
+)
+
+wide_study_information %>%
+  filter(!row_id %in% rows_id_to_discard) %>%
+  get_all_duplicated_pipe(doi, reviewer, study_number) %>%
+  arrange(doi, reviewer, study_number) %>%
+  View()
+
+
 study_information_dm <- wide_study_information %>%
+  filter(!row_id %in% rows_id_to_discard) %>%
   select(!number) %>%
   pivot_longer(cols = !all_of(c(id_names, "study_number", "section")),
                names_to = "questions",
                values_to = "answers"
-  )
+  ) %>%
+  select(!n_itc)
 
 
 # methodology -------------------------------------------------------------
 
 methodology %>% get_all_duplicated_pipe(id_names, questions)
+
 
 # results -----------------------------------------------------------------
 
@@ -146,28 +189,27 @@ results %>% get_all_duplicated_pipe(id_names, questions)
 
 # combining sections ------------------------------------------------------
 
+order_sections <- data.frame(order_sections = 1:4,
+                             section = c("general_information", "study_information", "methodology", "results"))
+
 long_results_dm <- bind_rows(general_information_dm, study_information_dm, methodology, results) %>%
   select(!row_id) %>%
-  select(doi, n_itc, section, study_number, questions, section, everything()) %>%
+  select(doi, n_itc, study_number, section, questions, section, everything()) %>%
   mutate(answers = str_squish(str_to_lower(answers))) %>%
+  left_join(order_sections) %>%
+  arrange(doi, order_sections, n_itc) %>%
+  select(!order_sections) %>%
   pivot_wider(names_from = reviewer, values_from = answers) %>%
-  arrange(doi, n_itc, section) %>%
+  mutate(identical = ASL == BZ,
+         decision = if_else(identical, BZ, NA_character_)) %>%
+  replace_na(replace = list(n_itc = "", study_number = "", BZ = "", ASL = "", decision =  "", identical = "")) %>%
   rename(`Individual Studies Number` = study_number,
          `ITC Number` = n_itc
-  )
-
-
-
-# comparing answers ------------------------------------------------------
-
-long_results_dm %>% mutate(identical = BZ == ASL)
-
-
-# data mangement answers --------------------------------------------------
-
-long_results_dm <- long_results_dm %>%
-  mutate(identical = ASL == BZ,
-         `Final Answer` = if_else(identical, BZ, NA_character_))
+  ) %>%
+  filter() %>%
+  left_join(done[, c("DOI", "PMID", "both", "reviewer")],
+            by = c("doi" = "DOI")) %>%
+  select(doi, PMID, everything())
 
 
 # Export results ----------------------------------------------------------
@@ -176,3 +218,18 @@ long_results_dm %>% write_delim(paste0("data/literature_search_pubv1/extraction_
                                        as.Date(lubridate::now(), format = "yyMMDD"),
                                        ".tsv"),
                                 delim = "\t")
+
+for (initials in c("DH", "JL")) {
+  dir_results <- file.path(dir_data, "extraction_articles", initials)
+  if (!dir.exists(dir_results)) dir.create(dir_results)
+  result_reviewer <- long_results_dm %>%
+    filter(reviewer == initials & both)
+  for (pmid in unique(result_reviewer$PMID)) {
+    result_reviewer %>%
+      filter(PMID == pmid) %>%
+      select(!both) %>%
+      select(!reviewer) %>%
+      write_tsv(file = file.path(dir_results, paste0(pmid, ".tsv")))
+  }
+}
+
