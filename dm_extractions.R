@@ -23,7 +23,8 @@ extraction_df <- read_csv(
 )
 
 list_articles_to_do <- read_csv(file.path(dir_data, "/inclusion_articles/included_articles_final.csv")) %>%
-  mutate(PMID = as.character(PMID))
+  mutate(PMID = as.character(PMID),
+         row_names = 1:n())
 
 
 # articles done -----------------------------------------------------------
@@ -40,7 +41,7 @@ followup <- extraction_df %>%
   mutate(both = BZ & ASL) %>%
   filter(both)
 
-done <- list_articles_to_do[, c("DOI", "PMID")] %>%
+done <- list_articles_to_do[, c("DOI", "PMID", "row_names")] %>%
   mutate(reviewer = rep_len(c("DH", "JL"), length.out = n())) %>%
   full_join(followup, by = c("DOI" = "doi"))
 
@@ -207,7 +208,7 @@ long_results_dm <- bind_rows(general_information_dm, study_information_dm, metho
          `ITC Number` = n_itc
   ) %>%
   filter() %>%
-  left_join(done[, c("DOI", "PMID", "both", "reviewer")],
+  left_join(done[, c("DOI", "PMID", "both", "reviewer", "row_names")],
             by = c("doi" = "DOI")) %>%
   select(doi, PMID, everything())
 
@@ -225,10 +226,12 @@ for (initials in c("DH", "JL")) {
   result_reviewer <- long_results_dm %>%
     filter(reviewer == initials & both)
   for (pmid in unique(result_reviewer$PMID)) {
-    file_name <- file.path(dir_results, paste0(pmid, ".tsv"))
-    if (file.exists(file_name))
-    result_reviewer %>%
-      filter(PMID == pmid) %>%
+    data <- result_reviewer %>%
+      filter(PMID == pmid)
+    row_name <- as.character(unique(data$row_names))
+    file_name <- file.path(dir_results, paste0(row_name, "_", pmid, ".tsv"))
+    if (!file.exists(file_name))
+      data %>%
       select(!both) %>%
       select(!reviewer) %>%
       write_tsv(file = file_name)
