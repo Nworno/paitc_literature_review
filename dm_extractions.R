@@ -26,27 +26,6 @@ list_articles_to_do <- read_csv(file.path(dir_data, "/inclusion_articles/include
   mutate(PMID = as.character(PMID),
          row_names = 1:n())
 
-
-# articles done -----------------------------------------------------------
-
-followup <- extraction_df %>%
-  select(`DOI of the article`, `Initials of the reviewer filling the form`, itc_number) %>%
-  filter(!is.na(itc_number)) %>%
-  select(!itc_number) %>%
-  rename(doi = `DOI of the article`,
-         reviewer = `Initials of the reviewer filling the form`) %>%
-  distinct(doi, reviewer) %>%
-  mutate(counter = TRUE) %>%
-  pivot_wider(names_from = reviewer, values_from = counter, values_fill = FALSE) %>%
-  mutate(both = BZ & ASL) %>%
-  filter(both)
-
-done <- list_articles_to_do[, c("DOI", "PMID", "row_names")] %>%
-  mutate(reviewer = rep_len(c("DH", "JL"), length.out = n())) %>%
-  full_join(followup, by = c("DOI" = "doi"))
-
-View(done)
-
 ## ----Renaming sections---------------------------------------------------------------
 source("questions_sections.R")
 extraction_df$`Original Timestamp` <- NULL
@@ -71,7 +50,6 @@ df_questions_sections <- questions_sections %>%
   left_join(df_list_questions, by = c("question_names"))
 
 
-
 ## ----Format DOI----------------------------------------------------------------------
 extraction_df <- extraction_df %>%
   mutate(doi = sub("^.*doi\\.org/", replacement = "", x = doi, perl = TRUE)) %>%
@@ -84,6 +62,26 @@ extraction_df$Notes <- NULL
 
 # Create identifier for every row
 extraction_df[["row_id"]] <- with(extraction_df, paste(doi, n_itc, reviewer, sep = "_"))
+
+
+# articles done -----------------------------------------------------------
+
+followup <- extraction_df %>%
+  select(doi, reviewer, n_itc) %>%
+  filter(!is.na(n_itc)) %>%
+  select(!n_itc) %>%
+  distinct(doi, reviewer) %>%
+  mutate(counter = TRUE) %>%
+  pivot_wider(names_from = reviewer, values_from = counter, values_fill = FALSE) %>%
+  mutate(both = BZ & ASL)
+
+done <- list_articles_to_do[, c("DOI", "PMID", "row_names")] %>%
+  mutate(reviewer = rep_len(c("DH", "JL"), length.out = n())) %>%
+  full_join(followup, by = c("DOI" = "doi"))
+
+View(done)
+
+
 
 ## ----pivot_longer doi reviewer n_itc-------------------------------------------------
 
@@ -119,25 +117,28 @@ results <- long_extraction_df %>% filter(section == "results")
 # Counting number of missing answers
 print(general_information$answers %>% is.na() %>% sum())
 
-# Looking at duplicates answers
-general_information %>%
-  get_all_duplicated_pipe(all_of(c("doi", "reviewer", "questions", "answers"))) %>%
-  pivot_wider(id_cols = id_names, names_from = questions, values_from = answers) %>%
-  View()
-
 # Manually selecting the duplicates to filter out
-rows_id_to_discard <- c(
+rows_id_to_discard_general_info <- c(
   "10.2217/cer-2021-0216_3_BZ",
   "10.1016/j.ejcsup.2021.06.002_3_BZ",
   "10.1016/j.ejcsup.2021.06.002_4_BZ",
   "10.1016/j.ejcsup.2021.06.002_5_BZ",
   "10.1016/j.ejcsup.2021.06.002_6_BZ",
   "10.2147/CMAR.S325043_2_BZ",
-  "10.1210/clinem/dgab905_2_BZ"
+  "10.1210/clinem/dgab905_2_BZ",
+  "10.2217/cer-2021-0216_3_BZ"
 )
 
+# Looking at remaining duplicated answers
+general_information %>%
+  filter(! row_id %in% rows_id_to_discard_general_info) %>%
+  get_all_duplicated_pipe(all_of(c("doi", "reviewer", "questions", "answers"))) %>%
+  pivot_wider(id_cols = id_names, names_from = questions, values_from = answers) %>%
+  View()
+
+
 general_information_dm <- general_information %>%
-  filter(!row_id %in% rows_id_to_discard) %>%
+  filter(!row_id %in% rows_id_to_discard_general_info) %>%
   select(!n_itc)
 
 # study_information -------------------------------------------------------
@@ -150,26 +151,21 @@ wide_study_information <- study_information %>%
            fill = "right") %>%
   pivot_wider(names_from = "questions", values_from = "answers")
 
-wide_study_information %>%
-  get_all_duplicated_pipe(doi, reviewer, study_number) %>%
-  arrange(doi, reviewer, study_number) %>%
-  View()
-
-rows_id_to_discard <- c(
+rows_id_to_discard_study_info <- c(
   "10.1210/clinem/dgab905_2_BZ",
   "10.1016/j.ejcsup.2021.06.002_3_BZ",
   "10.2147/CMAR.S325043_2_BZ"
 )
 
 wide_study_information %>%
-  filter(!row_id %in% rows_id_to_discard) %>%
+  filter(!row_id %in% rows_id_to_discard_study_info) %>%
   get_all_duplicated_pipe(doi, reviewer, study_number) %>%
   arrange(doi, reviewer, study_number) %>%
   View()
 
 
 study_information_dm <- wide_study_information %>%
-  filter(!row_id %in% rows_id_to_discard) %>%
+  filter(!row_id %in% rows_id_to_discard_study_info) %>%
   select(!number) %>%
   pivot_longer(cols = !all_of(c(id_names, "study_number", "section")),
                names_to = "questions",
@@ -224,17 +220,39 @@ for (initials in c("DH", "JL")) {
   dir_results <- file.path(dir_data, "extraction_articles", initials)
   if (!dir.exists(dir_results)) dir.create(dir_results)
   result_reviewer <- long_results_dm %>%
-    filter(reviewer == initials & both)
-  for (pmid in unique(result_reviewer$PMID)) {
+    filter(reviewer == initials & both) %>%
+    distinct(PMID, row_names, reviewer, both)
+  for (pmid in result_reviewer$PMID) {
     data <- result_reviewer %>%
       filter(PMID == pmid)
     row_name <- as.character(unique(data$row_names))
-    file_name <- file.path(dir_results, paste0(row_name, "_", pmid, ".tsv"))
+    file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".tsv"))
     if (!file.exists(file_name))
       data %>%
       select(!both) %>%
       select(!reviewer) %>%
       write_tsv(file = file_name)
+
   }
+# browser()# browser()
+  ## writing batch zip file every 10 new articles
+  file_infos <- file.info(list.files(dir_results, full.names = TRUE))
+  file_infos$path <- row.names(file_infos)
+  file_infos %>%
+    mutate(day_creation = lubridate::date(ctime)) %>%
+    arrange(day_creation, path) %>%
+    mutate(n_row = 1:nrow(.),
+           batch = n_row %/% 10) %>%
+    group_by(batch) %>%
+    group_walk(.f = function(df, group_name_df) {
+      paths <- pull(df, path)
+      group_name <- pull(group_name_df, batch)
+      zip_name <- file.path(dir_results,
+                            paste0(group_name, "_", initials, ".zip")
+      )
+      # j option flag to avoid nested directory, other flags are just default values
+      if (! file.exists(zip_name)) zip(zip_name, paths, flags = '-r9Xj')
+    })
 }
+
 
