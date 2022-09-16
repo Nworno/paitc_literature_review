@@ -9,16 +9,13 @@ library(purrr)
 
 source("R_snippets.R")
 
-## ---- echo=FALSE---------------------------------------------------------------------
-knitr::opts_chunk$set(eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE)
-
 
 ## ----message=FALSE, include=FALSE----------------------------------------------------
 # responses_old_form <- read_csv("data/pubv1/extraction_articles/test_comparison_responses.csv")
 dir_data <- "data/literature_search_pubv1"
 
 extraction_df <- read_csv(
-  file.path(dir_data, "/extraction_articles/current_extraction_responses.csv"),
+  file.path(dir_data, "/extraction_articles/current_extraction.csv"),
   name_repair = "minimal"
 )
 
@@ -311,9 +308,9 @@ long_results_dm <- bind_rows(general_information_dm, study_info_with_num, method
   left_join(done[, c("DOI", "PMID", "both", "reviewer", "row_names")],
             by = c("doi" = "DOI")) %>%
   left_join(order_sections) %>%
-  arrange(doi, order_sections, `ITC Number`) %>%
-  select(!order_sections, !row_names) %>%
-  select(doi, PMID, section, `ITC Number`, `Individual Studies Number`, everything(), -order_sections)
+  arrange(doi, order_sections, `ITC Number`, `Individual Studies Number`) %>%
+  select(-order_sections, -row_names) %>%
+  select(doi, PMID, section, `ITC Number`, `Individual Studies Number`, everything())
 
 
 # Export results ----------------------------------------------------------
