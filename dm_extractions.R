@@ -6,6 +6,7 @@ library(tidyr)
 library(tibble)
 library(flextable)
 library(purrr)
+library(lubridate)
 
 source("R_snippets.R")
 
@@ -19,9 +20,13 @@ extraction_df <- read_csv(
   name_repair = "minimal"
 )
 
-list_articles_to_do <- read_csv(file.path(dir_data, "/inclusion_articles/included_articles_final.csv")) %>%
+list_articles_to_do <- read_csv(file.path(dir_data, "/inclusion_articles/included_articles.csv")) %>%
   mutate(PMID = as.character(PMID),
          row_names = 1:n())
+
+
+
+
 
 ## ----Renaming sections---------------------------------------------------------------
 source("questions_sections.R")
@@ -46,12 +51,35 @@ df_questions_sections <- questions_sections %>%
   select(-value_id) %>%
   left_join(df_list_questions, by = c("question_names"))
 
-
 ## ----Format DOI----------------------------------------------------------------------
 extraction_df <- extraction_df %>%
   mutate(doi = sub("^.*doi\\.org/", replacement = "", x = doi, perl = TRUE)) %>%
   mutate(doi = sub("^.+doi=", replacement = "", x = doi, fixed = FALSE)) %>%
   mutate(doi = sub("%2F", replacement = "/", x = doi, fixed = TRUE))
+
+
+## checking completeness of the extraction ---------------------------------
+
+extraction_df <- extraction_df %>%
+  # excel suppresses the seconds if saving to csv, so may need to adapt format "%d/%m/%Y %H:%M:%S")
+  mutate(timestamp = as_datetime(timestamp, format = "%d/%m/%Y %H:%M"))
+
+to_do <- list_articles_to_do %>%
+  filter(date != "XX") %>%
+  distinct(Title, DOI, date, PMID)
+
+done <- extraction_df %>%
+  filter(timestamp >= as_date("2022-07-01") &
+          # reviewer == "BZ") %>%
+          reviewer == "ASL") %>%
+  distinct(doi)
+
+
+anti_join(to_do, done, by = c("DOI" = "doi")) %>%
+  View()
+
+anti_join(done, to_do, by = c("doi" = "DOI")) %>%
+  View()
 
 # Drop rows without n_itc, or with "x"
 extraction_df <- extraction_df[!is.na(extraction_df$n_itc) & extraction_df$n_itc != "x", ]
