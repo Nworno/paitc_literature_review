@@ -1,4 +1,3 @@
-## ---- results='hide'-----------------------------------------------------------------
 library(readr)
 library(stringr)
 library(dplyr)
@@ -10,9 +9,6 @@ library(lubridate)
 
 source("R_snippets.R")
 
-
-## ----message=FALSE, include=FALSE----------------------------------------------------
-# responses_old_form <- read_csv("data/pubv1/extraction_articles/test_comparison_responses.csv")
 dir_data <- "data/literature_search_pubv1"
 
 extraction_df <- read_csv(
@@ -20,17 +16,21 @@ extraction_df <- read_csv(
   name_repair = "minimal"
 )
 
-list_articles_to_do <- read_csv(file.path(dir_data, "/inclusion_articles/included_articles.csv")) %>%
+list_articles_to_do <- read_csv(file.path(dir_data, "/extraction_articles/included_articles.csv")) %>%
   mutate(PMID = as.character(PMID),
          row_names = 1:n())
 
 
 
-
-
 ## ----Renaming sections---------------------------------------------------------------
 source("questions_sections.R")
+
+extraction_df$Timestamp <- ifelse(!is.na(extraction_df$`Original Timestamp`),
+                                  extraction_df$`Original Timestamp`,
+                                  extraction_df$Timestamp
+)
 extraction_df$`Original Timestamp` <- NULL
+subset_included_df$url <- NULL
 stopifnot(length(list_questions) == ncol(extraction_df))
 
 # Testing that names from the extraction csv results and names from the renaming list are identical
@@ -42,7 +42,7 @@ names(extraction_df) <- list_questions
 # Make list_questions as a data frame
 df_list_questions <- tibble(question_names = names(list_questions), question_names_numbered = list_questions)
 
-# questions respective to there sections
+# questions respective to their sections
 df_questions_sections <- questions_sections %>%
   tibble::enframe() %>%
   tidyr::unnest_longer(col = value) %>%
@@ -55,48 +55,68 @@ df_questions_sections <- questions_sections %>%
 extraction_df <- extraction_df %>%
   mutate(doi = sub("^.*doi\\.org/", replacement = "", x = doi, perl = TRUE)) %>%
   mutate(doi = sub("^.+doi=", replacement = "", x = doi, fixed = FALSE)) %>%
-  mutate(doi = sub("%2F", replacement = "/", x = doi, fixed = TRUE))
+  mutate(doi = sub("%2F", replacement = "/", x = doi, fixed = TRUE)) %>%
+  mutate(doi = tolower(doi)) %>%
+  # Manually correct DOI
+  mutate(doi = ifelse(doi == "03007995.2016.1248380",
+                      "10.1080/03007995.2016.1248380",
+                      doi)
+  )
 
+list_articles_to_do <- list_articles_to_do %>%
+  rename(doi = DOI) %>%
+  mutate(doi = tolower(doi)) %>%
+  filter(!included %in% c("XX"))
 
-## checking completeness of the extraction ---------------------------------
-
-extraction_df <- extraction_df %>%
-  # excel suppresses the seconds if saving to csv, so may need to adapt format "%d/%m/%Y %H:%M:%S")
-  mutate(timestamp = as_datetime(timestamp, format = "%d/%m/%Y %H:%M"))
-
-to_do <- list_articles_to_do %>%
-  filter(date != "XX") %>%
-  distinct(Title, DOI, date, PMID)
-
-done <- extraction_df %>%
-  filter(timestamp >= as_date("2022-07-01") &
-          # reviewer == "BZ") %>%
-          reviewer == "ASL") %>%
-  distinct(doi)
-
-
-anti_join(to_do, done, by = c("DOI" = "doi")) %>%
-  View()
-
-anti_join(done, to_do, by = c("doi" = "DOI")) %>%
-  View()
-
-# Drop rows without n_itc, or with "x"
-extraction_df <- extraction_df[!is.na(extraction_df$n_itc) & extraction_df$n_itc != "x", ]
-extraction_df$Notes <- NULL
-
-# Create identifier for every row
-extraction_df[["row_id"]] <- with(extraction_df, paste(doi, n_itc, reviewer, sep = "_"))
+# manual corrections ------------------------------------------------------
 
 # Manually remove these rows, to take into account the edge case when a reviewer does the same article twice (reviewer is important because second timestamp is actually not unique!!)
 extraction_df <- extraction_df %>% filter(
-  !(timestamp %in% c("09/08/2022 11:37:14" , "09/08/2022 11:47:21") & reviewer == "BZ")
+  !(timestamp %in% c("01/09/2022 14:47:10", "01/09/2022 14:47:55") & reviewer == "BZ")
 )
 
+## checking completeness of the extraction ---------------------------------
+extraction_df <- extraction_df %>%
+  # excel suppresses the seconds if saving to csv, so may need to adapt format "%d/%m/%Y %H:%M")
+  mutate(timestamp = as_datetime(timestamp, format = "%d/%m/%Y %H:%M:%S")) %>%
+  filter(timestamp >= as_date("2022-07-01"))
+
+to_do <- list_articles_to_do %>%
+  filter(!included %in% c("XX")) %>%
+  distinct(Title, doi, date, PMID)
+
+done_ASL <- extraction_df %>%
+  filter(reviewer == "ASL") %>%
+  distinct(doi)
+
+done_BZ <- extraction_df %>%
+  filter(reviewer == "ASL") %>%
+  distinct(doi)
+
+stopifnot("some included articles are missing from the review" = nrow(anti_join(to_do, done_ASL, by = "doi")) == 0)
+stopifnot("some included articles are missing from the review" = nrow(anti_join(to_do, done_BZ, by = "doi")) == 0)
+
+reviewed_excluded_ASL <- anti_join(done_ASL, to_do, by = "doi")
+reviewed_excluded_BZ <- anti_join(done_BZ, to_do, by = "doi")
+
+# filter on the included articles -----------------------------------------
+
+included_df <- extraction_df %>%
+  inner_join(to_do[, "doi"], by = "doi")
+
+# check that the n_itc column is filled for every articles
+stopifnot(included_df %>% filter(is.na(n_itc)) %>% nrow() == 0)
+
+# Drop rows without n_itc, or with "x"
+subset_included_df <- included_df %>%
+  filter(!n_itc %in% c("x", "xx"))
+
+# Create identifier for every row
+subset_included_df[["row_id"]] <- with(subset_included_df, paste(doi, n_itc, reviewer, sep = "_"))
 
 # articles done -----------------------------------------------------------
 
-followup <- extraction_df %>%
+followup <- subset_included_df %>%
   select(doi, reviewer, n_itc) %>%
   filter(!is.na(n_itc)) %>%
   select(!n_itc) %>%
@@ -105,16 +125,17 @@ followup <- extraction_df %>%
   pivot_wider(names_from = reviewer, values_from = counter, values_fill = FALSE) %>%
   mutate(both = BZ & ASL)
 
-done <- list_articles_to_do[, c("DOI", "PMID", "row_names")] %>%
+done <- list_articles_to_do[, c("doi", "PMID", "row_names")] %>%
   mutate(reviewer = rep_len(c("DH", "JL"), length.out = n())) %>%
-  full_join(followup, by = c("DOI" = "doi")) %>%
+  full_join(followup, by = c("doi")) %>%
   mutate(both = ifelse(is.na(both), FALSE, both))
 
+stopifnot(all(followup$both))
 
-## ----pivot_longer doi reviewer n_itc-------------------------------------------------
+## ---- pivot_longer doi reviewer n_itc-------------------------------------------------
 
 id_names <- c("n_itc", "doi", "reviewer", "row_id")
-long_extraction_df <- extraction_df %>%
+long_extraction_df <- subset_included_df %>%
   select(-timestamp, -url) %>%
   mutate(across(everything() & !all_of(id_names),
                 .fns = as.character)
@@ -161,6 +182,7 @@ rows_id_to_discard_general_info <- c(
 ## CHECK 1
 general_information %>%
   filter(! row_id %in% rows_id_to_discard_general_info) %>%
+  # filter(!timestamp != as_datetime("09/08/2022 11:37:14"))
   get_all_duplicated_pipe(all_of(c("doi", "reviewer", "questions", "answers"))) %>%
   pivot_wider(id_cols = id_names, names_from = questions, values_from = answers) %>%
   View()
@@ -175,6 +197,8 @@ general_information_dm <- general_information %>%
 # study_information -------------------------------------------------------
 
 ## Assigning study number: relies on the fact that the order of the rows (questions respective to a given form) hasn't change!!
+row_id_to_discard_study_info <- c("10.1210/clinem/dgab905_2_BZ")
+
 study_info_with_num <- study_information %>%
   select(all_of(c(id_names, "section", "answers", "questions"))) %>%
   separate(questions,
@@ -182,32 +206,32 @@ study_info_with_num <- study_information %>%
            sep = "_(?=[0-9]$)",
            fill = "right") %>%
   mutate(study_number_raw = ifelse(questions == "study_number", answers, NA),
-         # to visualy check, because `fill` cannot be used within a mutate statement
+         # to visually check, because `fill` cannot be used within a mutate statement
          study_number = study_number_raw) %>%
   group_by(row_id) %>%
   fill(study_number, .direction = "down") %>%
-  filter(study_number != "x") %>%
-  ungroup()
+  filter(!study_number %in% c("x", "xx")) %>%
+  ungroup() %>%
+  filter(!row_id %in% row_id_to_discard_study_info)
 
 ## Identifying duplicates ==> manually discard duplicates by marking them with x
 ### CHECK 2
 get_all_duplicated_pipe(data = study_info_with_num, doi, reviewer, study_number, questions) %>%
   View()
 
-# Once visual checking is done, remove study number tagged as 'x' and the questions "study_number", "n_itc", "number"
+# Once visual checking is done, remove the questions "study_number", "n_itc", "number"
 study_info_with_num <- study_info_with_num %>%
-  filter(study_number != "x",
-         questions != "study_number") %>%
-  select(!all_of(c("n_itc", "row_id", "study_number_raw", "number")))
+  filter(questions != "study_number") %>%
+  select(all_of(c("doi", "reviewer", "section", "study_number", "questions", "answers")))
 
 ## Identifying misaligned study information sections
 study_info_aligned <- study_info_with_num %>%
   pivot_wider(names_from = reviewer,
               values_from = answers) %>%
-  inner_join(done[done$both, "DOI"], by = c("doi" = "DOI"))
+  inner_join(done[done$both, "doi"], by = "doi" )
 
 # IDENTIFY MISALIGNED INDIVIDUAL STUDIES
-## Based on NCT that is supposed to be the same, then on all other questions. Cannot really check automatically for studies without NCT
+## Based on NCT that is supposed to be the same, then on all other questions.
 ### CHECK 3
 View(study_info_aligned %>%
        filter(questions == "NCT (only for clinical trial registered on clinicaltrials.gov)") %>%
@@ -215,14 +239,29 @@ View(study_info_aligned %>%
        filter(identical != TRUE | is.na(identical)) %>%
        arrange(doi, study_number))
 
+### CHECK 4  EUDRA-CT
+View(study_info_aligned %>%
+       filter(questions == "EudraCT (only for clinical trials registered on clinicaltrialsregister.eu") %>%
+       mutate(identical = BZ == ASL) %>%
+       filter(identical != TRUE | is.na(identical)) %>%
+       arrange(doi, study_number))
+
+
+### CHECK 5 on data source name
+View(study_info_aligned %>%
+       filter(questions == "Data source name (only if observational study or clinical trial without NCT)") %>%
+       mutate(identical = BZ == ASL) %>%
+       filter(identical != TRUE | is.na(identical)) %>%
+       arrange(doi, study_number))
+
+
 # methodology -------------------------------------------------------------
 
 ## CHECK 4
+
 methodology %>%
   get_all_duplicated_pipe(id_names, questions) %>%
   View()
-
-
 
 
 # results -----------------------------------------------------------------
@@ -232,6 +271,85 @@ results %>%
   View()
 
 
+# Parsing questions -----------------------------------------------
+
+## Free text questions
+free_text_questions <- c(
+  "Medical Condition of Interest Name",
+  "Countries of first author affiliations",
+  "Countries of last author affiliations",
+  "Data source name (only if observational study or clinical trial without NCT)",
+  "Country where the clinical trial/observational study was conducted (international if more than one)",
+  "Treatment name 1",
+  "Study 'number(s)' for treatment 1",
+  "Treatment name 2",
+  "Study 'number(s)' for treatment 2",
+  "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)",
+  "Primary outcome: unadjusted treatment effect",
+  "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",
+  "Primary outcome: adjusted treatment effect",
+  "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",
+  "If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",
+  "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",
+  "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm"
+)
+
+# Multiple choices questions
+qcm <- c(
+  "Positions of study investigators (for any authors of the article, any that applies)",
+  "Mentioned sources of funding",
+  "Phase of the clinical trial (clinical trial only)",
+  "Form of the indirect comparison",
+  "Justification for selecting variables to be included in the adjustment model (in the main text)",
+  "Covariates adjusted for/matched on in the indirect comparison",
+)
+
+others <- c(
+  "Timestamp",
+  "DOI of the article",
+)
+
+## Unique choice questions
+qcu <- c(
+  "Initials of the reviewer filling the form",
+  "itc_number",
+  "At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company",
+  "Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article",
+  "Mention of a systematic review to find the studies to compare treatments of interest",
+  "study_number",
+  "NCT (only for clinical trial registered on clinicaltrials.gov)",
+  "EudraCT (only for clinical trials registered on clinicaltrialsregister.eu",
+  "Patient-level data used",
+  "Clinical Trial",
+  "Number of treatment arms (clinical trial only)",
+  "Type of population-adjusted indirect comparisons performed",
+  "Anchored comparison?",
+  "Form of the indirect comparison",
+  "Definition of a single primary outcome for the indirect comparison",
+  "Primary outcome: variable type",
+  "Inclusion of prognostic factors in the adjustment/matching model",
+  "Inclusion of treatment-effect modifiers in the adjustment/matching model",
+  "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",
+  "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)",
+  "Reporting of a weights' distribution evaluation (MAIC)",
+  "Reporting of the list of the covariates adjusted for/matched on",
+  "Number of covariates adjusted for/matched on",
+  "Primary outcome: treatment effect contrast",
+  "Direction of the treatment effect contrast: IPD treatment is:",
+  "Sample size of the population of interest in the non IPD treatment arm",
+  "Initial sample size of the population of interest in the IPD treatment arm",
+  "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC"
+)
+
+
+
+"Pharmaceutical Industry" = "Pharmaceutical Industry / Medical device company"
+"Performance score" = "Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)"
+"Performance score (ECOG PS, Karnofsky, Lansky)" = "Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)"
+"Statistical based (ie pvalue based, that is looking at statistical significant differences between treatment arms)" =
+  "Statistical based (eg pvalue based, that is looking at statistical significant differences between treatment arms)"
+
+
 # combining sections ------------------------------------------------------
 
 order_sections <- data.frame(
@@ -239,38 +357,11 @@ order_sections <- data.frame(
   section = c("general_information", "study_information", "methodology", "results")
 )
 
+
 data_manage_answers <- function(long_data) {
   question_names <- unique(long_data$questions)
   long_data <- mutate(long_data, rows_order = 1:nrow(long_data))
 
-  free_text_questions <- c(
-    "Medical Condition of Interest Name",
-    "Countries of first author affiliations",
-    "Countries of last author affiliations",
-    "NCT (only for clinical trial registered on clinicaltrials.gov)",
-    "Country where the clinical trial/observational study was conducted (international if more than one)",
-    "EudraCT (only for clinical trials registered on clinicaltrialsregister.eu",
-    "Data source name (only if observational study or clinical trial without NCT)",
-    "Treatment name 1",
-    "Study 'number(s)' for treatment 1",
-    "Treatment name 2",
-    "Study 'number(s)' for treatment 2",
-    "Type of population-adjusted indirect comparisons performed",
-    "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)",
-    "Sample size of the population of interest in the non IPD treatment arm",
-    "Initial sample size of the population of interest in the IPD treatment arm",
-    "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",
-    "Number of covariates adjusted for/matched on",
-    "Primary outcome: treatment effect contrast",
-    "Direction of the treatment effect contrast: IPD treatment is:",
-    "Primary outcome: unadjusted treatment effect",
-    "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",
-    "Primary outcome: adjusted treatment effect",
-    "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",
-    "If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",
-    "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",
-    "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm"
-  )
   apply_specific_answers_dm <- function(wide_data) {
     wide_data %>%
       mutate(across(.cols = all_of(free_text_questions),
@@ -333,8 +424,8 @@ long_results_dm <- bind_rows(general_information_dm, study_info_with_num, method
   rename(`Individual Studies Number` = study_number,
          `ITC Number` = n_itc
   ) %>%
-  left_join(done[, c("DOI", "PMID", "both", "reviewer", "row_names")],
-            by = c("doi" = "DOI")) %>%
+  left_join(done[, c("doi", "PMID", "both", "reviewer", "row_names")],
+            by = "doi") %>%
   left_join(order_sections) %>%
   arrange(doi, order_sections, `ITC Number`, `Individual Studies Number`) %>%
   select(-order_sections, -row_names) %>%
