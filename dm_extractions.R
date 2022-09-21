@@ -17,20 +17,13 @@ extraction_df <- read_csv(
 )
 
 list_articles_to_do <- read_csv(file.path(dir_data, "/extraction_articles/included_articles.csv")) %>%
-  mutate(PMID = as.character(PMID),
-         row_names = 1:n())
-
-
+  mutate(PMID = as.character(PMID))
 
 ## ----Renaming sections---------------------------------------------------------------
 source("questions_sections.R")
 
-extraction_df$Timestamp <- ifelse(!is.na(extraction_df$`Original Timestamp`),
-                                  extraction_df$`Original Timestamp`,
-                                  extraction_df$Timestamp
-)
 extraction_df$`Original Timestamp` <- NULL
-subset_included_df$url <- NULL
+extraction_df$url <- NULL
 stopifnot(length(list_questions) == ncol(extraction_df))
 
 # Testing that names from the extraction csv results and names from the renaming list are identical
@@ -125,8 +118,9 @@ followup <- subset_included_df %>%
   pivot_wider(names_from = reviewer, values_from = counter, values_fill = FALSE) %>%
   mutate(both = BZ & ASL)
 
-done <- list_articles_to_do[, c("doi", "PMID", "row_names")] %>%
-  mutate(reviewer = rep_len(c("DH", "JL"), length.out = n())) %>%
+done <- list_articles_to_do[, c("doi", "PMID")] %>%
+  mutate(row_names = 1:n(),
+         reviewer = rep_len(c("DH", "JL"), length.out = n())) %>%
   full_join(followup, by = c("doi")) %>%
   mutate(both = ifelse(is.na(both), FALSE, both))
 
@@ -158,7 +152,7 @@ general_information <- long_extraction_df %>% filter(section == "general_informa
 study_information <- long_extraction_df %>% filter(section == "study_information")
 methodology <- long_extraction_df %>% filter(section == "methodology")
 results <- long_extraction_df %>% filter(section == "results")
-
+notes <- long_extraction_df %>% filter(section == "Notes")
 
 # General Information DM --------------------------------------------------
 ## Removing eventual duplicated: 1. removing missing answers, 2. keeping first line in case of duplication
@@ -285,10 +279,10 @@ free_text_questions <- c(
   "Treatment name 2",
   "Study 'number(s)' for treatment 2",
   "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)",
-  "Primary outcome: unadjusted treatment effect",
-  "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",
-  "Primary outcome: adjusted treatment effect",
-  "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",
+  "unadjusted_ttt_effect",
+  "unadjusted_pvalue_CI",
+  "adjusted_ttt_effect",
+  "adjusted_pvalue_CI",
   "If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",
   "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",
   "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm"
@@ -301,12 +295,12 @@ qcm <- c(
   "Phase of the clinical trial (clinical trial only)",
   "Form of the indirect comparison",
   "Justification for selecting variables to be included in the adjustment model (in the main text)",
-  "Covariates adjusted for/matched on in the indirect comparison",
+  "Covariates adjusted for/matched on in the indirect comparison"
 )
 
 others <- c(
   "Timestamp",
-  "DOI of the article",
+  "DOI of the article"
 )
 
 ## Unique choice questions
@@ -342,14 +336,6 @@ qcu <- c(
 )
 
 
-
-"Pharmaceutical Industry" = "Pharmaceutical Industry / Medical device company"
-"Performance score" = "Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)"
-"Performance score (ECOG PS, Karnofsky, Lansky)" = "Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)"
-"Statistical based (ie pvalue based, that is looking at statistical significant differences between treatment arms)" =
-  "Statistical based (eg pvalue based, that is looking at statistical significant differences between treatment arms)"
-
-
 # combining sections ------------------------------------------------------
 
 order_sections <- data.frame(
@@ -366,34 +352,39 @@ data_manage_answers <- function(long_data) {
     wide_data %>%
       mutate(across(.cols = all_of(free_text_questions),
                     .fns = function(x) str_squish(str_to_lower(x)))) %>%
-    mutate(`Positions of study investigators (for any authors of the article, any that applies)` = sub(
-      "Pharmaceutical Industry / Medical device company",
-      "Pharmaceutical Industry",
-      x = `Positions of study investigators (for any authors of the article, any that applies)`,
-      fixed = TRUE),
-      `Study 'number(s)' for treatment 1` = sub(
-        "[\\s,;]",
-        ";",
-        x = `Study 'number(s)' for treatment 1`
-      ),
-      `Study 'number(s)' for treatment 2` = sub(
-        "[\\s,;]",
-        ";",
-        x = `Study 'number(s)' for treatment 2`
-      ),
-      `Justification for selecting variables to be included in the adjustment model (in the main text)` = sub(
-        "(ie pvalue",
-        "(eg pvalue",
-        x = `Justification for selecting variables to be included in the adjustment model (in the main text)`,
-        fixed = TRUE
-      ),
-      `Covariates adjusted for/matched on in the indirect comparison` = sub(
-        "Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)",
-        "Performance score",
-        `Covariates adjusted for/matched on in the indirect comparison`,
-        fixed = TRUE
-      )
-    )
+      mutate(`Positions of study investigators (for any authors of the article, any that applies)` = sub(
+        "Pharmaceutical Industry / Medical device company",
+        "Pharmaceutical Industry",
+        x = `Positions of study investigators (for any authors of the article, any that applies)`,
+        fixed = TRUE),
+        `Study 'number(s)' for treatment 1` = sub(
+          "[\\s,;]",
+          ";",
+          x = `Study 'number(s)' for treatment 1`
+        ),
+        `Study 'number(s)' for treatment 2` = sub(
+          "[\\s,;]",
+          ";",
+          x = `Study 'number(s)' for treatment 2`
+        ),
+        `Justification for selecting variables to be included in the adjustment model (in the main text)` = sub(
+          "(ie pvalue",
+          "(eg pvalue",
+          x = `Justification for selecting variables to be included in the adjustment model (in the main text)`,
+          fixed = TRUE
+        ),
+        `Covariates adjusted for/matched on in the indirect comparison` = str_replace(
+          `Covariates adjusted for/matched on in the indirect comparison`,
+          c(fixed("Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)"),
+            fixed("Performance score (ECOG PS, Karnofsky, Lansky)")
+          ),
+          "Performance score"
+        )
+      ) %>%
+      mutate(across(starts_with("Treatment name"),
+                    ~ str_replace(.x, "(\\s?\\+\\s?)|(\\splus\\s)|(and)", " + ")
+      ))
+
   }
   # Pivot, apply answer transformation, and unpivot, and check for strict equalities of the input and output (beside the answer column)
   long_data_dm <- long_data %>%
@@ -413,73 +404,152 @@ data_manage_answers <- function(long_data) {
   return(long_data_dm %>% select(!rows_order))
 }
 
+
+# DM pvalues --------------------------------------------------------------
+
+# test <- data_manage_answers(long_data)
+#
+# test <- bind_rows(general_information_dm, study_info_with_num, methodology, results) %>%
+#   select(!row_id) %>%
+#   select(doi, n_itc, study_number, section, questions, reviewer, answers) %>%
+#   data_manage_answers()
+#
+# test %>%
+#   filter(questions == "unadjusted_pvalue_CI") %>%
+#   select(answers) %>%
+#   mutate(pvalue = ifelse(str_detect(answers, "^\\["), NA, answers),
+#          ci = ifelse(str_detect(answers, "^\\["), answers, NA)) %>%
+#   View()
+#
+#   unique()
+#
+# test %>%
+#   filter(questions == "unadjusted_pvalue_CI") %>%
+#   pull(answers) %>%
+#   unique()
+# -----------
+
+assert_names <- function(df, columns_to_review) {
+  # Check that the questions to review names are indeed present in the question column
+  # To avoid discarding eventually important question to review because of some name/rename mismatch
+  stopifnot(
+    "some question_to_review names are not present in the 'questions' column" =
+      all(columns_to_review %in% unique(df$questions))
+  )
+  df
+}
+
 long_results_dm <- bind_rows(general_information_dm, study_info_with_num, methodology, results) %>%
   select(!row_id) %>%
   select(doi, n_itc, study_number, section, questions, reviewer, answers) %>%
   data_manage_answers() %>%
   pivot_wider(names_from = reviewer, values_from = answers) %>%
+  assert_names(columns_to_review) %>%
+  replace_na(replace = list(n_itc = "", study_number = "", BZ = "", ASL = "")) %>%
   mutate(identical = ASL == BZ,
-         decision = if_else(identical, BZ, NA_character_)) %>%
-  replace_na(replace = list(n_itc = "", study_number = "", BZ = "", ASL = "", identical = FALSE, decision =  "")) %>%
-  rename(`Individual Studies Number` = study_number,
-         `ITC Number` = n_itc
+         decision = ifelse(identical, BZ,
+                           ifelse(questions %in% columns_to_review, "", "XXXX")
+         )
   ) %>%
-  left_join(done[, c("doi", "PMID", "both", "reviewer", "row_names")],
+  rename(`Ind studies num` = study_number,
+         `ITC num` = n_itc,
+         "reviewer 1" = "ASL",
+         "reviewer 2" = "BZ"
+  ) %>%
+  mutate(questions = replace_in_vec(questions, swap_names_values(list_questions))) %>%
+  left_join(done[, c("doi", "PMID", "reviewer", "row_names")],
             by = "doi") %>%
   left_join(order_sections) %>%
-  arrange(doi, order_sections, `ITC Number`, `Individual Studies Number`) %>%
+  arrange(doi, order_sections, `ITC num`, `Ind studies num`) %>%
   select(-order_sections, -row_names) %>%
-  select(doi, PMID, section, `ITC Number`, `Individual Studies Number`, everything())
+  select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, `reviewer 1`, `reviewer 2`, decision, identical, reviewer) %>%
+  # removing answers when identical, for more clarity
+  mutate(across(.cols = c(`reviewer 1`, `reviewer 2`),
+                .fns = ~ replace(.x, identical, "") %>% replace_na(""))
+  )
 
 
+# adding notes ------------------------------------------------------------
+
+notes_dm <- notes %>%
+  select(n_itc, doi, reviewer, answers) %>%
+  pivot_wider(names_from = reviewer, values_from = answers,
+              values_fn = function(...) paste(..., collapse = "   ")) %>%
+  rename("Notes reviewer 1" = "ASL", "Notes reviewer 2" = "BZ")
+
+long_results_w_notes <- long_results_dm %>%
+  left_join(notes_dm, by = c("doi", "ITC num" = "n_itc")) %>%
+  group_by(doi, `ITC num`) %>%
+  mutate(across(all_of(c("Notes reviewer 1", "Notes reviewer 2")),
+         .fns = ~ replace(.x, duplicated(.x), "")
+  ))
+
+
+# count identical ---------------------------------------------------------
+
+counts <- long_results_w_notes %>%
+  group_by(doi) %>%
+  summarise(n_questions = n(),
+            same = sum(identical),
+            differences = sum(!identical),
+            to_review = sum(decision == "")
+  )
+
+summarise(counts, across(-doi, .fns = sum))
+
+done_info <- left_join(done, counts, by = "doi") %>%
+  left_join(list_articles_to_do[, c("Title", "PMID", "Create Date")], by = "PMID") %>%
+  select(row_names, PMID, doi, Title, `Create Date`, n_questions, same, differences, to_review)
+
+# done_info %>% group_by(reviewer) %>% summarise(counts = sum(to_review))
+write_excel_csv2(done_info,
+                "data/literature_search_pubv1/extraction_articles/results_summary.csv")
 # Export results ----------------------------------------------------------
 
-long_results_dm %>% write_delim(paste0("data/literature_search_pubv1/extraction_articles/comparison_answers",
-                                       as.Date(lubridate::now(), format = "yyMMDD"),
-                                       ".tsv"),
-                                delim = "\t")
+long_results_w_notes %>% write_excel_csv2(paste0(
+  "data/literature_search_pubv1/extraction_articles/comparison_answers",
+  as.Date(lubridate::now(), format = "yyMMDD"),
+  ".csv"),
+  eol = "\r\n")
 
 for (initials in c("DH", "JL")) {
   dir_results <- file.path(dir_data, "extraction_articles", initials)
   if (!dir.exists(dir_results)) dir.create(dir_results)
-  result_reviewer <- long_results_dm %>%
-    filter(reviewer == initials & both)
+  result_reviewer <- long_results_w_notes %>%
+    filter(reviewer == initials)
+
   for (pmid in unique(result_reviewer$PMID)) {
     data <- result_reviewer %>%
       filter(PMID == pmid)
-    row_name <- as.character(unique(data$row_names))
-    file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".tsv"))
-    if (!file.exists(file_name))
-      data %>%
-      select(-both, -reviewer, -row_names) %>%
-      write_tsv(file = file_name)
+    row_name <- as.character(unique(done_info[done_info$PMID == pmid, "row_names"]))
+    file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".csv"))
+    # file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".csv"))
+    # if (!file.exists(file_name))
+    data %>%
+      select(-reviewer) %>%
+      write_excel_csv2(file = file_name)
   }
   ## writing batch zip file every 10 new articles
-  file_infos <- file.info(list.files(dir_results, full.names = TRUE))
-  file_infos$path <- row.names(file_infos)
-  file_infos %>%
-    mutate(day_creation = lubridate::date(ctime)) %>%
-    arrange(day_creation, path) %>%
-    mutate(n_row = 1:nrow(.),
-           batch = (n_row - 1) %/% 10 + 1) %>%
-    group_by(batch) %>%
-    group_walk(.f = function(df, group_name_df) {
-      paths <- pull(df, path)
-      group_name <- pull(group_name_df, batch)
-      if (length(paths) < 10) {
-        cat("returning", as.character(group_name), "\n")
-        return()
-      }
-      zip_name <- file.path(dir_results,
-                            paste0(group_name, "_", initials, ".zip")
-      )
-      # j option flag to avoid nested directory, other flags are just default values
-      if (! file.exists(zip_name)) zip(zip_name, paths, flags = '-r9Xj')
-    })
+  # file_infos <- file.info(list.files(dir_results, full.names = TRUE))
+  # file_infos$path <- row.names(file_infos)
+  # file_infos %>%
+  #   mutate(day_creation = lubridate::date(ctime)) %>%
+  #   arrange(day_creation, path) %>%
+  #   mutate(n_row = 1:nrow(.)) %>%
+  #          # batch = (n_row - 1) %/% 10 + 1) %>%
+  #   # group_by(batch) %>%
+  #   group_walk(.f = function(df, group_name_df) {
+  #     paths <- pull(df, path)
+  #     group_name <- pull(group_name_df, batch)
+  #     if (length(paths) < 10) {
+  #       cat("returning", as.character(group_name), "\n")
+  #       return()
+  #     }
+  #     zip_name <- file.path(dir_results,
+  #                           paste0(group_name, "_", initials, ".zip")
+  #     )
+  #     # j option flag to avoid nested directory, other flags are just default values
+  #     if (! file.exists(zip_name)) zip(zip_name, paths, flags = '-r9Xj')
+  #   })
 }
 
-
-## Question/réponse à harmoniser encore
-# Question  'Justification for selecting variables to be included in the adjustment model (in the main text) '
-    ## Réponse "statistical based" séparé en 2 mi-juillet --> à reprendre à la main
-# Effectifs initiaux : changement de définition au cours de l'inclusion
