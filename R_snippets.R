@@ -98,7 +98,7 @@ transform_df_to_ascii <- function(df) {
 }
 
 # Named list to data frame
-named_list_df <- list(
+named_list_example <- list(
   "general_information" = c(
     "Medical Condition of Interest Name",
     "Initials of the reviewer filling the form",
@@ -110,23 +110,23 @@ named_list_df <- list(
     "Treatment name 1",
     "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)"
   )
-) %>%
+)
+named_list_df <- named_list_example %>%
   tibble::enframe() %>%
   tidyr::unnest_longer(col = value)
-
 
 
 # Flatten a list ----------------------------------------------------------
 flat_list <- unlist(named_list_example)
 flat_list <- rlang::flatten(named_list_example)
 flat_list <- rlang::squash(named_list_example)
+
 flatten <- function(x) {
   if (!inherits(x, "list")) return(list(x))
   else return(unlist(c(lapply(x, flatten)), recursive = FALSE))
 }
 flatten(named_list_example)
-unlist(questions_sections, recursive = FALSE, use.names = FALSE)
-unlist(questions_sections, recursive = FALSE, use.names = FALSE)
+
 flatten_list <- function(nested_list) {
   # flatten 2 levels deep list, while keeping only last level names, if any
   do.call(c, unname(nested_list))
@@ -138,6 +138,7 @@ FitFlextableToPage <- function(ft, pgwidth = 8){
   ft_out <- width(ft_out, width = dim(ft_out)$widths*pgwidth /(flextable_dim(ft_out)$widths))
   return(ft_out)
 }
+
 
 # Extract pvalues from a tableby object
 extract_pvalues_tableby <- function(tableby) {
