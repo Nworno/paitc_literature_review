@@ -14,13 +14,14 @@ File `parse_pubmed_text_export.R`:
 
   Transform rayyan output to get included articles and exclusion reasons
 
-Data folder: 
-  - articles_selection: 
+`data` folder: 
+  - `articles_selection`: 
     - pubv1_wide_format.csv: original export from PubMed query
     - pubmed-indirecttr-set_abstract.txt: export from PubMed with more metadata details about articles
     - pubv1_formatted_rayyan_input.csv: formatted to be useable Rayyan.ai ()
     - included_articles.csv: final list of articles included in the extraction
-  - extraction:
+  - `extraction`:
     - **comparison_answers2022-09-21.csv**: extraction data-managed in a long format --> can be used for the article statistics. Column "decision".
     - current_extraction.csv: extraction in a wide format
     - results_summary.csv: stats about article answers
+    - extraction_results.csv: extraction results after adjudication 

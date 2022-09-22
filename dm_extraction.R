@@ -3,7 +3,6 @@ library(stringr)
 library(dplyr)
 library(tidyr)
 library(tibble)
-library(flextable)
 library(purrr)
 library(lubridate)
 
@@ -564,5 +563,16 @@ for (initials in c("JL", "DH")) {
   #     # j option flag to avoid nested directory, other flags are just default values
   #     if (! file.exists(zip_name)) zip(zip_name, paths, flags = '-r9Xj')
   #   })
+}
+
+
+# create temp results file ------------------------------------------------
+
+if (2 + 2 == 3) {
+  long_results_w_notes %>%
+    mutate(answer = ifelse(decision == "XXXX", NA_character_, decision),
+           answer = ifelse(is.na(answer), ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), answer)) %>%
+    select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, answer) %>%
+    write_excel_csv2("data/extraction/extraction_results.csv")
 }
 
