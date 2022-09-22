@@ -16,8 +16,10 @@ extraction_df <- read_csv(
   name_repair = "minimal"
 )
 
-list_articles_to_do <- read_csv(file.path(dir_data, "/extraction_articles/included_articles.csv")) %>%
-  mutate(PMID = as.character(PMID))
+full_list_articles_to_do <- read_csv(file.path(dir_data, "/extraction_articles/included_articles.csv")) %>%
+  mutate(PMID = as.character(PMID),
+         `Create Date` = as_date(`Create Date`, format = "%d/%m/%Y")) %>%
+  arrange(`Create Date`)
 
 ## ----Renaming sections---------------------------------------------------------------
 source("questions_sections.R")
@@ -56,7 +58,7 @@ extraction_df <- extraction_df %>%
                       doi)
   )
 
-list_articles_to_do <- list_articles_to_do %>%
+list_articles_to_do <- full_list_articles_to_do %>%
   rename(doi = DOI) %>%
   mutate(doi = tolower(doi)) %>%
   filter(!included %in% c("XX"))
@@ -120,7 +122,7 @@ followup <- subset_included_df %>%
 
 done <- list_articles_to_do[, c("doi", "PMID")] %>%
   mutate(row_names = 1:n(),
-         reviewer = rep_len(c("DH", "JL"), length.out = n())) %>%
+         reviewer = rep_len(c("JL", "DH"), length.out = n())) %>%
   full_join(followup, by = c("doi")) %>%
   mutate(both = ifelse(is.na(both), FALSE, both))
 
@@ -178,7 +180,7 @@ general_information %>%
   filter(! row_id %in% rows_id_to_discard_general_info) %>%
   # filter(!timestamp != as_datetime("09/08/2022 11:37:14"))
   get_all_duplicated_pipe(all_of(c("doi", "reviewer", "questions", "answers"))) %>%
-  pivot_wider(id_cols = id_names, names_from = questions, values_from = answers) %>%
+  pivot_wider(id_cols = all_of(id_names), names_from = questions, values_from = answers) %>%
   View()
 
 
@@ -451,6 +453,8 @@ long_results_dm <- bind_rows(general_information_dm, study_info_with_num, method
                            ifelse(questions %in% columns_to_review, "", "XXXX")
          )
   ) %>%
+  mutate(across(c(ASL, BZ),
+                .fns = ~ if_else(ASL == BZ, "", .x))) %>%
   rename(`Ind studies num` = study_number,
          `ITC num` = n_itc,
          "reviewer 1" = "ASL",
@@ -462,15 +466,9 @@ long_results_dm <- bind_rows(general_information_dm, study_info_with_num, method
   left_join(order_sections) %>%
   arrange(doi, order_sections, `ITC num`, `Ind studies num`) %>%
   select(-order_sections, -row_names) %>%
-  select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, `reviewer 1`, `reviewer 2`, decision, identical, reviewer) %>%
-  # removing answers when identical, for more clarity
-  mutate(across(.cols = c(`reviewer 1`, `reviewer 2`),
-                .fns = ~ replace(.x, identical, "") %>% replace_na(""))
-  )
-
+  select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, `reviewer 1`, `reviewer 2`, decision, identical, reviewer)
 
 # adding notes ------------------------------------------------------------
-
 notes_dm <- notes %>%
   select(n_itc, doi, reviewer, answers) %>%
   pivot_wider(names_from = reviewer, values_from = answers,
@@ -498,12 +496,17 @@ counts <- long_results_w_notes %>%
 summarise(counts, across(-doi, .fns = sum))
 
 done_info <- left_join(done, counts, by = "doi") %>%
-  left_join(list_articles_to_do[, c("Title", "PMID", "Create Date")], by = "PMID") %>%
-  select(row_names, PMID, doi, Title, `Create Date`, n_questions, same, differences, to_review)
+  right_join(full_list_articles_to_do[, c("Title", "PMID", "Create Date", "notes")],
+             by = c("PMID")) %>%
+  mutate(included = !is.na(n_questions)) %>%
+  select(row_names, PMID, doi, Title, `Create Date`, included, notes, n_questions, same, differences, to_review) %>%
+  arrange(row_names, `Create Date`)
+
 
 # done_info %>% group_by(reviewer) %>% summarise(counts = sum(to_review))
 write_excel_csv2(done_info,
                 "data/literature_search_pubv1/extraction_articles/results_summary.csv")
+
 # Export results ----------------------------------------------------------
 
 long_results_w_notes %>% write_excel_csv2(paste0(
@@ -512,7 +515,7 @@ long_results_w_notes %>% write_excel_csv2(paste0(
   ".csv"),
   eol = "\r\n")
 
-for (initials in c("DH", "JL")) {
+for (initials in c("JL", "DH")) {
   dir_results <- file.path(dir_data, "extraction_articles", initials)
   if (!dir.exists(dir_results)) dir.create(dir_results)
   result_reviewer <- long_results_w_notes %>%
