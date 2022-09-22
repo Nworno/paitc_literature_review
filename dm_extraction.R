@@ -576,3 +576,69 @@ if (2 + 2 == 3) {
     write_excel_csv2("data/extraction/extraction_results.csv")
 }
 
+
+# unique molecule names ---------------------------------------------------
+
+list_replacing_ttt_manual <- c(
+  "etoposide-ifosfamide" = "etoposide - ifosfamide",
+  "bendamustine- brentuximab" = "bendamustine - brentuximab",
+  "vinblastine-procarbazine" = "vinblastine - procarbazine",
+  "brentuximab-bendamustine" = "brentuximab - bendamustine",
+  "vinblastine-procarbazine" = "vinblastine - procarbazine",
+  "methotrexate + pl mtx-hydrocortancyl" = "mtx - hydrocortancyl",
+  "mogamulizumab + pl infiltree triple (aracytine, mtx, hydrocortancyl)" = "mogamulizumab - aracytine - mtx - hydrocortancyl",
+  "rituximab-gemcitabine-oxaliplatine" = "rituximab - gemcitabine - oxaliplatine"
+)
+str_transformation <- function(x) {
+  x %>%
+    str_to_lower() %>%
+    stringi::stri_trans_general(id = "Latin-ASCII") %>%
+    str_squish() %>%
+    replace_in_vec(named_list = list_replacing_ttt_manual) %>%
+    str_split("(\\+)|(\\s-\\s)|(\\set\\s)")
+}
+
+sort_alphabetically <- function(x) {
+  x[str_order(x)]
+}
+
+
+unique_ttt_names <- long_results_w_notes %>%
+  filter(questions %in% c("Treatment name 1", "Treatment name 2")) %>%
+  pivot_longer(cols = c("reviewer 1", "reviewer 2", "decision"),
+               names_to = "answer_type",
+               values_to = "answer") %>%
+  filter(! answer %in% c("", "XXXX")) %>%
+  pull(answer) %>%
+  unique() %>%
+  str_transformation() %>%
+  unlist() %>%
+  c() %>%
+  str_squish() %>%
+  unique() %>%
+  sort_alphabetically()
+
+df_ttt <- tibble(ttt_name = unique_ttt_names, simplified = c(""), category_1 = c(""), category_2 = c(""))
+write_excel_csv2(df_ttt, "data/extraction/ttt_names.csv")
+
+unique_condition_names <- long_results_w_notes %>%
+  filter(questions %in% c("Medical Condition of Interest Name")) %>%
+  pivot_longer(cols = c("reviewer 1", "reviewer 2", "decision"),
+               names_to = "answer_type",
+               values_to = "answer") %>%
+  pull(answer) %>%
+  unique() %>%
+  str_squish() %>%
+  unique() %>%
+  sort_alphabetically()
+
+df_condition <- tibble(condition_name = unique_condition_names,
+                       simplified = c(""),
+                       category_1 = c(""),
+                       category_2 = c(""))
+
+write_excel_csv2(df_condition, "data/extraction/condition_names.csv")
+
+# unique treatment names --------------------------------------------------
+
+
