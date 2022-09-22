@@ -9,14 +9,14 @@ library(lubridate)
 
 source("R_snippets.R")
 
-dir_data <- "data/literature_search_pubv1"
+dir_data <- "data"
 
 extraction_df <- read_csv(
-  file.path(dir_data, "/extraction_articles/current_extraction.csv"),
+  file.path(dir_data, "/extraction/current_extraction.csv"),
   name_repair = "minimal"
 )
 
-full_list_articles_to_do <- read_csv(file.path(dir_data, "/extraction_articles/included_articles.csv")) %>%
+full_list_articles_to_do <- read_csv(file.path(dir_data, "/articles_selection/included_articles.csv")) %>%
   mutate(PMID = as.character(PMID),
          `Create Date` = as_date(`Create Date`, format = "%d/%m/%Y")) %>%
   arrange(`Create Date`)
@@ -507,7 +507,17 @@ done_info <- left_join(done, counts, by = "doi") %>%
 write_excel_csv2(done_info,
                 "data/literature_search_pubv1/extraction_articles/results_summary.csv")
 
-# Export results ----------------------------------------------------------
+
+# export code pour review par BL et ASL -----------------------------------
+
+to_review_objective <- long_results_w_notes %>%
+  mutate(decision = ifelse(is.na(decision), "ZZZZ",
+                           ifelse(decision == "XXXX", NA_character_, decision)
+  ))
+to_review_objective %>% filter(reviewer == "DH") %>% write_csv2("data/extraction/to_review/to_review_BZ.csv")
+to_review_objective %>% filter(reviewer == "JL") %>% write_csv2("data/extraction/to_review/to_review_ASL.csv")
+
+# Export results for third reviewer ----------------------------------------------------------
 
 long_results_w_notes %>% write_excel_csv2(paste0(
   "data/literature_search_pubv1/extraction_articles/comparison_answers",
