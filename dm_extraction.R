@@ -510,9 +510,9 @@ write_excel_csv2(done_info,
 # export code pour review par BL et ASL -----------------------------------
 
 to_review_objective <- long_results_w_notes %>%
-  mutate(decision = ifelse(is.na(decision), "ZZZZ",
-                           ifelse(decision == "XXXX", NA_character_, decision)
-  ))
+  filter(section %in% c("general_information", "study_information")) %>%
+  mutate(decision = ifelse(decision == "XXXX", "", decision))
+
 to_review_objective %>% filter(reviewer == "DH") %>% write_csv2("data/extraction/to_review/to_review_BZ.csv")
 to_review_objective %>% filter(reviewer == "JL") %>% write_csv2("data/extraction/to_review/to_review_ASL.csv")
 
@@ -568,7 +568,7 @@ for (initials in c("JL", "DH")) {
 
 # create temp results file ------------------------------------------------
 
-if (2 + 2 == 3) {
+if (2 + 2 == 5) {
   long_results_w_notes %>%
     mutate(answer = ifelse(decision == "XXXX", "", decision),
            answer = ifelse(answer == "", ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), answer)) %>%

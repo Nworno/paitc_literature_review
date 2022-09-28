@@ -5,19 +5,15 @@ library("stringr")
 library("purrr")
 library("data.table")
 
-folder_raw_extraction <- "C:/Users/aserret-larmande/Documents/these/systematic_review_implementation/extractions/pub_finale_v1"
-
-folder_input_rayyan <- "data/pubv1"
+folder_input_rayyan <- "data/articles_selection"
 
 # Read original pubmed search export csv
 
-csv_pubmed <- read_csv(
-  file.path(folder_raw_extraction, "csv-indirecttr-set.csv")
-)
+csv_pubmed <- read_csv(file.path(folder_input_rayyan, "csv-indirecttr-set.csv"))
 
 
 # Formatting file from pubmed to rayyan format ----------------------------
-file_raw <- fread(file = file.path(folder_raw_extraction, "pubmed-indirecttr-set_abstract.txt"),
+file_raw <- fread(file = file.path(folder_input_rayyan, "pubmed-indirecttr-set_abstract.txt"),
                   encoding = "UTF-8",
                   header = FALSE,
                   fill = TRUE,

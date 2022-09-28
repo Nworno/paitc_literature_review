@@ -5,11 +5,11 @@ library("stringr")
 library("purrr")
 library("data.table")
 
-folder_raw_extraction <- "C:/Users/aserret-larmande/Documents/these/systematic_review_implementation/extractions/pub_finale_v1"
+source("R_snippets.R")
 
-folder_input_rayyan <- "data/pubv1"
+folder_input_rayyan <- "data/articles_selection"
 
-
+csv_pubmed <- read_csv(file.path(folder_input_rayyan, "csv-indirecttr-set.csv"))
 # Data Managing Rayyan extractions ---------------------------------
 
 parsing_rayyan_export <- function(rayyan_export_df) {
@@ -48,13 +48,6 @@ parsing_rayyan_export <- function(rayyan_export_df) {
   stopifnot(nrow(list_strings_dm) == nrow(rayyan_export_df))
   return(bind_cols(rayyan_export_df[, "pubmed_id"], list_strings_dm))
 }
-
-rename_w_named_list <- function(df, named_list) {
-  indices_to_rename <- which(names(df) %in% names(named_list))
-  names(df)[indices_to_rename] <- named_list[names(df)[indices_to_rename]]
-  return(df)
-}
-
 
 # Separating export in two files because no real way to differentiate notes and exclusion reasons between reviewers
 # Arnaud
@@ -219,6 +212,12 @@ final_df <- csv_pubmed %>%
   mutate(PMID = as.character(PMID)) %>%
   left_join(final_inclusion_df,
             by = c("PMID" = "pubmed_id")) %>%
+  left_join(rename(inclusion_df_arnaud, full_article_arnaud = full_article) %>% select(full_article_arnaud, pubmed_id),
+            by = c("PMID" = "pubmed_id")) %>%
+  left_join(rename(inclusion_df_belkacem, full_article_belkacem = full_article) %>% select(full_article_belkacem, pubmed_id),
+            by = c("PMID" = "pubmed_id")) %>%
+  mutate(full_article = full_article_arnaud | full_article_belkacem) %>%
+  select(-full_article_arnaud, -full_article_belkacem) %>%
   select(PMID, DOI, Title, Authors, consensus, decision, everything(), exclusion_reasons, reviewer_1, reviewer_2)
 
 included_articles <- final_df %>% filter(consensus == TRUE & decision == "Included")
@@ -233,6 +232,63 @@ to_review_articles %>%
   write_csv(file.path(folder_input_rayyan, "to_review_articles.csv"))
 
 
+# Adjudication -------------------------------------------------------
+
+adjudication <- read_csv(file.path(folder_input_rayyan, "to_review/Decision_DHE.csv"))
+adjudication$RAISON <- replace_in_vec(adjudication$RAISON,
+                                      c("Mention d'une MAIC dans le résumé" = NA,
+                                        "Mention d'une MAIC dans le résumé" = NA,
+                                        "Mention d'une comparaison indirecte dans le résumé / utilisation MAIC + STC dans le full text" = NA,
+                                        "Bucher" = "no_paitc",
+                                        "Mention d'une STC dans le résumé et le full text" = NA,
+                                        "Mention d'une MAIC dans le résumé" = NA,
+                                        "Objectif principal = methodo (illustration avec un case study)" = "methodological",
+                                        "Mention d'une STC dans le résumé et le full text" = NA,
+                                        "Il s'agit d'un erratum" = "not_original_article",
+                                        "MAIC dans le résumé, mais très douteux dans le full text" = "no_paitc",
+                                        "Objectif principal = methodo" = "methodological",
+                                        "Bucher (mais avec des rafinements)" = "no_paitc",
+                                        "Objectif principa = method / ce n'est qu'un abstract sans article complet" = "methodological",
+                                        "Je comprends qu'il n'y a pas de données individuelles (juste des simus)" = "no_paitc",
+                                        "Objectif principal = methodo (illustration avec un case study)" = "methodological",
+                                        "Objectif principal = methodo (illustration avec un case study)" = "methodological"
+                                      )
+)
+adjudication <- adjudication %>%
+  mutate(`FULL TEXT` = ifelse(`FULL TEXT` == "NON", FALSE, TRUE),
+         INCLUSION = ifelse(INCLUSION == "NON", FALSE, TRUE),
+         PMID = as.character(PMID)) %>%
+  rename(third_reviewer_inclusion = "INCLUSION",
+         reason_third_reviewer = "RAISON",
+         full_article_third_reviewer = "FULL TEXT") %>%
+  select(PMID, third_reviewer_inclusion, reason_third_reviewer, full_article_third_reviewer)
+
+
+# articles_discarded_afterwards -------------------------------------------
+
+#TODO: rajouter logique avec articles éliminés lors de la revue
+# read_csv
+# filter(included == "XX")
+# full_article_review = TRUE
+# reason --> manual
+# included = FALSE
+
+# flow chart df -----------------------------------------------------------
+
+flow_chart_df <- final_df %>%
+  left_join(adjudication, by = "PMID") %>%
+  mutate(final_included = ifelse(decision == "Included",
+                           TRUE,
+                           ifelse(third_reviewer_inclusion,
+                                  TRUE,
+                                  FALSE)),
+         final_exclusion_reasons = ifelse(!is.na(reason_third_reviewer), reason_third_reviewer, exclusion_reasons),
+         final_full_text = full_article | full_article_third_reviewer
+  )
+
+stopifnot(sum(is.na(flow_chart_df$final_included)) != 0)
+stopifnot(sum(is.na(flow_chart_df$final_exclusion_reasons)) != 0)
+stopifnot(sum(is.na(flow_chart_df$final_full_text)) != 0)
 ##############
 ## Exploration des désaccords
 
