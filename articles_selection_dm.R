@@ -231,64 +231,6 @@ to_review_articles %>%
   select(all_of(names(csv_pubmed))) %>%
   write_csv(file.path(folder_input_rayyan, "to_review_articles.csv"))
 
-
-# Adjudication -------------------------------------------------------
-
-adjudication <- read_csv(file.path(folder_input_rayyan, "to_review/Decision_DHE.csv"))
-adjudication$RAISON <- replace_in_vec(adjudication$RAISON,
-                                      c("Mention d'une MAIC dans le résumé" = NA,
-                                        "Mention d'une MAIC dans le résumé" = NA,
-                                        "Mention d'une comparaison indirecte dans le résumé / utilisation MAIC + STC dans le full text" = NA,
-                                        "Bucher" = "no_paitc",
-                                        "Mention d'une STC dans le résumé et le full text" = NA,
-                                        "Mention d'une MAIC dans le résumé" = NA,
-                                        "Objectif principal = methodo (illustration avec un case study)" = "methodological",
-                                        "Mention d'une STC dans le résumé et le full text" = NA,
-                                        "Il s'agit d'un erratum" = "not_original_article",
-                                        "MAIC dans le résumé, mais très douteux dans le full text" = "no_paitc",
-                                        "Objectif principal = methodo" = "methodological",
-                                        "Bucher (mais avec des rafinements)" = "no_paitc",
-                                        "Objectif principa = method / ce n'est qu'un abstract sans article complet" = "methodological",
-                                        "Je comprends qu'il n'y a pas de données individuelles (juste des simus)" = "no_paitc",
-                                        "Objectif principal = methodo (illustration avec un case study)" = "methodological",
-                                        "Objectif principal = methodo (illustration avec un case study)" = "methodological"
-                                      )
-)
-adjudication <- adjudication %>%
-  mutate(`FULL TEXT` = ifelse(`FULL TEXT` == "NON", FALSE, TRUE),
-         INCLUSION = ifelse(INCLUSION == "NON", FALSE, TRUE),
-         PMID = as.character(PMID)) %>%
-  rename(third_reviewer_inclusion = "INCLUSION",
-         reason_third_reviewer = "RAISON",
-         full_article_third_reviewer = "FULL TEXT") %>%
-  select(PMID, third_reviewer_inclusion, reason_third_reviewer, full_article_third_reviewer)
-
-
-# articles_discarded_afterwards -------------------------------------------
-
-#TODO: rajouter logique avec articles éliminés lors de la revue
-# read_csv
-# filter(included == "XX")
-# full_article_review = TRUE
-# reason --> manual
-# included = FALSE
-
-# flow chart df -----------------------------------------------------------
-
-flow_chart_df <- final_df %>%
-  left_join(adjudication, by = "PMID") %>%
-  mutate(final_included = ifelse(decision == "Included",
-                           TRUE,
-                           ifelse(third_reviewer_inclusion,
-                                  TRUE,
-                                  FALSE)),
-         final_exclusion_reasons = ifelse(!is.na(reason_third_reviewer), reason_third_reviewer, exclusion_reasons),
-         final_full_text = full_article | full_article_third_reviewer
-  )
-
-stopifnot(sum(is.na(flow_chart_df$final_included)) != 0)
-stopifnot(sum(is.na(flow_chart_df$final_exclusion_reasons)) != 0)
-stopifnot(sum(is.na(flow_chart_df$final_full_text)) != 0)
 ##############
 ## Exploration des désaccords
 
@@ -350,3 +292,71 @@ inclusion_df_comparative %>%
   unname() %>%
   clipr::write_clip()
 
+
+
+
+# Flow Chart DF -----------------------------------------------------------
+
+subset_final_df <- final_df %>%
+  mutate(included = if_else(decision == "Included", TRUE, FALSE)) %>%
+  select(PMID, included, full_article, exclusion_reasons)
+
+
+
+# Adjudication -------------------------------------------------------
+
+## 29/09/2022 --> modification du fichier adjudication pour PMID 25414048 --> inclus, STC
+adjudication <- read_csv(file.path(folder_input_rayyan, "to_review/Decision_DHE.csv"))
+adjudication$exclusion_reasons <- replace_in_vec(adjudication$RAISON,
+                                                 c("Mention d'une MAIC dans le résumé" = NA,
+                                                   "Mention d'une MAIC dans le résumé" = NA,
+                                                   "Mention d'une comparaison indirecte dans le résumé / utilisation MAIC + STC dans le full text" = NA,
+                                                   "Bucher" = "no_paitc",
+                                                   "Mention d'une STC dans le résumé et le full text" = NA,
+                                                   "Mention d'une MAIC dans le résumé" = NA,
+                                                   "Objectif principal = methodo (illustration avec un case study)" = "methodological",
+                                                   "Mention d'une STC dans le résumé et le full text" = NA,
+                                                   "Il s'agit d'un erratum" = "not_original_article",
+                                                   "MAIC dans le résumé, mais très douteux dans le full text" = "no_paitc",
+                                                   "Objectif principal = methodo" = "methodological",
+                                                   # "Bucher (mais avec des rafinements)" = "no_paitc",
+                                                   "STC" = NA,
+                                                   "Objectif principa = method / ce n'est qu'un abstract sans article complet" = "methodological",
+                                                   "Je comprends qu'il n'y a pas de données individuelles (juste des simus)" = "no_paitc",
+                                                   "Objectif principal = methodo (illustration avec un case study)" = "methodological",
+                                                   "Objectif principal = methodo (illustration avec un case study)" = "methodological"
+                                                 )
+)
+
+adjudication <- adjudication %>%
+  mutate(full_article = ifelse(`FULL TEXT` == "NON", FALSE, TRUE),
+         included = ifelse(INCLUSION == "NON", FALSE, TRUE),
+         PMID = as.character(PMID),
+         third = TRUE) %>%
+  select(PMID, full_article, included, exclusion_reasons, third)
+
+
+# articles_discarded_afterwards -------------------------------------------
+
+included_articles <- read_csv(file.path(folder_input_rayyan, "included_articles.csv"),
+                              col_types = c("PMID" = "c"))
+excluded_review <- included_articles %>%
+  filter(included == "XX") %>%
+  mutate(full_article = TRUE,
+         included = FALSE,
+         during_review = TRUE,
+         PMID = as.character(PMID)) %>%
+  select(PMID, full_article, included, exclusion_reasons, during_review)
+
+flow_chart_df <- subset_final_df %>%
+  anti_join(adjudication, by = "PMID") %>%
+  bind_rows(adjudication) %>%
+  anti_join(excluded_review, by = "PMID") %>%
+  bind_rows(excluded_review) %>%
+  mutate(across(.cols = c(third, during_review), .fns = ~ !is.na(.x)))
+
+
+stopifnot(nrow(flow_chart_df) == nrow(final_df))
+stopifnot(sum(flow_chart_df$included) == sum(is.na(included_articles$included)))
+
+write_csv(flow_chart_df, "data/articles_selection/flow_chart.csv")
