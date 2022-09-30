@@ -9,7 +9,7 @@ source("R_snippets.R")
 
 folder_input_rayyan <- "data/articles_selection"
 
-csv_pubmed <- read_csv(file.path(folder_input_rayyan, "csv-indirecttr-set.csv"))
+csv_pubmed <- read_csv(file.path(folder_input_rayyan, "pubv1_info.csv"))
 # Data Managing Rayyan extractions ---------------------------------
 
 parsing_rayyan_export <- function(rayyan_export_df) {

@@ -639,6 +639,3 @@ df_condition <- tibble(condition_name = unique_condition_names,
 
 write_excel_csv2(df_condition, "data/extraction/condition_names.csv")
 
-# unique treatment names --------------------------------------------------
-
-
