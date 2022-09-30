@@ -1,0 +1,147 @@
+---
+title: "results_stats"
+format: html
+---
+
+```{r config knitr}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(error = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+
+knitr::opts_chunk$set(fig.width = 12)
+knitr::opts_chunk$set(fig.height = 8)
+```
+
+
+```{r}
+library(readr)
+library(stringr)
+library(dplyr)
+library(tidyr)
+library(tibble)
+library(purrr)
+library(lubridate)
+library(ggthemr)
+library(arsenal)
+library(flextable)
+
+source("R_snippets.R")
+```
+
+
+```{r}
+all_articles_info <- read_csv("data/articles_selection/pubv1_wide_format.csv")
+all_articles_id <- read_csv("data/articles_selection/pubv1_info.csv")
+extraction_list <- read_csv("data/articles_selection/included_articles.csv")
+flow_chart_df <- read_csv("data/articles_selection/flow_chart.csv")
+results_df <- read_csv2("data/extraction/extraction_results.csv")
+```
+
+```{r}
+# ggtheme setting ---------------------------------------------------------
+ggthemr::ggthemr("fresh")
+```
+
+```{r}
+# list_questions ----------------------------------------------------------
+source("questions_sections.R")
+methodology_questions <- questions_sections$methodology %>% unname()
+```
+
+
+```{r}
+# selection articles ---------------------------------------------------------
+included_articles <- filter(flow_chart_df, included)
+
+stopifnot(identical(
+  unique(included_articles$PMID)[order(unique(included_articles$PMID))],
+  unique(results_df$PMID)[order(unique(results_df$PMID))]
+))
+
+
+# joins -------------------------------------------------------------------
+
+included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
+
+
+# articles metadata -------------------------------------------------------
+
+## Authors specific affiliations would need to be parsed and retrieved through pubv1_info.txt --> regex looking at ". " preceded by a ", " or "^"
+included_articles_info %>%
+  mutate("journal_title" = JT,
+         "journal_title_short" = TA) %>%
+  group_by(journal_title_short) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count)) %>%
+  ggplot(aes(x = reorder(journal_title_short, count), y = count)) +
+  geom_bar(stat = "identity") +
+  theme(axis.text.y = element_text(size = 7)) +
+  scale_x_discrete() +
+  coord_flip() +
+  labs(title = "Publication journals",
+       x = "Journals",
+       y = "Articles count")
+
+## Publication dates
+publication_date_df <- included_articles_info %>%
+  select(EDAT) %>%
+  mutate(publication_date = as_date(EDAT, format = "%Y/%m/%d %H:%M"),
+         publication_year = year(publication_date),
+         publication_date_q = lubridate::quarter(publication_date, with_year = TRUE),
+         publication_date_s = lubridate::semester(publication_date, with_year = TRUE),
+         publication_date_s = ifelse(round(publication_date_s %% 0.2, 1) == 0.1,
+                                      trunc(publication_date_s),
+                                      trunc(publication_date_s) + 0.5))
+publication_date_df %>%
+  group_by(publication_date_s) %>%
+  summarise(count = n()) %>%
+  ggplot(aes(x = publication_date_s, y = count)) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = 2010:2022) +
+  labs(title = "Publications by semester",
+       x = "Date",
+       y = "Publication counts")
+
+publication_date_df %>%
+  filter(publication_year < 2022) %>%
+  group_by(publication_year) %>%
+  summarise(count = n()) %>%
+  ggplot(aes(x = publication_year, y = count)) +
+  geom_point() +
+  geom_line() +
+  geom_text(aes(label = count), nudge_y = 2.5, nudge_x = -0.05) +
+  scale_x_continuous(breaks = 2010:2022) +
+  labs(title = "MAIC/STC implementation: publications by years",
+       x = "Year",
+       y = "Publication counts")
+
+## Results
+
+general_information_df <- results_df[results_df$section == "general_information",]
+individual_study_df <- results_df[results_df$section == "individual_study",]
+paitc_results <- results_df[results_df$section %in% c("methodology", "results"), ]
+
+
+results_wide <- paitc_results %>%
+  pivot_wider(id_cols = c(doi, PMID, `ITC num`), names_from = questions, values_from = answer) %>%
+  mutate(across(where(is.character), .fns = as.factor))
+
+
+## Checks
+results_wide %>%
+  summarise(across(.fns = ~ sum(is.na(.x)))) %>%
+  pivot_longer(cols = everything()) %>%
+  View()
+```
+
+
+```{r results='asis'}
+results_wide %>%
+  select(all_of(methodology_questions)) %>%
+  tableby(as.formula("`Type of population-adjusted indirect comparisons performed` ~ ."),
+          data = .) %>%
+  summary()
+```
+
