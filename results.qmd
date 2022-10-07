@@ -31,11 +31,11 @@ source("R_snippets.R")
 
 
 ```{r}
-all_articles_info <- read_csv("data/articles_selection/pubv1_wide_format.csv")
-all_articles_id <- read_csv("data/articles_selection/pubv1_info.csv")
+all_articles_info <- read_csv("data/articles_selection/all_articles_info.csv")
+all_articles_id <- read_csv("data/articles_selection/articles_id.csv")
 extraction_list <- read_csv("data/articles_selection/included_articles.csv")
 flow_chart_df <- read_csv("data/articles_selection/flow_chart.csv")
-results_df <- read_csv2("data/extraction/extraction_results.csv")
+results_df <- read_csv2("data/extraction/results_dm.csv")
 ```
 
 ```{r}

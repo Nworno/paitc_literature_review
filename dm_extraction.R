@@ -11,7 +11,7 @@ source("R_snippets.R")
 dir_data <- "data"
 
 extraction_df <- read_csv(
-  file.path(dir_data, "/extraction/current_extraction.csv"),
+  file.path(dir_data, "/extraction/current_extraction_raw.csv"),
   name_repair = "minimal"
 )
 
@@ -566,14 +566,67 @@ for (initials in c("JL", "DH")) {
 }
 
 
+# Integrating reviews BZ and ASL into results -------------------------------
+
+review_ASL <- read_csv("data/extraction/to_review/to_review_ASL_done.csv",
+                       col_types = list(identical = "l",
+                                        PMID = "c",
+                                        `Ind studies num` = "c",
+                                        `ITC num` = "c"))
+review_BZ <- read_csv("data/extraction/to_review/to_review_BZ_done.csv",
+                      col_types = list(identical = "l",
+                                       PMID = "c",
+                                       `Ind studies num` = "c",
+                                       `ITC num` = "c"))
+results_objective_adj <- bind_rows(review_ASL, review_BZ) %>%
+  select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, decision)
+
+
+
+# Integrating reviews DH and JL into results --------------------------------
+if (FALSE) {
+  review_DH <- read_csv("data/extraction/to_review/to_review_DH_done.csv",
+                        col_types = list(identical = "l",
+                                         PMID = "c",
+                                         `Ind studies num` = "c",
+                                         `ITC num` = "c"))
+  review_JL <- read_csv("data/extraction/to_review/to_review_JL_done.csv",
+                        col_types = list(identical = "l",
+                                         PMID = "c",
+                                         `Ind studies num` = "c",
+                                         `ITC num` = "c"))
+
+  results_adjudication <- bind_rows(review_DH, review_JL) %>%
+  select(doi, PMID, section, `ITC num`, `Ind studies number`, questions, decision)
+} else {
+  results_adjudication <- long_results_w_notes %>%
+    filter(section %in% c("methodology", "results")) %>%
+    mutate(decision = ifelse(decision == "XXXX", "", decision),
+           decision = ifelse(decision == "", ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), decision)) %>%
+  select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, decision)
+}
+long_results_final <- bind_rows(results_objective_adj, results_adjudication) %>%
+  rename(answer = "decision",
+         n_itc = "ITC num",
+         study_number = "Ind studies num") %>%
+  left_join(order_sections) %>%
+  arrange(doi, order_sections, n_itc, study_number) %>%
+  select(-order_sections)
+
+write_excel_csv(long_results_final, "data/extraction/extraction_results.csv")
+
+
 # create temp results file ------------------------------------------------
 
 if (2 + 2 == 5) {
   long_results_w_notes %>%
     mutate(answer = ifelse(decision == "XXXX", "", decision),
            answer = ifelse(answer == "", ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), answer)) %>%
-    select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, answer) %>%
-    write_excel_csv2("data/extraction/extraction_results.csv")
+    rename(answer = decision,
+           `ITC num` = "n_itc",
+           `Ind studies num` = "study_number") %>%
+    select(doi, PMID, section, n_itc, study_number, questions, answer) %>%
+    write_excel_csv("data/extraction/extraction_results.csv")
 }
 
 
