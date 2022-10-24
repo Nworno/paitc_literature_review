@@ -1,0 +1,134 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;reviewer;Notes reviewer 1;Notes reviewer 2
+10.2217/cer-2016-0085;28350241;general_information;;;Medical Condition of Interest Name;relapsing–remitting multiple sclerosis;multiple sclerosis;XXXX;FALSE;BZ;NA;NA
+10.2217/cer-2016-0085;28350241;general_information;;;Countries of first author affiliations;;;switzerland;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;general_information;;;Countries of last author affiliations;;;usa;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;1;Patient-level data used;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;1;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00420212;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;2;Patient-level data used;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;2;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00451451;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;3;Patient-level data used;;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;3;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00004814;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);international;usa;XXXX;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;3;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;4;Patient-level data used;;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;4;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;4;Data source name (only if observational study or clinical trial without NCT);;;eur/can study;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;4;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;4;Phase of the clinical trial (clinical trial only);3;;XXXX;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;5;Patient-level data used;;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;5;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;5;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00099502;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;5;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;5;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;study_information;;5;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Treatment name 1;dimethyl fumarate;delayed-release dimethyl fumarate;delayed-release dimethyl fumarate;FALSE;BZ;"N nonIPD 251
+	N IPD 2651
+	ESS 1032
+	unadjusted RR pooled for GA US/EUR/CAN + direct comparison =  0.77   0.027
+	adjusted RR pooled for GA US/EUR/CAN + direct comparison = 0.76  0.047
+";"Effectif non IPD (Intervention + Placebo) = 251
+Effectif IPD (Intervention + Placebo) = 2651
+ESS IPD (Intervention + Placebo) = 1032"
+10.2217/cer-2016-0085;28350241;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Treatment name 2;;;glatiramer acetate;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Study 'number(s)' for treatment 2;"3;4";3;3;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Anchored comparison?;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Definition of a single primary outcome for the indirect comparison;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;Yes;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);annualized relapse rate;annualized relapse rate at 2 years;annualized relapse rate at 2 years;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Continuous (count, mean, ...);FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Treatment name 1;dimethyl fumarate;delayed-release dimethyl fumarate;delayed-release dimethyl fumarate;FALSE;BZ;"N nonIPD 239
+	N IPD 2651
+	ESS 1206
+	unadjusted RR pooled for GA US/EUR/CAN + direct comparison =  0.77   0.027
+	adjusted RR pooled for GA US/EUR/CAN + direct comparison = 0.76  0.047
+";"Effectif non IPD (Intervention + Placebo) = 239
+Effectif IPD (Intervention + Placebo) = 2651
+ESS IPD (Intervention + Placebo) = 1206
+
+Pas de résultats données pour les MAIC 1 et 2 (formulaire 1 et 2) mais résultat de la meta-analyse incluant la MAIC 1 et 2 :
+Rate ratio before matching = 0.77   p=0.027
+Rate ratio before matching = 0.76   p=0.047"
+10.2217/cer-2016-0085;28350241;methodology;2;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Treatment name 2;;;glatiramer acetate;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Study 'number(s)' for treatment 2;"3;4";4;4;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Anchored comparison?;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);annualized relapse rate;annualized relapse rate at 2 years;annualized relapse rate at 2 years;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Continuous (count, mean, ...);FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Treatment name 1;dimethyl fumarate;delayed-release dimethyl fumarate;delayed-release dimethyl fumarate;FALSE;BZ;Even if not anchored, sample sizes reported seem to be for both active and control comparators;"Effectif non IPD (Intervention + Placebo) = 448
+Effectif IPD (Intervention + Placebo) = 2651
+ESS IPD (Intervention + Placebo) = 364"
+10.2217/cer-2016-0085;28350241;methodology;3;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Treatment name 2;;;glatiramer acetate;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Study 'number(s)' for treatment 2;;;5;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Anchored comparison?;No;Yes;No;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Definition of a single primary outcome for the indirect comparison;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;Yes;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;12-week confirmed disability progression;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Primary outcome: variable type;;;Binary (eg rates);TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;methodology;3;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Number of covariates adjusted for/matched on;;;7;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Primary outcome: treatment effect contrast;RR;Rate ratio;Rate ratio;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Primary outcome: unadjusted treatment effect;0.77;;;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.027;;;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Primary outcome: adjusted treatment effect;0.76;;;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.047;;;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Number of covariates adjusted for/matched on;;;5;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Primary outcome: treatment effect contrast;RR;Rate ratio;Rate ratio;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Primary outcome: unadjusted treatment effect;0.77;;;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.027;;;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Primary outcome: adjusted treatment effect;0.76;;;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.047;;;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;Number of covariates adjusted for/matched on;;;7;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;Primary outcome: treatment effect contrast;;;RR;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;Primary outcome: unadjusted treatment effect;;;0.73;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.015;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;Primary outcome: adjusted treatment effect;;;0.51;TRUE;BZ;;
+10.2217/cer-2016-0085;28350241;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;<0.001;TRUE;BZ;;

@@ -1,0 +1,54 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;reviewer;Notes reviewer 1;Notes reviewer 2
+10.2147/ptt.s326121;34765537;general_information;;;Medical Condition of Interest Name;moderate-to-severe plaque psoriasis;moderate-to-severe plaque psoriasis (patients that are inadequate responders to ustekinumab);XXXX;FALSE;BZ;NA;NA
+10.2147/ptt.s326121;34765537;general_information;;;Countries of first author affiliations;;;uk;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;general_information;;;Countries of last author affiliations;;;germany;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;Yes;Not mentioned;XXXX;FALSE;BZ;;
+10.2147/ptt.s326121;34765537;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;1;Patient-level data used;;;Yes;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;1;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01708603;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;2;Patient-level data used;;;Yes;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;2;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01708629;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;3;Patient-level data used;;;No;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;3;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02203032;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;3;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Treatment name 1;;;brodalumab;TRUE;BZ;NA;"""One possible limitation is that MAIC is based on the assumption that all effect modifiers and prognostic factors have been accounted for in the analysis.""
+==> Est ce que ça implique qu'ils considèrent que les covariables prises en compte sont ""effect modifiers""/""prognosis facotors"" ?"
+10.2147/ptt.s326121;34765537;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Treatment name 2;guselkumab;guselkuma;guselkumab;FALSE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Study 'number(s)' for treatment 2;;;3;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Anchored comparison?;;;No;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);psoriasis area and severity index 90 rate;proportions of patients who achieved pasi 90 (psoriasis area severity index) at weeks 12;proportions of patients who achieved pasi 90 (psoriasis area severity index) at weeks 12;FALSE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Primary outcome: variable type;;;Binary (eg rates);TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;135;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;121;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;90;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Reporting of a weights' distribution evaluation (MAIC);Not mentioned;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;FALSE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Number of covariates adjusted for/matched on;;;11;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Comorbidities and medical history (beside pathology/disease of interest in the comparison);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Comorbidities and medical history (beside pathology/disease of interest in the comparison);FALSE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Primary outcome: treatment effect contrast;Rate difference;Proportions difference;Risk difference;FALSE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;Primary outcome: adjusted treatment effect;14.6;14.60%;14.6;FALSE;BZ;;
+10.2147/ptt.s326121;34765537;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.002;TRUE;BZ;;

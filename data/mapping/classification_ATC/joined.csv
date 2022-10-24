@@ -1,0 +1,357 @@
+,ttt_name,simplified,category_1,category_2 (top level class ATC),ATC code,concept_class_id,concept_code
+0,,,,,,Unit,{n/a}
+1,-extent 2 weeks,,,,,Unit,{n/a}
+2,[177lu]lu-dota-tat,[177lu]lu-dota-tate,Peptide receptor radionucleide therapy,cancer therapy,V10XX04,,
+3,[177lu]lu-dota-tate,[177lu]lu-dota-tate,Peptide receptor radionucleide therapy,,V10XX04,,
+4,/- second stem-cell transplantation (salvage-2),stem-cell transplantation,,,,,
+5,1 mg,,,,,Unit,{n/a}
+6,15-valent pneumococcal conjugate vaccine,pneumococcal vaccine,vaccine,,J07AL,,
+7,20-valent pneumococcal conjugate vaccine,pneumococcal vaccine,vaccine,,J07AL,,
+8,abemaciclib,abemaciclib,CDK inhibitor,immunotherapy,L01EF03,ATC 5th,L01EF03
+9,abiraterone acetate,abiraterone acetate,Hormone antagonist,Endocrine therapy,L02BX03,,
+10,acalabrutinib,acalabrutinib,BTK Inhibitor,Antineoplastic agent (cancer therapy),L01EL02,ATC 5th,L01EL02
+11,acitretin,acitretin,Retinoid,Antipsoriatic,D05BB02,ATC 5th,D05BB02
+12,adalimumab,adalimumab,TNF-α inhibitor,Immunosupressant,L04AB04,ATC 5th,L04AB04
+13,adalimumab 150mg,adalimumab,TNF-α inhibitor,Immunosupressant,L04AB04,ATC 5th,L04AB04
+14,adt,Androgen deprivation therapy,,,,,
+15,alectinib,alectinib,ALK inhibitor,Antineoplastic agent (cancer therapy),L01ED03,ATC 5th,L01ED03
+16,alemtuzumab,alemtuzumab,Monoclonal antibody anti-CD52,Immunosupressant,L04AA34,ATC 5th,L04AA34
+17,amlodipine,amlodipine,Selective calcium channel blocker,Cardiovascular system,C08CA01,ATC 5th,C08CA01
+18,"amlodipine 10mg,",amlodipine,Selective calcium channel blocker,Cardiovascular system,C08CA01,ATC 5th,C08CA01
+19,amlodipine 5 mg,amlodipine,Selective calcium channel blocker,Cardiovascular system,C08CA01,ATC 5th,C08CA01
+20,apalutamide,apalutamide,Anti-androgen,Endocrine therapy,L02BB05,ATC 5th,L02BB05
+21,apomorphine sublingual film,apomorphine,Dopamine agonist,Anti-parkinson drug,G04BE07,ATC 5th,G04BE07
+22,apremilast,apremilast,PDE4 inhibitor,Immunosupressant,L04AA32,ATC 5th,L04AA32
+23,ard of care,Standard of care,,,,,
+24,asunaprevir,asunaprevir,HCV protease inhibitor,Antiviral,J05AP06,ATC 5th,J05AP06
+25,atezolizumab,atezolizumab,Monoclonal antibody : PD-1/PDL-1 inhibitor,Antineoplastic agent (cancer therapy),L01XC32,ATC 5th,L01XC32
+26,atomoxetine,atomoxetine,Selective norepinephrine (noradrenaline) reuptake inhibitor,Psychoanaleptic,N06BA09,ATC 5th,N06BA09
+27,avapritinib,avapritinib,Other protein kinase inhibitor,Antineoplastic agent (cancer therapy),L01EX18,ATC 5th,L01EX18
+28,axicabtagene ciloleucel,axicabtagene ciloleucel,,Antineoplastic agent (cancer therapy),L01XX70,ATC 5th,L01XX70
+29,axitinib,axitinib,,,L01EK01,ATC 5th,L01EK01
+30,azacitidine,azacitidine,,,L01BC07,ATC 5th,L01BC07
+31,baricitinib,baricitinib,,,L04AA37,ATC 5th,L04AA37
+32,bax 855,bax 855,,,,,
+33,bay 81-8973,bay 81-8973,,,,,
+34,bay 81-8973 (recombinant factor viii),bay 81-8974,,,,,
+35,bay 94-9027,bay 94-9027,,,,,
+36,belantamab mafodotin,belantamab mafodotin,,,L01XC39,ATC 5th,L01XC39
+37,bendamustine,bendamustine,,,L01AA09,ATC 5th,L01AA09
+38,benralizumab,benralizumab,,,R03DX10,ATC 5th,R03DX10
+39,best supportive care,Best supportive care,,,,,
+40,best supportive care (bsc),Best supportive care,,,,,
+41,betamethasone dipropionate aerosol foam,,,,,Unit,{n/a}
+42,bevacizumab,bevacizumab,,,L01XC07,ATC 5th,L01XC07
+43,binimetinib,binimetinib,,,L01EE03,ATC 5th,L01EE03
+44,bisoprolol,bisoprolol,,,C07AB07,ATC 5th,C07AB07
+45,bisoprolol 5 mg,bisoprolol,,,C07AB07,ATC 5th,C07AB07
+46,blinatumomab,blinatumomab,,,L01XC19,ATC 5th,L01XC19
+47,boceprevir,boceprevir,,,J05AP03,ATC 5th,J05AP03
+48,bortezomib,bortezomib,,,L01XG01,ATC 5th,L01XG01
+49,bortezomib-melphalan-prednisone,,,,,Unit,{n/a}
+50,"bortezomib, cyclophosphamide",,,,,Unit,{n/a}
+51,"bortezomib, lenalidomide",,,,,Unit,{n/a}
+52,"bortezomib, thalidomide",,,,,Unit,{n/a}
+53,bosutinib,bosutinib,,,L01EA04,ATC 5th,L01EA04
+54,brexanolone,brexanolone,,,,,
+55,brigatinib,brigatinib,,,L01ED04,ATC 5th,L01ED04
+56,brodalumab,brodalumab,,,L04AC12,ATC 5th,L04AC12
+57,cabozantinb,cabozantinb,,,,,
+58,cabozantinib,cabozantinib,,,L01EX07,ATC 5th,L01EX07
+59,calcipotriene 0.005%/betamethasone dipropionate 0.064% foam,,,,,Unit,{n/a}
+60,calcipotriol,calcipotriol,,,D05AX02,ATC 5th,D05AX02
+61,carboplatin,carboplatin,,,L01XA02,ATC 5th,L01XA02
+62,carfilzomib,carfilzomib,,,L01XG02,ATC 5th,L01XG02
+63,carfizomib,carfilzomib,,,L01XG02,ATC 5th,L01XG02
+64,cb catheter (arctic front advancetm),cb catheter,,,,,
+65,cemiplimab,cemiplimab,,,L01XC33,ATC 5th,L01XC33
+66,ceritinib,ceritinib,,,L01ED02,ATC 5th,L01ED02
+67,certinib,ceritinib,,,L01ED02,ATC 5th,L01ED02
+68,cetuximab,cetuximab,,,L01XC06,ATC 5th,L01XC06
+69,chemotherapy,chemotherapy,,,,,
+70,chlorambucil,chlorambucil,,,L01AA02,ATC 5th,L01AA02
+71,ciltacabtagene autoleucel,ciltacabtagene autoleucel,,,,,
+72,cisplatin,cisplatin,,,L01XA01,ATC 5th,L01XA01
+73,cisplatin-based chemotherapy,,,,,Unit,{n/a}
+74,cladribine,cladribine,,,L01BB04,ATC 5th,L01BB04
+75,cladribine tablets,cladribine,,,L01BB04,ATC 5th,L01BB04
+76,clofarabine,clofarabine,,,L01BB06,ATC 5th,L01BB06
+77,clofarabine monotherapy,clofarabine,,,L01BB06,ATC 5th,L01BB06
+78,cobimetinib,cobimetinib,,,L01EE02,ATC 5th,L01EE02
+79,copanlisib,copanlisib,,,L01EM02,ATC 5th,L01EM02
+80,crisaborole,crisaborole,,,D11AH06,ATC 5th,D11AH06
+81,crisaborole ointment 2,crisaborole,,,D11AH06,ATC 5th,D11AH06
+82,crisaborole ointment 2%,crisaborole,,,D11AH06,ATC 5th,D11AH06
+83,crizotinib,crizotinib,,,L01ED01,ATC 5th,L01ED01
+84,cryoballoon (cb) ablation,,,,,Unit,{n/a}
+85,cyclophosphamide,cyclophosphamide,,,L01AA01,ATC 5th,L01AA01
+86,d-vmp (daratumumab-bortezomib-melphalan-prednisone),,,,,Unit,{n/a}
+87,dabrafenib,dabrafenib,,,L01EC02,ATC 5th,L01EC02
+88,daclatasvir,daclatasvir,,,J05AP07,ATC 5th,J05AP07
+89,dacomitinib,dacomitinib,,,L01EB07,ATC 5th,L01EB07
+90,damoctocog alfa pegol,damoctocog alfa pegol,,,,,
+91,damoctocog alfa pegol (bay 94-9027),damoctocog alfa pegol,,,,,
+92,damoctocog alfa pegol (pooled prophylaxis),damoctocog alfa pegol,,,,,
+93,damoctocog alfa pegol q5d,damoctocog alfa pegol,,,,,
+94,damoctocog alfa pegol q7d,damoctocog alfa pegol,,,,,
+95,damoctocog alfa pegol twice weekly,damoctocog alfa pegol,,,,,
+96,daratumumab,daratumumab,,,L01XC24,ATC 5th,L01XC24
+97,daratumumab (kdd),,,,,Unit,{n/a}
+98,daratumumab-bortezomib-melphalan-prednisone,,,,,Unit,{n/a}
+99,"daratumumab, bortezomib, thalidomide",,,,,Unit,{n/a}
+100,darolutamide,darolutamide,,,L02BB06,ATC 5th,L02BB06
+101,dasatinib,dasatinib,,,L01EA02,ATC 5th,L01EA02
+102,dbragenib,dbragenib,,,,,
+103,decitabine,decitabine,,,L01BC08,ATC 5th,L01BC08
+104,delayed- release dimethyl fumarate,dimethyl fumarate,,,L04AX07,ATC 5th,L04AX07
+105,delayed-release dimethyl fumarate,dimethyl fumarate,,,L04AX07,ATC 5th,L04AX07
+106,deutetrabenazine,deutetrabenazine,,,N07XX16,ATC 5th,N07XX16
+107,dexamethasone,,,,,Unit,{n/a}
+108,dexamethasone (dvd):,,,,,Unit,{n/a}
+109,dexamethasone (vd),,,,,Unit,{n/a}
+110,dexamethasone (vd) 8 cycles,,,,,Unit,{n/a}
+111,dexamethasone (vd) administred for 8 cycles,,,,,Unit,{n/a}
+112,dimethyl fumarate,dimethyl fumarate,,,L04AX07,ATC 5th,L04AX07
+113,dimethyl fumarate 240 mg twice daily,dimethyl fumarate,,,L04AX07,ATC 5th,L04AX07
+114,dulaglutide,dulaglutide,,,A10BJ05,ATC 5th,A10BJ05
+115,dulaglutide 1.5 mg,dulaglutide,,,A10BJ05,ATC 5th,A10BJ05
+116,dulaglutide 3.0,dulaglutide,,,A10BJ05,ATC 5th,A10BJ05
+117,dulaglutide 3.0 mg,dulaglutide,,,A10BJ05,ATC 5th,A10BJ05
+118,dulaglutide 3.0mg,dulaglutide,,,A10BJ05,ATC 5th,A10BJ05
+119,dulaglutide 4.5 mg,dulaglutide,,,A10BJ05,ATC 5th,A10BJ05
+120,dulaglutide 4.5mg,dulaglutide,,,A10BJ05,ATC 5th,A10BJ05
+121,dupilumab,dupilumab,,,D11AH05,ATC 5th,D11AH05
+122,duvelisib,duvelisib,,,L01EM04,ATC 5th,L01EM04
+123,emicizumab every 2 weeks,emicizumab,,,B02BX06,ATC 5th,B02BX06
+124,emicizumab every 4 weeks,emicizumab,,,B02BX06,ATC 5th,B02BX06
+125,emicizumab every week,emicizumab,,,B02BX06,ATC 5th,B02BX06
+126,emicizumab q1w,emicizumab,,,B02BX06,ATC 5th,B02BX06
+127,emicizumab q2w regimen,emicizumab,,,B02BX06,ATC 5th,B02BX06
+128,emicizumab q4w regimen,emicizumab,,,B02BX06,ATC 5th,B02BX06
+129,encorafenib,encorafenib,,,L01EC03,ATC 5th,L01EC03
+130,entrectinib,entrectinib,,,L01EX14,ATC 5th,L01EX14
+131,enzalutamide,enzalutamide,,,L02BB04,ATC 5th,L02BB04
+132,erenumab,erenumab,,,N02CD01,ATC 5th,N02CD01
+133,erlotinib,erlotinib,,,L01EB02,ATC 5th,L01EB02
+134,etanercept,etanercept,,,L04AB01,ATC 5th,L04AB01
+135,etoposide plus cyclophosphamide,,,,,Unit,{n/a}
+136,etoposide plus cyclophosphamide combination therapy,,,,,Unit,{n/a}
+137,everolimus,everolimus,,,L01EG02,ATC 5th,L01EG02
+138,fingolimod,fingolimod,,,L04AA27,ATC 5th,L04AA27
+139,fingolimod 0.5mg,fingolimod,,,L04AA27,ATC 5th,L04AA27
+140,folfirinox,folfirinox,,,,,
+141,fulvestran,fulvestran,,,,,
+142,fulvestrant,fulvestrant,,,L02BA03,ATC 5th,L02BA03
+143,fumaric acid esters,fumaric acid esters,,,,,
+144,fusion,fusion,,,,,
+145,fviiifc,fviiifc,,,,,
+146,galcanezumab,galcanezumab,,,N02CD02,ATC 5th,N02CD02
+147,gefitinib,gefitinib,,,L01EB01,ATC 5th,L01EB01
+148,gemcitabine,gemcitabine,,,L01BC05,ATC 5th,L01BC05
+149,glasdegib,glasdegib,,,L01XJ03,ATC 5th,L01XJ03
+150,glatiramer acetate,glatiramer acetate,,,L03AX13,ATC 5th,L03AX13
+151,guanfacine extended release,guanfacine extended release,,,,,
+152,guanfacine extended-release high dose,guanfacine extended release,,,,,
+153,guanfacine extended-release low dose,guanfacine extended release,,,,,
+154,guanfacine extended-release mid dose,guanfacine extended release,,,,,
+155,guselkuma,guselkuma,,,,,
+156,guselkumab,guselkumab,,,L04AC16,ATC 5th,L04AC16
+157,halobetasol 0.01%/tazarotene 0.045%,,,,,Unit,{n/a}
+158,halobetasol 0.01%/tazarotene 0.045% lotion,,,,,Unit,{n/a}
+159,ibrutinib,ibrutinib,,,L01EL01,ATC 5th,L01EL01
+160,ibrutinib1,ibrutinib,,,L01EL01,ATC 5th,L01EL01
+161,idecabtagene,idecabtagene vicleucel,,,,,
+162,idecabtagene vicleucel,idecabtagene vicleucel,,,,,
+163,idelalisib,idelalisib,,,L01EM01,ATC 5th,L01EM01
+164,ifnβ-1a 22 μg once weekly (qw),Interferon beta-1a,,,,,
+165,ifnβ-1b 250 μg once every other day (q2d),Interferon beta-1b,,,,,
+166,ifnβ-1b 8 miu once every other day,Interferon beta-1b,,,,,
+167,im ifnβ-1a 60 μg once weekly,Interferon beta-1a,,,,,
+168,infliximab,infliximab,,,L04AB02,ATC 5th,L04AB02
+169,inotersen,inotersen,,,N07XX15,ATC 5th,N07XX15
+170,inotuzumab ozogamicin,inotuzumab ozogamicin,,,L01XC26,ATC 5th,L01XC26
+171,intravenous methylprednisolone,Methylprednisolone,,,,,
+172,"intravitreally administered aflibercept (ivt-afl) : one injection every 8 weeks in the first year followed by prorenata regimen in the second year,",Methylprednisolone,,,,,
+173,intravitreally administered aflibercept (ivt-afl) with 2 weeks adjustment,Methylprednisolone,,,,,
+174,intravitreally administered aflibercept 8 weeks,Methylprednisolone,,,,,
+175,intravitreally administered aflibercept treat-,Methylprednisolone,,,,,
+176,ipilimumab,ipilimumab,,,L01XC11,ATC 5th,L01XC11
+177,ixekizumab,ixekizumab,,,L04AC13,ATC 5th,L04AC13
+178,ledipasvir,ledipasvir,,,,,
+179,lenalidomide,lenalidomide,,,L04AX04,ATC 5th,L04AX04
+180,lenalidomide-dexamethasone,,,,,Unit,{n/a}
+181,lenalidomide-dexamethasone 18 months (rd18),,,,,Unit,{n/a}
+182,lenalidomide-dexamethasone continuou,,,,,Unit,{n/a}
+183,lenvatinib,lenvatinib,,,L01EX08,ATC 5th,L01EX08
+184,letrozole,letrozole,,,L02BG04,ATC 5th,L02BG04
+185,levodopa inhalation powder,levodopa,,,N04BA01,ATC 5th,N04BA01
+186,liso-cel,lisocabtagene maraleucel,,,,,
+187,lisocabtagene,lisocabtagene maraleucel,,,,,
+188,lisocabtagene maraleucel,lisocabtagene maraleucel,,,,,
+189,lorlatinib,lorlatinib,,,L01ED05,ATC 5th,L01ED05
+190,low-dos ecytarabine,cytarabine,,,L01BC01,ATC 5th,L01BC01
+191,low-dose cytarabine,cytarabine,,,L01BC01,ATC 5th,L01BC01
+192,low-dose cytarabine.,cytarabine,,,L01BC01,ATC 5th,L01BC01
+193,low-dose dexamethasone,dexamethasone,,,A01AC02,ATC 5th,A01AC02
+194,magnetic resonance-guided focused ultrasound,,,,,Unit,{n/a}
+195,melphalan-prednisone-thalidomide,,,,,Unit,{n/a}
+196,melphalan-prednisone-thalidomide (mpt),,,,,Unit,{n/a}
+197,mepolizumab,mepolizumab,,,R03DX09,ATC 5th,R03DX09
+198,methotrexate,methotrexate,,,L01BA01,ATC 5th,L01BA01
+199,midostaurin,midostaurin,,,L01EX10,ATC 5th,L01EX10
+200,modified bortezomib-melphalan-prednisone schedules,,,,,Unit,{n/a}
+201,modified vmp schedule,,,,,Unit,{n/a}
+202,nab-paclitaxel,nab-paclitaxel,,,,,
+203,natalizumab,natalizumab,,,L04AA23,ATC 5th,L04AA23
+204,nct01712789,,,,,Unit,{n/a}
+205,nilotinib,nilotinib,,,L01EA03,ATC 5th,L01EA03
+206,niraparib,niraparib,,,L01XK02,ATC 5th,L01XK02
+207,nivolumab,nivolumab,,,L01XC17,ATC 5th,L01XC17
+208,nusinersen,nusinersen,,,M09AX07,ATC 5th,M09AX07
+209,obinutuzumab,obinutuzumab,,,L01XC15,ATC 5th,L01XC15
+210,ofosbuvir/ ledipasvir,,,,,Unit,{n/a}
+211,olaparib,olaparib,,,L01XK01,ATC 5th,L01XK01
+212,onasemnogene abeparvovec,onasemnogene abeparvovec,,,M09AX09,ATC 5th,M09AX09
+213,onasemnogeneabeparvovec,onasemnogene abeparvovec,,,M09AX09,ATC 5th,M09AX09
+214,ozanimod,ozanimod,,,L04AA38,ATC 5th,L04AA38
+215,padua downstaging protocol,,,,,Unit,{n/a}
+216,padua surgical aggressive downstaging,,,,,Unit,{n/a}
+217,palbociclib,palbociclib,,,L01EF01,ATC 5th,L01EF01
+218,paliative therapy/salvage therapy,,,,,Unit,{n/a}
+219,palliative therapy/salvage therapy,,,,,Unit,{n/a}
+220,panitumumab,panitumumab,,,L01XC08,ATC 5th,L01XC08
+221,panobinostat,panobinostat,,,L01XH03,ATC 5th,L01XH03
+222,patisiran,patisiran,,,N07XX12,ATC 5th,N07XX12
+223,"pcv20 (prevnar 20, a 20-valent pneumococcal conjugate vaccine)",pneumoccocal vaccine,Vaccine,,,,
+224,pegcetacoplan,pegcetacoplan,,,,,
+225,peginterferon alfa- 2a,Interferon alpha-2a,,,,,
+226,peginterferon alfa-2a,Interferon alpha-2a,,,,,
+227,peginterferon alpha 2a,Interferon alpha-2a,,,,,
+228,peginterferon beta-1a,Interferon beta-1a,,,,,
+229,peginterferon-alfa,Interferon alpha,,,,,
+230,peginterferon-α,Interferon alpha,,,,,
+231,pembrolizumab,pembrolizumab,,,L01XC18,ATC 5th,L01XC18
+232,pemetrexed,pemetrexed,,,L01BA04,ATC 5th,L01BA04
+233,pemetrexed maintenance,pemetrexed,,,L01BA04,ATC 5th,L01BA04
+234,pemetrexed or docetaxel,,,,,Unit,{n/a}
+235,pemetrexed/docetaxel,,,,,Unit,{n/a}
+236,pimecrolimus 1%,pimecrolimus,,,D11AH02,ATC 5th,D11AH02
+237,placebo,placebo,,,,,
+238,platinum,platinum,,,,,
+239,platinum followed by pemetrexed maintenance,,,,,Unit,{n/a}
+240,platinum-based chemotherapy,,,,,Unit,{n/a}
+241,polychemotherapy/high-dose single-agent regimens/stem-cell transplantation (salvage-1),,,,,Unit,{n/a}
+242,pomalidomide,pomalidomide,,,L04AX06,ATC 5th,L04AX06
+243,ponatinib,ponatinib,,,L01EA05,ATC 5th,L01EA05
+244,prior episodic treatment rfixfc,rFIXFc,,,,,
+245,prior episodic treatment rix-fp,rIX-FP,,,,,
+246,prior prophylaxis rfixfc,rFIXFc,,,,,
+247,prior prophylaxis rix-fp,rIX-FP,,,,,
+248,radiofrequency (rf) ablation with ablation index,,,,,Unit,{n/a}
+249,rahf-pfm,rAHF-PFM,,,,,
+250,rahf-pfm (2004 study),rAHF-PFM,,,,,
+251,rahf-pfm (2012 study),rAHF-PFM,,,,,
+252,rahf-pfm 2004,rAHF-PFM,,,,,
+253,rahf-pfm 2012,rAHF-PFM,,,,,
+254,rahf-pfm octocog alf,rAHF-PFM,,,,,
+255,rahf-pfm octocog alfa,rAHF-PFM,,,,,
+256,ramucirumab,ramucirumab,,,L01XC21,ATC 5th,L01XC21
+257,ratiofrequency catheter ablation with ablation index,,,,,Unit,{n/a}
+258,ratiofrequency catheter ablation with cryoballoon,,,,,Unit,{n/a}
+259,ravulizumab,ravulizumab,,,L04AA43,ATC 5th,L04AA43
+260,recombinant fviiifc,FVIIIFc,,,,,
+261,regorafenib,regorafenib,,,L01EX05,ATC 5th,L01EX05
+262,remestemcel-l-rknd,remestemcel-L-rknd,,,,,
+263,rfixfc (regimen prior to study entry : prior prophylaxis),rFIXFc,,,,,
+264,rfixfc (treatment regimen prior to study entry : prior on-dem,rFIXFc,,,,,
+265,rfviiifc,FVIIIFc,,,,,
+266,rfviiifc (efmoroctocog alfa),FVIIIFc,,,,,
+267,ribavirin,ribavirin,,,J05AP01,ATC 5th,J05AP01
+268,ribavirine,ribavirin,,,J05AP01,ATC 5th,J05AP01
+269,ribociclib,ribociclib,,,L01EF02,ATC 5th,L01EF02
+270,rimegepant,rimegepant,,,N02CD06,ATC 5th,N02CD06
+271,risankizumab,risankizumab,,,L04AC18,ATC 5th,L04AC18
+272,risdiplam,risdiplam,,,M09AX10,ATC 5th,M09AX10
+273,rituximab,rituximab,,,L01XC02,ATC 5th,L01XC02
+274,rivaroxaban,rivaroxaban,,,B01AF01,ATC 5th,B01AF01
+275,rix-fp,rIX-FP,,,,,
+276,routine clinical practice,,,,,Unit,{n/a}
+277,routine clinical practice (rcp),,,,,Unit,{n/a}
+278,ruxolitinib,ruxolitinib,,,L01EJ01,ATC 5th,L01EJ01
+279,rviii-singlechain,,,,,Unit,{n/a}
+280,rviii-singlechain lonoctocog alfa,,,,,Unit,{n/a}
+281,salvage chemotherapy,,,,,Unit,{n/a}
+282,salvage chemotherapy/treatment,,,,,Unit,{n/a}
+283,sc ifnβ-1a 22 μg three times weekly,Interferon beta-1a,,,,,
+284,sc ifnβ-1a 44 μg three times weekly,Interferon beta-1a,,,,,
+285,second-generation cryoballoon (cb),,,,,Unit,{n/a}
+286,secukinumab,secukinumab,,,L04AC10,ATC 5th,L04AC10
+287,secukinumab 150 mg,secukinumab,,,L04AC10,ATC 5th,L04AC10
+288,secukinumab 150mg,secukinumab,,,L04AC10,ATC 5th,L04AC10
+289,secukinumab 300 mg,secukinumab,,,L04AC10,ATC 5th,L04AC10
+290,secukinumab 300mg,secukinumab,,,L04AC10,ATC 5th,L04AC10
+291,selinexor,selinexor,,,L01XX66,ATC 5th,L01XX66
+292,semaglutide,semaglutide,,,A10BJ06,ATC 5th,A10BJ06
+293,semaglutide 0.5,semaglutide,,,A10BJ06,ATC 5th,A10BJ06
+294,semaglutide 1.0 mg,semaglutide,,,A10BJ06,ATC 5th,A10BJ06
+295,semaglutide 1.0mg,semaglutide,,,A10BJ06,ATC 5th,A10BJ06
+296,semaglutide 2.0 m,semaglutide,,,A10BJ06,ATC 5th,A10BJ06
+297,semaglutide 2.0 mg,semaglutide,,,A10BJ06,ATC 5th,A10BJ06
+298,semaglutide 2.0mg,semaglutide,,,A10BJ06,ATC 5th,A10BJ06
+299,simeprevir,simeprevir,,,J05AP05,ATC 5th,J05AP05
+300,siponimod,siponimod,,,L04AA42,ATC 5th,L04AA42
+301,sitagliptin 100 mg,sitagliptin,,,A10BH01,ATC 5th,A10BH01
+302,sitagliptin 100 mg once daily,sitagliptin,,,A10BH01,ATC 5th,A10BH01
+303,sitagliptin 50 mg,sitagliptin,,,A10BH01,ATC 5th,A10BH01
+304,sitagliptin 50 mg once daily,sitagliptin,,,A10BH01,ATC 5th,A10BH01
+305,sofosbuvir,sofosbuvir,,,J05AP08,ATC 5th,J05AP08
+306,sonidegib,sonidegib,,,L01XJ02,ATC 5th,L01XJ02
+307,st,,,,,Unit,{n/a}
+308,sunitinb,sunitinib,,,L01EX01,ATC 5th,L01EX01
+309,sunitinib,sunitinib,,,L01EX01,ATC 5th,L01EX01
+310,systemic therapy,,,,,Unit,{n/a}
+311,tacrolimus 0.03%,tacrolimus,,,D11AH01,ATC 5th,D11AH01
+312,tacrolimus 0.1%,tacrolimus,,,D11AH01,ATC 5th,D11AH01
+313,tare using sir-spheres (radioembolization),,,,,Unit,{n/a}
+314,tazemetostat,tazemetostat,,,L01XX72,ATC 5th,L01XX72
+315,telaprevir,telaprevir,,,J05AP02,ATC 5th,J05AP02
+316,temsirolimus,temsirolimus,,,L01EG01,ATC 5th,L01EG01
+317,teprotumumab,teprotumumab,,,L04AA53,ATC 5th,L04AA53
+318,teriflunomide,teriflunomide,,,L04AA31,ATC 5th,L04AA31
+319,teriflunomide 14 mg,teriflunomide,,,L04AA31,ATC 5th,L04AA31
+320,teriflunomide 14mg,teriflunomide 14mg,,,,,
+321,teriflunomide 7 mg,teriflunomide 7 mg,,,,,
+322,teriflunomide 7mg,teriflunomide 7mg,,,,,
+323,tetrabenazine,tetrabenazine,,,N07XX06,ATC 5th,N07XX06
+324,thalidomide,thalidomide,,,L04AX02,ATC 5th,L04AX02
+325,thermocool smarttouchtm catheter or the thermocool smarttouchtm sf catheter with ai/visitag surpointtm module,,,,,Unit,{n/a}
+326,thermocool smarttouch™/thermocool smarttouch™ sf catheter with ai (stai),,,,,Unit,{n/a}
+327,tildrakizumab 100mg,tildrakizumab,,,L04AC17,ATC 5th,L04AC17
+328,tildrakizumab 200mg,tildrakizumab,,,L04AC17,ATC 5th,L04AC17
+329,tisagenlecleucel,tisagenlecleucel,,,L01XX71,ATC 5th,L01XX71
+330,tocilizumab,tocilizumab,,,L04AC07,ATC 5th,L04AC07
+331,tofacitinib,tofacitinib,,,L04AA29,ATC 5th,L04AA29
+332,total disc replacemen,,,,,Unit,{n/a}
+333,total disc replacement (tdr),,,,,Unit,{n/a}
+334,trametinib,trametinib,,,L01EE01,ATC 5th,L01EE01
+335,transarterial radioembolization using sir-spheres(R) y-90 resin microspheres,,,,,Unit,{n/a}
+336,treatment),,,,,Unit,{n/a}
+337,turoctocog alfa,turoctocog alfa,,,,,
+338,turoctocog alfa pegol,turoctocog alfa,,,,,
+339,turoctocog alfa pegol (n8-gp),turoctocog alfa,,,,,
+340,umbralisib,umbralisib,,,,,
+341,unilateral deep brain stimulation,,,,,Unit,{n/a}
+342,unilateral deep brain stimulation (dbs),,,,,Unit,{n/a}
+343,upadacitinib,upadacitinib,,,L04AA44,ATC 5th,L04AA44
+344,upadacitinib monotherapy,upadacitinib,,,L04AA44,ATC 5th,L04AA44
+345,"v114 (vaxneuvance, a 15-valent pneumococcal conjugate vaccine)",Pneumococcal vaccine,Vaccine,,,,
+346,velcade,Bortézomib,,,,,
+347,vemurafenib,vemurafenib,,,L01EC01,ATC 5th,L01EC01
+348,venetoclax,venetoclax,,,L01XX52,ATC 5th,L01XX52
+349,vicleucel,Idecabtagene vicleucel,,,,,
+350,vildagliptin,vildagliptin,,,A10BH02,ATC 5th,A10BH02
+351,vildagliptin 50 mg twice daily,vildagliptin,,,A10BH02,ATC 5th,A10BH02
+352,vismodegib,vismodegib,,,L01XJ01,ATC 5th,L01XJ01
+353,vmp (bortezomib/melphalan/prednisone),,,,,Unit,{n/a}
+354,xxl protocol downstaging,,,,,Unit,{n/a}
+355,xxl trial downstaging protocol,,,,,Unit,{n/a}

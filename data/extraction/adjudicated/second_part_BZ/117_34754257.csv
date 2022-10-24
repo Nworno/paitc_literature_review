@@ -1,0 +1,52 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;reviewer;Notes reviewer 1;Notes reviewer 2
+10.2147/jbm.s321288;34754257;general_information;;;Medical Condition of Interest Name;severe hemophilia a;hemophilia a;XXXX;FALSE;BZ;NA;NA
+10.2147/jbm.s321288;34754257;general_information;;;Countries of first author affiliations;;;usa;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;general_information;;;Countries of last author affiliations;;;italy;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;1;Patient-level data used;;;Yes;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;1;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01580293;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;1;Phase of the clinical trial (clinical trial only);;;2, 3;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;1;Number of treatment arms (clinical trial only);1;2 or more;XXXX;FALSE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;2;Patient-level data used;;;No;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;2;Clinical Trial;;;Yes;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01480180;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;study_information;;2;Number of treatment arms (clinical trial only);1;2 or more;XXXX;FALSE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Treatment name 1;damoctocog alfa pegol (bay 94-9027);damoctocog alfa pegol;damoctocog alfa pegol (bay 94-9027);FALSE;BZ;"Controls arms eligible to constitute anchors, but did not use it
+Does STC as a secondary sensitivity analysis, but results not reported in this form";"""The use of MAIC or STC instead of naive (nonadjusted) comparison carries some limitations as it reduces bias only if all key treatment modifiers and prognostic factors are included for an adjustment."" 
+==> Les auteurs considèrent qu'ils ont pris en compte des facteurs pronostiques/modificateurs d'effet ?
+""It is also possible that there are other unknown effect modifiers that were not considered in the analysis""   ==> effect modifiers considered in the analysis ?"
+10.2147/jbm.s321288;34754257;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Treatment name 2;turoctocog alfa pegol (n8-gp);turoctocog alfa pegol;turoctocog alfa pegol (n8-gp);FALSE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Anchored comparison?;;;No;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);mean annualized bleeding rate;annualized bleeding rate (abr);mean annualized bleeding rate;FALSE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;175;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;102;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;61.94;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Number of covariates adjusted for/matched on;;;6;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Primary outcome: treatment effect contrast;;;Incidence Rate Ratio;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Primary outcome: unadjusted treatment effect;;;1.1;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.4492;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;Primary outcome: adjusted treatment effect;;;1.11;TRUE;BZ;;
+10.2147/jbm.s321288;34754257;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.449;TRUE;BZ;;

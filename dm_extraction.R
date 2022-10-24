@@ -8,10 +8,11 @@ library(lubridate)
 
 source("R_snippets.R")
 
+WRITE <- FALSE
 dir_data <- "data"
 
 extraction_df <- read_csv(
-  file.path(dir_data, "/extraction/current_extraction_raw.csv"),
+  file.path(dir_data, "/extraction/results_extraction_raw.csv"),
   name_repair = "minimal"
 )
 
@@ -502,9 +503,6 @@ done_info <- left_join(done, counts, by = "doi") %>%
   arrange(row_names, `Create Date`)
 
 
-# done_info %>% group_by(reviewer) %>% summarise(counts = sum(to_review))
-write_excel_csv2(done_info,
-                "data/literature_search_pubv1/extraction_articles/results_summary.csv")
 
 
 # export code pour review par BL et ASL -----------------------------------
@@ -512,122 +510,6 @@ write_excel_csv2(done_info,
 to_review_objective <- long_results_w_notes %>%
   filter(section %in% c("general_information", "study_information")) %>%
   mutate(decision = ifelse(decision == "XXXX", "", decision))
-
-to_review_objective %>% filter(reviewer == "DH") %>% write_csv2("data/extraction/to_review/to_review_BZ.csv")
-to_review_objective %>% filter(reviewer == "JL") %>% write_csv2("data/extraction/to_review/to_review_ASL.csv")
-
-# Export results for third reviewer ----------------------------------------------------------
-
-long_results_w_notes %>% write_excel_csv2(paste0(
-  "data/literature_search_pubv1/extraction_articles/comparison_answers",
-  as.Date(lubridate::now(), format = "yyMMDD"),
-  ".csv"),
-  eol = "\r\n")
-
-for (initials in c("JL", "DH")) {
-  dir_results <- file.path(dir_data, "extraction_articles", initials)
-  if (!dir.exists(dir_results)) dir.create(dir_results)
-  result_reviewer <- long_results_w_notes %>%
-    filter(reviewer == initials)
-
-  for (pmid in unique(result_reviewer$PMID)) {
-    data <- result_reviewer %>%
-      filter(PMID == pmid)
-    row_name <- as.character(unique(done_info[done_info$PMID == pmid, "row_names"]))
-    file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".csv"))
-    # file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".csv"))
-    # if (!file.exists(file_name))
-    data %>%
-      select(-reviewer) %>%
-      write_excel_csv2(file = file_name)
-  }
-  ## writing batch zip file every 10 new articles
-  # file_infos <- file.info(list.files(dir_results, full.names = TRUE))
-  # file_infos$path <- row.names(file_infos)
-  # file_infos %>%
-  #   mutate(day_creation = lubridate::date(ctime)) %>%
-  #   arrange(day_creation, path) %>%
-  #   mutate(n_row = 1:nrow(.)) %>%
-  #          # batch = (n_row - 1) %/% 10 + 1) %>%
-  #   # group_by(batch) %>%
-  #   group_walk(.f = function(df, group_name_df) {
-  #     paths <- pull(df, path)
-  #     group_name <- pull(group_name_df, batch)
-  #     if (length(paths) < 10) {
-  #       cat("returning", as.character(group_name), "\n")
-  #       return()
-  #     }
-  #     zip_name <- file.path(dir_results,
-  #                           paste0(group_name, "_", initials, ".zip")
-  #     )
-  #     # j option flag to avoid nested directory, other flags are just default values
-  #     if (! file.exists(zip_name)) zip(zip_name, paths, flags = '-r9Xj')
-  #   })
-}
-
-
-# Integrating reviews BZ and ASL into results -------------------------------
-
-review_ASL <- read_csv("data/extraction/to_review/to_review_ASL_done.csv",
-                       col_types = list(identical = "l",
-                                        PMID = "c",
-                                        `Ind studies num` = "c",
-                                        `ITC num` = "c"))
-review_BZ <- read_csv("data/extraction/to_review/to_review_BZ_done.csv",
-                      col_types = list(identical = "l",
-                                       PMID = "c",
-                                       `Ind studies num` = "c",
-                                       `ITC num` = "c"))
-results_objective_adj <- bind_rows(review_ASL, review_BZ) %>%
-  select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, decision)
-
-
-
-# Integrating reviews DH and JL into results --------------------------------
-if (FALSE) {
-  review_DH <- read_csv("data/extraction/to_review/to_review_DH_done.csv",
-                        col_types = list(identical = "l",
-                                         PMID = "c",
-                                         `Ind studies num` = "c",
-                                         `ITC num` = "c"))
-  review_JL <- read_csv("data/extraction/to_review/to_review_JL_done.csv",
-                        col_types = list(identical = "l",
-                                         PMID = "c",
-                                         `Ind studies num` = "c",
-                                         `ITC num` = "c"))
-
-  results_adjudication <- bind_rows(review_DH, review_JL) %>%
-  select(doi, PMID, section, `ITC num`, `Ind studies number`, questions, decision)
-} else {
-  results_adjudication <- long_results_w_notes %>%
-    filter(section %in% c("methodology", "results")) %>%
-    mutate(decision = ifelse(decision == "XXXX", "", decision),
-           decision = ifelse(decision == "", ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), decision)) %>%
-  select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, decision)
-}
-long_results_final <- bind_rows(results_objective_adj, results_adjudication) %>%
-  rename(answer = "decision",
-         n_itc = "ITC num",
-         study_number = "Ind studies num") %>%
-  left_join(order_sections) %>%
-  arrange(doi, order_sections, n_itc, study_number) %>%
-  select(-order_sections)
-
-write_excel_csv(long_results_final, "data/extraction/extraction_results.csv")
-
-
-# create temp results file ------------------------------------------------
-
-if (2 + 2 == 5) {
-  long_results_w_notes %>%
-    mutate(answer = ifelse(decision == "XXXX", "", decision),
-           answer = ifelse(answer == "", ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), answer)) %>%
-    rename(answer = decision,
-           `ITC num` = "n_itc",
-           `Ind studies num` = "study_number") %>%
-    select(doi, PMID, section, n_itc, study_number, questions, answer) %>%
-    write_excel_csv("data/extraction/extraction_results.csv")
-}
 
 
 # unique molecule names ---------------------------------------------------
@@ -672,7 +554,6 @@ unique_ttt_names <- long_results_w_notes %>%
   sort_alphabetically()
 
 df_ttt <- tibble(ttt_name = unique_ttt_names, simplified = c(""), category_1 = c(""), category_2 = c(""))
-write_excel_csv2(df_ttt, "data/extraction/ttt_names.csv")
 
 unique_condition_names <- long_results_w_notes %>%
   filter(questions %in% c("Medical Condition of Interest Name")) %>%
@@ -690,5 +571,113 @@ df_condition <- tibble(condition_name = unique_condition_names,
                        category_1 = c(""),
                        category_2 = c(""))
 
-write_excel_csv2(df_condition, "data/extraction/condition_names.csv")
+# mapping ATC -------------------------------------------------------------
 
+treatment_mapping <- read_tsv("data/extraction/treatment_mapping.tsv")
+atc_classification <- read_tsv("data/classification_ATC/CONCEPT.tsv")
+
+treatment_mapped <- treatment_mapping %>%
+  left_join(
+    atc_classification[, c("concept_name", "concept_class_id", "concept_code")],
+    by = c("ATC code" = "concept_code")
+  ) %>%
+  mutate(mutliples = str_detect(`ATC code`, ";"),
+         concept_list = str_split(`ATC code`, ";")) %>%
+  unnest(concept_list)
+
+hierarchy %>% left_join(rename(hierarchy, level_up = ancestor_concept_id, ancestor_concept_id = descendant_concept_id))
+
+filter(treatment_mapped, is.na(concept_name)) %>% View()
+View(treatment_mapped)
+
+# WRITING FILES -----------------------------------------------------------
+
+NEW_ADJUDICATION <- FALSE
+if (NEW_ADJUDICATION) {
+  pmids <- long_results_w_notes %>%
+    filter(reviewer == "JL") %>%
+    ungroup() %>%
+    select(PMID) %>%
+    distinct()
+  pmid_JL <- pmids %>%
+    tail(10)
+  pmid_ASL_BZ <- pmids %>%
+    anti_join(pmid_JL)
+  pmid_ASL <- head(pmid_ASL_BZ, ceiling(nrow(pmid_ASL_BZ) / 2))
+  pmid_BZ <- anti_join(pmid_ASL_BZ, pmid_ASL)
+
+  file_JL  <- semi_join(long_results_w_notes, pmid_JL) %>% mutate(reviewer = "JL")
+  file_BZ  <- semi_join(long_results_w_notes, pmid_BZ) %>% mutate(reviewer = "BZ")
+  file_ASL <- semi_join(long_results_w_notes, pmid_ASL) %>% mutate(reviewer = "ASL")
+  #
+  for (result_reviewer in list(file_JL, file_BZ, file_ASL)) {
+    for (pmid in unique(result_reviewer$PMID)) {
+      data <- filter(result_reviewer, PMID == pmid)
+      reviewer <- unique(data$reviewer)
+      dir_results <- file.path("data/extraction/to_review/new_adjudication", reviewer)
+      row_name <- as.character(unique(done_info[done_info$PMID == pmid, "row_names"]))
+      file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".csv"))
+      data %>%
+        write_excel_csv2(file = file_name)
+    }
+  }
+
+}
+
+
+if (WRITE) {
+  write_excel_csv2(done_info,
+                   "data/literature_search_pubv1/extraction_articles/results_summary.csv")
+
+  to_review_objective %>% filter(reviewer == "DH") %>% write_csv2("data/extraction/to_review/to_review_BZ.csv")
+  to_review_objective %>% filter(reviewer == "JL") %>% write_csv2("data/extraction/to_review/to_review_ASL.csv")
+
+  long_results_w_notes %>% write_excel_csv2(paste0(
+    "data/literature_search_pubv1/extraction_articles/comparison_answers",
+    as.Date(lubridate::now(), format = "yyMMDD"),
+    ".csv"),
+    eol = "\r\n")
+
+  # Export results for third reviewer ----------------------------------------------------------
+
+  for (initials in c("JL", "DH")) {
+    dir_results <- file.path(dir_data, "extraction_articles", initials)
+    if (!dir.exists(dir_results)) dir.create(dir_results)
+    result_reviewer <- long_results_w_notes %>%
+      filter(reviewer == initials)
+
+    for (pmid in unique(result_reviewer$PMID)) {
+      data <- result_reviewer %>%
+        filter(PMID == pmid)
+      row_name <- as.character(unique(done_info[done_info$PMID == pmid, "row_names"]))
+      file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".csv"))
+      # file_name <- file.path(dir_results, paste0(str_pad(row_name, width = 3, pad = "0"), "_", pmid, ".csv"))
+      # if (!file.exists(file_name))
+      data %>%
+        select(-reviewer) %>%
+        write_excel_csv2(file = file_name)
+    }
+    ## writing batch zip file every 10 new articles
+    # file_infos <- file.info(list.files(dir_results, full.names = TRUE))
+    # file_infos$path <- row.names(file_infos)
+    # file_infos %>%
+    #   mutate(day_creation = lubridate::date(ctime)) %>%
+    #   arrange(day_creation, path) %>%
+    #   mutate(n_row = 1:nrow(.)) %>%
+    #          # batch = (n_row - 1) %/% 10 + 1) %>%
+    #   # group_by(batch) %>%
+    #   group_walk(.f = function(df, group_name_df) {
+    #     paths <- pull(df, path)
+    #     group_name <- pull(group_name_df, batch)
+    #     if (length(paths) < 10) {
+    #       cat("returning", as.character(group_name), "\n")
+    #       return()
+    #     }
+    #     zip_name <- file.path(dir_results,
+    #                           paste0(group_name, "_", initials, ".zip")
+    #     )
+    #     # j option flag to avoid nested directory, other flags are just default values
+    #     if (! file.exists(zip_name)) zip(zip_name, paths, flags = '-r9Xj')
+    #   })
+  }
+}

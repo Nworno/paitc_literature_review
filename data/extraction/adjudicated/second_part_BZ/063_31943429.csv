@@ -1,0 +1,86 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;reviewer;Notes reviewer 1;Notes reviewer 2
+10.1111/cea.13561;31943429;general_information;;;Medical Condition of Interest Name;severe asthma;asthma;XXXX;FALSE;BZ;NA;NA
+10.1111/cea.13561;31943429;general_information;;;Countries of first author affiliations;;;france;TRUE;BZ;;
+10.1111/cea.13561;31943429;general_information;;;Countries of last author affiliations;;;usa;TRUE;BZ;;
+10.1111/cea.13561;31943429;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;BZ;;
+10.1111/cea.13561;31943429;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;BZ;;
+10.1111/cea.13561;31943429;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;1;Patient-level data used;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;1;Clinical Trial;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02075255;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;2;Patient-level data used;;;No;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;2;Clinical Trial;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01691508;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;3;Patient-level data used;;;No;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;3;Clinical Trial;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02528214;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;3;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
+10.1111/cea.13561;31943429;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Treatment name 1;;;benralizumab;TRUE;BZ;"No sample sizes for individual arms. Sample sizes for intervention and control arms: 
+N IPD = 148
+ESS = 72
+N non IPD = 135";BMI = Comorbidité
+10.1111/cea.13561;31943429;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Treatment name 2;;;mepolizumab;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Anchored comparison?;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);mean percentage of oral corticosteroids reduction;ocs (oral corticosteroids) dosage reduction from baseline to week 24;ocs (oral corticosteroids) dosage reduction from baseline to week 24;FALSE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier), Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier), Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);FALSE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;Yes;No;No;FALSE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Treatment name 1;;;benralizumab;TRUE;BZ;"N IPD = 142 
+ESS = 36
+N non IPD = 210";"BMI = Comorbidité
+
+Effectif étude 1 (Bras comparé + bras placebo) = 148
+ESS étude 1 (Bras comparé + bras placebo) = 36
+Effectif étude 3 (Bras comparé + bras placebo) = 210"
+10.1111/cea.13561;31943429;methodology;2;;Study 'number(s)' for treatment 1;;;1;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Treatment name 2;;;dupilumab;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Study 'number(s)' for treatment 2;2;3;3;FALSE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Anchored comparison?;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);mean percentage of oral corticosteroids reduction;ocs (oral corticosteroids) dosage reduction from baseline to week 24;ocs (oral corticosteroids) dosage reduction from baseline to week 24;FALSE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier), Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier), Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);FALSE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;Yes;No;No;FALSE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;BZ;;
+10.1111/cea.13561;31943429;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;Number of covariates adjusted for/matched on;;;5;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;Covariates adjusted for/matched on in the indirect comparison;Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Comorbidities and medical history (beside pathology/disease of interest in the comparison);;FALSE;BZ;;
+10.1111/cea.13561;31943429;results;1;;Primary outcome: treatment effect contrast;;;Means difference;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;Primary outcome: unadjusted treatment effect;;;20.1;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.1584;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;Primary outcome: adjusted treatment effect;;;6.08;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.67;0.6737;0.67;FALSE;BZ;;
+10.1111/cea.13561;31943429;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;2;;Number of covariates adjusted for/matched on;;;5;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;2;;Covariates adjusted for/matched on in the indirect comparison;Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Comorbidities and medical history (beside pathology/disease of interest in the comparison);;FALSE;BZ;;
+10.1111/cea.13561;31943429;results;2;;Primary outcome: treatment effect contrast;;;Means difference;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;2;;Primary outcome: unadjusted treatment effect;;;8.1;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.46;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;2;;Primary outcome: adjusted treatment effect;;;-0.71;TRUE;BZ;;
+10.1111/cea.13561;31943429;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.94;TRUE;BZ;;
