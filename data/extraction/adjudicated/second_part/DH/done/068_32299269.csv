@@ -1,0 +1,318 @@
+﻿doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1080/09546634.2020.1747592;32299269;general_information;;;Medical Condition of Interest Name;;;moderate-to-severe plaque psoriasis;TRUE;NA;NA
+10.1080/09546634.2020.1747592;32299269;general_information;;;Countries of first author affiliations;;;usa;TRUE;;
+10.1080/09546634.2020.1747592;32299269;general_information;;;Countries of last author affiliations;;;germany;TRUE;;
+10.1080/09546634.2020.1747592;32299269;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry;TRUE;;
+10.1080/09546634.2020.1747592;32299269;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;Yes;Not mentioned;XXXX;FALSE;;
+10.1080/09546634.2020.1747592;32299269;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1080/09546634.2020.1747592;32299269;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);NCT01474512;NCT01646177;NCT01646177;FALSE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;2;Patient-level data used;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01597245;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;3;Patient-level data used;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;3;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01646177;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;3;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;4;Patient-level data used;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;4;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02561806;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;4;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;4;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;5;Patient-level data used;;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;5;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;5;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02207244;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;5;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;5;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;5;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;6;Patient-level data used;;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;6;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;6;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01722331;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;6;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;6;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;7;Patient-level data used;;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;7;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;7;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01729754;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;7;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;7;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;8;Patient-level data used;;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;8;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;8;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02684370;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;8;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;8;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;9;Patient-level data used;;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;9;Clinical Trial;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;9;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02684357;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;9;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;study_information;;9;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Treatment name 1;;;ixekizumab;TRUE;"Using PASI 75 at week 12 
+NCT provided in the article are not correct (seems like copy pasting error), the corrected ones are the one from the form
+   N non IPD  927
+	IPD 1952 
+	ESS 1565";"It seems the authors got the NCTs wrong for UNCOVER-1/2/3 :
+UNCOVER-1 : NCT01597245 (NCT01474512 ???)
+UNCOVER-2 : NCT01646177 (NCT01597245 ???)
+UNCOVER-3 : NCT01646177 (NCT01646177 ???)   Overall matching.
+
+Results for matching per treatment arm separately : 7.5 (1.4,
+13.6)  p < 0.05
+
+Weight = other covariates
+
+Sample size non IPD (Guselkumab + placebo arms) = 503
+Initial sample size IPD (ixekizumab + placebo arms) = 1952
+ESS IPD (ixekizumab + placebo arms) = 1717
+""Our analyses were not head-to-head comparisons between ixekizumab and the IL-23 p19 inhibitors, and the same limitations associated with all MAIC apply, including the assumptions that treatment effects are population dependent and that all treatment effect modifiers and prognostic factors were taken into account "" ==> Which means they used prognosis factors for weighting"
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Treatment name 2;;;guselkumab;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Study 'number(s)' for treatment 2;;;5;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;rate of psoriasis area severity index (pasi) 75% improvement responders;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Binary (eg rates);FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Treatment name 1;;;ixekizumab;TRUE;"Sample sizes and effect size found in supplementary materials
+mean risk difference PASI 75 response at week 12 
+N non IPD  927
+	IPD 1952 
+	ESS 1565
+";"Overall matching with placebo as a bridge and and 100mg as dosage for tildrakizumab
+
+Results for matching per treatment arm separately : 26.8 (21.4,
+32.8)  p < 0.001
+
+Sample size non IPD (tildrakizumab + placebo arms) = 927
+Initial sample size IPD (ixekizumab + placebo arms) = 1952
+ESS IPD (ixekizumab + placebo arms) = 1565"
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Treatment name 2;;;tildrakizumab 100mg;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Study 'number(s)' for treatment 2;;;"6;7";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;rate of psoriasis area severity index (pasi) 75% improvement responders;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Binary (eg rates);FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Treatment name 1;;;ixekizumab;TRUE;"ixekizumab vs tildrakizumab 200mg   (placebo as anchor)
+N non IPD  927
+	IPD 1952 
+	ESS 1588";"Overall matching with placebo as a bridge and and 200mg as dosage for tildrakizumab
+
+Results for matching per treatment arm separately : 25.6 (20.2,
+30.9)  p < 0.001
+
+Sample size non IPD (tildrakizumab + placebo arms) = 927
+Initial sample size IPD (ixekizumab + placebo arms) = 1952
+ESS IPD (ixekizumab + placebo arms) = 1588"
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Treatment name 2;;;tildrakizumab 200mg;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Study 'number(s)' for treatment 2;;;"6;7";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;rate of psoriasis area severity index (pasi) 75% improvement responders;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Binary (eg rates);FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;3;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Treatment name 1;;;ixekizumab;TRUE;"ixekizumab vs tildrakizumab 100mg   (etanercept as anchor)
+	N non IPD  463
+	IPD 1470
+	ESS 1108";"Overall matching with Etanercept as a bridge and and 100mg as dosage for tildrakizumab
+
+Results for matching per treatment arm separately : 25.8 (16.6,
+35.0)  p < 0.001
+
+Sample size non IPD (tildrakizumab + placebo arms) = 463
+Initial sample size IPD (ixekizumab + placebo arms) = 1470
+ESS IPD (ixekizumab + placebo arms) = 1108"
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Study 'number(s)' for treatment 1;"1;2;3";"2;3";"2;3";FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Treatment name 2;;;tildrakizumab 100mg;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Study 'number(s)' for treatment 2;;;"6;7";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;rate of psoriasis area severity index (pasi) 75% improvement responders;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Binary (eg rates);FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;4;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Treatment name 1;;;ixekizumab;TRUE;"ixekizumab vs tildrakizumab 200mg   (etanercept as anchor)
+	N non IPD  470
+	IPD 1470
+	ESS 1163";"Overall matching with Etanercept as a bridge and and 200mg as dosage for tildrakizumab
+
+Results for matching per treatment arm separately : 21.8 (12.8;
+30.9)  p < 0.001
+
+Sample size non IPD (tildrakizumab + placebo arms) = 470
+Initial sample size IPD (ixekizumab + placebo arms) = 1470
+ESS IPD (ixekizumab + placebo arms) = 1163"
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Study 'number(s)' for treatment 1;"1;2;3";"2;3";"2;3";FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Treatment name 2;;;tildrakizumab 200mg;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Study 'number(s)' for treatment 2;;;"6;7";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;rate of psoriasis area severity index (pasi) 75% improvement responders;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Binary (eg rates);FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;5;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Treatment name 1;;;ixekizumab;TRUE;"ixekizumab vs risankizumab (placebo as anchor)
+weights and BMI counted as 2 variables
+	N non IPD 798  
+	IPD 1952
+	ESS 1398
+";"Overall matching with Placebo as a bridge
+
+Results for matching per treatment arm separately : 5.6 [0.1;11.2]   p<0.05
+
+Sample size non IPD (risankizumab + placebo arms) = 798
+Initial sample size IPD (ixekizumab + placebo arms) = 1952
+ESS IPD (ixekizumab + placebo arms) = 1398
+
+Weight = other covariate (Weight and BMI as the same covariate)"
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Treatment name 2;;;risankizumab;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Study 'number(s)' for treatment 2;"8;9";8;8;FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;rate of psoriasis area severity index (pasi) 75% improvement responders;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Binary (eg rates);FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;6;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Treatment name 1;;;ixekizumab;TRUE;"ixekizumab vs risankizumab (ustekinumab as anchor)
+weights and BMI counted as 2 variables
+N non IPD 797  
+	IPD 252
+	ESS 116";"Overall matching with ustekinumab as a bridge
+
+Results for matching per treatment arm separately : 5.7 [-9.6;20.9] 
+
+Sample size non IPD (risankizumab + placebo arms) = 797
+Initial sample size IPD (ixekizumab + placebo arms) = 256
+ESS IPD (ixekizumab + placebo arms) = 116
+
+Weight = other covariate (Weight and BMI as the same covariate)"
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Study 'number(s)' for treatment 1;;;4;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Treatment name 2;;;risankizumab;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Study 'number(s)' for treatment 2;;;"8;9";TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;rate of psoriasis area severity index (pasi) 75% improvement responders;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Primary outcome: variable type;Continuous (count, mean, ...);Binary (eg rates);Binary (eg rates);FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Justification for selecting variables to be included in the adjustment model (in the main text);Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);Nothing mentioned, not reported;Nothing mentioned, not reported;FALSE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;methodology;7;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;Number of covariates adjusted for/matched on;;;8;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;Primary outcome: treatment effect contrast;Means difference;Risk difference;Risk difference;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;Primary outcome: unadjusted treatment effect;;;8.3;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);"[2.4;14.2] <0.01";"[2.4;14.2] p<0.01";"[2.4;14.2] p<0.01";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;Primary outcome: adjusted treatment effect;;;8;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";"[2.0;14.1] <0.01";"[2.0;14.1] p<0.01";"[2.0;14.1] p<0.01";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;Number of covariates adjusted for/matched on;;;5;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;Primary outcome: treatment effect contrast;Means difference;Risk difference;Risk difference;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;Primary outcome: unadjusted treatment effect;;;27.7;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);<0.001;"[22.5;32.8] p<0.001";"[22.5;32.8] p<0.001";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;Primary outcome: adjusted treatment effect;;;27;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;"[21.6;32.3] p<0.001";"[21.6;32.3] p<0.001";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;Number of covariates adjusted for/matched on;;;5;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;Primary outcome: treatment effect contrast;Means difference;Risk difference;Risk difference;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;Primary outcome: unadjusted treatment effect;;;26.4;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);<0.001;"[21.3;31.5] p<0.001";"[21.3;31.5] p<0.001";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;Primary outcome: adjusted treatment effect;;;25.7;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;"[20.4;31.0] p<0.001";"[20.4;31.0] p<0.001";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;Number of covariates adjusted for/matched on;;;5;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;Primary outcome: treatment effect contrast;Means difference;Risk difference;Risk difference;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;Primary outcome: unadjusted treatment effect;;;28.1;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);<0.001;"[19.2;37.0] p<0.001";"[19.2;37.0] p<0.001";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;Primary outcome: adjusted treatment effect;;;25.7;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;4;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;"[16.5;34.9] p<0.001";"[16.5;34.9] p<0.001";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;Number of covariates adjusted for/matched on;;;5;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;Primary outcome: treatment effect contrast;Means difference;Risk difference;Risk difference;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;Primary outcome: unadjusted treatment effect;26.4;24.1;24.1;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);<0.001;"[15.3;32.9] p<0.001";"[15.3;32.9] p<0.001";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;Primary outcome: adjusted treatment effect;25.7;21.7;21.7;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;5;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;"[12.7;30.7] p<0.001";"[12.7;30.7] p<0.001";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;Number of covariates adjusted for/matched on;8;7;8;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;Primary outcome: treatment effect contrast;Means difference;Risk difference;Risk difference;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;Primary outcome: unadjusted treatment effect;;;5.5;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);<0.5;"[0.2;10.8] p<0.05";"[0.2;10.8] p<0.05";FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;Primary outcome: adjusted treatment effect;;;5.5;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;6;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[-0.1;11.0]";TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;Number of covariates adjusted for/matched on;8;7;8;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;Primary outcome: treatment effect contrast;Means difference;Risk difference;Risk difference;FALSE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;Primary outcome: unadjusted treatment effect;;;0.8;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;"[-10.9;12.6]";TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;Primary outcome: adjusted treatment effect;;;7.8;TRUE;;
+10.1080/09546634.2020.1747592;32299269;results;7;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[-6.7;22.3]";TRUE;;

@@ -56,7 +56,7 @@ For the IPD sample size of this comparison, the size before application of inclu
 10.2165/11592490-000000000-00000;21819162;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
-10.2165/11592490-000000000-00000;21819162;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;;FALSE;BZ;;
+10.2165/11592490-000000000-00000;21819162;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;No;FALSE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;2;;Treatment name 1;vildagliptin;vildagliptin 50 mg twice daily;vildagliptin 50 mg twice daily;FALSE;BZ;Anchored on placebo;"*Placebo-controlled MAIC
 *Covariates were taken from tables 2, but it's not mentioned in the text wether these are the covariates used in the MAIC
@@ -73,7 +73,7 @@ For the IPD sample size of this comparison, the size before application of inclu
 10.2165/11592490-000000000-00000;21819162;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
-10.2165/11592490-000000000-00000;21819162;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;;FALSE;BZ;;
+10.2165/11592490-000000000-00000;21819162;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;No;FALSE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;3;;Treatment name 1;vildagliptin;vildagliptin 50 mg twice daily;vildagliptin 50 mg twice daily;FALSE;BZ;Anchored on placebo;"*Placebo-controlled MAIC
 *Covariates were taken from tables 2, but it's not mentioned in the text wether these are the covariates used in the MAIC
@@ -90,7 +90,7 @@ For the IPD sample size of this comparison, the size before application of inclu
 10.2165/11592490-000000000-00000;21819162;methodology;3;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;3;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;3;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
-10.2165/11592490-000000000-00000;21819162;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;;FALSE;BZ;;
+10.2165/11592490-000000000-00000;21819162;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;No;FALSE;BZ;;
 10.2165/11592490-000000000-00000;21819162;methodology;3;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;163;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;results;1;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;156;TRUE;BZ;;
@@ -120,7 +120,7 @@ For the IPD sample size of this comparison, the size before application of inclu
 10.2165/11592490-000000000-00000;21819162;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.133;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;results;2;;Primary outcome: adjusted treatment effect;;;-0.56;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;<0.001;TRUE;BZ;;
-10.2165/11592490-000000000-00000;21819162;results;3;;Sample size of the population of interest in the non IPD treatment arm;145;175;;FALSE;BZ;;
+10.2165/11592490-000000000-00000;21819162;results;3;;Sample size of the population of interest in the non IPD treatment arm;145;175;145;FALSE;BZ;;
 10.2165/11592490-000000000-00000;21819162;results;3;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;149;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;results;3;;Initial sample size of the population of interest in the IPD treatment arm;;;76;TRUE;BZ;;
 10.2165/11592490-000000000-00000;21819162;results;3;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;72;TRUE;BZ;;

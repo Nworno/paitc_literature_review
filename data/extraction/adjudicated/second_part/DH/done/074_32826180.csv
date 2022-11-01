@@ -1,0 +1,59 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1016/j.clgc.2020.07.006;32826180;general_information;;;Medical Condition of Interest Name;locally advanced or metastatic urothelial cancer;pd-l1–positive locaadvanced or metastatic urothelial carcinoma;XXXX;FALSE;NA;NA
+10.1016/j.clgc.2020.07.006;32826180;general_information;;;Countries of first author affiliations;;;uk;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;general_information;;;Countries of last author affiliations;;;usa;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02335424;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);unknown;international;XXXX;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;1;Phase of the clinical trial (clinical trial only);;;2;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;1;Number of treatment arms (clinical trial only);;;1;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;2;Data source name (only if observational study or clinical trial without NCT);;;bamias et al. (2007);TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;greece;XXXX;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;2;Number of treatment arms (clinical trial only);1;;XXXX;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;3;Patient-level data used;;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;3;Clinical Trial;;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;3;Data source name (only if observational study or clinical trial without NCT);;;carles et al. (2000);TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;spain;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;4;Patient-level data used;;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;4;Clinical Trial;;;Yes;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);NCT00111787;NCT00014274;NCT00014274;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;4;Phase of the clinical trial (clinical trial only);2;2, 3;XXXX;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;4;Number of treatment arms (clinical trial only);1;2 or more;XXXX;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;5;Patient-level data used;;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;5;Clinical Trial;;;Yes;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;5;Data source name (only if observational study or clinical trial without NCT);;;linardou et al. (2004);TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;5;Country where the clinical trial/observational study was conducted (international if more than one);;greece;XXXX;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;5;Phase of the clinical trial (clinical trial only);2;;XXXX;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;study_information;;5;Number of treatment arms (clinical trial only);1;;XXXX;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Treatment name 1;;;pembrolizumab;TRUE;Associated with an economic analysis;"Cost-effectivness (economic) analysis
+
+""This analysis uses a simulated treatment comparison to adjust for cross-study differences then applies a relative treatment effect based on a standard meta-analysis model. The approach was detailed in previous publications"""
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Treatment name 2;;;carboplatin + gemcitabine;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Study 'number(s)' for treatment 2;"2;3;4;5²";"2;3;4;5";"2;3;4;5";FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Type of population-adjusted indirect comparisons performed;;;STC;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Anchored comparison?;;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;overall survival;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;results;1;;Reporting of a weights' distribution evaluation (MAIC);;Not mentioned;;FALSE;;
+10.1016/j.clgc.2020.07.006;32826180;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;No;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;results;1;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Denominator if ratio, or rightside if difference;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;results;1;;Primary outcome: adjusted treatment effect;;;2.34;TRUE;;
+10.1016/j.clgc.2020.07.006;32826180;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;"[1.92;2.85]";"[1.92;2.85]";FALSE;;

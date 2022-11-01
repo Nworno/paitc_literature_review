@@ -1,0 +1,231 @@
+﻿doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1080/03007995.2020.1747999;32220214;general_information;;;Medical Condition of Interest Name;;;secondary progressive multiple sclerosis;TRUE;NA;NA
+10.1080/03007995.2020.1747999;32220214;general_information;;;Countries of first author affiliations;;;canada;TRUE;;
+10.1080/03007995.2020.1747999;32220214;general_information;;;Countries of last author affiliations;;;switzerland;TRUE;;
+10.1080/03007995.2020.1747999;32220214;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
+10.1080/03007995.2020.1747999;32220214;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1080/03007995.2020.1747999;32220214;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01665144;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01416181;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;3;Patient-level data used;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;3;Clinical Trial;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;3;Data source name (only if observational study or clinical trial without NCT);;;nordic spms study;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;3;Phase of the clinical trial (clinical trial only);3;;XXXX;FALSE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;4;Patient-level data used;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;4;Clinical Trial;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;4;Data source name (only if observational study or clinical trial without NCT);;;panitch et al. (2004) (north american study);TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;4;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;5;Patient-level data used;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;5;Clinical Trial;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;5;Data source name (only if observational study or clinical trial without NCT);;;cohen et al. (2002) (impact);TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;5;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;5;Country where the clinical trial/observational study was conducted (international if more than one);international;;XXXX;FALSE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;6;Patient-level data used;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;6;Clinical Trial;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;6;Data source name (only if observational study or clinical trial without NCT);;;spectrims study group (2001) li et al. (2001);TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;6;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;6;Country where the clinical trial/observational study was conducted (international if more than one);international;;XXXX;FALSE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;7;Patient-level data used;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;7;Clinical Trial;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;7;Data source name (only if observational study or clinical trial without NCT);;;european study group (1998) kappos et al. (2001);TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;7;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/03007995.2020.1747999;32220214;study_information;;7;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Treatment name 1;;;siponimod;TRUE;"Also conduct a STC, but only report results in supplemental materials   Non IPD 939
+	IPD 543   410";"N non IPD (bras intervention + bras placebo) = 939
+N IPD (bras intervention + bras placebo) = 543
+ESS IPD (bras intervention + bras placebo) = 410"
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Treatment name 2;;;ifnβ-1b 250 μg once every other day (q2d);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Study 'number(s)' for treatment 2;;;4;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);risk of sustained disability at 6 month;time to confirmed disability progression at six months (cdp-6);time to confirmed disability progression at six months (cdp-6);FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Treatment name 1;;;siponimod;TRUE;"NonIPD   364
+IPD  578   Scenario A 157";"N non IPD (bras intervention + bras placebo) = 364
+N IPD (bras intervention + bras placebo) = 578
+ESS IPD (bras intervention + bras placebo) = 157"
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Treatment name 2;;;ifnβ-1a 22 μg once weekly (qw);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Study 'number(s)' for treatment 2;;;3;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);risk of sustained disability at 6 month;time to confirmed disability progression at six months (cdp-6);time to confirmed disability progression at six months (cdp-6);FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Treatment name 1;;;siponimod;TRUE;"NonIPD 887
+IPD 608  Scenario A 516";"N non IPD (bras intervention + bras placebo) = 887
+N IPD (bras intervention + bras placebo) = 608
+ESS IPD (bras intervention + bras placebo) = 516"
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Treatment name 2;;;natalizumab;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Study 'number(s)' for treatment 2;;;2;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);risk of sustained disability at 6 month;the proportion of patients who experienced cdp-6 (confirmed disability progression at six months) by 96 weeks based on an increase in edss alone;the proportion of patients who experienced cdp-6 (confirmed disability progression at six months) by 96 weeks based on an increase in edss alone;FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Primary outcome: variable type;Time-to-event;Binary (eg rates);Binary (eg rates);FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;3;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Treatment name 1;;;siponimod;TRUE;"NonIPD  618
+	IPD 455   Scenario A 237";"N non IPD (bras  IFNβ-1a 22ug + bras  IFNβ-1a 44ug + bras placebo) = 618
+N IPD (bras intervention + bras placebo) = 455
+ESS IPD (bras intervention + bras placebo) = 237"
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Treatment name 2;;;sc ifnβ-1a 22 μg three times weekly;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Study 'number(s)' for treatment 2;;;6;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);risk of sustained disability at 6 month;time to confirmed disability progression at three months (cdp-3);time to confirmed disability progression at three months (cdp-3);FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;4;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Treatment name 1;;;siponimod;TRUE;"NonIPD  618
+IPD 455   Scenario A 237";"N non IPD (bras  IFNβ-1a 22ug + bras  IFNβ-1a 44ug + bras placebo) = 618
+N IPD (bras intervention + bras placebo) = 455
+ESS IPD (bras intervention + bras placebo) = 237"
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Treatment name 2;;;sc ifnβ-1a 44 μg three times weekly;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Study 'number(s)' for treatment 2;;;6;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Anchored comparison?;Yes;No;Yes;FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);risk of sustained disability at 6 month;time to confirmed disability progression at three months (cdp-3);time to confirmed disability progression at three months (cdp-3);FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;5;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Treatment name 1;;;siponimod;TRUE;"NonIPD 718
+	IPD 455  Scenario A 140";"N non IPD (bras intervention + bras placebo) = 718
+N IPD (bras intervention + bras placebo) = 455
+ESS IPD (bras intervention + bras placebo) = 140"
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Treatment name 2;;;ifnβ-1b 8 miu once every other day;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Study 'number(s)' for treatment 2;;;7;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);risk of sustained disability at 6 month;time to confirmed disability progression at three months (cdp-3);time to confirmed disability progression at three months (cdp-3);FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;6;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Treatment name 1;;;siponimod;TRUE;"NonIPD  436
+	IPD   563  113";"N non IPD (bras intervention + bras placebo) = 436
+N IPD (bras intervention + bras placebo) = 563
+ESS IPD (bras intervention + bras placebo) = 113
+
+Pour chacune de ces 7 formulaire (MAIC), une autre MAIC a été réalisée pour un autre outcome (annualized relapse rate) avec d'autres covariables (5) et des effectifs différents."
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Treatment name 2;;;im ifnβ-1a 60 μg once weekly;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Study 'number(s)' for treatment 2;;;5;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Anchored comparison?;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);risk of sustained disability at 6 month;time to confirmed disability progression at three months (cdp-3);time to confirmed disability progression at three months (cdp-3);FALSE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;methodology;7;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;1;;Number of covariates adjusted for/matched on;6;10;10;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;1;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;1;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;1;;Primary outcome: adjusted treatment effect;;;0.55;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.33;0.91]";TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;2;;Number of covariates adjusted for/matched on;5;10;10;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;2;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;2;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;2;;Primary outcome: adjusted treatment effect;;;0.43;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.20;0.93]";TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;3;;Number of covariates adjusted for/matched on;;;10;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;3;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;3;;Primary outcome: treatment effect contrast;HR;OR;OR;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;3;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;3;;Primary outcome: adjusted treatment effect;;;0.76;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.44;1.30]";TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;4;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;4;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;4;;Number of covariates adjusted for/matched on;6;10;10;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;4;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;4;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;4;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;4;;Primary outcome: adjusted treatment effect;;;0.8;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;4;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.46;1.38]";TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;5;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;5;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;5;;Number of covariates adjusted for/matched on;6;10;10;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;5;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;5;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;5;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;5;;Primary outcome: adjusted treatment effect;;;0.84;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;5;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.49;1.47]";TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;6;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;6;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;6;;Number of covariates adjusted for/matched on;6;10;10;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;6;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;6;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;6;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;6;;Primary outcome: adjusted treatment effect;;;0.82;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;6;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.42;1.63]";TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;7;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;7;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;7;;Number of covariates adjusted for/matched on;6;10;10;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;7;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;FALSE;;
+10.1080/03007995.2020.1747999;32220214;results;7;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;7;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;7;;Primary outcome: adjusted treatment effect;;;0.42;TRUE;;
+10.1080/03007995.2020.1747999;32220214;results;7;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.20;0.88]";TRUE;;

@@ -1,0 +1,61 @@
+﻿doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1007/s12325-017-0564-1;28573505;general_information;;;Medical Condition of Interest Name;;;chronic lymphocytic leukemia;TRUE;NA;NA
+10.1007/s12325-017-0564-1;28573505;general_information;;;Countries of first author affiliations;;;belgium;TRUE;;
+10.1007/s12325-017-0564-1;28573505;general_information;;;Countries of last author affiliations;;;uk;TRUE;;
+10.1007/s12325-017-0564-1;28573505;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Pharmaceutical Industry;TRUE;;
+10.1007/s12325-017-0564-1;28573505;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Not mentioned;TRUE;;
+10.1007/s12325-017-0564-1;28573505;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1007/s12325-017-0564-1;28573505;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1007/s12325-017-0564-1;28573505;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01722487;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01010061;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1007/s12325-017-0564-1;28573505;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Treatment name 1;ibrutinib1;ibrutinib;ibrutinib;FALSE;"Bayesian analysis, so credible intervals reported
+Sample sizes reported together for both active treatment and control arms: 
+	NonIPD 589 
+	IPD 191 
+	ESS 35";"Creatinine clearance = comorbidities
+
+Effectif non IPD (intervention + placebo ) = 589
+Initial sample size IPD (intervention + placebo ) = 115
+ESS IPD (intervention + placebo ) = 35
+
+HR for PFS by  IRC assessment :
+Naive Analysis = 0.85 [0.44;1.63]
+MAIC = 0.24 [0.04;1.35]"
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Treatment name 2;;;obinutuzumab + chlorambucil;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Anchored comparison?;;;Yes;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);progression-free survival;progression-free survival by investigator assessment;progression-free survival;FALSE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);FALSE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;No;Yes;Yes;FALSE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1007/s12325-017-0564-1;28573505;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Number of covariates adjusted for/matched on;9;11;9;FALSE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Comorbidities and medical history (beside pathology/disease of interest in the comparison);TRUE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Primary outcome: unadjusted treatment effect;0.5;0.48;0.5;FALSE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);"[0.22;1.15]";"[0.22;1.02]";"[0.22;1.15]";FALSE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Primary outcome: adjusted treatment effect;0.24;0.12;0.24;FALSE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";"[0.04;1.35]";"[0.02;0.97]";"[0.04;1.35]";FALSE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Sample size of the population of interest in the non IPD treatment arm;589;;589;FALSE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;Initial sample size of the population of interest in the IPD treatment arm;191;;115;FALSE;;
+10.1007/s12325-017-0564-1;28573505;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";35;;35;FALSE;;

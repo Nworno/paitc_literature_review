@@ -1,0 +1,90 @@
+﻿doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1111/dom.14497;34286894;general_information;;;Medical Condition of Interest Name;;;type 2 diabetes;TRUE;NA;NA
+10.1111/dom.14497;34286894;general_information;;;Countries of first author affiliations;;;usa;TRUE;;
+10.1111/dom.14497;34286894;general_information;;;Countries of last author affiliations;denmark;danemark;XXXX;FALSE;;
+10.1111/dom.14497;34286894;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
+10.1111/dom.14497;34286894;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1111/dom.14497;34286894;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;;
+10.1111/dom.14497;34286894;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02648204;TRUE;;
+10.1111/dom.14497;34286894;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1111/dom.14497;34286894;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1111/dom.14497;34286894;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1111/dom.14497;34286894;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1111/dom.14497;34286894;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT03495102;TRUE;;
+10.1111/dom.14497;34286894;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1111/dom.14497;34286894;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1111/dom.14497;34286894;study_information;;2;Number of treatment arms (clinical trial only);1;2 or more;XXXX;FALSE;;
+10.1111/dom.14497;34286894;study_information;;3;Patient-level data used;;No;XXXX;FALSE;;
+10.1111/dom.14497;34286894;study_information;;3;Clinical Trial;;Yes;XXXX;FALSE;;
+10.1111/dom.14497;34286894;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;NCT03495102;;FALSE;;
+10.1111/dom.14497;34286894;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;international;XXXX;FALSE;;
+10.1111/dom.14497;34286894;study_information;;3;Phase of the clinical trial (clinical trial only);;3;XXXX;FALSE;;
+10.1111/dom.14497;34286894;study_information;;3;Number of treatment arms (clinical trial only);;2 or more;XXXX;FALSE;;
+10.1111/dom.14497;34286894;methodology;1;;Treatment name 1;semaglutide 1.0mg;semaglutide 1.0 mg;semaglutide 1.0mg;FALSE;"MAIC as a sensitivity analysis, Bucher is the primary one because 'no evidence of treatment effect modifiers based on a post hoc analysis', referring to an article of the investigators of the original trial, who determined that based on their data there was no observed heterogeneity of treatment effect based on these charactersitics. Therefore, choice of the covariates  = 'Status of prognostic factor/treatment effect modified assessed in the IPD dataset""""
+Methodology and purpose of the research very close to than 10.1210/clinem/dgab905
+Incidentally, they say that safety endpoints are more difficult to assess in indirect comparisons because usually they are assessed differently between trials, could be an interesting reference in the article
+";"Sensitivity analysis 2
+BMI = others"
+10.1111/dom.14497;34286894;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Treatment name 2;dulaglutide 3.0mg;dulaglutide 3.0 mg;dulaglutide 3.0mg;FALSE;;
+10.1111/dom.14497;34286894;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Anchored comparison?;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);change from baseline hba1c;change from baseline in hba1c;change from baseline in hba1c;FALSE;;
+10.1111/dom.14497;34286894;methodology;1;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);Status of prognostic factor/treatment effect modified assessed in the IPD dataset;Nothing mentioned, not reported;Nothing mentioned, not reported;FALSE;;
+10.1111/dom.14497;34286894;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);No;Yes;Yes;FALSE;;
+10.1111/dom.14497;34286894;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1111/dom.14497;34286894;methodology;2;;Treatment name 1;semaglutide 1.0mg;semaglutide 1.0 mg;semaglutide 1.0mg;FALSE;NA;"Sensitivity analysis 2
+BMI = others"
+10.1111/dom.14497;34286894;methodology;2;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1111/dom.14497;34286894;methodology;2;;Treatment name 2;dulaglutide 4.5mg;dulaglutide 4.5 mg;dulaglutide 4.5mg;FALSE;;
+10.1111/dom.14497;34286894;methodology;2;;Study 'number(s)' for treatment 2;2;3;2;FALSE;;
+10.1111/dom.14497;34286894;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1111/dom.14497;34286894;methodology;2;;Anchored comparison?;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;methodology;2;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1111/dom.14497;34286894;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1111/dom.14497;34286894;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);change from baseline hba1c;change from baseline in hba1c;change from baseline in hba1c;FALSE;;
+10.1111/dom.14497;34286894;methodology;2;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;;
+10.1111/dom.14497;34286894;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);Status of prognostic factor/treatment effect modified assessed in the IPD dataset;Nothing mentioned, not reported;Nothing mentioned, not reported;FALSE;;
+10.1111/dom.14497;34286894;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;No;No discussion (in the main text) of the status of prognostic factors of the variables;No;FALSE;;
+10.1111/dom.14497;34286894;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);No;Yes;Yes;FALSE;;
+10.1111/dom.14497;34286894;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;616;TRUE;;
+10.1111/dom.14497;34286894;results;1;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;612;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;300;TRUE;;
+10.1111/dom.14497;34286894;results;1;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;299;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Number of covariates adjusted for/matched on;;;3;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Covariates adjusted for/matched on in the indirect comparison;Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Comorbidities and medical history (beside pathology/disease of interest in the comparison), Other(s);Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Comorbidities and medical history (beside pathology/disease of interest in the comparison), Other(s);FALSE;;
+10.1111/dom.14497;34286894;results;1;;Primary outcome: treatment effect contrast;;;Means difference;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Primary outcome: unadjusted treatment effect;;;-0.24;TRUE;;
+10.1111/dom.14497;34286894;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.016;TRUE;;
+10.1111/dom.14497;34286894;results;1;;Primary outcome: adjusted treatment effect;-0.26;-0.25;-0.25;FALSE;;
+10.1111/dom.14497;34286894;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.047;0.037;0.037;FALSE;;
+10.1111/dom.14497;34286894;results;2;;Sample size of the population of interest in the non IPD treatment arm;;;614;TRUE;;
+10.1111/dom.14497;34286894;results;2;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;612;TRUE;;
+10.1111/dom.14497;34286894;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;;300;TRUE;;
+10.1111/dom.14497;34286894;results;2;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;299;TRUE;;
+10.1111/dom.14497;34286894;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1111/dom.14497;34286894;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1111/dom.14497;34286894;results;2;;Number of covariates adjusted for/matched on;;;3;TRUE;;
+10.1111/dom.14497;34286894;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);TRUE;;
+10.1111/dom.14497;34286894;results;2;;Primary outcome: treatment effect contrast;;;Means difference;TRUE;;
+10.1111/dom.14497;34286894;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1111/dom.14497;34286894;results;2;;Primary outcome: unadjusted treatment effect;;;-0.07;TRUE;;
+10.1111/dom.14497;34286894;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.484;TRUE;;
+10.1111/dom.14497;34286894;results;2;;Primary outcome: adjusted treatment effect;;;-0.08;TRUE;;
+10.1111/dom.14497;34286894;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.523;TRUE;;

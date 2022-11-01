@@ -1,0 +1,200 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1016/j.ejcsup.2021.06.002;34912478;general_information;;;Medical Condition of Interest Name;advanced unresctable gastroenteropancreatic neuroendocrine tumor;advanced, unresectable gastrointestinal neuroendocrine tumours;XXXX;FALSE;NA;NA
+10.1016/j.ejcsup.2021.06.002;34912478;general_information;;;Countries of first author affiliations;;;uk;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;general_information;;;Countries of last author affiliations;;;germany;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Private Data Analysis Company;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;1;Data source name (only if observational study or clinical trial without NCT);;;erasmus study;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);netherlands;;XXXX;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;1;Number of treatment arms (clinical trial only);;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01524783;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;3;Patient-level data used;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;3;Clinical Trial;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00510068;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;3;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;4;Patient-level data used;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;4;Clinical Trial;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00428597;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;4;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;study_information;;4;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Treatment name 1;;;[177lu]lu-dota-tate;TRUE;"Inclusion almost only based on statistical significance, even though at some point they mention that they were chosen based on the clinical expert opinion also
+acknowledge residual confounding
+test safety endpoints too";"G-NET
+
+say ""A histogram describing the full distribution of weights is provided in the data supplement."" but couldn't be found."
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Treatment name 2;;;everolimus;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Anchored comparison?;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Definition of a single primary outcome for the indirect comparison;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;Yes;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;progression-free survival;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Treatment name 1;[177lu]lu-dota-tate;[177lu]lu-dota-tat;[177lu]lu-dota-tate;FALSE;NA;"GI-NET
+
+say ""A histogram describing the full distribution of weights is provided in the data supplement."" but couldn't be found."
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Treatment name 2;everolimus;best supportive care (bsc);best supportive care (bsc);FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Study 'number(s)' for treatment 2;3;2;2;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Anchored comparison?;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Definition of a single primary outcome for the indirect comparison;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;Yes;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;progression-free survival;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Treatment name 1;;;[177lu]lu-dota-tate;TRUE;NA;"PI-NET
+
+say ""A histogram describing the full distribution of weights is provided in the data supplement."" but couldn't be found."
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Treatment name 2;;;sunitinib;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Study 'number(s)' for treatment 2;;;4;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Anchored comparison?;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;progression-free survival;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;3;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Treatment name 1;;;[177lu]lu-dota-tate;TRUE;NA;"PI-NET
+
+say ""A histogram describing the full distribution of weights is provided in the data supplement."" but couldn't be found."
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Treatment name 2;best supportive care;best supportive care (bsc);best supportive care;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Study 'number(s)' for treatment 2;;;4;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Anchored comparison?;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;progression-free survival;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;4;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Treatment name 1;;;[177lu]lu-dota-tate;TRUE;NA;GI-NET
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Treatment name 2;;;everolimus;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Study 'number(s)' for treatment 2;;;3;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Anchored comparison?;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;progression-free survival;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;5;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Treatment name 1;;;[177lu]lu-dota-tate;TRUE;NA;"GI-NET
+
+say ""A histogram describing the full distribution of weights is provided in the data supplement."" but couldn't be found."
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Treatment name 2;best supportive care;best supportive care (bsc);best supportive care;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Study 'number(s)' for treatment 2;;;3;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Anchored comparison?;;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;progression-free survival;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;methodology;6;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;118;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;111;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;105;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Reporting of a weights' distribution evaluation (MAIC);Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Number of covariates adjusted for/matched on;;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...);TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;Primary outcome: adjusted treatment effect;;;0.38;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.25;0.58]";TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Sample size of the population of interest in the non IPD treatment arm;;;57;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;;111;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;95;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Reporting of a weights' distribution evaluation (MAIC);Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Number of covariates adjusted for/matched on;;;1;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...);TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;Primary outcome: adjusted treatment effect;;;0.35;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";"[0.24;0.59]";"[0.21;0.59]";"[0.21;0.59]";FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Sample size of the population of interest in the non IPD treatment arm;;;86;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Initial sample size of the population of interest in the IPD treatment arm;;;62;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;48;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Reporting of a weights' distribution evaluation (MAIC);Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Number of covariates adjusted for/matched on;;;4;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Covariates adjusted for/matched on in the indirect comparison;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...);Age, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;Age, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;Primary outcome: adjusted treatment effect;;;0.36;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.18;0.70]";TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Sample size of the population of interest in the non IPD treatment arm;;;85;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Initial sample size of the population of interest in the IPD treatment arm;;;62;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;35;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Reporting of a weights' distribution evaluation (MAIC);Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Number of covariates adjusted for/matched on;;;4;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Covariates adjusted for/matched on in the indirect comparison;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);Age, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;Age, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;Primary outcome: adjusted treatment effect;;;0.13;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;4;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.08;0.22]";TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Sample size of the population of interest in the non IPD treatment arm;;;207;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Initial sample size of the population of interest in the IPD treatment arm;;;62;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;22;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Reporting of a weights' distribution evaluation (MAIC);Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Number of covariates adjusted for/matched on;;;4;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Covariates adjusted for/matched on in the indirect comparison;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, , Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...);Age, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;Age, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;Primary outcome: adjusted treatment effect;;;0.46;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;5;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.30;0.71]";TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Sample size of the population of interest in the non IPD treatment arm;;;203;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Initial sample size of the population of interest in the IPD treatment arm;;;62;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;18;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Reporting of a weights' distribution evaluation (MAIC);Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Number of covariates adjusted for/matched on;;;4;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Covariates adjusted for/matched on in the indirect comparison;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);Age, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;Age, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;FALSE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;Primary outcome: adjusted treatment effect;;;0.21;TRUE;;
+10.1016/j.ejcsup.2021.06.002;34912478;results;6;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.13;0.32]";TRUE;;

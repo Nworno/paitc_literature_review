@@ -1,0 +1,72 @@
+10.1111/bjd.16140
+
+- pas trouvé de ligne avec "Adjusted treatment effect" (juste celle avec les p-values) est-ce normale ? (peut être parce qu'on ne peut pas lire les valeurs sur le graphique et que tu as enlevé ces lignes du coup ?)
+- je ne retrouve pas les 6 comparaisons que vous avez listé. Selon moi, il n'y en a que trois sur le critère principal, et les p-values ne sont pas celles indiquées par le reviewer 1. Selon moi, les 3 p-values à recueillir sont celles correspondant à PASI 75, figure sur les risques difference, methode = SG strata. OK ?
+
+10.1007/s40744-018-0106-6
+
+- Je me serai arrêté au critère principal de chaque comparaison (150mg et 300mg), soit à 12 semaines (et non à 16)
+Ca se discute car après 12 semaines, ce n'est plus la mm méthode (MAIC anchored avant 12 semaines, non anchored après), mais le première critère de jugement est 12 semaines. 
+
+10.2147/jbm.s206806
+
+- l'étude 4 (tarantino 2004) ne peut pas correspondre au NCT00157157 (qui est une étude ayant démarré en 2004)
+
+10.2217/cer-2019-0145
+
+- cette étude dispose des données individuelles pour les 2 études impliquées, mais utilise la méthode STC. IPD = checkmate (n = 42), non IPD = Flatiron random (n = 34). Ce n'était pas tjs simple de le voir en lisant l'article
+
+10.1080/09546634.2020.1747592
+
+- deux études (UNCOVER 2 et 3) partagent le mm nct (NCT01646177)
+
+10.1007/s12325-020-01378-y
+
+- La comparaison 2 (safety) n'a pas à être recueillie selon moi (pas le CDJ principal) => j'ai laissé vide
+  (La seconde comparaison (safety) est anchored alors que la première ne l'est pas. Mais il s'agit des mêmes traitements comparés)
+ 
+10.1177/1756286420975916
+
+l'étude compare des annualized relapse rates, c'est à dire des incidences, j'ai considéré qu'il s'agissait d'un critère binaire
+
+10.2147/jbm.s288283
+
+A-LONG: NCT01181128
+HAVEN-3 : NCT02847637
+HAVEN-4 : NCT03020160
+Pour moi, le critère annualized bleeding rate est plutôt associé à une variable binaire (c'est une incidence) => J'ai mis que la variable était Binary, mm si vous étiez tous les deux d'accord qu'il s'agissait d'une variable continuous. 
+
+10.1111/dom.14497
+
+L'étude référencée "3" est la même que l'étude "2", donc j'ai laissé vide (il n'y a que 2 études quoi)
+
+10.1007/s12325-021-01853-0
+
+Le critère est binary selon moi (incidence), et lamesure d'assocation un RR
+
+10.1177/17588359211049639
+
+Les comparaisons 3 et 4 étaient :
+- pour l'un des reviewers : 2 analyses en sous-groupes (chez les "HRD-positive patients")
+- pour l'autre reviewers : 2 comparaisons dans l'échantillon globale (chez les "biomarker-unselected patients")
+J'ai choisi la seconde option (mais ça vaut le coup de comprendre ce que l'autre reviewer a choisi).
+
+10.2217/cer-2021-0221
+
+Je n'ai pas retrouvé les ESS dans l'article ni dans les suppléments
+
+10.1007/s12325-021-01885-6
+
+Il s'agit d'une anchored MAIC, mais le fichier csv ne comporte pas de ligne sur l'ESS, est-ce normal ?
+
+10.2217/fon-2021-1102
+
+overall response rate n'est cité que dans le "summary points" => coquille, le critère est objective response rate
+
+__________________________________________________
+
+ETUDES BIEN RAPPORTEES
+10.1016/j.clinthera.2019.09.012
+10.1080/03007995.2020.1747999
+10.1016/j.lungcan.2021.03.020
+10.2217/cer-2021-0221 => pour la figure expliquant les MAIC. En revanche, je n'ai pas trouvé les ESS dans l'article !

@@ -1,0 +1,234 @@
+﻿doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decision,identical
+10.1001/jamaophthalmol.2021.6284,35175308,results,1,,geographical region,No,,No,FALSE
+10.1002/edm2.259,34277983,results,1,,"If anchored, total initial sample size IPD",3297,,3297,FALSE
+10.1002/edm2.259,34277983,results,1,,"If anchored, total ESS IPD",,,2633,TRUE
+10.1002/edm2.259,34277983,results,1,,"If anchored, total sample size non IPD",9901,,9901,FALSE
+10.1007/bf03261873,23113551,results,1,,geographical region,No,,No,FALSE
+10.1007/bf03261873,23113551,results,2,,geographical region,No,,No,FALSE
+10.1007/bf03261873,23113551,results,3,,geographical region,No,,No,FALSE
+10.1007/s12325-017-0564-1,28573505,results,1,,"If anchored, total initial sample size IPD",191,115,115,FALSE
+10.1007/s12325-017-0564-1,28573505,results,1,,"If anchored, total ESS IPD",,,35,TRUE
+10.1007/s12325-017-0564-1,28573505,results,1,,"If anchored, total sample size non IPD",,,589,TRUE
+10.1007/s12325-018-0734-9,29949047,results,1,,geographical region,No,,No,FALSE
+10.1007/s12325-018-0734-9,29949047,results,1,,"If anchored, total initial sample size IPD",57,,57,FALSE
+10.1007/s12325-018-0734-9,29949047,results,1,,"If anchored, total ESS IPD",34,,34,FALSE
+10.1007/s12325-018-0734-9,29949047,results,1,,"If anchored, total sample size non IPD",290,,290,FALSE
+10.1007/s12325-019-00991-w,31140123,results,1,,geographical region,,Yes,No,FALSE
+10.1007/s12325-019-00991-w,31140123,results,2,,geographical region,,Yes,No,FALSE
+10.1007/s12325-019-01156-5,31813086,results,1,,"If anchored, total initial sample size IPD",1207,,1207,FALSE
+10.1007/s12325-019-01156-5,31813086,results,1,,"If anchored, total ESS IPD",1171,,1171,FALSE
+10.1007/s12325-019-01156-5,31813086,results,1,,"If anchored, total sample size non IPD",1401,,1401,FALSE
+10.1007/s12325-019-01157-4,31813087,results,1,,"If anchored, total initial sample size IPD",1207,,1207,FALSE
+10.1007/s12325-019-01157-4,31813087,results,1,,"If anchored, total ESS IPD",1171,,1171,FALSE
+10.1007/s12325-019-01157-4,31813087,results,1,,"If anchored, total sample size non IPD",1401,,1401,FALSE
+10.1007/s12325-020-01378-y,32424805,results,1,,geographical region,,,Yes,TRUE
+10.1007/s12325-020-01378-y,32424805,results,2,,geographical region,,Yes,Yes,FALSE
+10.1007/s12325-020-01599-1,33377987,results,1,,geographical region,No,,No,FALSE
+10.1007/s12325-020-01599-1,33377987,results,2,,geographical region,No,,No,FALSE
+10.1007/s12325-020-01599-1,33377987,results,3,,geographical region,No,,No,FALSE
+10.1007/s12325-020-01599-1,33377987,results,4,,geographical region,No,,No,FALSE
+10.1007/s12325-021-01853-0,34368918,results,1,,geographical region,No,,No,FALSE
+10.1007/s12325-021-01853-0,34368918,results,3,,geographical region,,,Yes,TRUE
+10.1007/s12325-021-01885-6,34797506,results,1,,geographical region,,,Yes,TRUE
+10.1007/s12325-021-01885-6,34797506,results,1,,"If anchored, total initial sample size IPD",,,1150,TRUE
+10.1007/s12325-021-01885-6,34797506,results,1,,"If anchored, total ESS IPD",,,455,TRUE
+10.1007/s12325-021-01885-6,34797506,results,1,,"If anchored, total sample size non IPD",1509,,1509,FALSE
+10.1007/s12325-022-02054-z,35157216,results,1,,geographical region,No,,No,FALSE
+10.1007/s12325-022-02054-z,35157216,results,2,,geographical region,No,,No,FALSE
+10.1007/s12325-022-02054-z,35157216,results,3,,geographical region,No,,No,FALSE
+10.1007/s12325-022-02054-z,35157216,results,4,,geographical region,No,,No,FALSE
+10.1007/s40263-013-0102-x,23975660,results,1,,geographical region,No,,No,FALSE
+10.1007/s40744-017-0070-6,28762213,results,1,,geographical region,No,,No,FALSE
+10.1007/s40744-017-0070-6,28762213,results,2,,geographical region,No,,No,FALSE
+10.1007/s40744-018-0106-6,29605841,results,1,,geographical region,No,,No,FALSE
+10.1007/s40744-018-0106-6,29605841,results,2,,geographical region,No,,No,FALSE
+10.1007/s40744-018-0106-6,29605841,results,3,,geographical region,No,,No,FALSE
+10.1016/j.clinthera.2015.12.017,26839044,results,1,,geographical region,No,,No,FALSE
+10.1016/j.lungcan.2021.03.020,33839603,results,1,,geographical region,No,,No,FALSE
+10.1016/j.lungcan.2021.03.020,33839603,results,2,,geographical region,No,,No,FALSE
+10.1016/j.msard.2021.102972,33979770,results,1,,geographical region,No,,No,FALSE
+10.1080/03007995.2018.1520696,30286627,results,1,,geographical region,No,,No,FALSE
+10.1080/03007995.2018.1520696,30286627,results,3,,geographical region,No,,No,FALSE
+10.1080/03007995.2018.1520696,30286627,results,4,,geographical region,No,,No,FALSE
+10.1080/03007995.2019.1605239,30964361,results,1,,geographical region,No,,No,FALSE
+10.1080/03007995.2019.1605239,30964361,results,2,,geographical region,No,,No,FALSE
+10.1080/03007995.2020.1747999,32220214,results,1,,"If anchored, total initial sample size IPD",,,543,TRUE
+10.1080/03007995.2020.1747999,32220214,results,1,,"If anchored, total ESS IPD",,,410,TRUE
+10.1080/03007995.2020.1747999,32220214,results,1,,"If anchored, total sample size non IPD",,,939,TRUE
+10.1080/03007995.2020.1747999,32220214,results,2,,"If anchored, total initial sample size IPD",,,578,TRUE
+10.1080/03007995.2020.1747999,32220214,results,2,,"If anchored, total ESS IPD",,,157,TRUE
+10.1080/03007995.2020.1747999,32220214,results,2,,"If anchored, total sample size non IPD",,,364,TRUE
+10.1080/03007995.2020.1747999,32220214,results,3,,"If anchored, total initial sample size IPD",,,608,TRUE
+10.1080/03007995.2020.1747999,32220214,results,3,,"If anchored, total ESS IPD",,,516,TRUE
+10.1080/03007995.2020.1747999,32220214,results,3,,"If anchored, total sample size non IPD",,,887,TRUE
+10.1080/03007995.2020.1747999,32220214,results,3,,geographical region,No,,No,FALSE
+10.1080/03007995.2020.1747999,32220214,results,4,,"If anchored, total initial sample size IPD",,,455,TRUE
+10.1080/03007995.2020.1747999,32220214,results,4,,"If anchored, total ESS IPD",,,237,TRUE
+10.1080/03007995.2020.1747999,32220214,results,4,,"If anchored, total sample size non IPD",,,618,TRUE
+10.1080/03007995.2020.1747999,32220214,results,5,,"If anchored, total initial sample size IPD",455,,455,FALSE
+10.1080/03007995.2020.1747999,32220214,results,5,,"If anchored, total ESS IPD",237,,237,FALSE
+10.1080/03007995.2020.1747999,32220214,results,5,,"If anchored, total sample size non IPD",618,,618,FALSE
+10.1080/03007995.2020.1747999,32220214,results,6,,"If anchored, total initial sample size IPD",,,455,TRUE
+10.1080/03007995.2020.1747999,32220214,results,6,,"If anchored, total ESS IPD",,,140,TRUE
+10.1080/03007995.2020.1747999,32220214,results,6,,"If anchored, total sample size non IPD",,,718,TRUE
+10.1080/03007995.2020.1747999,32220214,results,7,,"If anchored, total initial sample size IPD",,,563,TRUE
+10.1080/03007995.2020.1747999,32220214,results,7,,"If anchored, total ESS IPD",,,113,TRUE
+10.1080/03007995.2020.1747999,32220214,results,7,,"If anchored, total sample size non IPD",,,436,TRUE
+10.1080/03007995.2022.2030112,35042448,results,1,,geographical region,No,,No,FALSE
+10.1080/09546634.2020.1747592,32299269,results,1,,"If anchored, total initial sample size IPD",,,1952,TRUE
+10.1080/09546634.2020.1747592,32299269,results,1,,"If anchored, total ESS IPD",1565,1717,1717,FALSE
+10.1080/09546634.2020.1747592,32299269,results,1,,"If anchored, total sample size non IPD",927,503,503,FALSE
+10.1080/09546634.2020.1747592,32299269,results,1,,geographical region,No,,No,FALSE
+10.1080/09546634.2020.1747592,32299269,results,2,,"If anchored, total initial sample size IPD",,,1952,TRUE
+10.1080/09546634.2020.1747592,32299269,results,2,,"If anchored, total ESS IPD",,,1565,TRUE
+10.1080/09546634.2020.1747592,32299269,results,2,,"If anchored, total sample size non IPD",,,927,TRUE
+10.1080/09546634.2020.1747592,32299269,results,3,,"If anchored, total initial sample size IPD",,,1952,TRUE
+10.1080/09546634.2020.1747592,32299269,results,3,,"If anchored, total ESS IPD",,,1588,TRUE
+10.1080/09546634.2020.1747592,32299269,results,3,,"If anchored, total sample size non IPD",,,927,TRUE
+10.1080/09546634.2020.1747592,32299269,results,4,,"If anchored, total initial sample size IPD",,,1470,TRUE
+10.1080/09546634.2020.1747592,32299269,results,4,,"If anchored, total ESS IPD",,,1108,TRUE
+10.1080/09546634.2020.1747592,32299269,results,4,,"If anchored, total sample size non IPD",,,463,TRUE
+10.1080/09546634.2020.1747592,32299269,results,5,,"If anchored, total initial sample size IPD",,,1470,TRUE
+10.1080/09546634.2020.1747592,32299269,results,5,,"If anchored, total ESS IPD",,,1163,TRUE
+10.1080/09546634.2020.1747592,32299269,results,5,,"If anchored, total sample size non IPD",,,470,TRUE
+10.1080/09546634.2020.1747592,32299269,results,6,,"If anchored, total initial sample size IPD",,,1952,TRUE
+10.1080/09546634.2020.1747592,32299269,results,6,,"If anchored, total ESS IPD",,,1398,TRUE
+10.1080/09546634.2020.1747592,32299269,results,6,,"If anchored, total sample size non IPD",,,798,TRUE
+10.1080/09546634.2020.1747592,32299269,results,6,,geographical region,No,,No,FALSE
+10.1080/09546634.2020.1747592,32299269,results,7,,"If anchored, total initial sample size IPD",252,256,256,FALSE
+10.1080/09546634.2020.1747592,32299269,results,7,,"If anchored, total ESS IPD",,,116,TRUE
+10.1080/09546634.2020.1747592,32299269,results,7,,"If anchored, total sample size non IPD",,,797,TRUE
+10.1080/09546634.2020.1747592,32299269,results,7,,geographical region,No,,No,FALSE
+10.1080/10428194.2021.1913144,33955326,results,1,,geographical region,No,,No,FALSE
+10.1080/10428194.2021.1913144,33955326,results,2,,geographical region,No,,No,FALSE
+10.1080/10428194.2021.1913144,33955326,results,3,,geographical region,No,,No,FALSE
+10.1080/10428194.2021.1913144,33955326,results,4,,geographical region,No,,No,FALSE
+10.1080/10428194.2021.1913144,33955326,results,5,,geographical region,No,,No,FALSE
+10.1080/10428194.2021.1913144,33955326,results,6,,geographical region,No,,No,FALSE
+10.1080/10428194.2022.2047962,35289710,results,1,,geographical region,No,,No,FALSE
+10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total initial sample size IPD",848,,NA,FALSE
+10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total ESS IPD",586,,NA,FALSE
+10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total sample size non IPD",393,,NA,FALSE
+10.1080/14656566.2020.1811850,32892660,results,1,,geographical region,No,,No,FALSE
+10.1080/14760584.2021.1994858,34672224,results,1,,"If anchored, total initial sample size IPD",2196,,3033,FALSE
+10.1080/14760584.2021.1994858,34672224,results,1,,"If anchored, total ESS IPD",1710,1170,1710,FALSE
+10.1080/14760584.2021.1994858,34672224,results,1,,"If anchored, total sample size non IPD",2997,,2997,FALSE
+10.1097/brs.0000000000002647,29570121,results,1,,geographical region,,,No,TRUE
+10.1097/ju.0000000000001767,33818140,results,2,,geographical region,,,Yes,TRUE
+10.1111/bjd.16140,29171861,results,1,,"If anchored, total sample size non IPD",,,653,TRUE
+10.1111/bjd.16140,29171861,results,1,,geographical region,No,,No,FALSE
+10.1111/bjd.16140,29171861,results,1,,"If anchored, total initial sample size IPD",1956,,1956,FALSE
+10.1111/bjd.16140,29171861,results,1,,"If anchored, total ESS IPD",1666,,1666,FALSE
+10.1111/bjd.16140,29171861,results,2,,geographical region,No,,No,FALSE
+10.1111/bjd.16140,29171861,results,2,,"If anchored, total initial sample size IPD",1956,,1956,FALSE
+10.1111/bjd.16140,29171861,results,2,,"If anchored, total ESS IPD",1666,,1666,FALSE
+10.1111/bjd.16140,29171861,results,2,,"If anchored, total sample size non IPD",653,,653,FALSE
+10.1111/bjd.16140,29171861,results,3,,"If anchored, total sample size non IPD",,,653,TRUE
+10.1111/bjd.16140,29171861,results,3,,geographical region,No,,No,FALSE
+10.1111/bjd.16140,29171861,results,3,,"If anchored, total initial sample size IPD",1465,,1465,FALSE
+10.1111/bjd.16140,29171861,results,3,,"If anchored, total ESS IPD",989,,989,FALSE
+10.1111/bjd.16140,29171861,results,4,,geographical region,No,,No,FALSE
+10.1111/bjd.16140,29171861,results,4,,"If anchored, total initial sample size IPD",1465,,1465,FALSE
+10.1111/bjd.16140,29171861,results,4,,"If anchored, total ESS IPD",989,,989,FALSE
+10.1111/bjd.16140,29171861,results,4,,"If anchored, total sample size non IPD",653,,653,FALSE
+10.1111/bjd.16140,29171861,results,5,,"If anchored, total sample size non IPD",,,676,TRUE
+10.1111/bjd.16140,29171861,results,5,,geographical region,No,,No,FALSE
+10.1111/bjd.16140,29171861,results,5,,"If anchored, total initial sample size IPD",259,,259,FALSE
+10.1111/bjd.16140,29171861,results,5,,"If anchored, total ESS IPD",122,,122,FALSE
+10.1111/bjd.16140,29171861,results,6,,geographical region,No,,No,FALSE
+10.1111/bjd.16140,29171861,results,6,,"If anchored, total initial sample size IPD",259,,259,FALSE
+10.1111/bjd.16140,29171861,results,6,,"If anchored, total ESS IPD",122,,122,FALSE
+10.1111/bjd.16140,29171861,results,6,,"If anchored, total sample size non IPD",676,,676,FALSE
+10.1111/cea.13561,31943429,results,1,,geographical region,No,,No,FALSE
+10.1111/cea.13561,31943429,results,1,,"If anchored, total initial sample size IPD",,,148,TRUE
+10.1111/cea.13561,31943429,results,1,,"If anchored, total ESS IPD",,,72,TRUE
+10.1111/cea.13561,31943429,results,1,,"If anchored, total sample size non IPD",,,135,TRUE
+10.1111/cea.13561,31943429,results,2,,geographical region,No,,No,FALSE
+10.1111/cea.13561,31943429,results,2,,"If anchored, total initial sample size IPD",142,148,148,FALSE
+10.1111/cea.13561,31943429,results,2,,"If anchored, total ESS IPD",,,36,TRUE
+10.1111/cea.13561,31943429,results,2,,"If anchored, total sample size non IPD",,,210,TRUE
+10.1111/dom.14497,34286894,results,1,,geographical region,No,,No,FALSE
+10.1111/dom.14497,34286894,results,2,,geographical region,No,,No,FALSE
+10.1111/j.1743-7563.2011.01400.x,21585706,results,1,,"If anchored, total initial sample size IPD",72,,72,FALSE
+10.1111/j.1743-7563.2011.01400.x,21585706,results,1,,"If anchored, total ESS IPD",46,,46,FALSE
+10.1111/j.1743-7563.2011.01400.x,21585706,results,1,,"If anchored, total sample size non IPD",67,,67,FALSE
+10.1111/jdv.15369,30472749,results,1,,geographical region,No,,No,FALSE
+10.1111/jdv.15369,30472749,results,3,,geographical region,No,,No,FALSE
+10.1136/rmdopen-2019-001131,32371431,results,1,,geographical region,No,,No,FALSE
+10.1136/rmdopen-2019-001131,32371431,results,2,,geographical region,No,,No,FALSE
+10.1136/rmdopen-2019-001131,32371431,results,2,,"If anchored, total initial sample size IPD",369,,369,FALSE
+10.1136/rmdopen-2019-001131,32371431,results,2,,"If anchored, total ESS IPD",331,333.1,331,FALSE
+10.1136/rmdopen-2019-001131,32371431,results,3,,geographical region,No,,No,FALSE
+10.1177/1756286420975916,33488773,results,1,,geographical region,,Yes,Yes,FALSE
+10.1183/13993003.01393-2018,30309978,results,1,,"If anchored, total initial sample size IPD",,,959,TRUE
+10.1183/13993003.01393-2018,30309978,results,1,,"If anchored, total ESS IPD",,,639,TRUE
+10.1183/13993003.01393-2018,30309978,results,1,,geographical region,No,,No,FALSE
+10.1183/13993003.01393-2018,30309978,results,1,,"If anchored, total sample size non IPD",884,,884,FALSE
+10.1185/03007995.2015.1106934,26455472,results,1,,geographical region,No,,No,FALSE
+10.1185/03007995.2015.1106934,26455472,results,2,,geographical region,No,,No,FALSE
+10.1186/2162-3619-2-32,24314093,results,3,,"If anchored, total initial sample size IPD",,394,,FALSE
+10.1186/s12885-018-5157-0,30567533,results,1,,geographical region,No,Yes,Yes,FALSE
+10.1186/s12885-018-5157-0,30567533,results,2,,geographical region,No,Yes,Yes,FALSE
+10.1186/s13045-021-01144-9,34493319,results,1,,geographical region,No,No,,FALSE
+10.1210/clinem/dgab905,34922383,results,1,,geographical region,No,No,,FALSE
+10.1210/clinem/dgab905,34922383,results,2,,geographical region,No,No,,FALSE
+10.2147/cmar.s163478,29861642,results,1,,geographical region,,,Yes,TRUE
+10.2147/jbm.s104074,27445511,results,3,,geographical region,No,,No,FALSE
+10.2147/jbm.s206806,31417326,results,1,,geographical region,Yes,,Yes,FALSE
+10.2147/jbm.s206806,31417326,results,2,,geographical region,Yes,,Yes,FALSE
+10.2147/jbm.s312885,34285621,results,1,,geographical region,No,,No,FALSE
+10.2147/jbm.s312885,34285621,results,2,,geographical region,No,,No,FALSE
+10.2147/jbm.s321288,34754257,results,1,,geographical region,No,,No,FALSE
+10.2147/ptt.s326121,34765537,results,1,,geographical region,No,,No,FALSE
+10.2165/11592490-000000000-00000,21819162,results,1,,geographical region,No,,No,FALSE
+10.2165/11592490-000000000-00000,21819162,results,2,,geographical region,No,,No,FALSE
+10.2165/11592490-000000000-00000,21819162,results,3,,geographical region,No,,No,FALSE
+10.2217/cer-2016-0085,28350241,results,1,,"If anchored, total initial sample size IPD",,,2651,TRUE
+10.2217/cer-2016-0085,28350241,results,1,,"If anchored, total ESS IPD",,,1032,TRUE
+10.2217/cer-2016-0085,28350241,results,1,,"If anchored, total sample size non IPD",,,251,TRUE
+10.2217/cer-2016-0085,28350241,results,2,,"If anchored, total initial sample size IPD",,,2651,TRUE
+10.2217/cer-2016-0085,28350241,results,2,,"If anchored, total ESS IPD",,,1206,TRUE
+10.2217/cer-2016-0085,28350241,results,2,,"If anchored, total sample size non IPD",,,239,TRUE
+10.2217/cer-2016-0085,28350241,results,3,,"If anchored, total initial sample size IPD",,2651,2651,FALSE
+10.2217/cer-2016-0085,28350241,results,3,,"If anchored, total ESS IPD",,364,364,FALSE
+10.2217/cer-2016-0085,28350241,results,3,,"If anchored, total sample size non IPD",,448,448,FALSE
+10.2217/cer-2018-0020,30168349,results,1,,geographical region,No,,No,FALSE
+10.2217/cer-2018-0020,30168349,results,2,,geographical region,No,,No,FALSE
+10.2217/cer-2018-0141,30806520,results,1,,geographical region,No,,No,FALSE
+10.2217/cer-2018-0141,30806520,results,2,,geographical region,No,,No,FALSE
+10.2217/cer-2019-0169,31948278,results,1,,geographical region,No,,No,FALSE
+10.2217/cer-2019-0169,31948278,results,2,,geographical region,No,,No,FALSE
+10.2217/cer-2020-0069,32602756,results,1,,geographical region,,,Yes,TRUE
+10.2217/cer-2020-0272,33626934,results,1,,geographical region,,,Yes,TRUE
+10.2217/cer-2020-0272,33626934,results,1,,"If anchored, total initial sample size IPD",,,280,TRUE
+10.2217/cer-2020-0272,33626934,results,1,,"If anchored, total ESS IPD",,,135,TRUE
+10.2217/cer-2020-0272,33626934,results,1,,"If anchored, total sample size non IPD",,,669,TRUE
+10.2217/cer-2020-0272,33626934,results,2,,geographical region,,,Yes,TRUE
+10.2217/cer-2020-0272,33626934,results,2,,"If anchored, total initial sample size IPD",,,217,TRUE
+10.2217/cer-2020-0272,33626934,results,2,,"If anchored, total ESS IPD",,,64,TRUE
+10.2217/cer-2020-0272,33626934,results,2,,"If anchored, total sample size non IPD",,,726,TRUE
+10.2217/cer-2021-0221,34751591,results,1,,geographical region,,,Yes,TRUE
+10.2217/cer-2021-0221,34751591,results,1,,"If anchored, total initial sample size IPD",,501,270,FALSE
+10.2217/cer-2021-0221,34751591,results,1,,"If anchored, total sample size non IPD",,669,669,FALSE
+10.2217/cer.15.49,26390233,results,1,,geographical region,No,,No,FALSE
+10.2217/cer.15.49,26390233,results,2,,geographical region,No,,No,FALSE
+10.2217/cer.15.69,26793987,results,1,,geographical region,No,,No,FALSE
+10.2217/fon-2021-1102,35232230,results,2,,geographical region,No,,No,FALSE
+10.2217/fon-2021-1102,35232230,results,3,,geographical region,No,,No,FALSE
+10.2217/imt-2018-0208,30852924,results,2,,geographical region,,,Yes,TRUE
+10.2217/imt-2020-0266,33228440,results,3,,geographical region,No,,No,FALSE
+10.2217/imt-2020-0266,33228440,results,4,,geographical region,No,,No,FALSE
+10.2217/imt-2020-0266,33228440,results,5,,geographical region,No,,No,FALSE
+10.2217/imt-2020-0266,33228440,results,6,,geographical region,No,,No,FALSE
+10.2217/imt-2021-0273,35073727,results,1,,geographical region,,,Yes,TRUE
+10.2217/imt-2021-0273,35073727,results,1,,"If anchored, total initial sample size IPD",1428,,1428,FALSE
+10.2217/imt-2021-0273,35073727,results,1,,"If anchored, total ESS IPD",993,,993,FALSE
+10.2217/imt-2021-0273,35073727,results,1,,"If anchored, total sample size non IPD",793,,793,FALSE
+10.3390/cancers12123648,33291810,results,1,,geographical region,,,Yes,TRUE
+10.3390/cancers12123648,33291810,results,1,,"If anchored, total initial sample size IPD",,,816,TRUE
+10.3390/cancers12123648,33291810,results,1,,"If anchored, total ESS IPD",,,456,TRUE
+10.3390/cancers12123648,33291810,results,1,,"If anchored, total sample size non IPD",,,793,TRUE
+10.5152/eurjrheum.2019.19057,31364979,results,1,,geographical region,Yes,,Yes,FALSE
+10.5152/eurjrheum.2019.19057,31364979,results,2,,geographical region,Yes,,Yes,FALSE
+10.5152/eurjrheum.2019.19057,31364979,results,3,,geographical region,Yes,,Yes,FALSE
+10.5152/eurjrheum.2019.19057,31364979,results,4,,geographical region,Yes,,Yes,FALSE

@@ -1,0 +1,45 @@
+﻿doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1080/13696998.2018.1443111;29458286;general_information;;;Medical Condition of Interest Name;metastatic non-small cell lung cancer;anaplastic lymphoma kinase-positive metastatic non-small cell lung cancer;XXXX;FALSE;NA;NA
+10.1080/13696998.2018.1443111;29458286;general_information;;;Countries of first author affiliations;;;usa;TRUE;;
+10.1080/13696998.2018.1443111;29458286;general_information;;;Countries of last author affiliations;;;usa;TRUE;;
+10.1080/13696998.2018.1443111;29458286;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
+10.1080/13696998.2018.1443111;29458286;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.1080/13696998.2018.1443111;29458286;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1080/13696998.2018.1443111;29458286;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1080/13696998.2018.1443111;29458286;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01828099;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01154140;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1080/13696998.2018.1443111;29458286;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Treatment name 1;ceritinib;certinib;ceritinib;FALSE;Associated with an economics analysis;"Cost-effectivness (economic) analysis
+
+For the cost-effictivness analysis, the authors need to evaluate PFS and OS :
+HR for OS = 0.82 [0.54;1.27]"
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Treatment name 2;;;crizotinib;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);progression free survival;progression-free survival;progression-free survival;FALSE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1080/13696998.2018.1443111;29458286;methodology;1;;Anchored comparison?;No;;No;FALSE;;
+10.1080/13696998.2018.1443111;29458286;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1080/13696998.2018.1443111;29458286;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;No;TRUE;;
+10.1080/13696998.2018.1443111;29458286;results;1;;Primary outcome: treatment effect contrast;;HR;HR;FALSE;;
+10.1080/13696998.2018.1443111;29458286;results;1;;Primary outcome: adjusted treatment effect;;;0.64;TRUE;;
+10.1080/13696998.2018.1443111;29458286;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.47;0.87]";TRUE;;
+10.1080/13696998.2018.1443111;29458286;results;1;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;;

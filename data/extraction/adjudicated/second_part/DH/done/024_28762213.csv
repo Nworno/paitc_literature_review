@@ -1,0 +1,90 @@
+﻿doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1007/s40744-017-0070-6;28762213;general_information;;;Medical Condition of Interest Name;active psoriatic arthritis;psoriatic arthritis;XXXX;FALSE;NA;NA
+10.1007/s40744-017-0070-6;28762213;general_information;;;Countries of first author affiliations;;;usa;TRUE;;
+10.1007/s40744-017-0070-6;28762213;general_information;;;Countries of last author affiliations;;;usa;TRUE;;
+10.1007/s40744-017-0070-6;28762213;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
+10.1007/s40744-017-0070-6;28762213;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1007/s40744-017-0070-6;28762213;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00195689;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;usa;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01392326;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;3;Patient-level data used;;;No;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;3;Clinical Trial;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01752634;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;3;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1007/s40744-017-0070-6;28762213;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Treatment name 1;;;adalimumab;TRUE;"Associated with an economic analysis
+3 other studies used MAIC to conduct this comparison, but none where anchored, and the latter two report that secukinumab (NonIPD) has better outcomes and cost effectiveness ==> interesting to look at their justification to conduct unanchored comparisons  1 : Greenberg JD, Nikoglou E, Gunda P, Palmer J, S J. Comparison of secukinumab Vs adalimumab in a cost per responder analysis based on a matching-adjusted indirect comparison of efficacy data for the treatment of psoriatic arthritis at 48 weeks from the US perspective [abstract]. Arthritis Rheumatol. 2016;68 (suppl 10).
+2 : Nash P, editor Secukinumab for the treatment of psoriatic arthritis: comparative effectiveness results versus adalimumab up to 48 weeks using a matching-adjusted indirect comparison.
+3 : Nash P, McInnes IB, Mease PJ, et al. Secukinumab for the treatment of psoriatic arthritis: comparative effectiveness versus adalimumab using a matching-adjusted indirect comparison [abstract]. Arthritis Rheumatol. 2016;68 (suppl 10).";HAQ-DI = Disease severity
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Treatment name 2;;;secukinumab 150 mg;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Study 'number(s)' for treatment 2;;;"2;3";TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Anchored comparison?;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);response rate in relative acr 20;response rates for acr 20 (american college of rheumatology) at week 24;response rates for acr 20 (american college of rheumatology) at week 24;FALSE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Primary outcome: variable type;;;Binary (eg rates);TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Treatment name 1;;;adalimumab;TRUE;NA;"HAQ-DI = Disease severity
+
+Weight = Other"
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Treatment name 2;;;secukinumab 300 mg;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Study 'number(s)' for treatment 2;;;"2;3";TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Anchored comparison?;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);response rate in relative acr 20;response rates for acr 20 (american college of rheumatology) at week 24;response rates for acr 20 (american college of rheumatology) at week 24;FALSE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Primary outcome: variable type;;;Binary (eg rates);TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1007/s40744-017-0070-6;28762213;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;302;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;300;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;134;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;49;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;147;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";;;79;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Number of covariates adjusted for/matched on;;;10;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Primary outcome: treatment effect contrast;Rate difference;Means difference;Rate difference;FALSE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;Primary outcome: adjusted treatment effect;0.095;9.50%;9.50%;FALSE;;
+10.1007/s40744-017-0070-6;28762213;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.176;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Sample size of the population of interest in the non IPD treatment arm;;;100;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;300;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;;134;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;76;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;147;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";;;79;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Number of covariates adjusted for/matched on;;;10;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Primary outcome: treatment effect contrast;Rate difference;Means difference;Rate difference;FALSE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;Primary outcome: adjusted treatment effect;0.053;;5.30%;FALSE;;
+10.1007/s40744-017-0070-6;28762213;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.507;TRUE;;

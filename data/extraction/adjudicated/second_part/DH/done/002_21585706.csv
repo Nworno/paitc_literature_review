@@ -1,0 +1,51 @@
+﻿doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1111/j.1743-7563.2011.01400.x;21585706;general_information;;;Medical Condition of Interest Name;non-small cell lung cancer;non-squamous non-small cell lung cancer;XXXX;FALSE;NA;NA
+10.1111/j.1743-7563.2011.01400.x;21585706;general_information;;;Countries of first author affiliations;;;taiwan;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;general_information;;;Countries of last author affiliations;;;switzerland;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00451906;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;1;Phase of the clinical trial (clinical trial only);;;4;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;1;Number of treatment arms (clinical trial only);;;1;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;2;Data source name (only if observational study or clinical trial without NCT);;;yang et al. (2010);TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;international;XXXX;FALSE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Treatment name 1;bevacizumab + cisplatin;bevacizumab + cisplatin-based chemotherapy;bevacizumab + cisplatin;FALSE;Median difference calculted from the 2 point estimates reported;"Is this a MAIC ? (weights has not been calculated)
+
+Method : A matching algorithm was developed whereby 1000 samples of the pre-matched analysis set of the SAiL data were selected that resulted in equal distributions of the ECOG PS and gender-matching variables selected. A distribution of survival outcomes was derived by calculating the median PFS estimate from each of the 1000 matched sets. The mean of this distribution provided the PFS point estimates, while a 95% CI was defined by the 2.5 and 97.5 percentiles.
+
+HR has not been calculated
+"
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Treatment name 2;;;pemetrexed + cisplatin;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Type of population-adjusted indirect comparisons performed;"Other kind of ""Matching-Adjusted Indirect Comparison""";MAIC;"Other kind of ""Matching-Adjusted Indirect Comparison""";FALSE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Anchored comparison?;Yes;No;No;FALSE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Definition of a single primary outcome for the indirect comparison;Yes;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;Yes;FALSE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;progression-free survival;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);Nothing mentioned, not reported;Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier);Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier);FALSE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;No;No;FALSE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;67;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;72;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;46;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Number of covariates adjusted for/matched on;;;2;TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Sex, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...);TRUE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Primary outcome: treatment effect contrast;Median difference;HR has not been calculated;Median difference;FALSE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;;
+10.1111/j.1743-7563.2011.01400.x;21585706;results;1;;Primary outcome: adjusted treatment effect;1;;1;FALSE;;

@@ -7,12 +7,14 @@ library(purrr)
 library(lubridate)
 
 source("R_snippets.R")
+source("questions_sections.R")
 
 WRITE <- FALSE
 dir_data <- "data"
 
 extraction_df <- read_csv(
-  file.path(dir_data, "/extraction/results_extraction_raw.csv"),
+  file.path(dir_data, "/extraction/results_extraction_raw_sup_cols.csv"),
+  # file.path(dir_data, "/extraction/results_extraction_raw.csv"),  # Before adding 4 extra columns
   name_repair = "minimal"
 )
 
@@ -22,10 +24,10 @@ full_list_articles_to_do <- read_csv(file.path(dir_data, "/articles_selection/in
   arrange(`Create Date`)
 
 ## ----Renaming sections---------------------------------------------------------------
-source("questions_sections.R")
 
 extraction_df$`Original Timestamp` <- NULL
 extraction_df$url <- NULL
+extraction_df$`similar comparison as` <- NULL
 stopifnot(length(list_questions) == ncol(extraction_df))
 
 # Testing that names from the extraction csv results and names from the renaming list are identical
@@ -340,12 +342,6 @@ qcu <- c(
 
 # combining sections ------------------------------------------------------
 
-order_sections <- data.frame(
-  order_sections = c(1, 2, 3, 4),
-  section = c("general_information", "study_information", "methodology", "results")
-)
-
-
 data_manage_answers <- function(long_data) {
   question_names <- unique(long_data$questions)
   long_data <- mutate(long_data, rows_order = 1:nrow(long_data))
@@ -429,7 +425,6 @@ data_manage_answers <- function(long_data) {
 #   filter(questions == "unadjusted_pvalue_CI") %>%
 #   pull(answers) %>%
 #   unique()
-# -----------
 
 assert_names <- function(df, columns_to_review) {
   # Check that the questions to review names are indeed present in the question column
@@ -571,24 +566,6 @@ df_condition <- tibble(condition_name = unique_condition_names,
                        category_1 = c(""),
                        category_2 = c(""))
 
-# mapping ATC -------------------------------------------------------------
-
-treatment_mapping <- read_tsv("data/extraction/treatment_mapping.tsv")
-atc_classification <- read_tsv("data/classification_ATC/CONCEPT.tsv")
-
-treatment_mapped <- treatment_mapping %>%
-  left_join(
-    atc_classification[, c("concept_name", "concept_class_id", "concept_code")],
-    by = c("ATC code" = "concept_code")
-  ) %>%
-  mutate(mutliples = str_detect(`ATC code`, ";"),
-         concept_list = str_split(`ATC code`, ";")) %>%
-  unnest(concept_list)
-
-hierarchy %>% left_join(rename(hierarchy, level_up = ancestor_concept_id, ancestor_concept_id = descendant_concept_id))
-
-filter(treatment_mapped, is.na(concept_name)) %>% View()
-View(treatment_mapped)
 
 # WRITING FILES -----------------------------------------------------------
 
@@ -638,6 +615,12 @@ if (WRITE) {
     ".csv"),
     eol = "\r\n")
 
+
+# Writing treatment names ------------------------------------------------
+  df_ttt %>% write_csv(file.path(dir_data, "mapping/ttt_names.csv"))
+# Writing condition names ------------------------------------------------
+  df_condition %>% write_csv(file.path(dir_data, "condition_names.csv"))
+
   # Export results for third reviewer ----------------------------------------------------------
 
   for (initials in c("JL", "DH")) {
@@ -680,4 +663,14 @@ if (WRITE) {
     #     if (! file.exists(zip_name)) zip(zip_name, paths, flags = '-r9Xj')
     #   })
   }
+# Adjudicating extra questions --------------------------------------------
+long_results_w_notes %>%
+  filter(questions %in% extra_columns) %>%
+  mutate(decision = ifelse(decision == "XXXX", "", decision)) %>%
+  select(-reviewer, -`Notes reviewer 1`, -`Notes reviewer 2`) %>%
+  write_csv("data/extraction/to_review/sup_columns_adjudication.csv")
+
+
 }
+
+

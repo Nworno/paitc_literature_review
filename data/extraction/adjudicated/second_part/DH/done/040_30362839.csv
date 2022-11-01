@@ -1,0 +1,50 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1080/03007995.2018.1541443;30362839;general_information;NA;NA;Medical Condition of Interest Name;previously untreated advanced anaplastic lymphoma kinase (alk)-positive non-small cell lung cancer;advanced or metastatic anaplastic lymphoma kinase-positive non-small cell lung cancer;previously untreated advanced anaplastic lymphoma kinase (alk)-positive non-small cell lung cancer;FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;general_information;NA;NA;Countries of first author affiliations;NA;NA;usa;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;general_information;NA;NA;Countries of last author affiliations;NA;NA;usa;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;general_information;NA;NA;Positions of study investigators (for any authors of the article, any that applies);NA;NA;Pharmaceutical Industry, Private Data Analysis Company;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;general_information;NA;NA;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;NA;NA;Yes;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;general_information;NA;NA;Mentioned sources of funding;NA;NA;Pharmaceutical Industry;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;general_information;NA;NA;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;NA;NA;Yes;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;general_information;NA;NA;Mention of a systematic review to find the studies to compare treatments of interest;NA;NA;No;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;1;Patient-level data used;NA;NA;Yes;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;1;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;1;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01828099;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;1;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;1;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;1;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;2;Patient-level data used;NA;NA;No;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;2;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;2;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01154140;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;2;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;2;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;study_information;NA;2;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Treatment name 1;NA;NA;ceritinib;TRUE;"Conduct an unanchored comparison, although say that the effect of the ""chemotherapy"" arms were similar after adjustment across arms. Include all baseline characteristics without discussing the status of TEM or prognostic factors. Conducted by the inventor of the methodology! 
+Don""t provide the ESS for the treatment arm, although total ESS = 340, and said that there was a 10% reduction in sample size (so should be around 170)";Smoking status = other covariates
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Study 'number(s)' for treatment 1;NA;NA;1;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Treatment name 2;NA;NA;crizotinib;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Study 'number(s)' for treatment 2;NA;NA;2;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Anchored comparison?;NA;NA;No;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Form of the indirect comparison;NA;NA;Simple (ie treatments effects extracted from two studies);TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Definition of a single primary outcome for the indirect comparison;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;Yes;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);progression free survival;progression-free survival;progression-free survival;FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Primary outcome: variable type;NA;NA;Time-to-event;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Inclusion of prognostic factors in the adjustment/matching model;No discussion (in the main text) of the status of prognostic factors of the variables;Yes;Yes;FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;methodology;1;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Sample size of the population of interest in the non IPD treatment arm;172;343;172;FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Initial sample size of the population of interest in the IPD treatment arm;189;376;189;FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";NA;340;NA;FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Reporting of a weights' distribution evaluation (MAIC);Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Number of covariates adjusted for/matched on;NA;NA;8;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Comorbidities and medical history (beside pathology/disease of interest in the comparison);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Other(s);Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Comorbidities and medical history (beside pathology/disease of interest in the comparison);FALSE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Primary outcome: treatment effect contrast;NA;NA;HR;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Primary outcome: unadjusted treatment effect;NA;NA;0.68;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);NA;NA;0.01;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;Primary outcome: adjusted treatment effect;NA;NA;0.64;TRUE;NA;NA
+10.1080/03007995.2018.1541443;30362839;results;1;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";NA;NA;0.004;TRUE;NA;NA

@@ -1,0 +1,78 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1007/s12325-019-0873-7;30758745;general_information;NA;NA;Medical Condition of Interest Name;relapsed or refractory acute lymphoblastic leukemia;relapsed/refractory acute lymphoblastic leukemia;relapsed or refractory acute lymphoblastic leukemia;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;general_information;NA;NA;Countries of first author affiliations;NA;NA;usa;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;general_information;NA;NA;Countries of last author affiliations;NA;NA;uk;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;general_information;NA;NA;Positions of study investigators (for any authors of the article, any that applies);NA;NA;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;general_information;NA;NA;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;general_information;NA;NA;Mentioned sources of funding;NA;NA;Pharmaceutical Industry;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;general_information;NA;NA;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;general_information;NA;NA;Mention of a systematic review to find the studies to compare treatments of interest;NA;NA;No;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;1;Patient-level data used;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;1;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;1;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT02013167;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;1;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;1;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;1;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;2;Patient-level data used;NA;NA;No;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;2;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;2;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01564784;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;2;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;2;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;study_information;NA;2;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Treatment name 1;NA;NA;blinatumomab;TRUE;opposite MAIC carried out by 10.1007/s12325-019-00991-w, with different conclusions;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Study 'number(s)' for treatment 1;NA;NA;1;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Treatment name 2;NA;NA;inotuzumab ozogamicin;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Study 'number(s)' for treatment 2;NA;NA;2;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Anchored comparison?;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Form of the indirect comparison;NA;NA;Simple (ie treatments effects extracted from two studies);TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);restricted mean survival time at 12 months;overall survival;overall survival;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Primary outcome: variable type;NA;NA;Time-to-event;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);Yes;No;NA;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Treatment name 1;NA;NA;blinatumomab;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Study 'number(s)' for treatment 1;NA;NA;1;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Treatment name 2;NA;NA;inotuzumab ozogamicin;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Study 'number(s)' for treatment 2;NA;NA;2;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Anchored comparison?;NA;NA;No;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Form of the indirect comparison;NA;NA;Simple (ie treatments effects extracted from two studies);TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);restricted mean survival time at 12 months;overall survival;overall survival;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Primary outcome: variable type;NA;NA;Time-to-event;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);Yes;No;No;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Sample size of the population of interest in the non IPD treatment arm;NA;NA;164;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;NA;NA;162;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;203;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;NA;107;107;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Number of covariates adjusted for/matched on;NA;NA;9;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Primary outcome: treatment effect contrast;Means difference;RMST difference at 12 months;RMST difference at 12 months;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Primary outcome: unadjusted treatment effect;NA;NA;1.02;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);NA;NA;0.16;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Primary outcome: adjusted treatment effect;NA;NA;1.62;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";NA;NA;0.04;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";107;NA;107;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Sample size of the population of interest in the non IPD treatment arm;NA;NA;164;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;203;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Number of covariates adjusted for/matched on;NA;NA;9;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Primary outcome: treatment effect contrast;Means difference;RMST difference at 12 months;RMST difference at 12 months;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Primary outcome: unadjusted treatment effect;NA;NA;-0.18;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);NA;NA;0.69;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Primary outcome: adjusted treatment effect;NA;NA;0.15;TRUE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";NA;NA;0.76;TRUE;NA;NA

@@ -33,7 +33,7 @@ Spartant (1207) = Apalutamide (605) + Placebo (401)"
 10.1093/jnci/djab071;33830214;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;BZ;;
 10.1093/jnci/djab071;33830214;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;BZ;;
 10.1093/jnci/djab071;33830214;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;BZ;;
-10.1093/jnci/djab071;33830214;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);No;Yes;;FALSE;BZ;;
+10.1093/jnci/djab071;33830214;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);No;Yes;No;FALSE;BZ;;
 10.1093/jnci/djab071;33830214;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
 10.1093/jnci/djab071;33830214;results;1;;Sample size of the population of interest in the non IPD treatment arm;806;1207;1207;FALSE;BZ;;
 10.1093/jnci/djab071;33830214;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;131;TRUE;BZ;;

@@ -1,0 +1,49 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.3390/biom11060780;34067288;general_information;;;Medical Condition of Interest Name;;;metastatic pancreatic cancer;TRUE;NA;NA
+10.3390/biom11060780;34067288;general_information;;;Countries of first author affiliations;italy;itally;XXXX;FALSE;;
+10.3390/biom11060780;34067288;general_information;;;Countries of last author affiliations;;;italy;TRUE;;
+10.3390/biom11060780;34067288;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic;TRUE;;
+10.3390/biom11060780;34067288;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Not mentioned;TRUE;;
+10.3390/biom11060780;34067288;general_information;;;Mentioned sources of funding;None mentioned;This research received no external funding.;XXXX;FALSE;;
+10.3390/biom11060780;34067288;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;None;TRUE;;
+10.3390/biom11060780;34067288;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;No;TRUE;;
+10.3390/biom11060780;34067288;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.3390/biom11060780;34067288;study_information;;1;Clinical Trial;;;No;TRUE;;
+10.3390/biom11060780;34067288;study_information;;1;Data source name (only if observational study or clinical trial without NCT);;;local retrospective cohort from ehr;TRUE;;
+10.3390/biom11060780;34067288;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;italy;TRUE;;
+10.3390/biom11060780;34067288;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.3390/biom11060780;34067288;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.3390/biom11060780;34067288;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);NCT01804790;NCT00112658;NCT00112658;FALSE;;
+10.3390/biom11060780;34067288;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;france;TRUE;;
+10.3390/biom11060780;34067288;study_information;;2;Phase of the clinical trial (clinical trial only);3;2, 3;XXXX;FALSE;;
+10.3390/biom11060780;34067288;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Treatment name 1;folfirinox;gemcitabine + nab-paclitaxel;gemcitabine + nab-paclitaxel;FALSE;"Similar efficacy but different safety profiles
+Mention of the target population 
+Almost no description of the PRODIGE clinical trial
+Almost no discussion of the assumptions of MAIC, especially of the unanchored ones. Complete overlook of the covariate inclusion criteria. 
+We can guess that the variables presented in the table 1 are the ones that have been matched on,  but not completely obvious, and one of the modality of the metastatic sites is not balanced between populations (despite the fact that the d value is very low)
+Poor quality article, submitted and accepted within 30 days";NA
+10.3390/biom11060780;34067288;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Treatment name 2;gemcitabine + nab-paclitaxel;folfirinox;folfirinox;FALSE;;
+10.3390/biom11060780;34067288;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Anchored comparison?;;;No;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);overall survival;overall survival (os);overall survival (os);FALSE;;
+10.3390/biom11060780;34067288;methodology;1;;Primary outcome: variable type;;;Time-to-event;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);"Nothing mentioned, not reported
+";Nothing mentioned, not reported;Nothing mentioned, not reported;FALSE;;
+10.3390/biom11060780;34067288;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.3390/biom11060780;34067288;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.3390/biom11060780;34067288;results;1;;Sample size of the population of interest in the non IPD treatment arm;268;171;171;FALSE;;
+10.3390/biom11060780;34067288;results;1;;Initial sample size of the population of interest in the IPD treatment arm;171;268;268;FALSE;;
+10.3390/biom11060780;34067288;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.3390/biom11060780;34067288;results;1;;Reporting of the list of the covariates adjusted for/matched on;Yes;No;Yes;FALSE;;
+10.3390/biom11060780;34067288;results;1;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest, Comorbidities and medical history (beside pathology/disease of interest in the comparison);;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest, Comorbidities and medical history (beside pathology/disease of interest in the comparison);FALSE;;
+10.3390/biom11060780;34067288;results;1;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
+10.3390/biom11060780;34067288;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Denominator if ratio, or rightside if difference;TRUE;;
+10.3390/biom11060780;34067288;results;1;;Primary outcome: adjusted treatment effect;;;1.1;TRUE;;
+10.3390/biom11060780;34067288;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.527;TRUE;;

@@ -1,7 +1,12 @@
+order_sections <- data.frame(
+  order_sections = c(1, 2, 3, 4),
+  section = c("general_information", "study_information", "methodology", "results")
+)
+
 questions_sections <- list(
   "id_response" = c(
     "Timestamp" = "Timestamp",
-    "DOI of the article" = "DOI of the article",
+    "doi" = "doi",
     "Initials of the reviewer filling the form" = "Initials of the reviewer filling the form",
     "itc_number" = "itc_number"
   ),
@@ -50,9 +55,13 @@ questions_sections <- list(
     "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC" = "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",
     "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm" = "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",
     "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm" = "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm",
+    "If anchored, total initial sample size IPD" = "If anchored, total initial sample size IPD",
+    "If anchored, total ESS IPD" = "If anchored, total ESS IPD",
+    "If anchored, total sample size non IPD" = "If anchored, total sample size non IPD",
     "Reporting of a weights' distribution evaluation (MAIC)" = "Reporting of a weights' distribution evaluation (MAIC)",
     "Reporting of the list of the covariates adjusted for/matched on" = "Reporting of the list of the covariates adjusted for/matched on",
     "Number of covariates adjusted for/matched on" = "Number of covariates adjusted for/matched on",
+    "geographical region" = "geographical region",
     "Covariates adjusted for/matched on in the indirect comparison" = "Covariates adjusted for/matched on in the indirect comparison",
     "Primary outcome: treatment effect contrast" = "Primary outcome: treatment effect contrast",
     "Direction of the treatment effect contrast: IPD treatment is:" = "Direction of the treatment effect contrast: IPD treatment is:",
@@ -69,7 +78,7 @@ list_questions <- c(
   "Edit URL" = "url",
   "Timestamp" = "timestamp",
   "itc_number" = "n_itc",
-  "DOI of the article" = "doi",
+  "doi" = "doi",
   "Initials of the reviewer filling the form" = "reviewer",
   "Medical Condition of Interest Name" = "Medical Condition of Interest Name",
   "Countries of first author affiliations" = "Countries of first author affiliations",
@@ -155,7 +164,11 @@ list_questions <- c(
   "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])" = "unadjusted_pvalue_CI",
   "Primary outcome: adjusted treatment effect" = "adjusted_ttt_effect",
   "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])" = "adjusted_pvalue_CI",
-  "Notes" = "Notes"
+  "Notes" = "Notes",
+  "geographical region" = "geographical region",
+  "If anchored, total initial sample size IPD" = "If anchored, total initial sample size IPD",
+  "If anchored, total ESS IPD" = "If anchored, total ESS IPD",
+  "If anchored, total sample size non IPD" = "If anchored, total sample size non IPD"
 )
 
 
@@ -195,4 +208,12 @@ columns_to_review <- c(
   "unadjusted_pvalue_CI",
   "adjusted_ttt_effect",
   "adjusted_pvalue_CI"
+)
+
+extra_columns <- c(
+  "geographical region" = "geographical region",
+  "If anchored, total initial sample size IPD" = "If anchored, total initial sample size IPD",
+  "If anchored, total ESS IPD" = "If anchored, total ESS IPD",
+  "If anchored, total sample size non IPD" = "If anchored, total sample size non IPD"
+
 )

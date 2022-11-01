@@ -1,0 +1,84 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1007/s12325-020-01378-y;32424805;general_information;;;Medical Condition of Interest Name;;;advanced hepatocellular carcinoma;TRUE;NA;NA
+10.1007/s12325-020-01378-y;32424805;general_information;;;Countries of first author affiliations;;;usa;TRUE;;
+10.1007/s12325-020-01378-y;32424805;general_information;;;Countries of last author affiliations;;;usa;TRUE;;
+10.1007/s12325-020-01378-y;32424805;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
+10.1007/s12325-020-01378-y;32424805;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.1007/s12325-020-01378-y;32424805;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.1007/s12325-020-01378-y;32424805;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.1007/s12325-020-01378-y;32424805;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;Yes;No;No;FALSE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01908426;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;2;Patient-level data used;;;No;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01774344;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.1007/s12325-020-01378-y;32424805;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Treatment name 1;;;cabozantinib;TRUE;say can't do an anchored analysis because proportional risk hypothesis not respected;"Efficacity analysis /
+Pas de calcul du HR.
+OS median Cabozatinib (months) :
+- Population initiale : 10.46 (IC95 = 9.46;11.58)
+- MAIC : 11.40 (IC95 = 10.01;12.96)
+OS median Regorafenib = 10.6 (ICç( = 9.1;12.1]
+Median difference = 0.8 months"
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Treatment name 2;;;regorafenib;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Anchored comparison?;;;No;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;overall survival;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Primary outcome: variable type;Continuous (count, mean, ...);Time-to-event;Time-to-event;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier), A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Treatment name 1;;cabozantinib;;FALSE;NA;2nd MAIC is anchored.
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Study 'number(s)' for treatment 1;;1;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Treatment name 2;;regorafenib;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Study 'number(s)' for treatment 2;;2;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Type of population-adjusted indirect comparisons performed;;MAIC;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Anchored comparison?;;Yes;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Form of the indirect comparison;;Simple (ie treatments effects extracted from two studies);;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Definition of a single primary outcome for the indirect comparison;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;frequency of grade 3 or 4 teaes (treatment-emergent adverse events) : fatigue;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Primary outcome: variable type;;Binary (eg rates);;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier), A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;No;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;Yes;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;No;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;No;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;379;TRUE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Initial sample size of the population of interest in the IPD treatment arm;326;470;326;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;187;TRUE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Number of covariates adjusted for/matched on;11;10;11;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest, Other(s);TRUE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Primary outcome: treatment effect contrast;Median difference;Pas de calcul du HR, seulement test du log-rank;Median difference;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;Primary outcome: adjusted treatment effect;0.8;;0.8;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.3474;TRUE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Sample size of the population of interest in the non IPD treatment arm;;379;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;194;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;470;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;187;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;237;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";;81;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Reporting of a weights' distribution evaluation (MAIC);;Not mentioned;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Reporting of the list of the covariates adjusted for/matched on;;Yes;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Number of covariates adjusted for/matched on;;10;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Covariates adjusted for/matched on in the indirect comparison;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest, Other(s);;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Primary outcome: treatment effect contrast;;Log-OR;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;Numerator if ratio, or left side if difference;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Primary outcome: unadjusted treatment effect;;0.07;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;0.9404;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;Primary outcome: adjusted treatment effect;;0.09;;FALSE;;
+10.1007/s12325-020-01378-y;32424805;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;0.9313;;FALSE;;

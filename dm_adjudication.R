@@ -7,6 +7,7 @@ library(purrr)
 library(lubridate)
 
 source("R_snippets.R")
+source("questions_sections.R")
 
 WRITE <- FALSE
 dir_data <- "data"
@@ -14,29 +15,209 @@ dir_data <- "data"
 
 # DM adjudication first part ----------------------------------------------
 
-first_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/first_part_ASL.csv"),
+first_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/first_part/ASL.csv"),
                            col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                            col_types = c("cccccc"))
-first_part_BZ <- read_csv(file.path(dir_data, "extraction/adjudicated/first_part_BZ.csv"),
+first_part_BZ <- read_csv(file.path(dir_data, "extraction/adjudicated/first_part/BZ.csv"),
                           col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                           col_types = c("cccccc"))
 first_part <- bind_rows(first_part_ASL, first_part_BZ)
 
 
-# DM adjudication: second_part
+#  DM adjudication: second_part -------------------------------------------
 
-## Belkacem results
-files_BZ <- list.files(file.path(dir_data, "extraction/adjudicated/second_part_BZ"), full.names = TRUE)
+## Loading Belkacem adjudication -----------------------------------------------------
+
+files_BZ <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/BZ"), full.names = TRUE)
 second_part_BZ <- do.call(bind_rows, lapply(X = files_BZ,
                                           FUN = read_csv2,
                                           col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                                           col_types = c("cccccc")))
-## Arnaud's results
-second_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part_ASL.csv"),
+
+
+
+## Loading Arnaud adjudication -------------------------------------------
+
+second_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/ASL.csv"),
                             col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                             col_types = c("cccccc"))
 
-TEMPORARY <- TRUE
+
+# Loading David adjudication ----------------------------------------------
+files_DH <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/DH"),
+                       full.names = TRUE,
+                       recursive = TRUE,
+                       pattern = ".csv")
+
+second_part_DH <- lapply(X = files_DH,
+                         FUN = read_csv2,
+                         col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
+                         col_types = c("cccccc"))
+
+# PLACEHOLDER: Loading Jerome adjudication ----------------------------------------------
+# files_JL <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/JL"),
+#                        full.names = TRUE,
+#                        recursive = TRUE,
+#                        pattern = ".csv")
+#
+# second_part_JL <- lapply(X = files_JL,
+#                          FUN = read_csv2,
+#                          col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
+#                          col_types = c("cccccc"))
+
+second_part <- bind_rows(second_part_ASL, second_part_BZ, second_part_DH
+                         # , second_part_JL
+                         )
+# Bring together respective questions for first and second part -----------
+
+second_part_subset <- anti_join(second_part, first_part, by = c("doi", "ITC num", "Ind studies num", "questions", "decision"))
+
+# DM steps:
+# - Retrieve supplementary adjudicated columns (total sample size, included covariates)
+# - Check for answers with xxxx
+# - Check for comparisons with xx
+
+sup_columns <- read_csv(file.path(dir_data,
+                                  "extraction/adjudicated/second_part/sup_columns_adjudicated.csv"),
+                        col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
+                        col_types = c("cccccc"))
+
+long_results_final <- bind_rows(first_part, second_part_subset, sup_columns) %>%
+  rename(answer = "decision",
+         n_itc = "ITC num",
+         study_number = "Ind studies num") %>%
+  left_join(order_sections) %>%
+  arrange(doi, order_sections, n_itc, study_number) %>%
+  select(-order_sections)
+
+## TEMP, en attendant adjudication JL
+long_results_dm <- semi_join(long_results_dm, second_part_subset, by = "doi")
+
+
+# Treatments and ATC ------------------------------------------------------
+ttt_df <- read_tsv("data/mapping/treatment_mapping.tsv") %>%
+  select(ttt_name, `ATC code`, others, `CAR-T cells`) %>%
+  distinct()
+
+## Handling multiple ATC code per lines ----------------------------------
+handling_multiple_codes <- ttt_df[, "ATC code"] %>%
+  mutate("ATC code parsed" = str_split(`ATC code`, ";")) %>%
+  unnest_longer(`ATC code parsed`) %>%
+  distinct()
+ttt_df <- ttt_df %>% left_join(handling_multiple_codes, by = "ATC code") %>%
+  select(-`ATC code`) %>%
+  rename(`ATC code` = `ATC code parsed`)
+
+atc_ancestors <- read_tsv("data/mapping/classification_ATC/CONCEPT_ANCESTOR.csv")
+atc_classification <- read_tsv("data/mapping/classification_ATC/CONCEPT.csv") %>%
+  select(all_of(c("concept_id", "concept_code", "concept_class_id", "concept_name")))
+ttt_mapping <- ttt_df %>%
+  select(`ATC code`) %>%
+  drop_na(`ATC code`) %>%
+  distinct() %>%
+  left_join(atc_classification,
+                     by = c("ATC code" = "concept_code")) %>%
+  left_join(atc_ancestors[c("ancestor_concept_id", "descendant_concept_id")],
+            by = c("concept_id" = "descendant_concept_id")) %>%
+  left_join(atc_classification,
+            by = c("ancestor_concept_id" = "concept_id"),
+            suffix = c("", "_ancestor")) %>%
+  # Last ancestor level seems useless, but allows to keep the codes without ancestor
+  # filter(concept_class_id_ancestor != "ATC 5th") %>%
+  rename(concept_code_ancestor = concept_code) %>%
+  select(-ancestor_concept_id, concept_name_ancestor) %>%
+  distinct() %>%
+  pivot_wider(names_from = "concept_class_id_ancestor",
+              values_from = c("concept_code_ancestor", "concept_name_ancestor")
+  ) %>%
+  select(!ends_with(c("5th", "NA"))) %>%
+  select(-concept_id)
+
+L01EX <- ttt_mapping %>%
+  filter(str_starts(`ATC code`, "L01EX")) %>%
+  mutate(concept_name = ifelse(`ATC code` == "L01EX25", "umbralisib: oral", `ATC code`)) %>%
+  fill(everything(), .direction = "down")
+
+N06AX29 <- ttt_mapping %>%
+  filter(str_starts(`ATC code`, "N06AX29")) %>%
+  mutate(
+    `concept_code_ancestor_ATC 1st` = "N",
+    `concept_code_ancestor_ATC 2nd` = "N06",
+    `concept_code_ancestor_ATC 3rd` = "N06A",
+    `concept_code_ancestor_ATC 4th` = "N06AX",
+    `concept_name_ancestor_ATC 1st` = "NERVOUS SYSTEM",
+    `concept_name_ancestor_ATC 2nd` = "PSYCHOANALEPTICS",
+    `concept_name_ancestor_ATC 3nd` = "ANTIDEPRESSANTS",
+    `concept_name_ancestor_ATC 4nd` = "OTHER ANTIDEPRESSANTS"
+  )
+
+car_t_cells <- ttt_mapping %>%
+  semi_join(filter(ttt_df, `CAR-T cells` == TRUE)) %>%
+  filter(is.na(concept_class_id)) %>%
+  mutate(
+    `concept_code_ancestor_ATC 1st` = "L",
+    `concept_code_ancestor_ATC 2nd` = "L01",
+    `concept_code_ancestor_ATC 3rd` = "L01X",
+    `concept_code_ancestor_ATC 4th` = "L01XL",
+    `concept_name_ancestor_ATC 1st` = "ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS",
+    `concept_name_ancestor_ATC 2nd` = "ANTINEOPLASTIC AGENTS",
+    `concept_name_ancestor_ATC 3nd` = "OTHER ANTINEOPLASTIC AGENTS",
+    `concept_name_ancestor_ATC 4nd` = "ANTINEOPLASTIC CELL AND GENE THERAPY"
+  )
+
+curated <- bind_rows(L01EX, N06AX29, car_t_cells)
+atc_mapping_final <- ttt_mapping %>%
+  anti_join(curated, by = "ATC code") %>%
+  bind_rows(curated)
+ttt_df_mapped <- ttt_df %>% left_join(atc_mapping_final, by = "ATC code")
+
+# Checking that all ttt names found in extraction have either ATC ancestors mapped or something written in 'others' column
+stopifnot(!is.na(ttt_df_mapped$others) || !is.na(ttt_df_mapped$`concept_code_ancestor_ATC 4th`))
+ttt_df_mapped %>% write_tsv(file.path(dir_data, "mapping/ttt_atc_mapped.tsv"))
+
+# Function identical to the one used in dm_extraction to simplify ttt names from extraction
+str_transformation <- function(x) {
+  x %>%
+    str_to_lower() %>%
+    stringi::stri_trans_general(id = "Latin-ASCII") %>%
+    str_squish() %>%
+    replace_in_vec(named_list = list_replacing_ttt_manual) %>%
+    str_split("(\\+)|(\\s-\\s)|(\\set\\s)")
+}
+
+wide_ttt_parsed <- second_part_subset %>%
+  filter(questions %in% c("Treatment name 1", "Treatment name 2")) %>%
+  distinct(decision) %>%
+  rename(ttt_name = decision) %>%
+  mutate(ttt_parsed = str_transformation(ttt_name)) %>%
+  unnest_wider(ttt_parsed) %>%
+  rename("first" = "...1", "second" = "...2", "third" = "...3") %>%
+  mutate(across(.cols = all_of(c("first", "second", "third")),
+                .fns = str_squish)
+  ) %>%
+  distinct()
+
+long_ttt_parsed <- wide_ttt_parsed %>%
+  pivot_longer(cols = c("first", "second", "third"),
+               names_to = "instance",
+               values_to = "ttt_parsed") %>%
+  filter(!is.na(ttt_parsed))
+
+ttt_mapped <- long_ttt_parsed %>% left_join(ttt_mapping)
+table(test$concept_class_id)
+
+#   View()
+#
+# second_part_subset %>%
+#   filter(questions %in% c("Treatment name 1", "Treatment name 2"))
+
+
+
+# ARCHIVE -----------------------------------------------------------------
+
+## create temp results file ------------------------------------------------
+
+TEMPORARY <- FALSE
 if (TEMPORARY) {
   second_part_ASL_BZ <- bind_rows(second_part_ASL, second_part_BZ)
   temp_results_second_part <- read_csv2("data/extraction/comparison_answers2022-09-21.csv") %>%
@@ -48,7 +229,7 @@ if (TEMPORARY) {
     anti_join(first_part, by = c("doi", "section", "Ind studies num", "questions"))
   second_part <- bind_rows(second_part_ASL_BZ, temp_results_second_part)
 } else {
-## Jerome's results
+  ## Jerome's results
   files_JL <- list.files(file.path(dir_data, "extraction/adjudicated/second_part_JL"), full.names = TRUE)
   second_part_JL <- do.call(bind_rows, lapply(X = files_JL,
                                               FUN = read_csv2,
@@ -64,17 +245,7 @@ if (TEMPORARY) {
   second_part <- bind_rows(second_part_ASL, second_part_BZ, second_part_DH, second_part_JL)
 }
 
-second_part_subset <- anti_join(second_part, first_part, by = c("doi", "ITC num", "Ind studies num", "questions", "decision"))
 
-results_dm <- bind_rows(first_part, second_part) %>%
-  arrange(doi, section, `Ind studies num`, `ITC num`) %>%
-  write_tsv("data/extraction/results_dm.tsv")
-
-# Merge sections ----------------------------------------------------------
-
-
-
-# create temp results file ------------------------------------------------
 
 if (2 + 2 == 5) {
   long_results_w_notes %>%
@@ -85,14 +256,13 @@ if (2 + 2 == 5) {
            `Ind studies num` = "study_number") %>%
     select(doi, PMID, section, n_itc, study_number, questions, answer) %>%
     write_excel_csv("data/extraction/extraction_results.csv")
+  write_excel_csv2(df_ttt, "data/extraction/ttt_names.csv")
+  write_excel_csv2(df_condition, "data/extraction/condition_names.csv")
 }
-write_excel_csv2(df_ttt, "data/extraction/ttt_names.csv")
-write_excel_csv2(df_condition, "data/extraction/condition_names.csv")
 
 
 
-
-# Integrating reviews BZ and ASL into results -------------------------------
+## Integrating reviews BZ and ASL into results -------------------------------
 
 review_ASL <- read_csv("data/extraction/to_review/to_review_ASL_done.csv",
                        col_types = list(identical = "l",
@@ -108,8 +278,7 @@ results_objective_adj <- bind_rows(review_ASL, review_BZ) %>%
   select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, decision)
 
 
-
-# Integrating reviews DH and JL into results --------------------------------
+## Integrating reviews DH and JL into results --------------------------------
 if (FALSE) {
   review_DH <- read_csv("data/extraction/to_review/to_review_DH_done.csv",
                         col_types = list(identical = "l",
@@ -131,12 +300,9 @@ if (FALSE) {
            decision = ifelse(decision == "", ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), decision)) %>%
     select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, decision)
 }
-long_results_final <- bind_rows(results_objective_adj, results_adjudication) %>%
-  rename(answer = "decision",
-         n_itc = "ITC num",
-         study_number = "Ind studies num") %>%
-  left_join(order_sections) %>%
-  arrange(doi, order_sections, n_itc, study_number) %>%
-  select(-order_sections)
 
+
+results_dm <- bind_rows(first_part, second_part_subset) %>%
+  arrange(doi, section, `Ind studies num`, `ITC num`) %>%
+  write_tsv("data/extraction/results_dm.tsv")
 

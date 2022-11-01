@@ -1,0 +1,161 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.5152/eurjrheum.2019.19057;31364979;general_information;;;Medical Condition of Interest Name;;;psoriatic arthritis;TRUE;NA;NA
+10.5152/eurjrheum.2019.19057;31364979;general_information;;;Countries of first author affiliations;;;usa;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;general_information;;;Countries of last author affiliations;;;uk;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;1;Patient-level data used;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;1;Clinical Trial;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01752634;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;2;Patient-level data used;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;2;Clinical Trial;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01989468;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;3;Patient-level data used;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;3;Clinical Trial;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02404350;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;3;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;4;Patient-level data used;;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;4;Clinical Trial;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00317499;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;4;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;4;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);unknown;;XXXX;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Treatment name 1;;;secukinumab 150 mg;TRUE;Attempt to evaluate the remaining bias as per NICE recommendations;"Secukinumab 150 mg
+Placebo-adjusted analysis at week 12
+
+weight = Other covariate"
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Treatment name 2;;;etanercept;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Study 'number(s)' for treatment 2;;;4;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Anchored comparison?;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;acr 20 (american college of rheumatology ) response rates at week 12;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Primary outcome: variable type;;;Binary (eg rates);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;No;Yes;Yes;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Treatment name 1;;;secukinumab 150 mg;TRUE;NA;"Secukinumab 150 mg
+Non Placebo-adjusted analysis at week 24
+
+weight = Other covariate"
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Study 'number(s)' for treatment 1;1.2.3;"1;2;3";"1;2;3";FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Treatment name 2;;;etanercept;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Study 'number(s)' for treatment 2;;;4;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Anchored comparison?;;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;acr 20 (american college of rheumatology ) response rates at week 24;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Primary outcome: variable type;;;Binary (eg rates);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;No;Yes;Yes;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Treatment name 1;secukinumab 300mg;secukinumab 300 mg;secukinumab 300mg;FALSE;NA;"Secukinumab 300 mg
+Placebo-adjusted analysis at week 12
+
+weight = Other covariate"
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Treatment name 2;;;etanercept;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Study 'number(s)' for treatment 2;;;4;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Anchored comparison?;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;acr 20 (american college of rheumatology ) response rates at week 12;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Primary outcome: variable type;;;Binary (eg rates);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Inclusion of prognostic factors in the adjustment/matching model;No;Yes;Yes;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;3;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Treatment name 1;secukinumab 300mg;secukinumab 300 mg;secukinumab 300mg;FALSE;NA;"Secukinumab 300 mg
+Non Placebo-adjusted analysis at week 24
+
+weight = Other covariate"
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Treatment name 2;;;etanercept;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Study 'number(s)' for treatment 2;;;4;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Anchored comparison?;;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;acr 20 (american college of rheumatology ) response rates at week 24;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Primary outcome: variable type;;;Binary (eg rates);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Inclusion of prognostic factors in the adjustment/matching model;No;Yes;Yes;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;methodology;4;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;101;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;104;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;458;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;104;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;567;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";;;159;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Number of covariates adjusted for/matched on;;;11;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Primary outcome: treatment effect contrast;;;OR;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;Primary outcome: adjusted treatment effect;;;0.57;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.186;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Sample size of the population of interest in the non IPD treatment arm;;;101;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;;458;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;104;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Number of covariates adjusted for/matched on;;;11;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Primary outcome: treatment effect contrast;;;OR;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;Primary outcome: adjusted treatment effect;;;1.47;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.173;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;104;;Non anchored comparison;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;567;;Non anchored comparison;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;results;2;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";159;;Non anchored comparison;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Sample size of the population of interest in the non IPD treatment arm;;;101;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;104;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Initial sample size of the population of interest in the IPD treatment arm;;;461;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;75;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;567;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";;;159;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Number of covariates adjusted for/matched on;;;11;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Primary outcome: treatment effect contrast;;;OR;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;Primary outcome: adjusted treatment effect;;;0.86;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.722;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Sample size of the population of interest in the non IPD treatment arm;;;101;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Initial sample size of the population of interest in the IPD treatment arm;;;461;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;75;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Number of covariates adjusted for/matched on;;;11;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Primary outcome: treatment effect contrast;;;OR;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;Primary outcome: adjusted treatment effect;;;3.28;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;<0.001;TRUE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;104;;Non anchored comparison;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;567;;Non anchored comparison;FALSE;;
+10.5152/eurjrheum.2019.19057;31364979;results;4;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";159;;Non anchored comparison;FALSE;;

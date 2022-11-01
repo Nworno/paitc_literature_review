@@ -1,0 +1,237 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1111/bjd.16140;29171861;general_information;NA;NA;Medical Condition of Interest Name;NA;NA;moderate-to-severe plaque psoriasis;TRUE;NA;NA
+10.1111/bjd.16140;29171861;general_information;NA;NA;Countries of first author affiliations;NA;NA;uk;TRUE;NA;NA
+10.1111/bjd.16140;29171861;general_information;NA;NA;Countries of last author affiliations;NA;NA;germany;TRUE;NA;NA
+10.1111/bjd.16140;29171861;general_information;NA;NA;Positions of study investigators (for any authors of the article, any that applies);NA;NA;Academic, Pharmaceutical Industry;TRUE;NA;NA
+10.1111/bjd.16140;29171861;general_information;NA;NA;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;Yes;Not mentioned;Not mentioned;FALSE;NA;NA
+10.1111/bjd.16140;29171861;general_information;NA;NA;Mentioned sources of funding;NA;NA;Pharmaceutical Industry;TRUE;NA;NA
+10.1111/bjd.16140;29171861;general_information;NA;NA;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;general_information;NA;NA;Mention of a systematic review to find the studies to compare treatments of interest;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Patient-level data used;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01474512;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;2;Patient-level data used;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;2;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;2;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01597245;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;2;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;2;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;2;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;3;Patient-level data used;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;3;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;3;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01646177;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;3;Country where the clinical trial/observational study was conducted (international if more than one);NA;international;international;FALSE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;3;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;3;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;4;Patient-level data used;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;4;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;4;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT02561806;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;4;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;4;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;4;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;5;Patient-level data used;NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;5;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;5;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01358578;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;5;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;5;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;5;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Patient-level data used;NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01365455;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Patient-level data used;NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01555125;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Patient-level data used;NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01636687;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;xx;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;9;Patient-level data used;NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;9;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;9;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT02074982;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;9;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;international;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;9;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1111/bjd.16140;29171861;study_information;NA;9;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Treatment name 1;NA;NA;ixekizumab;TRUE;"SG total placeboanchored
+Sample sizes reported for both treatment and anchored arm together";"weights calculation for the IPD is based on mean values of covariates for total population (SG total).
+Commun comparator = Placebo
+covariates : weight = other"
+10.1111/bjd.16140;29171861;methodology;xx;NA;Study 'number(s)' for treatment 1;NA;NA;"1;2;3";TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Treatment name 2;NA;NA;secukinumab;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Study 'number(s)' for treatment 2;NA;NA;"5;6;7;8";TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Anchored comparison?;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);pasi 75 at week 12;psoriasis area severity index 75 response rate at week 12;psoriasis area severity index 75 response rate at week 12;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Primary outcome: variable type;NA;NA;Binary (eg rates);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Inclusion of prognostic factors in the adjustment/matching model;No discussion (in the main text) of the status of prognostic factors of the variables;No;No discussion (in the main text) of the status of prognostic factors of the variables;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);No;Yes;No;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Treatment name 1;NA;NA;ixekizumab;TRUE;"SG separate placebo anchored
+Sample sizes reported for both treatment and anchored arm together";"weights calculation for the IPD is based on mean values of covariates for each treatment arm separately (SG separate).
+Commun comparator = Placebo
+covariates : weight = other"
+10.1111/bjd.16140;29171861;methodology;xx;NA;Study 'number(s)' for treatment 1;NA;NA;"1;2;3";TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Treatment name 2;NA;NA;secukinumab;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Study 'number(s)' for treatment 2;NA;NA;"5;6;7;8";TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Anchored comparison?;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);pasi 75 at week 12;psoriasis area severity index 75 response rate at week 12;psoriasis area severity index 75 response rate at week 12;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Primary outcome: variable type;NA;NA;Binary (eg rates);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Inclusion of prognostic factors in the adjustment/matching model;No discussion (in the main text) of the status of prognostic factors of the variables;No;No discussion (in the main text) of the status of prognostic factors of the variables;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Treatment name 1;NA;NA;ixekizumab;TRUE;"SG total etanercept anchored
+Sample sizes reported for both treatment and anchored arm together";"weights calculation for the IPD is based on mean values of covariates for total population (SG total).
+Commun comparator = Etanercept
+covariates : weight = other"
+10.1111/bjd.16140;29171861;methodology;3;NA;Study 'number(s)' for treatment 1;NA;NA;"2;3";TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Treatment name 2;NA;NA;secukinumab;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Study 'number(s)' for treatment 2;NA;NA;5;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Anchored comparison?;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);pasi 75 at week 12;psoriasis area severity index 75 response rate at week 12;psoriasis area severity index 75 response rate at week 12;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Primary outcome: variable type;NA;NA;Binary (eg rates);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Inclusion of prognostic factors in the adjustment/matching model;No discussion (in the main text) of the status of prognostic factors of the variables;No;No discussion (in the main text) of the status of prognostic factors of the variables;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;3;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Treatment name 1;NA;NA;ixekizumab;TRUE;"SG separate etanercept anchored
+Sample sizes reported for both treatment and anchored arm together";"weights calculation for the IPD is based on mean values of covariates for each treatment arm separately (SG separate).
+Commun comparator = Etanercept
+covariates : weight = other"
+10.1111/bjd.16140;29171861;methodology;xx;NA;Study 'number(s)' for treatment 1;NA;NA;"2;3";TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Treatment name 2;NA;NA;secukinumab;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Study 'number(s)' for treatment 2;NA;NA;5;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Anchored comparison?;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);pasi 75 at week 12;psoriasis area severity index 75 response rate at week 12;psoriasis area severity index 75 response rate at week 12;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Primary outcome: variable type;NA;NA;Binary (eg rates);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Inclusion of prognostic factors in the adjustment/matching model;No discussion (in the main text) of the status of prognostic factors of the variables;No;No discussion (in the main text) of the status of prognostic factors of the variables;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Treatment name 1;NA;NA;ixekizumab;TRUE;"SG total ustekinumab anchored
+Sample sizes reported for both treatment and anchored arm together";"weights calculation for the IPD is based on mean values of covariates for total population (SG total).
+Commun comparator = Ustekinumab
+covariates : weight = other"
+10.1111/bjd.16140;29171861;methodology;5;NA;Study 'number(s)' for treatment 1;NA;NA;4;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Treatment name 2;NA;NA;secukinumab;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Study 'number(s)' for treatment 2;NA;NA;9;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Anchored comparison?;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Form of the indirect comparison;NA;NA;Simple (ie treatments effects extracted from two studies);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);pasi 75 at week 12;psoriasis area severity index 75 response rate at week 12;psoriasis area severity index 75 response rate at week 12;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Primary outcome: variable type;NA;NA;Binary (eg rates);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Inclusion of prognostic factors in the adjustment/matching model;No discussion (in the main text) of the status of prognostic factors of the variables;No;No discussion (in the main text) of the status of prognostic factors of the variables;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;5;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Treatment name 1;NA;NA;ixekizumab;TRUE;"SG separate ustekinumab anchored
+Sample sizes reported for both treatment and anchored arm together";"weights calculation for the IPD is based on mean values of covariates for each treatment arm separately (SG separate).
+Commun comparator = Ustekinumab
+covariates : weight = other"
+10.1111/bjd.16140;29171861;methodology;xx;NA;Study 'number(s)' for treatment 1;NA;NA;4;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Treatment name 2;NA;NA;secukinumab;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Study 'number(s)' for treatment 2;9;6;9;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Anchored comparison?;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Form of the indirect comparison;NA;NA;Simple (ie treatments effects extracted from two studies);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);pasi 75 at week 12;psoriasis area severity index 75 response rate at week 12;psoriasis area severity index 75 response rate at week 12;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Primary outcome: variable type;NA;NA;Binary (eg rates);TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Inclusion of prognostic factors in the adjustment/matching model;No discussion (in the main text) of the status of prognostic factors of the variables;No;No discussion (in the main text) of the status of prognostic factors of the variables;FALSE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;methodology;xx;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;1956;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";NA;NA;1666;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Number of covariates adjusted for/matched on;NA;NA;6;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Primary outcome: treatment effect contrast;NA;NA;Risk difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Sample size of the population of interest in the non IPD treatment arm;653;NA;653;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.00007;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.0002;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Number of covariates adjusted for/matched on;NA;NA;6;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Primary outcome: treatment effect contrast;NA;NA;Risk difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Sample size of the population of interest in the non IPD treatment arm;653;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Initial sample size of the population of interest in the IPD treatment arm;1956;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";1666;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.00007;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.0003;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;1465;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";NA;NA;989;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;Number of covariates adjusted for/matched on;NA;NA;7;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;Primary outcome: treatment effect contrast;NA;NA;Risk difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.1;0.7;0.1;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.7;0.1;0.7;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;3;NA;Sample size of the population of interest in the non IPD treatment arm;653;NA;653;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Number of covariates adjusted for/matched on;NA;NA;7;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Primary outcome: treatment effect contrast;NA;NA;Risk difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.1;0.69;0.1;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.69;0.1;0.69;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Sample size of the population of interest in the non IPD treatment arm;653;NA;653;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Initial sample size of the population of interest in the IPD treatment arm;1465;NA;1465;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";989;NA;989;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;259;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";NA;NA;122;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Number of covariates adjusted for/matched on;NA;NA;8;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Primary outcome: treatment effect contrast;Risk difference;Rate difference;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.21;0.26;0.21;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.33;0.21;0.26;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Sample size of the population of interest in the non IPD treatment arm;676;NA;676;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Number of covariates adjusted for/matched on;NA;NA;8;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Primary outcome: treatment effect contrast;NA;NA;Risk difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.21;0.16;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.24;0.21;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Sample size of the population of interest in the non IPD treatment arm;676;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;Initial sample size of the population of interest in the IPD treatment arm;259;NA;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;xx;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";122;NA;NA;FALSE;NA;NA
