@@ -35,7 +35,6 @@ second_part_BZ <- do.call(bind_rows, lapply(X = files_BZ,
                                           col_types = c("cccccc")))
 
 
-
 ## Loading Arnaud adjudication -------------------------------------------
 
 second_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/ASL.csv"),
@@ -90,13 +89,10 @@ long_results_final <- bind_rows(first_part, second_part_subset, sup_columns) %>%
   arrange(doi, order_sections, n_itc, study_number) %>%
   select(-order_sections)
 
-## TEMP, en attendant adjudication JL
-long_results_dm <- semi_join(long_results_dm, second_part_subset, by = "doi")
-
 
 # Treatments and ATC ------------------------------------------------------
 ttt_df <- read_tsv("data/mapping/treatment_mapping.tsv") %>%
-  select(ttt_name, `ATC code`, others, `CAR-T cells`) %>%
+  select(ttt_name, `ATC code`, others, `CAR-T cells`, others) %>%
   distinct()
 
 ## Handling multiple ATC code per lines ----------------------------------
@@ -133,6 +129,8 @@ ttt_mapping <- ttt_df %>%
   select(!ends_with(c("5th", "NA"))) %>%
   select(-concept_id)
 
+
+## manually inserting 2023 incoming atc codes ------------------------------
 L01EX <- ttt_mapping %>%
   filter(str_starts(`ATC code`, "L01EX")) %>%
   mutate(concept_name = ifelse(`ATC code` == "L01EX25", "umbralisib: oral", `ATC code`)) %>%
@@ -151,6 +149,20 @@ N06AX29 <- ttt_mapping %>%
     `concept_name_ancestor_ATC 4nd` = "OTHER ANTIDEPRESSANTS"
   )
 
+L04AA54 <- ttt_mapping %>%
+  filter(str_starts(`ATC code`, "L04AA54")) %>%
+  mutate(
+    `concept_code_ancestor_ATC 1st` = "L",
+    `concept_code_ancestor_ATC 2nd` = "L04",
+    `concept_code_ancestor_ATC 3rd` = "L04A",
+    `concept_code_ancestor_ATC 4th` = "L04AA",
+    `concept_name_ancestor_ATC 1st` = "NERVOUS ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS",
+    `concept_name_ancestor_ATC 2nd` = "IMMUNOSUPPRESSANTS",
+    `concept_name_ancestor_ATC 3nd` = "IMMUNOSUPPRESSANTS",
+    `concept_name_ancestor_ATC 4nd` = "Selective immunosuppressants"
+  )
+
+
 car_t_cells <- ttt_mapping %>%
   semi_join(filter(ttt_df, `CAR-T cells` == TRUE)) %>%
   filter(is.na(concept_class_id)) %>%
@@ -165,24 +177,50 @@ car_t_cells <- ttt_mapping %>%
     `concept_name_ancestor_ATC 4nd` = "ANTINEOPLASTIC CELL AND GENE THERAPY"
   )
 
-curated <- bind_rows(L01EX, N06AX29, car_t_cells)
+curated <- bind_rows(L01EX, N06AX29, L04AA54, car_t_cells)
 atc_mapping_final <- ttt_mapping %>%
   anti_join(curated, by = "ATC code") %>%
   bind_rows(curated)
-ttt_df_mapped <- ttt_df %>% left_join(atc_mapping_final, by = "ATC code")
+ttt_df_mapped <- ttt_df %>% left_join(atc_mapping_final, by = "ATC code") %>%
+  distinct()
 
 # Checking that all ttt names found in extraction have either ATC ancestors mapped or something written in 'others' column
-stopifnot(!is.na(ttt_df_mapped$others) || !is.na(ttt_df_mapped$`concept_code_ancestor_ATC 4th`))
-ttt_df_mapped %>% write_tsv(file.path(dir_data, "mapping/ttt_atc_mapped.tsv"))
+stopifnot(!is.na(ttt_df_mapped$others) | !is.na(ttt_df_mapped$`concept_code_ancestor_ATC 2nd`))
 
-# Function identical to the one used in dm_extraction to simplify ttt names from extraction
+ttt_df_mapped_final <- ttt_df_mapped %>%
+  mutate(final_classification_code = case_when(
+    !is.na(`concept_code_ancestor_ATC 4th`) ~ `concept_code_ancestor_ATC 4th`,
+    !is.na(`concept_code_ancestor_ATC 3rd`) ~ `concept_code_ancestor_ATC 3rd`,
+    !is.na(`concept_code_ancestor_ATC 2nd`) ~ `concept_code_ancestor_ATC 2nd`,
+    TRUE ~ NA_character_
+    ),
+    final_classification_name = case_when(
+      !is.na(`concept_name_ancestor_ATC 4th`) ~ `concept_name_ancestor_ATC 4th`,
+      !is.na(`concept_name_ancestor_ATC 3rd`) ~ `concept_name_ancestor_ATC 3rd`,
+      !is.na(`concept_name_ancestor_ATC 2nd`) ~ `concept_name_ancestor_ATC 2nd`,
+      !is.na(others) ~ others,
+      TRUE ~ NA_character_
+    )) %>%
+  distinct(ttt_name, final_classification_code, final_classification_name)
+
+list_replacing_ttt_manual <- c(
+  "etoposide-ifosfamide" = "etoposide - ifosfamide",
+  "bendamustine- brentuximab" = "bendamustine - brentuximab",
+  "vinblastine-procarbazine" = "vinblastine - procarbazine",
+  "brentuximab-bendamustine" = "brentuximab - bendamustine",
+  "vinblastine-procarbazine" = "vinblastine - procarbazine",
+  "methotrexate + pl mtx-hydrocortancyl" = "mtx - hydrocortancyl",
+  "mogamulizumab + pl infiltree triple (aracytine, mtx, hydrocortancyl)" = "mogamulizumab - aracytine - mtx - hydrocortancyl",
+  "rituximab-gemcitabine-oxaliplatine" = "rituximab - gemcitabine - oxaliplatine"
+)
 str_transformation <- function(x) {
+# Function modified as compared to the one used in dm_extraction to simplify ttt names from extraction
   x %>%
     str_to_lower() %>%
     stringi::stri_trans_general(id = "Latin-ASCII") %>%
     str_squish() %>%
     replace_in_vec(named_list = list_replacing_ttt_manual) %>%
-    str_split("(\\+)|(\\s-\\s)|(\\set\\s)")
+    str_split("(\\+)|(\\s-\\s)|(\\set\\s)|(\\sor\\s)|(\\sand\\s)|(/)|(followed\\sby)")
 }
 
 wide_ttt_parsed <- second_part_subset %>%
@@ -203,14 +241,67 @@ long_ttt_parsed <- wide_ttt_parsed %>%
                values_to = "ttt_parsed") %>%
   filter(!is.na(ttt_parsed))
 
-ttt_mapped <- long_ttt_parsed %>% left_join(ttt_mapping)
-table(test$concept_class_id)
+ttt_atc_mapped <- long_ttt_parsed %>%
+  left_join(ttt_df_mapped_final, by = c("ttt_parsed" = "ttt_name")) %>%
+  filter(!is.na(final_classification_name)) %>%
+  pivot_wider(id_cols = "ttt_name",
+              names_from = "instance",
+              values_from = "final_classification_name")
 
-#   View()
-#
-# second_part_subset %>%
-#   filter(questions %in% c("Treatment name 1", "Treatment name 2"))
+decision_atc_mapped <- second_part_subset %>%
+  filter(questions %in% c("Treatment name 1", "Treatment name 2")) %>%
+  left_join(ttt_atc_mapped, by = c("decision" = "ttt_name"))
 
+decision_atc_mapped %>% write_tsv(file.path(dir_data, "mapping/decision_atc_mapped.tsv"))
+
+
+# ICD mapping -------------------------------------------------------------
+
+
+icd <- read_tsv("data/mapping/classification_ICDWHO/CONCEPT.csv") %>%
+  select(all_of(c("concept_id", "concept_code", "concept_class_id", "concept_name")))
+concept_relationship <- read_tsv("data/mapping/classification_ICDWHO/CONCEPT_RELATIONSHIP.csv")
+conditions_mapping <- read_tsv("data/mapping/conditions_mapping.tsv")
+
+icd <- icd %>%
+  filter(str_starts(concept_class_id, "ICD10") & !str_starts(concept_name, "Invalid ICD10"))
+
+# Not possible to use CONCEPT_ANCESTOR.csv because for some reason concept.csv doesn't map to it --> use of concept_relationship somehow
+conditions_mapped <- conditions_mapping %>%
+  left_join(icd[, c("concept_code", "concept_id")], by = c("ICD-10 code" = "concept_code")) %>%
+  left_join(filter(concept_relationship, relationship_id == "Subsumes"), by = c("concept_id"  = "concept_id_2")) %>%
+  rename(ancestor_concept_id_1 = concept_id_1) %>%
+  left_join(filter(concept_relationship, relationship_id == "Subsumes"), by = c("ancestor_concept_id_1" = "concept_id_2")) %>%
+  rename(ancestor_concept_id_2 = concept_id_1) %>%
+  left_join(filter(concept_relationship, relationship_id == "Subsumes"), by = c("ancestor_concept_id_2" = "concept_id_2")) %>%
+  rename(ancestor_concept_id_3 = concept_id_1) %>%
+  left_join(filter(concept_relationship, relationship_id == "Subsumes"), by = c("ancestor_concept_id_3" = "concept_id_2")) %>%
+  rename(ancestor_concept_id_4 = concept_id_1) %>%
+  left_join(filter(concept_relationship, relationship_id == "Subsumes"), by = c("ancestor_concept_id_4" = "concept_id_2")) %>%
+  rename(ancestor_concept_id_5 = concept_id_1) %>%
+  select(condition_name,
+         `ICD-10 code`,
+         concept_id,
+         ancestor_concept_id_1,
+         ancestor_concept_id_2,
+         ancestor_concept_id_3,
+         ancestor_concept_id_4,
+         ancestor_concept_id_5) %>%
+  pivot_longer(cols = contains("concept_id"), values_to = "concept_id", names_to = "level") %>%
+  filter(!is.na(concept_id)) %>%
+  left_join(icd[, c("concept_id", "concept_class_id", "concept_code", "concept_name")], by = c("concept_id")) %>%
+  select(-level, -concept_id, -`ICD-10 code`) %>%
+  distinct() %>%
+  pivot_wider(names_from = c("concept_class_id"),
+              values_from = c("concept_code", "concept_name"),
+              values_fn = function(...) paste(..., collapse = "; "))
+
+
+conditions_mapped <- first_part %>%
+  filter(questions %in% c("Medical Condition of Interest Name")) %>%
+  left_join(conditions_mapped[, c("condition_name", "concept_code_ICD10 Hierarchy")],
+            by = c("decision" = "condition_name"))
+conditions_mapped %>% write_tsv("decision_icd_mapped.tsv")
 
 
 # ARCHIVE -----------------------------------------------------------------

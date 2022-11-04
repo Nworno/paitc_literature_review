@@ -185,8 +185,8 @@ magnetic resonance-guided focused ultrasound					NA	procedure		procedure
 melphalan-prednisone-thalidomide					L01AA03;L04AX02;H02AB07			
 melphalan-prednisone-thalidomide (mpt)					L01AA03;L04AX02;H02AB07			
 mepolizumab	mepolizumab	Anti-IL-5 monoclonal antibody	Interleukin inhibitors	Drug for obstructive airway diseases (Antiasthmatic)	R03DX09			
-methotrexate	methotrexate	Folic acid analogues	Antimetabolites	Antineoplastic agent / Immunosupressants	L01BA01;L01AA03			
-midostaurin	midostaurin	Other protein kinase inhibitor	Protein kinase inhibitor	Antineoplastic agent	L01EX10;L01AA03			
+methotrexate	methotrexate	Folic acid analogues	Antimetabolites	Antineoplastic agent / Immunosupressants	L01BA01			
+midostaurin	midostaurin	Other protein kinase inhibitor	Protein kinase inhibitor	Antineoplastic agent	L01EX10			
 modified bortezomib-melphalan-prednisone schedules					L01AA03;L01XG01;H02AB07			
 modified vmp (bortezomib/melphalan/prednisone) schedule					L01AA03;L01XG01;H02AB07			
 nab-paclitaxel	nab-paclitaxel	Taxane		Antineoplastic agent	L01CD01			
@@ -215,8 +215,8 @@ peginterferon alfa- 2a	pegInterferon alfa-2a	Interferons		Immunostimulant ? or i
 peginterferon alfa-2a	pegInterferon alfa-2a	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB11			
 peginterferon alpha 2a	pegInterferon alfa-2a	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB11			
 peginterferon beta-1a	pegInterferon beta-1a	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB13			
-peginterferon-alfa	pegInterferon alfa	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB11;L03AB12			
-peginterferon-α	pegInterferon alfa	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB11;L03AB12			
+peginterferon-alfa	pegInterferon alfa	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB11			
+peginterferon-α	pegInterferon alfa	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB11			
 pembrolizumab	pembrolizumab	Monoclonal antibody PD-1/PDL-1 inhibitor		Antineoplastic agent	L01XC18			
 pemetrexed	pemetrexed	Folic acid analogues	Antimetabolites	Antineoplastic agent	L01BA04			
 pemetrexed maintenance	pemetrexed	Folic acid analogues	Antimetabolites	Antineoplastic agent	L01BA04			

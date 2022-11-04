@@ -738,7 +738,7 @@
 10.1080/03007995.2018.1510225,30086654,study_information,,2,Country where the clinical trial/observational study was conducted (international if more than one),,,international,TRUE,JL,,
 10.1080/03007995.2018.1510225,30086654,study_information,,2,Phase of the clinical trial (clinical trial only),"1, 2",2,"1, 2",FALSE,JL,,
 10.1080/03007995.2018.1510225,30086654,study_information,,2,Number of treatment arms (clinical trial only),,,1,TRUE,JL,,
-10.1080/03007995.2018.1520696,30286627,general_information,,,Medical Condition of Interest Name,crizotinib-refractory anaplastic lymphoma kinase-positive non-small cell lung cancer,anaplastic lymphoma kinase-positive non-small cell lung cancer,,FALSE,JL,NA,NA
+10.1080/03007995.2018.1520696,30286627,general_information,,,Medical Condition of Interest Name,crizotinib-refractory anaplastic lymphoma kinase-positive non-small cell lung cancer,anaplastic lymphoma kinase-positive non-small cell lung cancer,anaplastic lymphoma kinase-positive non-small cell lung cancer,FALSE,JL,NA,NA
 10.1080/03007995.2018.1520696,30286627,general_information,,,Countries of first author affiliations,,,usa,TRUE,JL,,
 10.1080/03007995.2018.1520696,30286627,general_information,,,Countries of last author affiliations,,,usa,TRUE,JL,,
 10.1080/03007995.2018.1520696,30286627,general_information,,,"Positions of study investigators (for any authors of the article, any that applies)",,,"Academic, Pharmaceutical Industry, Private Data Analysis Company",TRUE,JL,,
@@ -1404,7 +1404,7 @@
 10.2147/jbm.s321288,34754257,study_information,,2,Country where the clinical trial/observational study was conducted (international if more than one),,,international,TRUE,JL,,
 10.2147/jbm.s321288,34754257,study_information,,2,Phase of the clinical trial (clinical trial only),,,3,TRUE,JL,,
 10.2147/jbm.s321288,34754257,study_information,,2,Number of treatment arms (clinical trial only),1,2 or more,1,FALSE,JL,,
-10.2147/ptt.s326121,34765537,general_information,,,Medical Condition of Interest Name,moderate-to-severe plaque psoriasis,moderate-to-severe plaque psoriasis (patients that are inadequate responders to ustekinumab),,FALSE,JL,NA,NA
+10.2147/ptt.s326121,34765537,general_information,,,Medical Condition of Interest Name,moderate-to-severe plaque psoriasis,moderate-to-severe plaque psoriasis (patients that are inadequate responders to ustekinumab),moderate-to-severe plaque psoriasis,FALSE,JL,NA,NA
 10.2147/ptt.s326121,34765537,general_information,,,Countries of first author affiliations,,,uk,TRUE,JL,,
 10.2147/ptt.s326121,34765537,general_information,,,Countries of last author affiliations,,,germany,TRUE,JL,,
 10.2147/ptt.s326121,34765537,general_information,,,"Positions of study investigators (for any authors of the article, any that applies)",,,"Academic, Pharmaceutical Industry",TRUE,JL,,

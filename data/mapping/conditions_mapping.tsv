@@ -15,20 +15,24 @@ advanced pancreatic neuroendocrine tumor	pancreatic neuroendocrine tumor			C25.4
 advanced pancreatic neuroendocrine tumors	pancreatic neuroendocrine tumors			C25.4	
 advanced renal cell carcinoma	renal cell carcinoma			C64	
 advanced systemic mastocytosis	systemic mastocytosis			Q82.2	
-advanced unresctable gastroenteropancreatic neuroendocrine tumor	gastroenteropancreatic neuroendocrine tumor			C7A	
-gastrointestinal neuroendocrine tumours	gastrointestinal neuroendocrine tumours			C7A	
+advanced unresctable gastroenteropancreatic neuroendocrine tumor	gastroenteropancreatic neuroendocrine tumor			C16.9	
+advanced, unresectable gastroenteropancreatic neuroendocrine tumours				C16.9	
+gastrointestinal neuroendocrine tumours	gastrointestinal neuroendocrine tumours			C16.9	
 advanced, unresectable, or metastatic urothelial cancer	urothelial cancer			C67.9	
 age-related macular degeneration	age-related macular degeneration			H35.3	
 alk-rearranged non-small-cell lung cancer	non-small-cell lung cancer			C34.9	
 anaplastic lymphoma kinase (alk)-positive non-small-cell lung cancer	non-small-cell lung cancer			C34.9	
 anaplastic lymphoma kinase-positive metastatic non-small cell lung cancer	non-small-cell lung cancer			C34.9	
 anaplastic lymphoma kinase-positive non-small cell lung cancer	non-small-cell lung cancer			C34.9	
+advanced anaplastic lymphoma kinase (alk)-positive non-small cell lung cancer				C34.9	
+(ALK)-positive metastatic non-small cell lung cancer				C34.9	
 ankylosing spondylitis	ankylosing spondylitis			M45	
 ansplant-ineligible newly diagnosed multiple myeloma	multiple myeloma			C90.0	
 asthma	asthma			J45.9	
 atrial fibrillation	atrial fibrillation			I48.9	
 Attention deficit / hyperactivity disorder	attention-deficit/hyperactivity disorder			F90.0	
 attention-deficit/hyperactivity disorder in children and adolescents	attention-deficit/hyperactivity disorder			F90.0	
+attention-deficit/hyperactivity disorder				F90.0	
 basal cell carcinoma	basal cell carcinoma			C44.9	
 braf v600-mutant advanced melanoma	melanoma			C43.9	
 braf v600e-mutant advanced or metastatic non-small-cell lung cancer	non-small-cell lung cancer			C34.9	
@@ -57,10 +61,13 @@ hepatocellular carcinom	hepatocellular carcinoma			C22.0
 hepatocellular carcinoma	hepatocellular carcinoma			C22.0	
 hereditary transthyretin-mediated amyloidoisis with polyneuropathy	hereditary amyloidoisis with polyneuropathy			E85.1	
 hereditary transthyretin-mediated amyloidosis with polyneuropathy	hereditary amyloidoisis with polyneuropathy			E85.1	
+amyloidosis with polyneuropathy	amyloidosis with polyneuropathy			E85.1	
 hormone receptor-positive/her2-negative advanced breast cancer	HR+/HER2- breast cancer			C50.9	
 hr+, her2− advanced breast cancer	HR+/HER2- breast cancer			C50.9	
 hr+/her2- advanced breast cancer	HR+/HER2- breast cancer			C50.9	
 hr+/her2− advanced breast cancer	HR+/HER2- breast cancer			C50.9	
+hr+, her2? advanced breast cancer				C50.9	
+hr+/her2? advanced breast cancer				C50.9	
 huntington disease	huntington disease			G10	
 hypertension suboptimally controlled by amlodipine 5 mg monotherapy	Hypertension			I10	
 locally advanced or metastatic urothelial cancer	urothelial cancer			C67.9	
@@ -95,7 +102,9 @@ parkinson's disease	Parkinson disease			G20
 parkinson’s disease ‘off’episodes	Parkinson disease			G20	
 paroxysmal nocturnal hemoglobinuria	paroxysmal nocturnal hemoglobinuria			D59.5	
 pd-l1–positive locaadvanced or metastatic urothelial carcinoma	urothelial cancer			C67.9	
+locally advanced or metastatic urothelial carcinoma				C67.9	
 pediatric acute lymphoblastic leukemia	acute lymphoblastic leukemia			C91.0	
+pediatric relapsed/refractory acute lymphoblastic leukemia				C91.0	
 persistent atrial fibrillation	atrial fibrillation			I48.9	
 plaque psoriasis	Plaque psoriasis			L40.0	
 plaque psoriasis:	Plaque psoriasis			L40.0	
@@ -104,6 +113,7 @@ postpartum depression	postpartum depression			F53.0
 previously untreated advanced anaplastic lymphoma kinase (alk)-positive non-small cell lung cancer	non-small-cell lung cancer			C34.9	
 psoriatic arthritis	psoriatic arthritis			L40.5	
 relapsed and refractory classical hodgkin’s lymphoma	classical hodgkin’s lymphoma			C81.7	
+relapsed and refractory classical hodgkin�s lymphoma	classical hodgkin’s lymphoma			C81.7	
 relapsed and refractory multiple myeloma	multiple myeloma			C90.0	
 relapsed and/or refractory multiple myeloma	multiple myeloma			C90.0	
 relapsed or refractory acute lymphoblastic leukemia	acute lymphoblastic leukemia			C91.0	
@@ -125,6 +135,7 @@ relapsing forms of multiple sclerosis,	multiple sclerosis			G35
 relapsing multiple sclerosis	multiple sclerosis			G35	
 relapsing-remitting multiple sclerosis	multiple sclerosis			G35	
 relapsing–remitting multiple sclerosis	multiple sclerosis			G35	
+relapsing�remitting multiple sclerosis				G35	
 rheumatoid arthritis	rheumatoid arthritis			M06.9	
 ros1 fusion-positive non-small cell lung cancer	non-small-cell lung cancer			C34.9	
 ros1-positive non-small-cell lung cancer	non-small-cell lung cancer			C34.9	
@@ -137,7 +148,8 @@ spinal muscular atrophy	spinal muscular atrophy			G12.9
 spinal muscular atrophy type 1	spinal muscular atrophy type 1			G12.0	
 steroid-refractory acute graft-versus-host	acute graft-versus-host			T86.0	
 steroid-refractory acute graft-versus-host disease	acute graft-versus-host			T86.0	
-symptomatic lumbar disc degeneration				M51.36	
+symptomatic lumbar disc degeneration				M51.3	
+lumbar disc degeneration				M51.3	
 thyroid eye disease	thyroid eye disease			H06.2	
 thyroid eye disease : proptosis and diplopia	thyroid eye disease			H06.2	
 transplant ineligible multiple myeloma	multiple myeloma			C90.0	
