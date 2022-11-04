@@ -89,9 +89,12 @@ long_results_final <- bind_rows(first_part, second_part_subset, sup_columns) %>%
   arrange(doi, order_sections, n_itc, study_number) %>%
   select(-order_sections)
 
+long_results_final %>% write_tsv("data/extraction/data_managed/long_results_final.tsv")
+
 
 # Treatments and ATC ------------------------------------------------------
 ttt_df <- read_tsv("data/mapping/treatment_mapping.tsv") %>%
+  mutate("CAR-T cells" = ifelse(!is.na(`CAR-T cells`), TRUE, FALSE)) %>%
   select(ttt_name, `ATC code`, others, `CAR-T cells`, others) %>%
   distinct()
 
@@ -201,7 +204,7 @@ ttt_df_mapped_final <- ttt_df_mapped %>%
       !is.na(others) ~ others,
       TRUE ~ NA_character_
     )) %>%
-  distinct(ttt_name, final_classification_code, final_classification_name)
+  distinct(ttt_name, final_classification_code, final_classification_name, `CAR-T cells`)
 
 list_replacing_ttt_manual <- c(
   "etoposide-ifosfamide" = "etoposide - ifosfamide",
@@ -246,13 +249,20 @@ ttt_atc_mapped <- long_ttt_parsed %>%
   filter(!is.na(final_classification_name)) %>%
   pivot_wider(id_cols = "ttt_name",
               names_from = "instance",
-              values_from = "final_classification_name")
+              values_from = c("final_classification_name", "CAR-T cells")) %>%
+  rowwise() %>%
+  mutate(car_t_cells = any(`CAR-T cells_first`, `CAR-T cells_second`, `CAR-T cells_third`, na.rm = TRUE)) %>%
+  ungroup() %>%
+  rename(first = final_classification_name_first,
+         second = final_classification_name_second,
+         third = final_classification_name_third) %>%
+  select(ttt_name, first, second, third, car_t_cells)
 
 decision_atc_mapped <- second_part_subset %>%
   filter(questions %in% c("Treatment name 1", "Treatment name 2")) %>%
   left_join(ttt_atc_mapped, by = c("decision" = "ttt_name"))
 
-decision_atc_mapped %>% write_tsv(file.path(dir_data, "mapping/decision_atc_mapped.tsv"))
+decision_atc_mapped %>% write_tsv(file.path(dir_data, "extraction/data_managed/decision_atc_mapped.tsv"))
 
 
 # ICD mapping -------------------------------------------------------------
@@ -301,7 +311,8 @@ conditions_mapped <- first_part %>%
   filter(questions %in% c("Medical Condition of Interest Name")) %>%
   left_join(conditions_mapped[, c("condition_name", "concept_code_ICD10 Hierarchy")],
             by = c("decision" = "condition_name"))
-conditions_mapped %>% write_tsv("decision_icd_mapped.tsv")
+conditions_mapped %>% write_tsv("data/extraction/data_managed/decision_icd_mapped.tsv")
+
 
 
 # ARCHIVE -----------------------------------------------------------------
