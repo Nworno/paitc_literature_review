@@ -1,4 +1,4 @@
-doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decision,identical,reviewer,Notes reviewer 1,Notes reviewer 2
+ï»¿doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decision,identical,reviewer,Notes reviewer 1,Notes reviewer 2
 10.1007/bf03261873,23113551,general_information,NA,NA,Medical Condition of Interest Name,NA,NA,attention-deficit/hyperactivity disorder,TRUE,DH,NA,NA
 10.1007/bf03261873,23113551,general_information,NA,NA,Countries of first author affiliations,NA,NA,usa,TRUE,DH,NA,NA
 10.1007/bf03261873,23113551,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,DH,NA,NA
@@ -12,13 +12,13 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.1007/bf03261873,23113551,study_information,NA,1,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00152009,TRUE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,1,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,1,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.1007/bf03261873,23113551,study_information,NA,1,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
+10.1007/bf03261873,23113551,study_information,NA,1,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,2,Patient-level data used,NA,NA,Yes,TRUE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,2,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,2,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NCT00150618,NCT00150618,FALSE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,2,Phase of the clinical trial (clinical trial only),NA,3,3,FALSE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,2,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.1007/bf03261873,23113551,study_information,NA,2,Data source name (only if observational study or clinical trial without NCT),sallee et al. (2009),NA,NA,FALSE,DH,NA,NA
+10.1007/bf03261873,23113551,study_information,NA,2,Data source name (only if observational study or clinical trial without NCT),sallee et al. (2009),NA,sallee et al. (2009),FALSE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),usa,NA,usa,FALSE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,3,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
 10.1007/bf03261873,23113551,study_information,NA,3,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
@@ -291,13 +291,13 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.1007/s40263-013-0102-x,23975660,study_information,NA,1,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00152009,TRUE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,1,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,1,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.1007/s40263-013-0102-x,23975660,study_information,NA,1,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
+10.1007/s40263-013-0102-x,23975660,study_information,NA,1,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,2,Patient-level data used,NA,NA,Yes,TRUE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,2,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,2,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NCT00150618,NCT00150618,FALSE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,2,Phase of the clinical trial (clinical trial only),NA,3,3,FALSE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,2,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.1007/s40263-013-0102-x,23975660,study_information,NA,2,Data source name (only if observational study or clinical trial without NCT),sallee et al. (2009),NA,NA,FALSE,DH,NA,NA
+10.1007/s40263-013-0102-x,23975660,study_information,NA,2,Data source name (only if observational study or clinical trial without NCT),sallee et al. (2009),NA,sallee et al. (2009),FALSE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),usa,NA,usa,FALSE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,3,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
 10.1007/s40263-013-0102-x,23975660,study_information,NA,3,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
@@ -334,11 +334,11 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.1007/s40263-019-00672-w,31642037,study_information,NA,4,Data source name (only if observational study or clinical trial without NCT),NA,NA,yonkers et al. (2008),TRUE,DH,NA,NA
 10.1007/s40263-019-00672-w,31642037,study_information,NA,4,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,usa,TRUE,DH,NA,NA
 10.1007/s40263-019-00672-w,31642037,study_information,NA,4,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Patient-level data used,NA,No,NA,FALSE,DH,NA,NA
-10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Clinical Trial,NA,Yes,NA,FALSE,DH,NA,NA
-10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Data source name (only if observational study or clinical trial without NCT),NA,sharp et al. (2010),NA,FALSE,DH,NA,NA
-10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Country where the clinical trial/observational study was conducted (international if more than one),NA,uk,NA,FALSE,DH,NA,NA
-10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Number of treatment arms (clinical trial only),NA,2 or more,NA,FALSE,DH,NA,NA
+10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Patient-level data used,NA,No,XXXX,FALSE,DH,NA,NA
+10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Clinical Trial,NA,Yes,XXXX,FALSE,DH,NA,NA
+10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Data source name (only if observational study or clinical trial without NCT),NA,sharp et al. (2010),XXXX,FALSE,DH,NA,NA
+10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Country where the clinical trial/observational study was conducted (international if more than one),NA,uk,XXXX,FALSE,DH,NA,NA
+10.1007/s40263-019-00672-w,31642037,study_information,NA,5,Number of treatment arms (clinical trial only),NA,2 or more,XXXX,FALSE,DH,NA,NA
 10.1007/s40744-017-0070-6,28762213,general_information,NA,NA,Medical Condition of Interest Name,active psoriatic arthritis,psoriatic arthritis,active psoriatic arthritis,FALSE,DH,NA,NA
 10.1007/s40744-017-0070-6,28762213,general_information,NA,NA,Countries of first author affiliations,NA,NA,usa,TRUE,DH,NA,NA
 10.1007/s40744-017-0070-6,28762213,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,DH,NA,NA
@@ -417,7 +417,7 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.1007/s40744-020-00257-w,33244703,study_information,NA,4,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,international,TRUE,DH,NA,NA
 10.1007/s40744-020-00257-w,33244703,study_information,NA,4,Phase of the clinical trial (clinical trial only),"3, 4",4,"3, 4",FALSE,DH,NA,NA
 10.1007/s40744-020-00257-w,33244703,study_information,NA,4,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.1016/j.clgc.2020.07.006,32826180,general_information,NA,NA,Medical Condition of Interest Name,locally advanced or metastatic urothelial cancer,pd-l1–positive locaadvanced or metastatic urothelial carcinoma,locally advanced or metastatic urothelial carcinoma,FALSE,DH,NA,NA
+10.1016/j.clgc.2020.07.006,32826180,general_information,NA,NA,Medical Condition of Interest Name,locally advanced or metastatic urothelial cancer,pd-l1â€“positive locaadvanced or metastatic urothelial carcinoma,locally advanced or metastatic urothelial carcinoma,FALSE,DH,NA,NA
 10.1016/j.clgc.2020.07.006,32826180,general_information,NA,NA,Countries of first author affiliations,NA,NA,uk,TRUE,DH,NA,NA
 10.1016/j.clgc.2020.07.006,32826180,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,DH,NA,NA
 10.1016/j.clgc.2020.07.006,32826180,general_information,NA,NA,"Positions of study investigators (for any authors of the article, any that applies)",NA,NA,"Academic, Pharmaceutical Industry, Private Data Analysis Company",TRUE,DH,NA,NA
@@ -434,7 +434,7 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.1016/j.clgc.2020.07.006,32826180,study_information,NA,2,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
 10.1016/j.clgc.2020.07.006,32826180,study_information,NA,2,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
 10.1016/j.clgc.2020.07.006,32826180,study_information,NA,2,Data source name (only if observational study or clinical trial without NCT),NA,NA,bamias et al. (2007),TRUE,DH,NA,NA
-10.1016/j.clgc.2020.07.006,32826180,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),NA,greece,NA,FALSE,DH,NA,NA
+10.1016/j.clgc.2020.07.006,32826180,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),NA,greece,unknown,FALSE,DH,NA,NA
 10.1016/j.clgc.2020.07.006,32826180,study_information,NA,2,Number of treatment arms (clinical trial only),1,NA,1,FALSE,DH,NA,NA
 10.1016/j.clgc.2020.07.006,32826180,study_information,NA,3,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
 10.1016/j.clgc.2020.07.006,32826180,study_information,NA,3,Clinical Trial,NA,NA,No,TRUE,DH,NA,NA
@@ -472,14 +472,14 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,10,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,usa,TRUE,DH,NA,NA
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,10,Phase of the clinical trial (clinical trial only),NA,NA,2,TRUE,DH,NA,NA
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,10,Number of treatment arms (clinical trial only),NA,NA,1,TRUE,DH,NA,NA
-10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
-10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
+10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Patient-level data used,NA,NA,no,TRUE,DH,NA,NA
+10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Clinical Trial,NA,NA,yes,TRUE,DH,NA,NA
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Data source name (only if observational study or clinical trial without NCT),NA,NA,czuczman 2015,TRUE,DH,NA,NA
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Phase of the clinical trial (clinical trial only),NA,NA,2,TRUE,DH,NA,NA
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Number of treatment arms (clinical trial only),NA,NA,1,TRUE,DH,NA,NA
-10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
-10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,12,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
-10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,12,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
+10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,11,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA
+10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,12,Patient-level data used,NA,NA,no,TRUE,DH,NA,NA
+10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,12,Clinical Trial,NA,NA,yes,TRUE,DH,NA,NA
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,12,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00294632,TRUE,DH,NA,NA
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,12,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,usa,TRUE,DH,NA,NA
 10.1016/j.clinthera.2019.09.012,31699438,study_information,NA,12,Phase of the clinical trial (clinical trial only),NA,NA,"1, 2",TRUE,DH,NA,NA
@@ -620,7 +620,7 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.1016/j.lungcan.2021.03.020,33839603,study_information,NA,2,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT02578680,TRUE,DH,NA,NA
 10.1016/j.lungcan.2021.03.020,33839603,study_information,NA,2,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,DH,NA,NA
 10.1016/j.lungcan.2021.03.020,33839603,study_information,NA,2,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.1016/j.lungcan.2021.03.020,33839603,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
+10.1016/j.lungcan.2021.03.020,33839603,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA
 10.1016/j.lungcan.2021.03.020,33839603,study_information,NA,3,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
 10.1016/j.lungcan.2021.03.020,33839603,study_information,NA,3,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
 10.1016/j.lungcan.2021.03.020,33839603,study_information,NA,3,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT02367781,TRUE,DH,NA,NA
@@ -1341,8 +1341,8 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.1186/s40734-017-0051-5,28265459,study_information,NA,2,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00219804,TRUE,DH,NA,NA
 10.1186/s40734-017-0051-5,28265459,study_information,NA,2,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,DH,NA,NA
 10.1186/s40734-017-0051-5,28265459,study_information,NA,2,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.1186/s40734-017-0051-5,28265459,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
-10.2147/cmar.s163478,29861642,general_information,NA,NA,Medical Condition of Interest Name,NA,NA,"hr+, her2? advanced breast cancer",TRUE,DH,NA,NA
+10.1186/s40734-017-0051-5,28265459,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA
+10.2147/cmar.s163478,29861642,general_information,NA,NA,Medical Condition of Interest Name,NA,NA,"hr+, her2- advanced breast cancer",TRUE,DH,NA,NA
 10.2147/cmar.s163478,29861642,general_information,NA,NA,Countries of first author affiliations,NA,NA,usa,TRUE,DH,NA,NA
 10.2147/cmar.s163478,29861642,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,DH,NA,NA
 10.2147/cmar.s163478,29861642,general_information,NA,NA,"Positions of study investigators (for any authors of the article, any that applies)",Pharmaceutical Industry,"Pharmaceutical Industry, Private Data Analysis Company","Pharmaceutical Industry, Private Data Analysis Company",FALSE,DH,NA,NA
@@ -1412,9 +1412,9 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.2147/jbm.s206806,31417326,study_information,NA,4,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
 10.2147/jbm.s206806,31417326,study_information,NA,4,Data source name (only if observational study or clinical trial without NCT),NA,tarantino et al. (2004),tarantino et al. (2004),FALSE,DH,NA,NA
 10.2147/jbm.s206806,31417326,study_information,NA,4,Number of treatment arms (clinical trial only),1,2 or more,2 or more,FALSE,DH,NA,NA
-10.2147/jbm.s206806,31417326,study_information,NA,4,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00157157,NA,NA,FALSE,DH,NA,NA
+10.2147/jbm.s206806,31417326,study_information,NA,4,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00157157,NA,XXXX,FALSE,DH,NA,NA
 10.2147/jbm.s206806,31417326,study_information,NA,4,Country where the clinical trial/observational study was conducted (international if more than one),international,NA,international,FALSE,DH,NA,NA
-10.2147/jbm.s206806,31417326,study_information,NA,4,Phase of the clinical trial (clinical trial only),3,NA,NA,FALSE,DH,NA,NA
+10.2147/jbm.s206806,31417326,study_information,NA,4,Phase of the clinical trial (clinical trial only),3,NA,XXXX,FALSE,DH,NA,NA
 10.2147/jbm.s206806,31417326,study_information,NA,5,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
 10.2147/jbm.s206806,31417326,study_information,NA,5,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
 10.2147/jbm.s206806,31417326,study_information,NA,5,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00243386,TRUE,DH,NA,NA
@@ -1492,10 +1492,10 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.2217/cer-2018-0141,30806520,study_information,NA,3,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00051623,TRUE,DH,NA,NA
 10.2217/cer-2018-0141,30806520,study_information,NA,3,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,DH,NA,NA
 10.2217/cer-2018-0141,30806520,study_information,NA,3,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.2217/cer-2018-0141,30806520,study_information,NA,3,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
+10.2217/cer-2018-0141,30806520,study_information,NA,3,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA
 10.2217/cer-2019-0145,31872771,general_information,NA,NA,Medical Condition of Interest Name,10.2217/cer-2019-0145,advanced gastric or gastroesophageal junction cancer,advanced gastric or gastroesophageal junction cancer,FALSE,DH,NA,NA
-10.2217/cer-2019-0145,31872771,general_information,NA,NA,Countries of first author affiliations,NA,NA,uk,TRUE,DH,NA,NA
-10.2217/cer-2019-0145,31872771,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,DH,NA,NA
+10.2217/cer-2019-0145,31872771,general_information,NA,NA,Countries of first author affiliations,NA,NA,UK,TRUE,DH,NA,NA
+10.2217/cer-2019-0145,31872771,general_information,NA,NA,Countries of last author affiliations,NA,NA,USA,TRUE,DH,NA,NA
 10.2217/cer-2019-0145,31872771,general_information,NA,NA,"Positions of study investigators (for any authors of the article, any that applies)",NA,NA,"Academic, Pharmaceutical Industry, Private Data Analysis Company",TRUE,DH,NA,NA
 10.2217/cer-2019-0145,31872771,general_information,NA,NA,"At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company",NA,NA,Yes,TRUE,DH,NA,NA
 10.2217/cer-2019-0145,31872771,general_information,NA,NA,Mentioned sources of funding,NA,NA,Pharmaceutical Industry,TRUE,DH,NA,NA
@@ -1509,7 +1509,7 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.2217/cer-2019-0145,31872771,study_information,NA,1,Number of treatment arms (clinical trial only),1,2 or more,2 or more,FALSE,DH,NA,NA
 10.2217/cer-2019-0145,31872771,study_information,NA,2,Patient-level data used,No,Yes,No,FALSE,DH,NA,NA
 10.2217/cer-2019-0145,31872771,study_information,NA,2,Clinical Trial,NA,NA,No,TRUE,DH,NA,NA
-10.2217/cer-2019-0145,31872771,study_information,NA,2,Data source name (only if observational study or clinical trial without NCT),NA,NA,flatiron health’s electronic health record database,TRUE,DH,NA,NA
+10.2217/cer-2019-0145,31872771,study_information,NA,2,Data source name (only if observational study or clinical trial without NCT),NA,NA,flatiron healthâ€™s electronic health record database,TRUE,DH,NA,NA
 10.2217/cer-2019-0145,31872771,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,usa,TRUE,DH,NA,NA
 10.2217/cer-2019-0169,31948278,general_information,NA,NA,Medical Condition of Interest Name,NA,NA,relapsing multiple sclerosis,TRUE,DH,NA,NA
 10.2217/cer-2019-0169,31948278,general_information,NA,NA,Countries of first author affiliations,NA,NA,usa,TRUE,DH,NA,NA
@@ -1745,13 +1745,13 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.2217/cer.15.33,26159375,study_information,NA,8,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00705432,TRUE,DH,NA,NA
 10.2217/cer.15.33,26159375,study_information,NA,8,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,DH,NA,NA
 10.2217/cer.15.33,26159375,study_information,NA,8,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.2217/cer.15.33,26159375,study_information,NA,8,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
+10.2217/cer.15.33,26159375,study_information,NA,8,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA
 10.2217/cer.15.33,26159375,study_information,NA,9,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
 10.2217/cer.15.33,26159375,study_information,NA,9,Clinical Trial,NA,NA,Yes,TRUE,DH,NA,NA
 10.2217/cer.15.33,26159375,study_information,NA,9,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00708500,TRUE,DH,NA,NA
 10.2217/cer.15.33,26159375,study_information,NA,9,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,DH,NA,NA
 10.2217/cer.15.33,26159375,study_information,NA,9,Number of treatment arms (clinical trial only),2 or more,3 or more,2 or more,FALSE,DH,NA,NA
-10.2217/cer.15.33,26159375,study_information,NA,9,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
+10.2217/cer.15.33,26159375,study_information,NA,9,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA
 10.2217/cer.15.69,26793987,general_information,NA,NA,Medical Condition of Interest Name,hepatitis c virus genotype 1b,hepatitis c genotype 1,hepatitis c virus genotype 1b,FALSE,DH,NA,NA
 10.2217/cer.15.69,26793987,general_information,NA,NA,Countries of first author affiliations,NA,NA,usa,TRUE,DH,NA,NA
 10.2217/cer.15.69,26793987,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,DH,NA,NA
@@ -1979,4 +1979,4 @@ doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decisio
 10.5152/eurjrheum.2019.19057,31364979,study_information,NA,4,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00317499,TRUE,DH,NA,NA
 10.5152/eurjrheum.2019.19057,31364979,study_information,NA,4,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,DH,NA,NA
 10.5152/eurjrheum.2019.19057,31364979,study_information,NA,4,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,DH,NA,NA
-10.5152/eurjrheum.2019.19057,31364979,study_information,NA,4,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,NA,FALSE,DH,NA,NA
+10.5152/eurjrheum.2019.19057,31364979,study_information,NA,4,Country where the clinical trial/observational study was conducted (international if more than one),unknown,NA,unknown,FALSE,DH,NA,NA

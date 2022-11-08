@@ -106,9 +106,9 @@
 10.1080/10428194.2021.1913144,33955326,results,5,,geographical region,No,,No,FALSE
 10.1080/10428194.2021.1913144,33955326,results,6,,geographical region,No,,No,FALSE
 10.1080/10428194.2022.2047962,35289710,results,1,,geographical region,No,,No,FALSE
-10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total initial sample size IPD",848,,NA,FALSE
-10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total ESS IPD",586,,NA,FALSE
-10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total sample size non IPD",393,,NA,FALSE
+10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total initial sample size IPD",848,,848,FALSE
+10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total ESS IPD",586,,586,FALSE
+10.1080/13696998.2020.1722139,31985301,results,1,,"If anchored, total sample size non IPD",418,,418,FALSE
 10.1080/14656566.2020.1811850,32892660,results,1,,geographical region,No,,No,FALSE
 10.1080/14760584.2021.1994858,34672224,results,1,,"If anchored, total initial sample size IPD",2196,,3033,FALSE
 10.1080/14760584.2021.1994858,34672224,results,1,,"If anchored, total ESS IPD",1710,1170,1710,FALSE
@@ -166,12 +166,12 @@
 10.1183/13993003.01393-2018,30309978,results,1,,"If anchored, total sample size non IPD",884,,884,FALSE
 10.1185/03007995.2015.1106934,26455472,results,1,,geographical region,No,,No,FALSE
 10.1185/03007995.2015.1106934,26455472,results,2,,geographical region,No,,No,FALSE
-10.1186/2162-3619-2-32,24314093,results,3,,"If anchored, total initial sample size IPD",,394,,FALSE
+10.1186/2162-3619-2-32,24314093,results,3,,"If anchored, total initial sample size IPD",,394,394,FALSE
 10.1186/s12885-018-5157-0,30567533,results,1,,geographical region,No,Yes,Yes,FALSE
 10.1186/s12885-018-5157-0,30567533,results,2,,geographical region,No,Yes,Yes,FALSE
-10.1186/s13045-021-01144-9,34493319,results,1,,geographical region,No,No,,FALSE
-10.1210/clinem/dgab905,34922383,results,1,,geographical region,No,No,,FALSE
-10.1210/clinem/dgab905,34922383,results,2,,geographical region,No,No,,FALSE
+10.1186/s13045-021-01144-9,34493319,results,1,,geographical region,No,No,No,FALSE
+10.1210/clinem/dgab905,34922383,results,1,,geographical region,No,No,No,FALSE
+10.1210/clinem/dgab905,34922383,results,2,,geographical region,No,No,No,FALSE
 10.2147/cmar.s163478,29861642,results,1,,geographical region,,,Yes,TRUE
 10.2147/jbm.s104074,27445511,results,3,,geographical region,No,,No,FALSE
 10.2147/jbm.s206806,31417326,results,1,,geographical region,Yes,,Yes,FALSE

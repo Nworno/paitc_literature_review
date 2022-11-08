@@ -215,5 +215,70 @@ extra_columns <- c(
   "If anchored, total initial sample size IPD" = "If anchored, total initial sample size IPD",
   "If anchored, total ESS IPD" = "If anchored, total ESS IPD",
   "If anchored, total sample size non IPD" = "If anchored, total sample size non IPD"
+)
+
+
+
+# question types ----------------------------------------------------------
+
+
+qcm_questions <- c("Positions of study investigators (for any authors of the article, any that applies)",
+         "At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company",
+         "Mentioned sources of funding",
+         "Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article",
+         "Mention of a systematic review to find the studies to compare treatments of interest" = "Mention of a systematic review to find the studies to compare treatments of interest",
+         "Patient-level data used",
+         "Clinical Trial",
+         "Phase of the clinical trial (clinical trial only)",
+         "Number of treatment arms (clinical trial only)",
+         "Type of population-adjusted indirect comparisons performed",
+         "Anchored comparison?",
+         "Form of the indirect comparison",
+         "Definition of a single primary outcome for the indirect comparison",
+         "Primary outcome: variable type",
+         "Primary outcome: treatment effect contrast",
+         "Justification for selecting variables to be included in the adjustment model (in the main text)",
+         "Inclusion of prognostic factors in the adjustment/matching model",
+         "Inclusion of treatment-effect modifiers in the adjustment/matching model",
+         "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",
+         "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)",
+         "Reporting of a weights' distribution evaluation (MAIC)",
+         "Reporting of the list of the covariates adjusted for/matched on",
+         "Covariates adjusted for/matched on in the indirect comparison",
+         "geographical region",
+         "Direction of the treatment effect contrast: IPD treatment is:"
+)
+
+numerical_questions <- c(
+  "study_number",
+  "Sample size of the population of interest in the non IPD treatment arm",
+  "Initial sample size of the population of interest in the IPD treatment arm",
+  "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",
+  "Number of covariates adjusted for/matched on",
+  "Primary outcome: unadjusted treatment effect",
+  "If anchored, total initial sample size IPD",
+  "If anchored, total ESS IPD",
+  "If anchored, total sample size non IPD",
+  "If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",
+  "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",
+  "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm"
+)
+
+
+characters_questions <- c(
+  "Medical Condition of Interest Name",
+  "Countries of first author affiliations",
+  "Countries of last author affiliations",
+  "NCT (only for clinical trial registered on clinicaltrials.gov)",
+  "EudraCT (only for clinical trials registered on clinicaltrialsregister.eu",
+  "Country where the clinical trial/observational study was conducted (international if more than one)",
+  "Data source name (only if observational study or clinical trial without NCT)",
+  "Treatment name 1",
+  "Treatment name 2",
+  "Study 'number(s)' for treatment 1",
+  "Study 'number(s)' for treatment 2",
+  "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)",
+  "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",
+  "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])"
 
 )

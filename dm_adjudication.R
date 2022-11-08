@@ -21,26 +21,27 @@ first_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/first_par
 first_part_BZ <- read_csv(file.path(dir_data, "extraction/adjudicated/first_part/BZ.csv"),
                           col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                           col_types = c("cccccc"))
-first_part <- bind_rows(first_part_ASL, first_part_BZ)
+first_part <- bind_rows(first_part_ASL, first_part_BZ) %>%
+  filter(decision != "XXXX")
 
+stopifnot(
+  first_part %>% filter(decision == "unknown") %>% pull(questions) %>% unique() == "Country where the clinical trial/observational study was conducted (international if more than one)"
+)
+stopifnot(!any(is.na(first_part$decision)))
 
 #  DM adjudication: second_part -------------------------------------------
 
 ## Loading Belkacem adjudication -----------------------------------------------------
-
 files_BZ <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/BZ"), full.names = TRUE)
 second_part_BZ <- do.call(bind_rows, lapply(X = files_BZ,
                                           FUN = read_csv2,
                                           col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                                           col_types = c("cccccc")))
 
-
 ## Loading Arnaud adjudication -------------------------------------------
-
 second_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/ASL.csv"),
                             col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                             col_types = c("cccccc"))
-
 
 # Loading David adjudication ----------------------------------------------
 files_DH <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/DH"),
@@ -66,10 +67,34 @@ second_part_DH <- lapply(X = files_DH,
 
 second_part <- bind_rows(second_part_ASL, second_part_BZ, second_part_DH
                          # , second_part_JL
-                         )
-# Bring together respective questions for first and second part -----------
+                         ) %>%
+  filter(`Ind studies num` != "xx" | is.na(`Ind studies num`))
 
-second_part_subset <- anti_join(second_part, first_part, by = c("doi", "ITC num", "Ind studies num", "questions", "decision"))
+
+# Resolving problems 'manually' -----------------------------------------------
+
+## Removing non numerical answers for the sample size questions
+# second_part[!is.na(second_part$decision) & (second_part$decision == "Non anchored comparison"), "decision"] <- NA
+
+
+# Bring together questions of first and second part -----------
+
+second_part_subset <- anti_join(second_part, first_part, by = c("doi", "section", "ITC num", "Ind studies num", "questions"))
+
+second_part_DH %>% bind_rows() %>% filter(is.na(decision)) %>% View()
+second_part_ASL %>% filter(is.na(decision)) %>% View()
+second_part_BZ %>% bind_rows() %>% filter(is.na(decision)) %>% View()
+##TODO 08/11/2022 : comprendre pourquoi 175 NA se sont rajoutés à 18h29
+## Regarder dans fichier csv si on retrouve ces NA ou pas
+""
+stopifnot(!any(is.na(second_part_subset$decision)))
+stopifnot(!any(is.na(second_part_subset$`ITC num`)))
+second_part_subset <- second_part_subset %>%
+  # no NAs there
+  filter(decision != "XXXX") %>%
+  # no NAs there
+  filter(`ITC num` != "xx")
+
 
 # DM steps:
 # - Retrieve supplementary adjudicated columns (total sample size, included covariates)
@@ -80,6 +105,8 @@ sup_columns <- read_csv(file.path(dir_data,
                                   "extraction/adjudicated/second_part/sup_columns_adjudicated.csv"),
                         col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                         col_types = c("cccccc"))
+stopifnot(!any(is.na(sup_columns$decision)))
+
 
 long_results_final <- bind_rows(first_part, second_part_subset, sup_columns) %>%
   rename(answer = "decision",
@@ -87,8 +114,30 @@ long_results_final <- bind_rows(first_part, second_part_subset, sup_columns) %>%
          study_number = "Ind studies num") %>%
   left_join(order_sections) %>%
   arrange(doi, order_sections, n_itc, study_number) %>%
-  select(-order_sections)
+  select(-order_sections) %>%
+# type checking
+  mutate(
+    n_itc = as.integer(n_itc),
+    study_number = as.integer(study_number)
+  )
 
+# answers sanity checking --------------------------------------------------------
+source("questions_sections.R")
+general_information <- long_results_final %>% filter(section == "general_information")
+study_information <- long_results_final %>% filter(section == "study_information")
+methodology <- long_results_final %>% filter(section == "methodology")
+results <- long_results_final %>% filter(section == "results")
+
+long_results_final
+test <- long_results_final %>%
+  pivot_wider(id_cols = c("doi", "n_itc", "study_number"), names_from = "questions", values_from = "answer") %>%
+  select(all_of(numerical_questions)) %>%
+  mutate(across(.fns = function(x) ifelse(x %>% as.numeric() %>% is.na(), x, NA))) %>%
+  select(where(~ any(!is.na(.x)))) %>%
+  filter(if_any(.cols = everything(), .fns = ~ !is.na(.x)))
+
+test %>% View()
+# Writing results ---------------------------------------------------------
 long_results_final %>% write_tsv("data/extraction/data_managed/long_results_final.tsv")
 
 
