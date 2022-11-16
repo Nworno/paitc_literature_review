@@ -9,8 +9,39 @@ source("R_snippets.R")
 
 folder_input_rayyan <- "data/articles_selection"
 
-csv_pubmed <- read_csv(file.path(folder_input_rayyan, "pubv1_info.csv"))
+csv_pubmed <- read_csv(file.path(folder_input_rayyan, "articles_id.csv"))
 # Data Managing Rayyan extractions ---------------------------------
+alignement_reasons <- c(
+  "Methodological" = "methodological",
+  "Not population adjusted" = "no_paitc",
+  "no_comparison" = "no_comparison",
+  "PAITC but reusing data from another PAITC" = "other_paitc",
+  "Wrong topic" = "wrong_topic",
+  "Wrong article type" =  "not_original_article",
+  "Not human study" = "no_human",
+  "result_not_described" =  "result_not_described",
+  "Not indirect comparison" = "no_itc",
+  "Review" =  "review",
+  "protocol" =  "protocol",
+  "feasibility" = "feasibility",
+  "duplicated" =  "duplicated"
+)
+
+hierarchy_reasons <- c(
+  "not_original_article",
+  "protocol",
+  "methodological",
+  "review",
+  "feasibility",
+  "result_not_described",
+  "other_paitc",
+  "no_paitc",
+  "no_itc",
+  "no_comparison",
+  "no_human",
+  "wrong_topic",
+  "duplicated"
+)
 
 parsing_rayyan_export <- function(rayyan_export_df) {
   rayyan_export_df <- rayyan_export_df[!is.na(rayyan_export_df$notes), ]
@@ -48,6 +79,7 @@ parsing_rayyan_export <- function(rayyan_export_df) {
   stopifnot(nrow(list_strings_dm) == nrow(rayyan_export_df))
   return(bind_cols(rayyan_export_df[, "pubmed_id"], list_strings_dm))
 }
+
 
 # Separating export in two files because no real way to differentiate notes and exclusion reasons between reviewers
 # Arnaud
@@ -128,38 +160,6 @@ consensus_df <- arnaud_output[, c("pubmed_id", "inclusion")] %>%
 exclusion_reasons_df_arnaud %>% names() %>% clipr::write_clip()
 exclusion_reasons_df_belkacem %>% names() %>% clipr::write_clip()
 
-alignement_reasons <- c(
-  "Methodological" = "methodological",
-  "Not population adjusted" = "no_paitc",
-  "no_comparison" = "no_comparison",
-  "PAITC but reusing data from another PAITC" = "other_paitc",
-  "Wrong topic" = "wrong_topic",
-  "Wrong article type" =  "not_original_article",
-  "Not human study" = "no_human",
-  "result_not_described" =  "result_not_described",
-  "Not indirect comparison" = "no_itc",
-  "Review" =  "review",
-  "protocol" =  "protocol",
-  "feasibility" = "feasibility",
-  "duplicated" =  "duplicated"
-)
-
-hierarchy_reasons <- c(
-  "not_original_article",
-  "protocol",
-  "methodological",
-  "review",
-  "feasibility",
-  "result_not_described",
-  "other_paitc",
-  "no_paitc",
-  "no_itc",
-  "no_comparison",
-  "no_human",
-  "wrong_topic",
-  "duplicated"
-)
-
 
 inclusion_df_belkacem <- inclusion_df_belkacem %>% rename_w_named_list(alignement_reasons)
 
@@ -224,12 +224,9 @@ included_articles <- final_df %>% filter(consensus == TRUE & decision == "Includ
 to_review_articles <- final_df %>% filter(consensus == FALSE)
 
 
-included_articles %>%
-  select(all_of(names(csv_pubmed))) %>%
-  write_csv(file.path(folder_input_rayyan, "included_articles.csv"))
 to_review_articles %>%
   select(all_of(names(csv_pubmed))) %>%
-  write_csv(file.path(folder_input_rayyan, "to_review_articles.csv"))
+  write_csv(file.path(folder_input_rayyan, "to_review/to_review_articles.csv"))
 
 ##############
 ## Exploration des désaccords
@@ -255,12 +252,6 @@ inclusion_df_comparative %>% formattable(list(
   full_article_arnaud = bool_formatter,
   full_article_belkacem = bool_formatter
 ))
-# library(DT)
-# inclusion_df_comparative %>% DT::datatable(
-#   options = list(
-#     pageLength = 100
-#   ))
-# )
 
 # Statistics about disagreements
 library(printr)
@@ -333,28 +324,36 @@ adjudication <- adjudication %>%
          third = TRUE) %>%
   select(PMID, full_article, included, exclusion_reasons, third)
 
+included_articles %>%
+  select(all_of(names(csv_pubmed))) %>%
+  # the file used to take notes during the extraction
+  write_csv(file.path(folder_input_rayyan, "included_articles_after_review.csv"))
 
 # articles_discarded_afterwards -------------------------------------------
 
-included_articles <- read_csv(file.path(folder_input_rayyan, "included_articles.csv"),
-                              col_types = c("PMID" = "c"))
-excluded_review <- included_articles %>%
+# the same file as included_articles_after_review.csv, but with manual notes
+# taken during the extraction (comes from included_articles.xlsx)
+included_articles_final <- read_csv(
+  file.path(folder_input_rayyan, "included_articles_final.csv")
+)
+
+excluded_during_extraction <- included_articles_final %>%
   filter(included == "XX") %>%
   mutate(full_article = TRUE,
          included = FALSE,
-         during_review = TRUE,
+         during_extraction = TRUE,
          PMID = as.character(PMID)) %>%
-  select(PMID, full_article, included, exclusion_reasons, during_review)
+  select(PMID, full_article, included, exclusion_reasons, during_extraction)
 
 flow_chart_df <- subset_final_df %>%
   anti_join(adjudication, by = "PMID") %>%
   bind_rows(adjudication) %>%
-  anti_join(excluded_review, by = "PMID") %>%
-  bind_rows(excluded_review) %>%
-  mutate(across(.cols = c(third, during_review), .fns = ~ !is.na(.x)))
+  anti_join(excluded_during_extraction, by = "PMID") %>%
+  bind_rows(excluded_during_extraction) %>%
+  mutate(across(.cols = c(third, during_extraction), .fns = ~ !is.na(.x)))
 
 
 stopifnot(nrow(flow_chart_df) == nrow(final_df))
-stopifnot(sum(flow_chart_df$included) == sum(is.na(included_articles$included)))
+stopifnot(sum(flow_chart_df$included) == sum(is.na(included_articles_final$included)))
 
 write_csv(flow_chart_df, "data/articles_selection/flow_chart.csv")
