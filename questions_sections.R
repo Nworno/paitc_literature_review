@@ -221,32 +221,35 @@ extra_columns <- c(
 
 # question types ----------------------------------------------------------
 
+qcm_questions <- c(
+  "Positions of study investigators (for any authors of the article, any that applies)",
+  "Mentioned sources of funding",
+  "Phase of the clinical trial (clinical trial only)",
+  "Justification for selecting variables to be included in the adjustment model (in the main text)",
+  "Covariates adjusted for/matched on in the indirect comparison"
+)
 
-qcm_questions <- c("Positions of study investigators (for any authors of the article, any that applies)",
-         "At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company",
-         "Mentioned sources of funding",
-         "Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article",
-         "Mention of a systematic review to find the studies to compare treatments of interest" = "Mention of a systematic review to find the studies to compare treatments of interest",
-         "Patient-level data used",
-         "Clinical Trial",
-         "Phase of the clinical trial (clinical trial only)",
-         "Number of treatment arms (clinical trial only)",
-         "Type of population-adjusted indirect comparisons performed",
-         "Anchored comparison?",
-         "Form of the indirect comparison",
-         "Definition of a single primary outcome for the indirect comparison",
-         "Primary outcome: variable type",
-         "Primary outcome: treatment effect contrast",
-         "Justification for selecting variables to be included in the adjustment model (in the main text)",
-         "Inclusion of prognostic factors in the adjustment/matching model",
-         "Inclusion of treatment-effect modifiers in the adjustment/matching model",
-         "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",
-         "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)",
-         "Reporting of a weights' distribution evaluation (MAIC)",
-         "Reporting of the list of the covariates adjusted for/matched on",
-         "Covariates adjusted for/matched on in the indirect comparison",
-         "geographical region",
-         "Direction of the treatment effect contrast: IPD treatment is:"
+qcu_questions <- c(
+  "At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company",
+  "Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article",
+  "Mention of a systematic review to find the studies to compare treatments of interest" = "Mention of a systematic review to find the studies to compare treatments of interest",
+  "Patient-level data used",
+  "Clinical Trial",
+  "Number of treatment arms (clinical trial only)",
+  "Type of population-adjusted indirect comparisons performed",
+  "Anchored comparison?",
+  "Form of the indirect comparison",
+  "Definition of a single primary outcome for the indirect comparison",
+  "Primary outcome: variable type",
+  "Primary outcome: treatment effect contrast",
+  "Inclusion of prognostic factors in the adjustment/matching model",
+  "Inclusion of treatment-effect modifiers in the adjustment/matching model",
+  "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",
+  "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)",
+  "Reporting of a weights' distribution evaluation (MAIC)",
+  "Reporting of the list of the covariates adjusted for/matched on",
+  "geographical region",
+  "Direction of the treatment effect contrast: IPD treatment is:"
 )
 
 numerical_questions <- c(

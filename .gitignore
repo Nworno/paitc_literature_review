@@ -1,3 +1,8 @@
+#perso 
+*.zip
+*.lnk
+*.Rproj
+
 # data archives folder
 *archive*
 *to_review*

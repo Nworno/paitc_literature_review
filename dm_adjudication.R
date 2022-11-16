@@ -31,28 +31,15 @@ stopifnot(!any(is.na(first_part$decision)))
 
 #  DM adjudication: second_part -------------------------------------------
 
-## Loading Belkacem adjudication -----------------------------------------------------
-files_BZ <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/BZ"), full.names = TRUE)
-second_part_BZ <- do.call(bind_rows, lapply(X = files_BZ,
-                                          FUN = read_csv2,
-                                          col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
-                                          col_types = c("cccccc")))
-
-## Loading Arnaud adjudication -------------------------------------------
 second_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/ASL.csv"),
                             col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
                             col_types = c("cccccc"))
-
-# Loading David adjudication ----------------------------------------------
-files_DH <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/DH"),
-                       full.names = TRUE,
-                       recursive = TRUE,
-                       pattern = ".csv")
-
-second_part_DH <- lapply(X = files_DH,
-                         FUN = read_csv2,
-                         col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
-                         col_types = c("cccccc"))
+second_part_BZ <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/BZ_raw.csv"),
+                           col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
+                           col_types = c("cccccc"))
+second_part_DH <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/DH_raw.csv"),
+                           col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
+                           col_types = c("cccccc"))
 
 # PLACEHOLDER: Loading Jerome adjudication ----------------------------------------------
 # files_JL <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/JL"),
@@ -81,14 +68,16 @@ second_part <- bind_rows(second_part_ASL, second_part_BZ, second_part_DH
 
 second_part_subset <- anti_join(second_part, first_part, by = c("doi", "section", "ITC num", "Ind studies num", "questions"))
 
+#TODO: NA présent, à corriger
 second_part_DH %>% bind_rows() %>% filter(is.na(decision)) %>% View()
 second_part_ASL %>% filter(is.na(decision)) %>% View()
 second_part_BZ %>% bind_rows() %>% filter(is.na(decision)) %>% View()
-##TODO 08/11/2022 : comprendre pourquoi 175 NA se sont rajoutés à 18h29
-## Regarder dans fichier csv si on retrouve ces NA ou pas
-""
+# Pour l'instant, filtrage de ces NA
+second_part_subset <- second_part_subset %>% filter(!is.na(decision))
+
+
 stopifnot(!any(is.na(second_part_subset$decision)))
-stopifnot(!any(is.na(second_part_subset$`ITC num`)))
+stopifnot(!any(is.na(second_part_subset %>% filter(section %in% c("methodology", "results")) %>% pull(`ITC num`))))
 second_part_subset <- second_part_subset %>%
   # no NAs there
   filter(decision != "XXXX") %>%
@@ -107,8 +96,11 @@ sup_columns <- read_csv(file.path(dir_data,
                         col_types = c("cccccc"))
 stopifnot(!any(is.na(sup_columns$decision)))
 
+# answers sanity checking --------------------------------------------------------
+source("questions_sections.R")
 
-long_results_final <- bind_rows(first_part, second_part_subset, sup_columns) %>%
+
+long_results <- bind_rows(first_part, second_part_subset, sup_columns) %>%
   rename(answer = "decision",
          n_itc = "ITC num",
          study_number = "Ind studies num") %>%
@@ -121,24 +113,92 @@ long_results_final <- bind_rows(first_part, second_part_subset, sup_columns) %>%
     study_number = as.integer(study_number)
   )
 
-# answers sanity checking --------------------------------------------------------
-source("questions_sections.R")
-general_information <- long_results_final %>% filter(section == "general_information")
-study_information <- long_results_final %>% filter(section == "study_information")
-methodology <- long_results_final %>% filter(section == "methodology")
-results <- long_results_final %>% filter(section == "results")
-
-long_results_final
-test <- long_results_final %>%
+test <- long_results %>%
   pivot_wider(id_cols = c("doi", "n_itc", "study_number"), names_from = "questions", values_from = "answer") %>%
   select(all_of(numerical_questions)) %>%
   mutate(across(.fns = function(x) ifelse(x %>% as.numeric() %>% is.na(), x, NA))) %>%
   select(where(~ any(!is.na(.x)))) %>%
   filter(if_any(.cols = everything(), .fns = ~ !is.na(.x)))
 
-test %>% View()
-# Writing results ---------------------------------------------------------
-long_results_final %>% write_tsv("data/extraction/data_managed/long_results_final.tsv")
+# Correcting non numeric answers in numerical columns
+long_results[grepl("%", long_results$answer), "answer"] <- long_results[grepl("%", long_results$answer), "answer", drop = TRUE] %>%
+  sub(pattern = "%", replacement = "", x = .)
+# Maybe assign "XXXX" instead of NA
+long_results[long_results$answer == "Non anchored comparison" & grepl("^If anchored comparison,\\s", long_results$questions), "answer"] <- NA
+
+# DM pvalues
+df_pvalues <- long_results %>%
+  filter(questions %in% c(
+    "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",
+    "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])"
+  ))
+
+df_pvalues <- df_pvalues %>%
+  mutate(lb_ci = str_extract(answer, "(?<=\\[).+(?=;)"),
+         ub_ci = str_extract(answer, "(?<=;).+(?=\\])"),
+         # pattern compliqué pour prendre en compte les cas ou l'IC et la pvalues sont simultanément reportés
+         pval = str_extract(answer, "(^[<>\\=\\.\\-\\d]+)|((?<=[p\\=])[<>\\=\\.\\-\\d]+)")
+  ) %>%
+  mutate(across(.cols = c(lb_ci, ub_ci, pval), .fns = str_trim)) %>%
+  mutate(across(.cols = c(lb_ci, ub_ci), .fns = as.numeric),
+         num_pval = as.numeric(pval))
+
+df_outcomes <- long_results %>%
+  filter(questions == "Primary outcome: treatment effect contrast") %>%
+  mutate(ci_cutoff = ifelse(
+    answer %in% c(
+      "HR",
+      "RR",
+      "OR",
+      "Means Ratio",
+      "Incidence Rate Ratio",
+      "Rate ratio"
+    ), 1, ifelse(answer %in% c(
+      "Means difference",
+      "RMST difference at 12 months",
+      "Median difference",
+      "Rate difference",
+      "Risk difference",
+      "Proportions difference"
+    ), 0, NA))
+  ) %>%
+  rename(outcome = answer) %>%
+  select(-questions)
+
+tryCatch(
+  stopifnot(df_pvalues %>%
+              filter(if_all(.cols = c(lb_ci, ub_ci, pval), .fns = is.na)) %>%
+              nrow() == 0
+  ), error = function(e) {
+    View(df_pvalues %>%
+           filter(if_all(.cols = c(lb_ci, ub_ci, pval), .fns = is.na))
+    )
+  }
+)
+
+df_significance <- left_join(df_pvalues, df_outcomes, by = c("doi", "section", "n_itc", "study_number")) %>%
+  mutate(significant = case_when(
+           grepl("^<", pval) ~ TRUE,
+           num_pval < 0.05 ~ TRUE,
+           num_pval >= 0.05 ~ FALSE,
+           lb_ci < ci_cutoff & ub_ci > ci_cutoff ~ TRUE,
+           lb_ci >= ci_cutoff | ub_ci <= ci_cutoff ~ FALSE,
+           TRUE ~ NA
+         )
+  ) %>%
+  select(-questions, -answer, -outcome) %>%
+  mutate(across(.cols = everything(), .fns = as.character)) %>%
+  pivot_longer(cols = c("lb_ci", "ub_ci", "pval", "num_pval", "ci_cutoff", "significant"),
+               names_to = "questions",
+               values_to = "answer")
+
+long_results_final <- mutate(long_results, across(.fns = as.character)) %>%
+  bind_rows(df_significance) %>%
+  arrange(doi, section, n_itc, study_number)
+
+
+# Writing final table of results -----------------------------------------
+long_results_final %>% write_tsv("data/extraction/to_use_for_stats/long_results_final.tsv")
 
 
 # Treatments and ATC ------------------------------------------------------
@@ -311,7 +371,7 @@ decision_atc_mapped <- second_part_subset %>%
   filter(questions %in% c("Treatment name 1", "Treatment name 2")) %>%
   left_join(ttt_atc_mapped, by = c("decision" = "ttt_name"))
 
-decision_atc_mapped %>% write_tsv(file.path(dir_data, "extraction/data_managed/decision_atc_mapped.tsv"))
+decision_atc_mapped %>% write_tsv(file.path(dir_data, "extraction/to_use_for_stats/decision_atc_mapped.tsv"))
 
 
 # ICD mapping -------------------------------------------------------------
@@ -360,7 +420,7 @@ conditions_mapped <- first_part %>%
   filter(questions %in% c("Medical Condition of Interest Name")) %>%
   left_join(conditions_mapped[, c("condition_name", "concept_code_ICD10 Hierarchy")],
             by = c("decision" = "condition_name"))
-conditions_mapped %>% write_tsv("data/extraction/data_managed/decision_icd_mapped.tsv")
+conditions_mapped %>% write_tsv("data/extraction/to_use_for_stats/decision_icd_mapped.tsv")
 
 
 
@@ -371,7 +431,7 @@ conditions_mapped %>% write_tsv("data/extraction/data_managed/decision_icd_mappe
 TEMPORARY <- FALSE
 if (TEMPORARY) {
   second_part_ASL_BZ <- bind_rows(second_part_ASL, second_part_BZ)
-  temp_results_second_part <- read_csv2("data/extraction/comparison_answers2022-09-21.csv") %>%
+  # temp_results_second_part <- read_csv2("data/extraction/raw/comparison_answers2022-09-21.csv") %>%
     mutate(across(.fns = as.character)) %>%
     mutate(decision = ifelse(decision == "XXXX", "", decision),
            decision = ifelse(decision == "", ifelse(`reviewer 2` != "", `reviewer 2`, `reviewer 1`), decision)) %>%
@@ -451,9 +511,4 @@ if (FALSE) {
            decision = ifelse(decision == "", ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), decision)) %>%
     select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, decision)
 }
-
-
-results_dm <- bind_rows(first_part, second_part_subset) %>%
-  arrange(doi, section, `Ind studies num`, `ITC num`) %>%
-  write_tsv("data/extraction/results_dm.tsv")
 

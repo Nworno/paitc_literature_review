@@ -13,8 +13,8 @@ WRITE <- FALSE
 dir_data <- "data"
 
 extraction_df <- read_csv(
-  file.path(dir_data, "/extraction/results_extraction_raw_sup_cols.csv"),
-  # file.path(dir_data, "/extraction/results_extraction_raw.csv"),  # Before adding 4 extra columns
+  file.path(dir_data, "/extraction/raw/results_extraction_raw_sup_cols.csv"),
+  # file.path(dir_data, "/extraction/raw/results_extraction_raw.csv"),  # Before adding 4 extra columns
   name_repair = "minimal"
 )
 
@@ -604,13 +604,13 @@ if (NEW_ADJUDICATION) {
 
 if (WRITE) {
   write_excel_csv2(done_info,
-                   "data/literature_search_pubv1/extraction_articles/results_summary.csv")
+                   "data/extraction/raw/results_summary.csv")
 
   to_review_objective %>% filter(reviewer == "DH") %>% write_csv2("data/extraction/to_review/to_review_BZ.csv")
   to_review_objective %>% filter(reviewer == "JL") %>% write_csv2("data/extraction/to_review/to_review_ASL.csv")
 
   long_results_w_notes %>% write_excel_csv2(paste0(
-    "data/literature_search_pubv1/extraction_articles/comparison_answers",
+    "data/extraction/raw/comparison_answers",
     as.Date(lubridate::now(), format = "yyMMDD"),
     ".csv"),
     eol = "\r\n")
@@ -619,12 +619,12 @@ if (WRITE) {
 # Writing treatment names ------------------------------------------------
   df_ttt %>% write_csv(file.path(dir_data, "mapping/ttt_names.csv"))
 # Writing condition names ------------------------------------------------
-  df_condition %>% write_csv(file.path(dir_data, "condition_names.csv"))
+  df_condition %>% write_csv(file.path(dir_data, "mapping/condition_names.csv"))
 
   # Export results for third reviewer ----------------------------------------------------------
 
   for (initials in c("JL", "DH")) {
-    dir_results <- file.path(dir_data, "extraction_articles", initials)
+    dir_results <- file.path(dir_data, "extraction/to_review", initials)
     if (!dir.exists(dir_results)) dir.create(dir_results)
     result_reviewer <- long_results_w_notes %>%
       filter(reviewer == initials)
