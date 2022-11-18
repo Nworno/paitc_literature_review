@@ -283,5 +283,4 @@ characters_questions <- c(
   "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)",
   "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",
   "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])"
-
 )

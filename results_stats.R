@@ -8,38 +8,47 @@ library(lubridate)
 library(ggthemr)
 library(arsenal)
 library(flextable)
+library(ggthemr)
 
 source("R_snippets.R")
+# ggtheme setting ---------------------------------------------------------
+ggthemr::ggthemr("fresh")
 
-all_articles_info <- read_csv("data/articles_selection/pubv1_wide_format.csv")
-all_articles_id <- read_csv("data/articles_selection/pubv1_info.csv")
-extraction_list <- read_csv("data/articles_selection/included_articles.csv")
-flow_chart_df <- read_csv("data/articles_selection/flow_chart.csv")
-results_df <- read_csv2("data/extraction/extraction_results.csv")
-
+all_articles_info <- read_csv("data/articles_selection/all_articles_info.csv", col_types = cols(.default = "c"))
+all_articles_id <- read_csv("data/articles_selection/articles_id.csv", col_types = cols(.default = "c"))
+# extraction_list <- read_csv("data/articles_selection/included_articles_after_review.csv", col_types = cols(.default = "c)))
+flow_chart_df <- read_csv("data/to_use_for_stats/flow_chart.csv", col_types = cols(included = "l",
+                                                                                   full_article = "l",
+                                                                                   third = "l",
+                                                                                   during_extraction = "l",
+                                                                                   .default = "c"))
+results_df <- read_tsv("data/to_use_for_stats/long_results_final.tsv", col_types = cols(.default = "c"))
+ttt_mapped <- read_tsv("data/to_use_for_stats/decision_atc_mapped.tsv", col_types = cols(.default = "c", car_t_cells = "l"))
+conditions_mapped <- read_tsv("data/to_use_for_stats/decision_icd_mapped.tsv", col_types = cols(.default = "c"))
 
 # list_questions ----------------------------------------------------------
 source("questions_sections.R")
 methodology_questions <- questions_sections$methodology %>% unname()
 
-
-# ggtheme setting ---------------------------------------------------------
-ggthemr::ggthemr("fresh")
-
-
 # selection articles ---------------------------------------------------------
+all_articles_id <- all_articles_id %>%
+  mutate(DOI = tolower(DOI)) %>%
+  rename(doi = DOI)
 included_articles <- filter(flow_chart_df, included)
 
-stopifnot(identical(
-  unique(included_articles$PMID)[order(unique(included_articles$PMID))],
-  unique(results$PMID)[order(unique(results$PMID))]
-))
+results_df <- left_join(results_df, all_articles_id[, c("doi", "PMID")], by = "doi")
+
+# 12 articles manquants, voir une fois qu'on aura tous les articles avec Jérôme
+# pour l'instant ne fonctionne pas car manque les articles à adjudiquer par Jérôme
+# stopifnot(identical(
+#   unique(included_articles$PMID)[order(unique(included_articles$PMID))],
+#   unique(results_df$PMID)[order(unique(results_df$PMID))]
+# ))
 
 
 # joins -------------------------------------------------------------------
 
 included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
-
 
 # articles metadata -------------------------------------------------------
 
@@ -69,16 +78,7 @@ publication_date_df <- included_articles_info %>%
          publication_date_s = ifelse(round(publication_date_s %% 0.2, 1) == 0.1,
                                       trunc(publication_date_s),
                                       trunc(publication_date_s) + 0.5))
-publication_date_df %>%
-  group_by(publication_date_s) %>%
-  summarise(count = n()) %>%
-  ggplot(aes(x = publication_date_s, y = count)) +
-  geom_point() +
-  geom_line() +
-  scale_x_continuous(breaks = 2010:2022) +
-  labs(title = "Publications by semester",
-       x = "Date",
-       y = "Publication counts")
+
 
 publication_date_df %>%
   filter(publication_year < 2022) %>%
@@ -101,10 +101,16 @@ paitc_results <- results_df[results_df$section %in% c("methodology", "results"),
 
 
 results_wide <- paitc_results %>%
-  pivot_wider(id_cols = c(doi, PMID, `ITC num`), names_from = questions, values_from = answer) %>%
+  filter(section == "results") %>%
+  pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer) %>%
   mutate(across(where(is.character), .fns = as.factor))
 
+with(results_wide, table(n_itc))
+distinct(results_wide, doi, n_itc) %>% dim()
 
+
+results_wide %>%
+  names()
 ## Checks
 results_wide %>%
   summarise(across(.fns = ~ sum(is.na(.x)))) %>%

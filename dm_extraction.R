@@ -18,7 +18,7 @@ extraction_df <- read_csv(
   name_repair = "minimal"
 )
 
-full_list_articles_to_do <- read_csv(file.path(dir_data, "/articles_selection/included_articles.csv")) %>%
+full_list_articles_to_do <- read_csv(file.path(dir_data, "/articles_selection/included_articles_final.csv")) %>%
   mutate(PMID = as.character(PMID),
          `Create Date` = as_date(`Create Date`, format = "%d/%m/%Y")) %>%
   arrange(`Create Date`)
@@ -669,8 +669,5 @@ long_results_w_notes %>%
   mutate(decision = ifelse(decision == "XXXX", "", decision)) %>%
   select(-reviewer, -`Notes reviewer 1`, -`Notes reviewer 2`) %>%
   write_csv("data/extraction/to_review/sup_columns_adjudication.csv")
-
-
 }
-
 

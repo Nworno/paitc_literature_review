@@ -9,7 +9,8 @@ source("R_snippets.R")
 
 folder_input_rayyan <- "data/articles_selection"
 
-csv_pubmed <- read_csv(file.path(folder_input_rayyan, "articles_id.csv"))
+articles_id <- read_csv(file.path(folder_input_rayyan, "articles_id.csv"),
+                        col_types = list(col_character()))
 # Data Managing Rayyan extractions ---------------------------------
 alignement_reasons <- c(
   "Methodological" = "methodological",
@@ -208,7 +209,7 @@ final_inclusion_df <- consensus_df %>%
   left_join(final_reason, by = "pubmed_id") %>%
   arrange(consensus)
 
-final_df <- csv_pubmed %>%
+final_df <- articles_id %>%
   mutate(PMID = as.character(PMID)) %>%
   left_join(final_inclusion_df,
             by = c("PMID" = "pubmed_id")) %>%
@@ -223,10 +224,10 @@ final_df <- csv_pubmed %>%
 included_articles <- final_df %>% filter(consensus == TRUE & decision == "Included")
 to_review_articles <- final_df %>% filter(consensus == FALSE)
 
-
 to_review_articles %>%
-  select(all_of(names(csv_pubmed))) %>%
+  select(all_of(names(articles_id))) %>%
   write_csv(file.path(folder_input_rayyan, "to_review/to_review_articles.csv"))
+
 
 ##############
 ## Exploration des désaccords
@@ -290,6 +291,11 @@ subset_final_df <- final_df %>%
   mutate(included = if_else(decision == "Included", TRUE, FALSE)) %>%
   select(PMID, included, full_article, exclusion_reasons)
 
+included_articles %>%
+  select(all_of(names(articles_id))) %>%
+  # this file was used to take notes during the extraction, articles adjudicated by David were appended manually
+  write_csv(file.path(folder_input_rayyan, "included_articles_after_review.csv"))
+
 
 
 # Adjudication -------------------------------------------------------
@@ -324,10 +330,6 @@ adjudication <- adjudication %>%
          third = TRUE) %>%
   select(PMID, full_article, included, exclusion_reasons, third)
 
-included_articles %>%
-  select(all_of(names(csv_pubmed))) %>%
-  # the file used to take notes during the extraction
-  write_csv(file.path(folder_input_rayyan, "included_articles_after_review.csv"))
 
 # articles_discarded_afterwards -------------------------------------------
 
@@ -350,10 +352,15 @@ flow_chart_df <- subset_final_df %>%
   bind_rows(adjudication) %>%
   anti_join(excluded_during_extraction, by = "PMID") %>%
   bind_rows(excluded_during_extraction) %>%
-  mutate(across(.cols = c(third, during_extraction), .fns = ~ !is.na(.x)))
+  mutate(across(.cols = c(third, during_extraction), .fns = ~ !is.na(.x))) %>%
+  left_join(articles_id[, c("PMID", "DOI")], by = "PMID") %>%
+  # to be able to join on DOI with the results df
+  mutate(DOI = tolower(DOI)) %>%
+  rename(doi = DOI) %>%
+  select(doi, everything())
 
 
 stopifnot(nrow(flow_chart_df) == nrow(final_df))
 stopifnot(sum(flow_chart_df$included) == sum(is.na(included_articles_final$included)))
 
-write_csv(flow_chart_df, "data/articles_selection/flow_chart.csv")
+write_csv(flow_chart_df, "data/to_use_for_stats/flow_chart.csv")

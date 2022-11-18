@@ -12,6 +12,7 @@ source("questions_sections.R")
 WRITE <- FALSE
 dir_data <- "data"
 
+flow_chart <- read_csv(file.path(dir_data, "to_use_for_stats/flow_chart.csv"))
 
 # DM adjudication first part ----------------------------------------------
 
@@ -161,7 +162,7 @@ df_outcomes <- long_results %>%
       "Risk difference",
       "Proportions difference"
     ), 0, NA))
-  ) %>%
+  )  %>%
   rename(outcome = answer) %>%
   select(-questions)
 
@@ -186,20 +187,29 @@ df_significance <- left_join(df_pvalues, df_outcomes, by = c("doi", "section", "
            TRUE ~ NA
          )
   ) %>%
-  select(-questions, -answer, -outcome) %>%
+  mutate(adjustment = ifelse(grepl("\\badjusted\\b", questions), "adjusted", "unadjusted")) %>%
   mutate(across(.cols = everything(), .fns = as.character)) %>%
   pivot_longer(cols = c("lb_ci", "ub_ci", "pval", "num_pval", "ci_cutoff", "significant"),
+               names_to = "indicator",
+               values_to = "values") %>%
+  pivot_wider(names_from = c("adjustment", "indicator"),
+              values_from = "values",
+              names_sep = "_") %>%
+  select(-questions, -answer, -outcome) %>%
+  pivot_longer(cols = !c(doi, section, n_itc, study_number),
                names_to = "questions",
-               values_to = "answer")
+               values_to = "answer") %>%
+    drop_na(answer)
 
 long_results_final <- mutate(long_results, across(.fns = as.character)) %>%
   bind_rows(df_significance) %>%
-  arrange(doi, section, n_itc, study_number)
+  arrange(doi, section, n_itc, study_number) %>%
+  # to discard article removed at the very end
+  semi_join(filter(flow_chart, included), by = "doi")
 
 
 # Writing final table of results -----------------------------------------
-long_results_final %>% write_tsv("data/extraction/to_use_for_stats/long_results_final.tsv")
-
+long_results_final %>% write_tsv("data/to_use_for_stats/long_results_final.tsv")
 
 # Treatments and ATC ------------------------------------------------------
 ttt_df <- read_tsv("data/mapping/treatment_mapping.tsv") %>%
@@ -371,7 +381,7 @@ decision_atc_mapped <- second_part_subset %>%
   filter(questions %in% c("Treatment name 1", "Treatment name 2")) %>%
   left_join(ttt_atc_mapped, by = c("decision" = "ttt_name"))
 
-decision_atc_mapped %>% write_tsv(file.path(dir_data, "extraction/to_use_for_stats/decision_atc_mapped.tsv"))
+decision_atc_mapped %>% write_tsv(file.path(dir_data, "to_use_for_stats/decision_atc_mapped.tsv"))
 
 
 # ICD mapping -------------------------------------------------------------
@@ -415,14 +425,7 @@ conditions_mapped <- conditions_mapping %>%
               values_from = c("concept_code", "concept_name"),
               values_fn = function(...) paste(..., collapse = "; "))
 
-
-conditions_mapped <- first_part %>%
-  filter(questions %in% c("Medical Condition of Interest Name")) %>%
-  left_join(conditions_mapped[, c("condition_name", "concept_code_ICD10 Hierarchy")],
-            by = c("decision" = "condition_name"))
-conditions_mapped %>% write_tsv("data/extraction/to_use_for_stats/decision_icd_mapped.tsv")
-
-
+conditions_mapped %>% write_tsv("data/to_use_for_stats/decision_icd_mapped.tsv")
 
 # ARCHIVE -----------------------------------------------------------------
 
