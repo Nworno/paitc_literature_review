@@ -3,7 +3,7 @@ title: "results_stats"
 format: html
 ---
 
-```{r config knitr}
+```{r config knitr, echo=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(error = FALSE)
@@ -71,17 +71,25 @@ results_df <- left_join(results_df, all_articles_id[, c("doi", "PMID")], by = "d
 included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
 ```
 
-```{r}
+```{r Creating section data frames}
 general_information_df <- results_df[results_df$section == "general_information",]
-individual_study_df <- results_df[results_df$section == "individual_study",]
+individual_study_df <- results_df[results_df$section == "study_information",]
 paitc_results <- results_df[results_df$section %in% c("methodology", "results"), ]
 ```
 
 
 # Articles general Information
 
-TODO: rajouter IF
-```{r Publication journals}
+```{r}
+general_information_df <- general_information_df %>% 
+  select(-n_itc, -study_number, -section, -PMID) %>% 
+  select(answer, everything())
+```
+
+## Journals
+
+```{r Publication journals, fig.height=18}
+#TODO: rajouter IF
 ## Authors specific affiliations would need to be parsed and retrieved through pubv1_info.txt --> regex looking at ". " preceded by a ", " or "^"
 included_articles_info %>%
   mutate("journal_title" = JT,
@@ -89,9 +97,10 @@ included_articles_info %>%
   group_by(journal_title_short) %>%
   summarise(count = n()) %>%
   arrange(desc(count)) %>%
-  ggplot(aes(x = reorder(journal_title_short, count), y = count)) +
+  ggplot(aes(x = reorder(journal_title_short, count), y = count, label = count)) +
   geom_bar(stat = "identity") +
-  theme(axis.text.y = element_text(size = 7)) +
+  geom_label() + 
+  theme(axis.text.y = element_text(size = 12)) +
   scale_x_discrete() +
   coord_flip() +
   labs(title = "Publication journals",
@@ -145,28 +154,269 @@ publication_dates_df %>%
   labs(x = "Time in months", "publication count", 
        title = "Time between submission and acceptation")
 ```
-## Medical conditions
+## Authors' affiliations
 
-```{r fig.width=16}
+```{r Authors affiliations}
+authors_affiliation_df <- general_information_df %>% 
+  filter(questions == "Positions of study investigators (for any authors of the article, any that applies)") %>%
+  # Manually correcting variation introduced during the review process 
+  mutate(answer = if_else(answer == "Academic, Private Data Analysis Company, Pharmaceutical Industry",
+                         "Academic, Pharmaceutical Industry, Private Data Analysis Company",
+                         answer)) %>%
+  select(doi, answer) %>% 
+  mutate(positions = str_split(answer, ", ")) %>% 
+  unnest(positions)
+```
+
+
+```{r }
+authors_affiliation_df %>% 
+  distinct(doi, answer) %>% 
+  count(answer) %>% {
+  ggplot(., aes(x = answer, y = n)) +
+  geom_bar(stat = "identity") +
+  geom_label(aes(label = n), 
+             position = position_stack(vjust = 0.5)) + 
+  coord_flip() + 
+  scale_x_discrete(limits = rev(.$answer)) +
+  labs(x = NULL, y = "Articles count", title = "Authors' positions") +
+  theme(axis.text.y = element_text(size = 8))
+}
+```
+
+
+```{r}
+authors_affiliation_df %>% 
+  group_by(positions) %>% 
+  summarise(counts = n()) %>% 
+  ggplot(aes(x = positions, y = counts)) +
+  geom_bar(stat = "identity") +
+  geom_label(aes(y = 150, label = counts),
+             position = position_stack(vjust = 0.5),
+             color = "black",
+             show.legend = FALSE) + 
+  labs(title = "Authors' positions",
+       subtitle = "At least one author affiliated with: ", 
+       y = "Articles count", 
+       x = "Positions")
+```
+
+
+```{r }
+authors_affiliation_df %>% 
+  mutate(counter = TRUE) %>% 
+  pivot_wider(names_from = positions, values_from = counter, values_fill = FALSE) %>% 
+  mutate(collaboration = Academic & `Pharmaceutical Industry`) %>% 
+  count(collaboration) %>% 
+  ggplot(aes(x = collaboration, y = n)) + 
+  geom_bar(stat = "identity") + 
+  geom_label(aes(label = n, y = 30)) +
+  scale_x_discrete(labels = c(`FALSE` = "No collaboration", `TRUE` = "Collaboration")) +
+  labs(x = NULL, 
+       y = "Articles count", 
+       title = "Academics/Pharmaceutical Collaborations")
+```
+
+### First and last authors positions
+
+```{r}
+general_information_df %>% 
+  mutate(answer = ifelse(tolower(answer) %in% c("usa", "uk"),
+                         str_to_upper(answer),
+                         str_to_title(answer))) %>% 
+  filter(questions %in% c("Countries of first author affiliations", "Countries of last author affiliations")) %>% 
+  count(questions, answer) %>%
+  ggplot(aes(x = reorder(answer, n), y = n)) + 
+  geom_bar(stat = "identity") + 
+  facet_grid(" ~ questions") + 
+  coord_flip() + 
+  labs(title = "Countries", 
+       x = NULL, 
+       y = "Article count")
+  
+```
+## Methodology departments
+
+
+```{r}
+general_information_df %>% 
+  filter(questions == "At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company") %>% 
+  count(answer) %>% 
+  ggplot(aes(x = answer, y = n, label = n)) +
+  geom_bar(stat = "identity") +
+  geom_label() +
+  labs(x = "Affiliation with a methodology department/data-analysis company", 
+       title = "Involvement of a Methodology department/data-analysis company", 
+       y = "Count")
+```
+
+## Fundings
+
+```{r}
+general_information_df %>% 
+  filter(questions == "Mentioned sources of funding") %>% 
+  count(answer) %>% 
+  ggplot(aes(x = answer, y = n, label = n)) +
+  geom_bar(stat = "identity") +
+  geom_label() +
+  coord_flip() + 
+  labs(x = NULL,
+       title = "Mentioned of source of fundings", 
+       y = "Count")
+```
+
+
+## Investigated medical conditions
+
+```{r fig.width=12}
 conditions_df <- general_information_df %>% 
   filter(questions == "Medical Condition of Interest Name") %>% 
   left_join(conditions_mapped, by = c("answer" = "condition_name"))
-
+# conditions_df
 stopifnot(!any(is.na(conditions_df$`concept_name_ICD10 Chapter`)))
+```
 
-ggplot(conditions_df, aes(x = `concept_name_ICD10 Hierarchy`)) + 
-  geom_bar() +
-  coord_flip()
 
-ggplot(conditions_df, aes(x = `concept_name_ICD10 Chapter`)) + 
-  geom_bar() +
-  coord_flip()
-#TODO: reprendre d'ici, améliorer ces figures et passer à la suite 
+```{r fig.width=12, fig.height=10}
+conditions_df %>% 
+  count(`concept_name_ICD10 Hierarchy`, `concept_code_ICD10 Hierarchy`) %>% 
+  mutate(across(where(is.character), as.factor)) %>% 
+  ggplot(aes(x = reorder(`concept_name_ICD10 Hierarchy`, as.numeric(`concept_code_ICD10 Hierarchy`)),
+             y = n, 
+             label = n)
+  ) + 
+  geom_bar(stat = "identity") +
+  geom_label() + 
+  coord_flip() +
+  scale_y_discrete() + 
+  labs(x = NULL, 
+       y = "Articles count", 
+       title = "Investigated Condition", 
+       subtitle = "By ICD-10 Subchapter")
 
 ```
 
 
-```{r Results}
+```{r fig.width=12}
+conditions_df %>% 
+  count(`concept_name_ICD10 Chapter`, `concept_code_ICD10 Chapter`) %>% 
+  mutate(across(where(is.character), as.factor)) %>% 
+  ggplot(aes(x = reorder(`concept_name_ICD10 Chapter`, as.numeric(`concept_code_ICD10 Chapter`)),
+             y = n, 
+             label = n)
+  ) + 
+  geom_bar(stat = "identity") +
+  geom_label() + 
+  coord_flip() + 
+  labs(x = NULL, 
+       y = "Articles count", 
+       title = "Investigated condition", 
+       subtitle = "By ICD-10 Chapter")
+
+```
+
+# Results
+
+```{r}
+wide_methodo_results <- paitc_results %>% 
+  pivot_wider(id_cols = c(doi, n_itc), names_from = questions, values_from = answer)
+```
+
+
+
+```{r data management to determine IPD/nonIPD treatments}
+ttt_ipd_df <- paitc_results %>% 
+  select(doi, section, n_itc, questions, answer) %>% 
+  filter(str_detect(questions,
+                    pattern = c("(Treatment name)|(Study 'number\\(s\\)' for treatment)"))) %>% 
+  separate(questions, into = c("questions", "treatment number"), 
+           sep = "\\s(?=\\d$)"
+  ) %>% 
+  pivot_wider(names_from = questions, 
+              values_from = answer) %>% 
+  mutate(`Study 'number(s)' for treatment` = str_split(`Study 'number(s)' for treatment`, ";")) %>% 
+  unnest_longer(`Study 'number(s)' for treatment`) %>% 
+  left_join(individual_study_df %>% 
+              filter(questions == "Patient-level data used") %>% 
+              pivot_wider(names_from = questions, values_from = answer) %>% 
+              rename(IPD = `Patient-level data used`) %>% 
+              select(doi, study_number, IPD), 
+            by = c("doi" = "doi", "Study 'number(s)' for treatment" = "study_number")
+  )
+
+stopifnot(
+  "Some combinations of doi-n_itc-treatment must be assigned both IPD and non IPD" = nrow(distinct(ttt_ipd_df, doi, `treatment number`, n_itc, `Treatment name`, IPD)) == nrow(distinct(ttt_ipd_df, doi, n_itc, IPD))
+)
+
+```
+
+```{r, fig.height = 18}
+
+ttt_ipd_df %>% 
+  mutate(IPD = tolower(IPD) %>% factor(levels = c("yes", "no"))) %>% 
+  #TODO: fix the NA issue
+  filter(!is.na(IPD)) %>% 
+  distinct(doi, n_itc, `treatment number`, `Treatment name`, IPD) %>% 
+  left_join(distinct(ttt_mapped[, c("decision", "first", "second", "third", "car_t_cells")]),
+            by = c("Treatment name" = "decision")) %>%
+  group_by(IPD) %>% 
+  count(first) %>% 
+  ggplot(aes(x = reorder(first, n), y = n, label = n)) +
+  geom_bar(stat = "identity") +
+  geom_label() +
+  coord_flip() +
+  facet_wrap(c("IPD"), labeller = labeller("IPD" = c("no" = "Non IPD", "yes" = "IPD"))) +
+  labs(title = "Treatments compared", 
+       subtitle = "ATC classification level 2") +
+  theme(axis.text = element_text(size = 16), 
+        strip.text = element_text(size = 18), 
+        plot.title = element_text(size = 22), 
+        plot.subtitle = element_text(size = 20))
+```
+
+
+
+```{r, results='asis}
+# results at the article level: eg "at least one ... per article"
+wide_methodo_results %>% 
+  group_by(doi) %>% 
+  # to fix the few cases where max(n_itc) isn't the number of comparisons performed
+  summarise(count_comparisons = n(), 
+            at_least_one_maic = any(`Type of population-adjusted indirect comparisons performed` == "MAIC"), 
+            at_least_one_stc = any(`Type of population-adjusted indirect comparisons performed` == "STC"),
+            at_least_other_paitc = any(!`Type of population-adjusted indirect comparisons performed` %in% c("MAIC", "STC")), 
+            ) %>% 
+  select(-doi) %>% 
+  `labels<-`(c(
+    "count_comparisons"    = "PAITC count (per article)",
+    "at_least_one_maic"    = "At least one MAIC in the article", 
+    "at_least_one_stc"     = "At least one STC in the article", 
+    "at_least_other_paitc" = "At least one other PAITC")) %>% 
+  tableby( ~ ., data = .) %>% 
+  summary() 
+```
+
+```{r}
+list_questions_methodo <- c(
+  "Type of population-adjusted indirect comparisons performed" = "Type of population-adjusted indirect comparisons performed",
+  "Anchored comparison?" = "Anchored comparison?",
+  "Form of the indirect comparison" = "Form of the indirect comparison",
+  "Definition of a single primary outcome for the indirect comparison" = "Definition of a single primary outcome for the indirect comparison",
+  # "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)" = "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)", #TODO --> non UTF8 characther somewhere, to be fixed
+  "Primary outcome: variable type" = "Primary outcome: variable type",
+  "Justification for selecting variables to be included in the adjustment model (in the main text)" = "Justification for selecting variables to be included in the adjustment model (in the main text)",
+  "Inclusion of prognostic factors in the adjustment/matching model" = "Inclusion of prognostic factors in the adjustment/matching model",
+  "Inclusion of treatment-effect modifiers in the adjustment/matching model" = "Inclusion of treatment-effect modifiers in the adjustment/matching model",
+  "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)" = "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",
+  "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)" = "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)"
+)
+```
+
+
+
+
+```{r Results, eval=FALSE}
+#TODO: reprendre d'ici 
 ## Results
 
 results_wide <- paitc_results %>%
@@ -174,39 +424,37 @@ results_wide <- paitc_results %>%
   pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer) %>%
   mutate(across(where(is.character), .fns = as.factor))
 
-with(results_wide, table(n_itc))
-distinct(results_wide, doi, n_itc) %>% dim()
-
-
-results_wide %>%
-  names()
+# with(results_wide, table(n_itc))
+# distinct(results_wide, doi, n_itc) %>% dim()
+# 
+# 
+# results_wide %>%
+#   names()
 ## Checks
-results_wide %>%
-  summarise(across(.fns = ~ sum(is.na(.x)))) %>%
-  pivot_longer(cols = everything()) %>%
-  View()
+# results_wide %>%
+#   summarise(across(.fns = ~ sum(is.na(.x)))) %>%
+#   pivot_longer(cols = everything()) %>%
+#   View()
 
 results_wide %>%
-  select(all_of(methodology_questions)) %>%
+  select(any_of(methodology_questions)) %>%
   tableby(as.formula("`Type of population-adjusted indirect comparisons performed` ~ ."),
           data = .) %>%
   summary() %>%
   as.data.frame() %>%
-  flextable() %>%
-  print(preview = "docx")
-  save_as_html(path = "test.html")
-
-
-
-
-
+  flextable()
 
 ```
 
-```{r}
-# ggtheme setting ---------------------------------------------------------
-ggthemr::ggthemr("fresh")
+
+
+```{r, results='asis'}
+wide_results %>% 
+  select(all_of(list_questions_methodo)) %>% 
+  tableby( ~ ., data = .) %>% 
+  summary()
 ```
+
 
 ```{r}
 # list_questions ----------------------------------------------------------
@@ -215,7 +463,7 @@ methodology_questions <- questions_sections$methodology %>% unname()
 ```
 
 
-```{r}
+```{r, eval=FALSE}
 # selection articles ---------------------------------------------------------
 included_articles <- filter(flow_chart_df, included)
 
@@ -295,14 +543,14 @@ results_wide <- paitc_results %>%
 
 
 ## Checks
-results_wide %>%
-  summarise(across(.fns = ~ sum(is.na(.x)))) %>%
-  pivot_longer(cols = everything()) %>%
-  View()
+# results_wide %>%
+#   summarise(across(.fns = ~ sum(is.na(.x)))) %>%
+#   pivot_longer(cols = everything()) %>%
+#   View()
 ```
 
 
-```{r results='asis'}
+```{r results='asis', eval=FALSE}
 results_wide %>%
   select(all_of(methodology_questions)) %>%
   tableby(as.formula("`Type of population-adjusted indirect comparisons performed` ~ ."),
