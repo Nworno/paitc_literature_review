@@ -71,6 +71,16 @@ results_df <- left_join(results_df, all_articles_id[, c("doi", "PMID")], by = "d
 included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
 ```
 
+```{r Discarding xx answers}
+
+results_df <- results_df %>% 
+  filter(!answer == "xx") %>% 
+  #TODO: check these NAs upstream
+  filter(!is.na(answer))
+
+```
+
+
 ```{r Creating section data frames}
 general_information_df <- results_df[results_df$section == "general_information",]
 individual_study_df <- results_df[results_df$section == "study_information",]
@@ -235,6 +245,7 @@ general_information_df %>%
        y = "Article count")
   
 ```
+
 ## Methodology departments
 
 
@@ -350,6 +361,8 @@ stopifnot(
 
 ```
 
+
+### Treatments
 ```{r, fig.height = 18}
 
 ttt_ipd_df %>% 
@@ -375,8 +388,29 @@ ttt_ipd_df %>%
 ```
 
 
+## Individual studies 
 
-```{r, results='asis}
+```{r, results='asis'}
+
+individual_studies_questions <- c(
+  "Patient-level data used", 
+  "Clinical Trial", 
+  "Country where the clinical trial/observational study was conducted (international if more than one)",
+  "Phase of the clinical trial (clinical trial only)", 
+  "Number of treatment arms (clinical trial only)"
+)
+
+individual_study_df %>% 
+  mutate(answer = str_to_title(answer)) %>% 
+  pivot_wider(names_from = questions, values_from = answer) %>% 
+  select(all_of(individual_studies_questions)) %>% 
+  tableby(`Patient-level data used` ~ ., data = .) %>% 
+  summary()
+```
+
+### Methodology statistics per article
+
+```{r, results='asis'}
 # results at the article level: eg "at least one ... per article"
 wide_methodo_results %>% 
   group_by(doi) %>% 
@@ -396,6 +430,8 @@ wide_methodo_results %>%
   summary() 
 ```
 
+## Methodology per comparisons
+
 ```{r}
 list_questions_methodo <- c(
   "Type of population-adjusted indirect comparisons performed" = "Type of population-adjusted indirect comparisons performed",
@@ -412,13 +448,33 @@ list_questions_methodo <- c(
 )
 ```
 
+```{r DM Variables selection}
 
+wide_methodo <- paitc_results %>% 
+  filter(section == "methodology") %>% 
+  pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer)
+
+
+wide_methodo %>% 
+  mutate(`Justification for selecting variables to be included in the adjustment model (in the main text)` = 
+           str_split(`Justification for selecting variables to be included in the adjustment model (in the main text)`, ",")) %>% 
+  unnest_longer(`Justification for selecting variables to be included in the adjustment model (in the main text)`) %>% 
+  pivot_wider(names_from = )
+            
+```
+
+
+
+```{r}
+wide_methodo %>%
+  select(all_of(list_questions_methodo)) %>% 
+  tableby(list(`Type of population-adjusted indirect comparisons performed`,
+               `Anchored comparison?`) ~ ., data = .) %>% 
+  summary()
+```
 
 
 ```{r Results, eval=FALSE}
-#TODO: reprendre d'ici 
-## Results
-
 results_wide <- paitc_results %>%
   filter(section == "results") %>%
   pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer) %>%
@@ -448,7 +504,7 @@ results_wide %>%
 
 
 
-```{r, results='asis'}
+```{r, results='asis', eval=FALSE}
 wide_results %>% 
   select(all_of(list_questions_methodo)) %>% 
   tableby( ~ ., data = .) %>% 
