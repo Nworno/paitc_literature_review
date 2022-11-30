@@ -1,66 +1,66 @@
 doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;reviewer;Notes reviewer 1;Notes reviewer 2
-10.1080/13696998.2020.1722139;31985301;general_information;;;Medical Condition of Interest Name;moderate-to-severe psoriasis;plaque psoriasis:;XXXX;FALSE;BZ;NA;NA
-10.1080/13696998.2020.1722139;31985301;general_information;;;Countries of first author affiliations;;;usa;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;general_information;;;Countries of last author affiliations;;;usa;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Academic, Pharmaceutical Industry;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Not mentioned;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;1;Patient-level data used;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;1;Clinical Trial;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);NCT01866163;NCT01928394;NCT01866163;FALSE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;usa;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;2;Patient-level data used;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;2;Clinical Trial;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02132936;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;france;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;3;Patient-level data used;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;3;Clinical Trial;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01536886;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;usa;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;3;Phase of the clinical trial (clinical trial only);;;2;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;4;Patient-level data used;;;No;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;4;Clinical Trial;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02462070;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);;;usa;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;4;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;4;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;5;Patient-level data used;;;No;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;5;Clinical Trial;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;5;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02462122;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;5;Country where the clinical trial/observational study was conducted (international if more than one);;;usa;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;5;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;study_information;;5;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Treatment name 1;;;calcipotriene 0.005%/betamethasone dipropionate 0.064% foam;TRUE;BZ;"Includes a medico economical analysis ; ESS total 2 arms = 586 (from 848 IPD)";Individual patient data (IPD) were re-weighted to match the average baseline characteristics of those from the HP/TAZ lotion clinical studies using the Newton-Raphson algorithm (NLPNRA subroutine within the PROC IML).
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Treatment name 2;halobetasol 0.01%/tazarotene 0.045%;halobetasol 0.01%/tazarotene 0.045% lotion;halobetasol 0.01%/tazarotene 0.045%;FALSE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Study 'number(s)' for treatment 2;;;"4;5";TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Anchored comparison?;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);physician’s global assessment treatment success;proportion of patients who achieved “clear” or “almost clear” skin (score of 0 or 1), with at least a 2-grade improvement in disease severity, as assessed by a 5-point pga (or iga) scale;physician’s global assessment treatment success;FALSE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Primary outcome: variable type;;;Binary (eg rates);TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Sample size of the population of interest in the non IPD treatment arm;249;276;276;FALSE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;;;142;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;649;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;199;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Number of covariates adjusted for/matched on;;;4;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Primary outcome: treatment effect contrast;;;Rate difference;TRUE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;Primary outcome: adjusted treatment effect;20.7;20.70%;20.7;FALSE;BZ;;
-10.1080/13696998.2020.1722139;31985301;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;<0.001;TRUE;BZ;;
+10.1080/13696998.2020.1722139;31985301;general_information;NA;NA;Medical Condition of Interest Name;moderate-to-severe psoriasis;plaque psoriasis:;XXXX;FALSE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;general_information;NA;NA;Countries of first author affiliations;NA;NA;usa;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;general_information;NA;NA;Countries of last author affiliations;NA;NA;usa;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;general_information;NA;NA;Positions of study investigators (for any authors of the article, any that applies);NA;NA;Academic, Pharmaceutical Industry;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;general_information;NA;NA;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;NA;NA;Not mentioned;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;general_information;NA;NA;Mentioned sources of funding;NA;NA;Pharmaceutical Industry;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;general_information;NA;NA;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;general_information;NA;NA;Mention of a systematic review to find the studies to compare treatments of interest;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;1;Patient-level data used;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;1;Clinical Trial;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;1;NCT (only for clinical trial registered on clinicaltrials.gov);NCT01866163;NCT01928394;NCT01866163;FALSE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;1;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;usa;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;1;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;1;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;2;Patient-level data used;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;2;Clinical Trial;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;2;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT02132936;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;2;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;france;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;2;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;2;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;3;Patient-level data used;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;3;Clinical Trial;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;3;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT01536886;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;3;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;usa;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;3;Phase of the clinical trial (clinical trial only);NA;NA;2;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;3;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;4;Patient-level data used;NA;NA;No;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;4;Clinical Trial;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;4;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT02462070;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;4;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;usa;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;4;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;4;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;5;Patient-level data used;NA;NA;No;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;5;Clinical Trial;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;5;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT02462122;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;5;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;usa;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;5;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;study_information;NA;5;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Treatment name 1;NA;NA;calcipotriene 0.005%/betamethasone dipropionate 0.064% foam;TRUE;BZ;"Includes a medico economical analysis ; ESS total 2 arms = 586 (from 848 IPD)";Individual patient data (IPD) were re-weighted to match the average baseline characteristics of those from the HP/TAZ lotion clinical studies using the Newton-Raphson algorithm (NLPNRA subroutine within the PROC IML).
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Study 'number(s)' for treatment 1;NA;NA;"1;2;3";TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Treatment name 2;halobetasol 0.01%/tazarotene 0.045%;halobetasol 0.01%/tazarotene 0.045% lotion;halobetasol 0.01%/tazarotene 0.045%;FALSE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Study 'number(s)' for treatment 2;NA;NA;"4;5";TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Anchored comparison?;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);physician's global assessment treatment success;proportion of patients who achieved clear or almost clear skin (score of 0 or 1), with at least a 2-grade improvement in disease severity, as assessed by a 5-point pga (or iga) scale;physician's global assessment treatment success;FALSE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Primary outcome: variable type;NA;NA;Binary (eg rates);TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;methodology;1;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Sample size of the population of interest in the non IPD treatment arm;249;276;276;FALSE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;NA;NA;142;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;649;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;NA;NA;199;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Yes, mentions that the weights distribution has been studied, but weights distribution not reported;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Number of covariates adjusted for/matched on;NA;NA;4;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Primary outcome: treatment effect contrast;NA;NA;Rate difference;TRUE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;NA;Numerator if ratio, or left side if difference;FALSE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;Primary outcome: adjusted treatment effect;20.7;20.70%;20.7;FALSE;BZ;NA;NA
+10.1080/13696998.2020.1722139;31985301;results;1;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";NA;NA;<0.001;TRUE;BZ;NA;NA

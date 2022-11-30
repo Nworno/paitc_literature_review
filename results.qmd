@@ -71,6 +71,7 @@ results_df <- left_join(results_df, all_articles_id[, c("doi", "PMID")], by = "d
 included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
 ```
 
+
 ```{r Discarding xx answers}
 
 results_df <- results_df %>% 
@@ -80,6 +81,28 @@ results_df <- results_df %>%
 
 ```
 
+```{r Renaming questions}
+results_df <- results_df %>% 
+  mutate(questions = case_when(
+    questions == "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)" ~ "primary_outcome_name", 
+    questions == "Primary outcome: variable type" ~ "primary_outcome_type",
+    questions == "Definition of a single primary outcome for the indirect comparison" ~ "primary_outcome_yn",
+    questions == "Anchored comparison?" ~ "anchored_yn",
+    #TODO: check that there wasn't a parsing error for answer below, since the part after the ';' seems to have been discarded
+    questions == "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC" ~ "ess_ttt", 
+    questions ==  "If anchored, total initial sample size IPD" ~ "n_ipd_total",
+    questions ==  "If anchored, total sample size non IPD" ~ "n_nonipd_total",
+    questions ==  "Initial sample size of the population of interest in the IPD treatment arm" ~ "n_ipd_ttt",
+    questions ==  "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm" ~ "n_ipd_anchor",
+    questions ==  "Sample size of the population of interest in the non IPD treatment arm" ~ "n_nonipd_ttt",
+    questions ==  "If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm" ~ "n_nonipd_anchor",
+    questions ==  "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC" ~ "ess_ttt",
+    questions ==  "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm" ~ "ess_anchor",
+    questions ==  "If anchored, total ESS IPD" ~ "ess_total",
+    questions == "Type of population-adjusted indirect comparisons performed" ~ "paitc_type",
+    TRUE ~ questions
+  ))
+```
 
 ```{r Creating section data frames}
 general_information_df <- results_df[results_df$section == "general_information",]
@@ -87,6 +110,18 @@ individual_study_df <- results_df[results_df$section == "study_information",]
 paitc_results <- results_df[results_df$section %in% c("methodology", "results"), ]
 ```
 
+```{r Wide methodo}
+wide_methodo <- paitc_results %>% 
+  filter(section == "methodology") %>% 
+  pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer)
+```
+
+
+```{r Wide results}
+wide_results <- paitc_results %>% 
+  filter(section == "results") %>% 
+  pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer)
+```
 
 # Articles general Information
 
@@ -391,7 +426,6 @@ ttt_ipd_df %>%
 ## Individual studies 
 
 ```{r, results='asis'}
-
 individual_studies_questions <- c(
   "Patient-level data used", 
   "Clinical Trial", 
@@ -416,9 +450,9 @@ wide_methodo_results %>%
   group_by(doi) %>% 
   # to fix the few cases where max(n_itc) isn't the number of comparisons performed
   summarise(count_comparisons = n(), 
-            at_least_one_maic = any(`Type of population-adjusted indirect comparisons performed` == "MAIC"), 
-            at_least_one_stc = any(`Type of population-adjusted indirect comparisons performed` == "STC"),
-            at_least_other_paitc = any(!`Type of population-adjusted indirect comparisons performed` %in% c("MAIC", "STC")), 
+            at_least_one_maic = any(paitc_type == "MAIC"), 
+            at_least_one_stc = any(paitc_type == "STC"),
+            at_least_other_paitc = any(!paitc_type %in% c("MAIC", "STC")), 
             ) %>% 
   select(-doi) %>% 
   `labels<-`(c(
@@ -433,14 +467,16 @@ wide_methodo_results %>%
 ## Methodology per comparisons
 
 ```{r}
+
+# Only binary variables
 list_questions_methodo <- c(
-  "Type of population-adjusted indirect comparisons performed" = "Type of population-adjusted indirect comparisons performed",
-  "Anchored comparison?" = "Anchored comparison?",
+  "Type of population-adjusted indirect comparisons performed" = "paitc_type",
+  "Anchored comparison?" = "anchored_yn",
   "Form of the indirect comparison" = "Form of the indirect comparison",
-  "Definition of a single primary outcome for the indirect comparison" = "Definition of a single primary outcome for the indirect comparison",
+  "Definition of a single primary outcome for the indirect comparison" = "primary_outcome_yn",
   # "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)" = "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)", #TODO --> non UTF8 characther somewhere, to be fixed
-  "Primary outcome: variable type" = "Primary outcome: variable type",
-  "Justification for selecting variables to be included in the adjustment model (in the main text)" = "Justification for selecting variables to be included in the adjustment model (in the main text)",
+  "Primary outcome: variable type" = "primary_outcome_type",
+  # "Justification for selecting variables to be included in the adjustment model (in the main text)" = "Justification for selecting variables to be included in the adjustment model (in the main text)",
   "Inclusion of prognostic factors in the adjustment/matching model" = "Inclusion of prognostic factors in the adjustment/matching model",
   "Inclusion of treatment-effect modifiers in the adjustment/matching model" = "Inclusion of treatment-effect modifiers in the adjustment/matching model",
   "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)" = "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",
@@ -448,169 +484,158 @@ list_questions_methodo <- c(
 )
 ```
 
-```{r DM Variables selection}
-
-wide_methodo <- paitc_results %>% 
-  filter(section == "methodology") %>% 
-  pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer)
-
-
-wide_methodo %>% 
-  mutate(`Justification for selecting variables to be included in the adjustment model (in the main text)` = 
-           str_split(`Justification for selecting variables to be included in the adjustment model (in the main text)`, ",")) %>% 
-  unnest_longer(`Justification for selecting variables to be included in the adjustment model (in the main text)`) %>% 
-  pivot_wider(names_from = )
-            
-```
-
 
 
 ```{r}
 wide_methodo %>%
   select(all_of(list_questions_methodo)) %>% 
-  tableby(list(`Type of population-adjusted indirect comparisons performed`,
-               `Anchored comparison?`) ~ ., data = .) %>% 
+  # Apparently select rename the columns using the names of list_questions_methodo ...
+  tableby(list(`Type of population-adjusted indirect comparisons performed`, `Anchored comparison?`) ~ ., data = .) %>% 
   summary()
 ```
 
+### Variables selection justification
 
-```{r Results, eval=FALSE}
-results_wide <- paitc_results %>%
-  filter(section == "results") %>%
-  pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer) %>%
-  mutate(across(where(is.character), .fns = as.factor))
 
-# with(results_wide, table(n_itc))
-# distinct(results_wide, doi, n_itc) %>% dim()
-# 
-# 
-# results_wide %>%
-#   names()
-## Checks
-# results_wide %>%
-#   summarise(across(.fns = ~ sum(is.na(.x)))) %>%
-#   pivot_longer(cols = everything()) %>%
-#   View()
 
-results_wide %>%
-  select(any_of(methodology_questions)) %>%
-  tableby(as.formula("`Type of population-adjusted indirect comparisons performed` ~ ."),
-          data = .) %>%
-  summary() %>%
-  as.data.frame() %>%
-  flextable()
+```{r DM Variables selection}
+variables_selection <- wide_methodo %>% 
+  rename(variables_justification = `Justification for selecting variables to be included in the adjustment model (in the main text)`) %>%
+  select(doi, n_itc, variables_justification) %>% 
+  # because the complete item for this one is "Nothing mentioned, not reported", thus simplyfying it
+  mutate(variables_justification = variables_justification %>% 
+           str_split(",") %>% 
+           map(~ str_trim(.x)) %>% 
+           map(~ .x[.x != "not reported"])) %>%
+  mutate(no_justification = sapply(variables_justification, function(x) any(x == "Nothing mentioned")), 
+         wrong_justification = sapply(variables_justification,
+                                      function(x) all(x %in% c(
+                                        "Nothing mentioned",
+                                        "Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier)",
+                                        "Status of prognostic factor/treatment effect modified assessed in the IPD dataset"
+                                      )))
+  )
+
+
+# Handling of list like columns 
+# (ie multiple choices questions : to be concatenated with merge(tab1, tab2, all = TRUE))
+# update: this only works if the total are identical, which is not the case here
+# solution is to merge downstream with flextable probably, or not merging at all
+# Plot using 'group' see https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html
+justif <- variables_selection %>% 
+  unnest_longer(col = variables_justification) %>% 
+  tableby(~ variables_justification, data = .)
+
+# Variables selection
+justif_binary <- variables_selection %>% 
+  tableby(~ no_justification + wrong_justification, data = .) 
+
+# merge(justif, justif_binary, all = FALSE)
+
+#TODO: stratifying by anchored/unanchored, and STC/MAIC as outcome
 
 ```
 
-
-
-```{r, results='asis', eval=FALSE}
-wide_results %>% 
-  select(all_of(list_questions_methodo)) %>% 
-  tableby( ~ ., data = .) %>% 
-  summary()
-```
-
+### Outcomes 
 
 ```{r}
-# list_questions ----------------------------------------------------------
-source("questions_sections.R")
-methodology_questions <- questions_sections$methodology %>% unname()
-```
-
-
-```{r, eval=FALSE}
-# selection articles ---------------------------------------------------------
-included_articles <- filter(flow_chart_df, included)
-
-stopifnot(identical(
-  unique(included_articles$PMID)[order(unique(included_articles$PMID))],
-  unique(results_df$PMID)[order(unique(results_df$PMID))]
-))
-
-
-# joins -------------------------------------------------------------------
-
-included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
-
-
-# articles metadata -------------------------------------------------------
-
-## Authors specific affiliations would need to be parsed and retrieved through pubv1_info.txt --> regex looking at ". " preceded by a ", " or "^"
-included_articles_info %>%
-  mutate("journal_title" = JT,
-         "journal_title_short" = TA) %>%
-  group_by(journal_title_short) %>%
-  summarise(count = n()) %>%
-  arrange(desc(count)) %>%
-  ggplot(aes(x = reorder(journal_title_short, count), y = count)) +
-  geom_bar(stat = "identity") +
-  theme(axis.text.y = element_text(size = 7)) +
-  scale_x_discrete() +
-  coord_flip() +
-  labs(title = "Publication journals",
-       x = "Journals",
-       y = "Articles count")
-
-## Publication dates
-publication_date_df <- included_articles_info %>%
-  select(EDAT) %>%
-  mutate(publication_date = as_date(EDAT, format = "%Y/%m/%d %H:%M"),
-         publication_year = year(publication_date),
-         publication_date_q = lubridate::quarter(publication_date, with_year = TRUE),
-         publication_date_s = lubridate::semester(publication_date, with_year = TRUE),
-         publication_date_s = ifelse(round(publication_date_s %% 0.2, 1) == 0.1,
-                                      trunc(publication_date_s),
-                                      trunc(publication_date_s) + 0.5))
-publication_date_df %>%
-  group_by(publication_date_s) %>%
-  summarise(count = n()) %>%
-  ggplot(aes(x = publication_date_s, y = count)) +
-  geom_point() +
-  geom_line() +
-  scale_x_continuous(breaks = 2010:2022) +
-  labs(title = "Publications by semester",
-       x = "Date",
-       y = "Publication counts")
-
-publication_date_df %>%
-  filter(publication_year < 2022) %>%
-  group_by(publication_year) %>%
-  summarise(count = n()) %>%
-  ggplot(aes(x = publication_year, y = count)) +
-  geom_point() +
-  geom_line() +
-  geom_text(aes(label = count), nudge_y = 2.5, nudge_x = -0.05) +
-  scale_x_continuous(breaks = 2010:2022) +
-  labs(title = "MAIC/STC implementation: publications by years",
-       x = "Year",
-       y = "Publication counts")
-
-## Results
-
-general_information_df <- results_df[results_df$section == "general_information",]
-individual_study_df <- results_df[results_df$section == "individual_study",]
-paitc_results <- results_df[results_df$section %in% c("methodology", "results"), ]
-
-
-results_wide <- paitc_results %>%
-  pivot_wider(id_cols = c(doi, PMID, `ITC num`), names_from = questions, values_from = answer) %>%
-  mutate(across(where(is.character), .fns = as.factor))
-
-
-## Checks
-# results_wide %>%
-#   summarise(across(.fns = ~ sum(is.na(.x)))) %>%
-#   pivot_longer(cols = everything()) %>%
-#   View()
-```
-
-
-```{r results='asis', eval=FALSE}
-results_wide %>%
-  select(all_of(methodology_questions)) %>%
-  tableby(as.formula("`Type of population-adjusted indirect comparisons performed` ~ ."),
-          data = .) %>%
+#TODO: group outcome names in larger categories
+wide_methodo  %>% 
+  mutate(primary_outcome_name = stringr::str_to_title(primary_outcome_name)) %>% 
+  add_count(primary_outcome_name, name = "primary_outcome_name_n") %>% 
+  mutate(primary_outcome_name = forcats::fct_reorder(primary_outcome_name,
+                                                     primary_outcome_name_n, 
+                                                     .desc = TRUE)) %>% 
+ # TODO : fix missing outcome name 
+  tableby( primary_outcome_yn ~  primary_outcome_type + primary_outcome_name ,
+           data = .) %>% 
   summary()
+```
+
+
+
+### Sample sizes
+
+```{r}
+wide_sample_size_df <- wide_results %>% 
+  left_join(distinct(wide_methodo, doi, n_itc, `anchored_yn`, paitc_type)) %>% 
+  select(anchored_yn, paitc_type, contains(c("n_ipd", "n_nonipd", "ess"))) %>%
+  mutate(across(contains(c("n_ipd", "n_nonipd", "ess")), as.integer)) %>% 
+  mutate(
+    n_ipd_total = case_when(
+      !is.na(n_ipd_total) ~ n_ipd_total,
+      anchored_yn == "No" ~ n_ipd_ttt, 
+      anchored_yn == "Yes" ~ n_ipd_ttt + n_ipd_anchor, 
+      TRUE ~ NA_integer_),
+    n_nonipd_total = case_when(
+      !is.na(n_nonipd_total) ~ n_nonipd_total,
+      anchored_yn == "No" ~ n_nonipd_ttt, 
+      anchored_yn == "Yes" ~ n_nonipd_ttt + n_ipd_anchor, 
+      TRUE ~ NA_integer_),
+    ess_total = case_when(
+      !is.na(ess_total) ~ ess_total,
+      anchored_yn == "No" ~ ess_ttt,
+      anchored_yn == "Yes" ~ ess_ttt + ess_anchor,
+      TRUE ~ NA_integer_)
+  ) %>% 
+  mutate(difference_ess_ttt = n_ipd_ttt - ess_ttt,
+         difference_ess_anchor = n_ipd_anchor - ess_anchor, 
+         difference_ess_total = n_ipd_total - ess_total, 
+         rapport_ess_ttt = ess_ttt / n_ipd_ttt,
+         rapport_ess_anchor = ess_anchor / n_ipd_anchor,
+         rapport_ess_total = ess_total / n_ipd_total)
+
+long_sample_size_df <- wide_sample_size_df %>% 
+  pivot_longer(cols = !all_of(c("anchored_yn", "paitc_type"))) %>% 
+  mutate(ipd_yn = case_when(
+    grepl("total", name) ~ "Total",
+    grepl("_ipd_", name) | grepl("ess_", name) ~ "IPD", 
+    grepl("_nonipd_", name) ~ "Non IPD",
+    TRUE ~ NA_character_
+  ),
+  sample_size_type = case_when(
+    grepl("difference", name) ~ "Difference",
+    grepl("rapport", name) ~ "Rapport", 
+    grepl("ess", name) ~ "ESS",
+    TRUE ~ "Original")
+  )
+```
+
+```{r}
+wide_sample_size_df %>% 
+  mutate(
+    n_ipd_yn = ifelse(is.na(n_ipd_total) & is.na(n_ipd_ttt), "No", "Yes"), 
+    n_nonipd_yn = ifelse(is.na(n_nonipd_total) & is.na(n_nonipd_ttt), "No", "Yes"), 
+    ess_yn = ifelse(is.na(ess_ttt) & is.na(ess_total), "No", "Yes"), 
+) %>% 
+  tableby(list(anchored_yn, paitc_type) ~ n_ipd_yn + n_nonipd_yn + ess_yn, data = .) %>% 
+  summary()
+```
+
+```{r Sample size reduction, fig.width = 14}
+
+sample_size_labels <- c(
+  Rapport = "Rapport ESS/Original",
+  Difference = "Difference Original - ESS", 
+  Original = "Original Sample Size", 
+  ESS = "ESS"
+)
+
+long_sample_size_df %>% 
+  filter(paitc_type %in% c("MAIC"), 
+         ipd_yn == "Total") %>%
+  mutate(sample_size_type = factor(sample_size_type, levels = c("Original", "ESS", "Difference", "Rapport"))) %>% 
+  # filter(ipd_yn == "Total") %>% 
+  ggplot(aes(y = value)) +
+  geom_boxplot() + 
+  facet_wrap(~ sample_size_type,
+             scales = "free",
+             ncol = 4, 
+             labeller = labeller( sample_size_type = sample_size_labels)) +
+  theme(legend.position = "bottom", legend.direction = "horizontal", axis.ticks =  element_blank()) +
+  labs(title = "Sample Size Reduction in MAIC", 
+       y = "Sample Size", 
+       x = NULL)
+
 ```
 

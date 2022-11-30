@@ -9,6 +9,7 @@ second_part_BZ <- bind_rows(lapply(X = files_BZ,
                                    col_types = c("ccccccccccccc")))
 second_part_BZ %>% write_csv(file.path(dir_data, "extraction/adjudicated/second_part/BZ_raw.csv"))
 
+
 files_DH <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/DH"),
                        full.names = TRUE,
                        recursive = TRUE,
