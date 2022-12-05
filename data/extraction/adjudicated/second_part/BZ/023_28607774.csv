@@ -40,4 +40,4 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1155/2017/6121760;28607774;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
 10.1155/2017/6121760;28607774;results;1;;Number of covariates adjusted for/matched on;;;2;TRUE;BZ;;
 10.1155/2017/6121760;28607774;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Past treatments for the disease of interest;TRUE;BZ;;
-10.1155/2017/6121760;28607774;results;1;;Primary outcome: treatment effect contrast;;Relative effects (e.g., relative risks and hazard ratios) has not been examined.;NA;FALSE;BZ;;
+10.1155/2017/6121760;28607774;results;1;;Primary outcome: treatment effect contrast;;Relative effects (e.g., relative risks and hazard ratios) has not been examined.;XXXX;FALSE;BZ;;

@@ -35,7 +35,7 @@ Not clear how to decide the sample size of the anchor arms";Sensitivity analysis
 10.1210/clinem/dgab905;34922383;methodology;1;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No;TRUE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;methodology;1;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;methodology;1;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;BZ;NA;NA
-10.1210/clinem/dgab905;34922383;methodology;1;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;No;NA;FALSE;BZ;NA;NA
+10.1210/clinem/dgab905;34922383;methodology;1;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;No;No;FALSE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;methodology;2;NA;Treatment name 1;semaglutide 2.0mg;semaglutide 2.0 mg;semaglutide 2.0 mg;FALSE;BZ;NA;Sensitivity analysis 1 = Unajusted comparison
 10.1210/clinem/dgab905;34922383;methodology;2;NA;Study 'number(s)' for treatment 1;NA;NA;1;TRUE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;methodology;2;NA;Treatment name 2;NA;NA;dulaglutide 4.5 mg;TRUE;BZ;NA;NA
@@ -50,7 +50,7 @@ Not clear how to decide the sample size of the anchor arms";Sensitivity analysis
 10.1210/clinem/dgab905;34922383;methodology;2;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No;TRUE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;methodology;2;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;methodology;2;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;BZ;NA;NA
-10.1210/clinem/dgab905;34922383;methodology;2;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;No;NA;FALSE;BZ;NA;NA
+10.1210/clinem/dgab905;34922383;methodology;2;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;No;No;FALSE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;results;1;NA;Sample size of the population of interest in the non IPD treatment arm;NA;NA;616;TRUE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;results;1;NA;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;NA;NA;612;TRUE;BZ;NA;NA
 10.1210/clinem/dgab905;34922383;results;1;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;480;TRUE;BZ;NA;NA

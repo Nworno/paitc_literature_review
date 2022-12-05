@@ -36,7 +36,7 @@
 Smoking status = other"
 10.1016/j.lungcan.2021.03.020;33839603;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;;
 10.1016/j.lungcan.2021.03.020;33839603;methodology;1;;Treatment name 2;;;atezolizumab + chemotherapy;TRUE;;
-10.1016/j.lungcan.2021.03.020;33839603;methodology;1;;Study 'number(s)' for treatment 2;"3;4";3;;FALSE;;
+10.1016/j.lungcan.2021.03.020;33839603;methodology;1;;Study 'number(s)' for treatment 2;"3;4";3;"3;4";FALSE;;
 10.1016/j.lungcan.2021.03.020;33839603;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
 10.1016/j.lungcan.2021.03.020;33839603;methodology;1;;Anchored comparison?;;;No;TRUE;;
 10.1016/j.lungcan.2021.03.020;33839603;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;

@@ -59,7 +59,7 @@ imatinib resistance/intolerance = Severity of disease history..."
 10.1080/03007995.2019.1605239;30964361;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);Yes;No;Yes;FALSE;;
 10.1080/03007995.2019.1605239;30964361;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;167;TRUE;;
 10.1080/03007995.2019.1605239;30964361;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;283;TRUE;;
-10.1080/03007995.2019.1605239;30964361;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;269.7;;FALSE;;
+10.1080/03007995.2019.1605239;30964361;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;269.7;XXXX;FALSE;;
 10.1080/03007995.2019.1605239;30964361;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
 10.1080/03007995.2019.1605239;30964361;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
 10.1080/03007995.2019.1605239;30964361;results;1;;Number of covariates adjusted for/matched on;3;4;4;FALSE;;
@@ -70,7 +70,7 @@ imatinib resistance/intolerance = Severity of disease history..."
 10.1080/03007995.2019.1605239;30964361;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.37;TRUE;;
 10.1080/03007995.2019.1605239;30964361;results;2;;Sample size of the population of interest in the non IPD treatment arm;;;321;TRUE;;
 10.1080/03007995.2019.1605239;30964361;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;;283;TRUE;;
-10.1080/03007995.2019.1605239;30964361;results;2;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;269.9;NA;FALSE;;
+10.1080/03007995.2019.1605239;30964361;results;2;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;269.9;XXXX;FALSE;;
 10.1080/03007995.2019.1605239;30964361;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
 10.1080/03007995.2019.1605239;30964361;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
 10.1080/03007995.2019.1605239;30964361;results;2;;Number of covariates adjusted for/matched on;;;3;TRUE;;

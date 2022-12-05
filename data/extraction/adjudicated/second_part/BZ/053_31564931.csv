@@ -91,4 +91,4 @@ HR (CI95) for full exponential STC : 0.490  [0.259;0.924]
 10.2147/ceor.s203482;31564931;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;"[0.351;0.909]";TRUE;BZ;;
 10.2147/ceor.s203482;31564931;results;2;;Primary outcome: adjusted treatment effect;;;0.505;TRUE;BZ;;
 10.2147/ceor.s203482;31564931;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.269;0.949]";TRUE;BZ;;
-10.2147/ceor.s203482;31564931;results;2;;Reporting of a weights' distribution evaluation (MAIC);;Not mentioned;;FALSE;BZ;;
+10.2147/ceor.s203482;31564931;results;2;;Reporting of a weights' distribution evaluation (MAIC);;Not mentioned;XXXX;FALSE;BZ;;

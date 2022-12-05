@@ -1,4 +1,4 @@
-﻿doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decision,identical,reviewer,Notes reviewer 1,Notes reviewer 2
+doi,PMID,section,ITC num,Ind studies num,questions,reviewer 1,reviewer 2,decision,identical,reviewer,Notes reviewer 1,Notes reviewer 2
 10.1001/jamaophthalmol.2021.6284,35175308,general_information,,,Medical Condition of Interest Name,thyroid eye disease,thyroid eye disease : proptosis and diplopia,XXXX,FALSE,ASL,NA,NA
 10.1001/jamaophthalmol.2021.6284,35175308,general_information,,,Countries of first author affiliations,,,usa,TRUE,ASL,,
 10.1001/jamaophthalmol.2021.6284,35175308,general_information,,,Countries of last author affiliations,canada,usa,XXXX,FALSE,ASL,,
@@ -83,7 +83,7 @@ Details on the weighting method = Supplementary material"
 10.1002/edm2.259,34277983,methodology,1,,Anchored comparison?,,,Yes,TRUE,ASL,,
 10.1002/edm2.259,34277983,methodology,1,,Form of the indirect comparison,,,Simple (ie treatments effects extracted from two studies),TRUE,ASL,,
 10.1002/edm2.259,34277983,methodology,1,,Definition of a single primary outcome for the indirect comparison,,,Yes,TRUE,ASL,,
-10.1002/edm2.259,34277983,methodology,1,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),"3 point mace (cardiovascular death, non-fatal myocardial infraction, non-fatal stroke)","threeâ€point (3p) mace (major adverse cardiovascular events : cv death, nonâ€fatal myocardial infarction, nonâ€fatal stroke)","3 point mace (cardiovascular death, non-fatal myocardial infraction, non-fatal stroke)",FALSE,ASL,,
+10.1002/edm2.259,34277983,methodology,1,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),"3 point mace (cardiovascular death, non-fatal myocardial infraction, non-fatal stroke)","three‐point (3p) mace (major adverse cardiovascular events : cv death, non‐fatal myocardial infarction, non‐fatal stroke)","3 point mace (cardiovascular death, non-fatal myocardial infraction, non-fatal stroke)",FALSE,ASL,,
 10.1002/edm2.259,34277983,methodology,1,,Primary outcome: variable type,,,Time-to-event,TRUE,ASL,,
 10.1002/edm2.259,34277983,methodology,1,,Justification for selecting variables to be included in the adjustment model (in the main text),,,A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion),TRUE,ASL,,
 10.1002/edm2.259,34277983,methodology,1,,Inclusion of prognostic factors in the adjustment/matching model,,,No,TRUE,ASL,,
@@ -98,10 +98,10 @@ Details on the weighting method = Supplementary material"
 10.1002/edm2.259,34277983,results,1,,Direction of the treatment effect contrast: IPD treatment is:,,,"Numerator if ratio, or left side if difference",TRUE,ASL,,
 10.1002/edm2.259,34277983,results,1,,Primary outcome: adjusted treatment effect,,,0.74,TRUE,ASL,,
 10.1002/edm2.259,34277983,results,1,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",,,0.06,TRUE,ASL,,
-10.1002/edm2.259,34277983,results,1,,Sample size of the population of interest in the non IPD treatment arm,,4949,NA,FALSE,ASL,,
-10.1002/edm2.259,34277983,results,1,,"If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",,4952,NA,FALSE,ASL,,
-10.1002/edm2.259,34277983,results,1,,Initial sample size of the population of interest in the IPD treatment arm,,1648,NA,FALSE,ASL,,
-10.1002/edm2.259,34277983,results,1,,"If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",,1649,NA,FALSE,ASL,,
+10.1002/edm2.259,34277983,results,1,,Sample size of the population of interest in the non IPD treatment arm,,4949,XXXX,FALSE,ASL,,
+10.1002/edm2.259,34277983,results,1,,"If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",,4952,XXXX,FALSE,ASL,,
+10.1002/edm2.259,34277983,results,1,,Initial sample size of the population of interest in the IPD treatment arm,,1648,XXXX,FALSE,ASL,,
+10.1002/edm2.259,34277983,results,1,,"If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",,1649,XXXX,FALSE,ASL,,
 10.1007/s00432-021-03602-w,33745079,general_information,,,Medical Condition of Interest Name,,,unresectable hepatocellular carcinoma,TRUE,ASL,NA,NA
 10.1007/s00432-021-03602-w,33745079,general_information,,,Countries of first author affiliations,,,italy,TRUE,ASL,,
 10.1007/s00432-021-03602-w,33745079,general_information,,,Countries of last author affiliations,,,italy,TRUE,ASL,,
@@ -194,7 +194,7 @@ Say they adjust on treatment effect modifiers only.  Do not mention the word una
 10.1007/s11523-021-00803-8,33638735,results,1,,Direction of the treatment effect contrast: IPD treatment is:,"Numerator if ratio, or left side if difference","Denominator if ratio, or rightside if difference","Denominator if ratio, or rightside if difference",FALSE,ASL,,
 10.1007/s11523-021-00803-8,33638735,results,1,,Primary outcome: adjusted treatment effect,,,0.59,TRUE,ASL,,
 10.1007/s11523-021-00803-8,33638735,results,1,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",,,[0.46;0.75],TRUE,ASL,,
-10.1007/s12325-014-0167-z,25414048,general_information,,,Medical Condition of Interest Name,relapsing-remitting multiple sclerosis,relapsingâ€“remitting multiple sclerosis,XXXX,FALSE,ASL,NA,NA
+10.1007/s12325-014-0167-z,25414048,general_information,,,Medical Condition of Interest Name,relapsing-remitting multiple sclerosis,relapsing–remitting multiple sclerosis,XXXX,FALSE,ASL,NA,NA
 10.1007/s12325-014-0167-z,25414048,general_information,,,Countries of first author affiliations,,,switzerland,TRUE,ASL,,
 10.1007/s12325-014-0167-z,25414048,general_information,,,Countries of last author affiliations,,,uk,TRUE,ASL,,
 10.1007/s12325-014-0167-z,25414048,general_information,,,"Positions of study investigators (for any authors of the article, any that applies)",,,"Academic, Pharmaceutical Industry",TRUE,ASL,,
@@ -350,7 +350,7 @@ No mention of STC in the main-text"
 10.1007/s12325-018-0734-9,29949047,study_information,,2,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Treatment name 1,,,dabrafenib + trametinib,TRUE,ASL,"Conducted in the context of a NMA. Numerical results found in supplemental materials. Don't report any treatment contrast effect, just the effet measure in both treatment arms. Calculated rate difference is 46.4%","Smoking history = other covariate
 
-Pas de rÃ©sultats de la comparaison entre dabrafenib+trametinib vs nivolumab dans l'article, les rÃ©sultats sont inclus ans la NMA, ce qui donne :
+Pas de résultats de la comparaison entre dabrafenib+trametinib vs nivolumab dans l'article, les résultats sont inclus ans la NMA, ce qui donne :
 
 OR(Overall response rate) Dabrafenib + trametinib vs Docetaxel (comparateur commun dans la NMA) = 13.21 [5.47;33.02]
 
@@ -359,12 +359,12 @@ OR(Overall response rate) Nivolumab vs Docetaxel (comparateur commun dans la NMA
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Treatment name 2,,,nivolumab,TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Study 'number(s)' for treatment 2,,,2,TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Type of population-adjusted indirect comparisons performed,,,MAIC,TRUE,ASL,,
-10.1007/s12325-018-0734-9,29949047,methodology,1,,Anchored comparison?,Yes,No,,FALSE,ASL,,
+10.1007/s12325-018-0734-9,29949047,methodology,1,,Anchored comparison?,Yes,No,No,FALSE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Form of the indirect comparison,,,Simple (ie treatments effects extracted from two studies),TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Definition of a single primary outcome for the indirect comparison,,,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),,,overall response rate,TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Primary outcome: variable type,,,Binary (eg rates),TRUE,ASL,,
-10.1007/s12325-018-0734-9,29949047,methodology,1,,Justification for selecting variables to be included in the adjustment model (in the main text),"Nothing mentioned, not reported","A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)",,FALSE,ASL,,
+10.1007/s12325-018-0734-9,29949047,methodology,1,,Justification for selecting variables to be included in the adjustment model (in the main text),"Nothing mentioned, not reported","A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)","A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)",FALSE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Inclusion of prognostic factors in the adjustment/matching model,,,Yes,TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,Inclusion of treatment-effect modifiers in the adjustment/matching model,,,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,methodology,1,,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",,,No,TRUE,ASL,,
@@ -376,10 +376,10 @@ OR(Overall response rate) Nivolumab vs Docetaxel (comparateur commun dans la NMA
 10.1007/s12325-018-0734-9,29949047,results,1,,Number of covariates adjusted for/matched on,10,9,10,FALSE,ASL,,
 10.1007/s12325-018-0734-9,29949047,results,1,,Covariates adjusted for/matched on in the indirect comparison,,,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest, Other(s)",TRUE,ASL,,
 10.1007/s12325-018-0734-9,29949047,results,1,,"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",34,,34,FALSE,ASL,,
-10.1007/s12325-018-0734-9,29949047,results,1,,Primary outcome: treatment effect contrast,Risk difference,,NA,FALSE,ASL,,
-10.1007/s12325-018-0734-9,29949047,results,1,,Direction of the treatment effect contrast: IPD treatment is:,"Numerator if ratio, or left side if difference",,NA,FALSE,ASL,,
-10.1007/s12325-018-0734-9,29949047,results,1,,Primary outcome: adjusted treatment effect,46.4,,NA,FALSE,ASL,,
-10.1007/s12325-018-0734-9,29949047,results,1,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",0.001,,NA,FALSE,ASL,,
+10.1007/s12325-018-0734-9,29949047,results,1,,Primary outcome: treatment effect contrast,Risk difference,,XXXX,FALSE,ASL,,
+10.1007/s12325-018-0734-9,29949047,results,1,,Direction of the treatment effect contrast: IPD treatment is:,"Numerator if ratio, or left side if difference",,XXXX,FALSE,ASL,,
+10.1007/s12325-018-0734-9,29949047,results,1,,Primary outcome: adjusted treatment effect,46.4,,XXXX,FALSE,ASL,,
+10.1007/s12325-018-0734-9,29949047,results,1,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",0.001,,XXXX,FALSE,ASL,,
 10.1007/s12325-019-00991-w,31140123,general_information,,,Medical Condition of Interest Name,,,relapsed or refractory acute lymphoblastic leukemia,TRUE,ASL,NA,NA
 10.1007/s12325-019-00991-w,31140123,general_information,,,Countries of first author affiliations,,,canada,TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,general_information,,,Countries of last author affiliations,,,germany,TRUE,ASL,,
@@ -412,7 +412,7 @@ Geographical region : Other"
 10.1007/s12325-019-00991-w,31140123,methodology,1,,Anchored comparison?,,,Yes,TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,1,,Form of the indirect comparison,,,Simple (ie treatments effects extracted from two studies),TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,1,,Definition of a single primary outcome for the indirect comparison,,,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",TRUE,ASL,,
-10.1007/s12325-019-00991-w,31140123,methodology,1,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),remission rate,complete response rate,,FALSE,ASL,,
+10.1007/s12325-019-00991-w,31140123,methodology,1,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),remission rate,complete response rate,complete response rate,FALSE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,1,,Primary outcome: variable type,,,Binary (eg rates),TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,1,,Justification for selecting variables to be included in the adjustment model (in the main text),,,"Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)",TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,1,,Inclusion of prognostic factors in the adjustment/matching model,,,No,TRUE,ASL,,
@@ -429,7 +429,7 @@ Geographical region : other type of covariate"
 10.1007/s12325-019-00991-w,31140123,methodology,2,,Anchored comparison?,,,Yes,TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,2,,Form of the indirect comparison,,,Simple (ie treatments effects extracted from two studies),TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,2,,Definition of a single primary outcome for the indirect comparison,,,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",TRUE,ASL,,
-10.1007/s12325-019-00991-w,31140123,methodology,2,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),remission rate,complete response rate,complete response rate,FALSE,ASL,,
+10.1007/s12325-019-00991-w,31140123,methodology,2,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),remission rate,complete response rate,complete remission rate,FALSE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,2,,Primary outcome: variable type,,,Binary (eg rates),TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,2,,Justification for selecting variables to be included in the adjustment model (in the main text),,,"Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)",TRUE,ASL,,
 10.1007/s12325-019-00991-w,31140123,methodology,2,,Inclusion of prognostic factors in the adjustment/matching model,,,No,TRUE,ASL,,
@@ -541,7 +541,7 @@ Geographical region : other type of covariate"
 10.1007/s12325-019-01173-4,31865547,study_information,,4,Country where the clinical trial/observational study was conducted (international if more than one),france,,XXXX,FALSE,ASL,,
 10.1007/s12325-019-01173-4,31865547,methodology,1,,Treatment name 1,ratiofrequency catheter ablation with ablation index,radiofrequency (rf) ablation with ablation index,ratiofrequency catheter ablation with ablation index,FALSE,ASL,"Claims that the MA in MAIC stands for the two steps of matching and adjustment analysis, where the matching is the first step of aligning inclusion criteria, and then the propensity score reweighting procedure is the adjustment step, therefore present all their results as matched before having done any adjustment. Thus the unadjusted results are the ""matched"", and the MAIC results are the ""matched and adjusted"" results.","Selection des covariates = Not statistical based
 
-Effectif du groupe non IPD (Ã©tudes 2;3;4) = 175 ou 155 ? possible une erreur dans le tableau ou ils disent 155, car dans la courbe de kaplan meier ils mettent 175."
+Effectif du groupe non IPD (études 2;3;4) = 175 ou 155 ? possible une erreur dans le tableau ou ils disent 155, car dans la courbe de kaplan meier ils mettent 175."
 10.1007/s12325-019-01173-4,31865547,methodology,1,,Study 'number(s)' for treatment 1,,,1,TRUE,ASL,,
 10.1007/s12325-019-01173-4,31865547,methodology,1,,Treatment name 2,ratiofrequency catheter ablation with cryoballoon,cryoballoon (cb) ablation,ratiofrequency catheter ablation with cryoballoon,FALSE,ASL,,
 10.1007/s12325-019-01173-4,31865547,methodology,1,,Study 'number(s)' for treatment 2,,,2;3;4,TRUE,ASL,,
@@ -650,7 +650,7 @@ Etude 1 = phase 4"
 10.1007/s12325-021-01846-z,34250584,study_information,,4,Clinical Trial,,,No,TRUE,ASL,,
 10.1007/s12325-021-01846-z,34250584,study_information,,4,NCT (only for clinical trial registered on clinicaltrials.gov),NCT03277976,,NCT03277976,FALSE,ASL,,
 10.1007/s12325-021-01846-z,34250584,study_information,,4,Country where the clinical trial/observational study was conducted (international if more than one),italy,,XXXX,FALSE,ASL,,
-10.1007/s12325-021-01846-z,34250584,study_information,,4,Data source name (only if observational study or clinical trial without NCT),,stabile et al. (2020),NA,FALSE,ASL,,
+10.1007/s12325-021-01846-z,34250584,study_information,,4,Data source name (only if observational study or clinical trial without NCT),,stabile et al. (2020),XXXX,FALSE,ASL,,
 10.1007/s12325-021-01846-z,34250584,study_information,,5,Patient-level data used,,,No,TRUE,ASL,,
 10.1007/s12325-021-01846-z,34250584,study_information,,5,Clinical Trial,,,No,TRUE,ASL,,
 10.1007/s12325-021-01846-z,34250584,study_information,,5,Data source name (only if observational study or clinical trial without NCT),,,gramlich et al. (2019),TRUE,ASL,,
@@ -667,7 +667,7 @@ Etude 1 = phase 4"
 10.1007/s12325-021-01846-z,34250584,study_information,,8,NCT (only for clinical trial registered on clinicaltrials.gov),,,NCT03012841,TRUE,ASL,,
 10.1007/s12325-021-01846-z,34250584,study_information,,8,Country where the clinical trial/observational study was conducted (international if more than one),,,international,TRUE,ASL,,
 10.1007/s12325-021-01846-z,34250584,study_information,,8,Number of treatment arms (clinical trial only),,1,1,FALSE,ASL,,
-10.1007/s12325-021-01846-z,34250584,methodology,1,,Treatment name 1,thermocool smarttouchtm catheter or the thermocool smarttouchtm sf catheter with ai/visitag surpointtm module,thermocool smarttouchâ„¢/thermocool smarttouchâ„¢ sf catheter with ai (stai),thermocool smarttouch /thermocool smarttouch sf catheter with ai (stai),FALSE,ASL,NA,"""Three electrophysiologists (G.S., A.H., D.G.) provided a priori and independent rankings of potential prognostic factors and treatment-effect modifiers that were reported in the STAI and CB trials, and were considered relevant with regard to catheter ablation of PsAF. Average rankings were calculated and used to order potential factors for adjustment in scenario analyses""
+10.1007/s12325-021-01846-z,34250584,methodology,1,,Treatment name 1,thermocool smarttouchtm catheter or the thermocool smarttouchtm sf catheter with ai/visitag surpointtm module,thermocool smarttouch™/thermocool smarttouch™ sf catheter with ai (stai),thermocool smarttouch /thermocool smarttouch sf catheter with ai (stai),FALSE,ASL,NA,"""Three electrophysiologists (G.S., A.H., D.G.) provided a priori and independent rankings of potential prognostic factors and treatment-effect modifiers that were reported in the STAI and CB trials, and were considered relevant with regard to catheter ablation of PsAF. Average rankings were calculated and used to order potential factors for adjustment in scenario analyses""
 ==> Experts ranking was used for sensitivity analyses"
 10.1007/s12325-021-01846-z,34250584,methodology,1,,Study 'number(s)' for treatment 1,,,1;2;3;4,TRUE,ASL,,
 10.1007/s12325-021-01846-z,34250584,methodology,1,,Treatment name 2,cb catheter (arctic front advancetm),second-generation cryoballoon (cb),second-generation cryoballoon (cb),FALSE,ASL,,
@@ -766,7 +766,7 @@ Etude 1 = phase 4"
 10.1007/s12325-022-02099-0,35279814,study_information,,2,Country where the clinical trial/observational study was conducted (international if more than one),,,international,TRUE,ASL,,
 10.1007/s12325-022-02099-0,35279814,study_information,,2,Phase of the clinical trial (clinical trial only),,,3,TRUE,ASL,,
 10.1007/s12325-022-02099-0,35279814,study_information,,2,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
-10.1007/s12325-022-02099-0,35279814,methodology,1,,Treatment name 1,tare using sir-spheres (radioembolization),transarterial radioembolization using sir-spheresÂ® y-90 resin microspheres,transarterial radioembolization ,FALSE,ASL,"Medical device company : from pharmaceutical industry, interpret it as pharmaceutical/medical device company
+10.1007/s12325-022-02099-0,35279814,methodology,1,,Treatment name 1,tare using sir-spheres (radioembolization),transarterial radioembolization using sir-spheres® y-90 resin microspheres,transarterial radioembolization ,FALSE,ASL,"Medical device company : from pharmaceutical industry, interpret it as pharmaceutical/medical device company
 
 Partly rely on statistics to select covariate, but don't use pvalues so the first answer doesn't apply : maybe need to reformulate it to pvalues based alone
 
@@ -835,14 +835,14 @@ Not mentioning that the weights distribution has been studied (only talking abou
 10.1007/s13555-021-00646-1,34877623,study_information,,4,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,5,Patient-level data used,,,No,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,5,Clinical Trial,,,Yes,TRUE,ASL,,
-10.1007/s13555-021-00646-1,34877623,study_information,,5,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00667160,,NA,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,study_information,,5,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00667160,,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,5,Country where the clinical trial/observational study was conducted (international if more than one),,,usa,TRUE,ASL,,
-10.1007/s13555-021-00646-1,34877623,study_information,,5,Phase of the clinical trial (clinical trial only),4,,NA,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,study_information,,5,Phase of the clinical trial (clinical trial only),4,,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,5,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,5,Data source name (only if observational study or clinical trial without NCT),,paller et al. (2005),paller et al. (2005),FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,6,Patient-level data used,Yes,No,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,6,Clinical Trial,,,Yes,TRUE,ASL,,
-10.1007/s13555-021-00646-1,34877623,study_information,,6,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00666302,,NA,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,study_information,,6,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00666302,,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,6,Country where the clinical trial/observational study was conducted (international if more than one),international,usa,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,6,Phase of the clinical trial (clinical trial only),4,,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,6,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
@@ -859,7 +859,7 @@ Not mentioning that the weights distribution has been studied (only talking abou
 10.1007/s13555-021-00646-1,34877623,study_information,,8,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,9,Patient-level data used,,,No,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,9,Clinical Trial,,,Yes,TRUE,ASL,,
-10.1007/s13555-021-00646-1,34877623,study_information,,9,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00480896,,NA,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,study_information,,9,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00480896,,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,9,Country where the clinical trial/observational study was conducted (international if more than one),international,,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,9,Phase of the clinical trial (clinical trial only),3,,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,study_information,,9,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
@@ -879,7 +879,7 @@ age counted as two different
 10.1007/s13555-021-00646-1,34877623,methodology,1,,Anchored comparison?,,,No,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,1,,Form of the indirect comparison,,,"Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate)",TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,1,,Definition of a single primary outcome for the indirect comparison,,,Yes,TRUE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,1,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),investigator's static global assessment improvement score of 0-1,investigator's static global assessment improvement score of 0-1,investigator's static global assessment improvement score of 0-1,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,1,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),investigator’s static global assessment improvement score of 0–1,proportion of patients achieving the investigator’s static global assessment scores and investigator’s global assessment (isga/iga 0/1) at 28–42 days,investigator’s static global assessment improvement score of 0–1,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,1,,Primary outcome: variable type,,,Binary (eg rates),TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,1,,Justification for selecting variables to be included in the adjustment model (in the main text),,,"Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)",TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,1,,Inclusion of prognostic factors in the adjustment/matching model,,,Yes,TRUE,ASL,,
@@ -894,29 +894,29 @@ age counted as two different
 10.1007/s13555-021-00646-1,34877623,methodology,2,,Anchored comparison?,,,No,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,2,,Form of the indirect comparison,,,"Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate)",TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,2,,Definition of a single primary outcome for the indirect comparison,,,Yes,TRUE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,2,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),investigator's static global assessment improvement score of 0-1,,investigator's static global assessment improvement score of 0-1,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,2,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),investigator’s static global assessment improvement score of 0–1,the investigator’s static global assessment scores and investigator’s global assessment (isga/iga 0/1) at 28–42 days,investigator’s static global assessment improvement score of 0–1,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,2,,Primary outcome: variable type,Binary (eg rates),"Categorical (more than 2 categories, ordered or not; eg scales)",Binary (eg rates),FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,2,,Justification for selecting variables to be included in the adjustment model (in the main text),,,"Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)",TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,2,,Inclusion of prognostic factors in the adjustment/matching model,,,Yes,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,2,,Inclusion of treatment-effect modifiers in the adjustment/matching model,,,Yes,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,2,,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",,,Yes,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,methodology,2,,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),,,No,TRUE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Treatment name 1,crisaborole,,NA,FALSE,ASL,"crisaborole vs tacrolimus 0.1%
+10.1007/s13555-021-00646-1,34877623,methodology,,,Treatment name 1,crisaborole,,XXXX,FALSE,ASL,"crisaborole vs tacrolimus 0.1%
 Authors say that this MAIC is not valid because sample size shrinking during matching process. Interesting to mention it.",NA
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Study 'number(s)' for treatment 1,1;2,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Treatment name 2,tacrolimus 0.1%,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Study 'number(s)' for treatment 2,6,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Type of population-adjusted indirect comparisons performed,MAIC,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Anchored comparison?,No,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Form of the indirect comparison,"Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate)",,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Definition of a single primary outcome for the indirect comparison,Yes,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),investigator's static global assessment improvement score of 0-1,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Primary outcome: variable type,Binary (eg rates),,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Justification for selecting variables to be included in the adjustment model (in the main text),"Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)",,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Inclusion of prognostic factors in the adjustment/matching model,Yes,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Inclusion of treatment-effect modifiers in the adjustment/matching model,Yes,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",Yes,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,methodology,3,,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),No,,NA,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Study 'number(s)' for treatment 1,1;2,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Treatment name 2,tacrolimus 0.1%,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Study 'number(s)' for treatment 2,6,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Type of population-adjusted indirect comparisons performed,MAIC,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Anchored comparison?,No,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Form of the indirect comparison,"Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate)",,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Definition of a single primary outcome for the indirect comparison,Yes,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),investigator’s static global assessment improvement score of 0–1,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Primary outcome: variable type,Binary (eg rates),,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Justification for selecting variables to be included in the adjustment model (in the main text),"Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose)",,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Inclusion of prognostic factors in the adjustment/matching model,Yes,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Inclusion of treatment-effect modifiers in the adjustment/matching model,Yes,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",Yes,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,methodology,xx,,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),No,,XXXX,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,results,1,,Initial sample size of the population of interest in the IPD treatment arm,,,1021,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,results,1,,"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",,,627,TRUE,ASL,,
 10.1007/s13555-021-00646-1,34877623,results,1,,Reporting of a weights' distribution evaluation (MAIC),,,"Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials",TRUE,ASL,,
@@ -941,18 +941,18 @@ Authors say that this MAIC is not valid because sample size shrinking during mat
 10.1007/s13555-021-00646-1,34877623,results,2,,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",[0.80;1.83],[1.02;1.69],[1.02;1.69],FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,results,2,,Primary outcome: adjusted treatment effect,1.03,1.5,1.5,FALSE,ASL,,
 10.1007/s13555-021-00646-1,34877623,results,2,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",[0.58;1.82],0.012,[1.09;2.05],FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Initial sample size of the population of interest in the IPD treatment arm,1021,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",94,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Reporting of a weights' distribution evaluation (MAIC),"Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials",,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Reporting of the list of the covariates adjusted for/matched on,Yes,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Number of covariates adjusted for/matched on,7,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Covariates adjusted for/matched on in the indirect comparison,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest",,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Primary outcome: treatment effect contrast,OR,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Direction of the treatment effect contrast: IPD treatment is:,"Numerator if ratio, or left side if difference",,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Primary outcome: unadjusted treatment effect,1.21,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",[0.80;1.83],,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,Primary outcome: adjusted treatment effect,1.03,,NA,FALSE,ASL,,
-10.1007/s13555-021-00646-1,34877623,results,3,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",[0.58;1.82],,NA,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Initial sample size of the population of interest in the IPD treatment arm,1021,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",94,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Reporting of a weights' distribution evaluation (MAIC),"Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials",,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Reporting of the list of the covariates adjusted for/matched on,Yes,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Number of covariates adjusted for/matched on,7,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Covariates adjusted for/matched on in the indirect comparison,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest",,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Primary outcome: treatment effect contrast,OR,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Direction of the treatment effect contrast: IPD treatment is:,"Numerator if ratio, or left side if difference",,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Primary outcome: unadjusted treatment effect,1.21,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",[0.80;1.83],,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,Primary outcome: adjusted treatment effect,1.03,,XXXX,FALSE,ASL,,
+10.1007/s13555-021-00646-1,34877623,results,xx,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",[0.58;1.82],,XXXX,FALSE,ASL,,
 10.1007/s40263-021-00805-0,33847901,general_information,,,Medical Condition of Interest Name,multiple sclerosis,relapsing-remitting multiple sclerosis,XXXX,FALSE,ASL,NA,NA
 10.1007/s40263-021-00805-0,33847901,general_information,,,Countries of first author affiliations,,,usa,TRUE,ASL,,
 10.1007/s40263-021-00805-0,33847901,general_information,,,Countries of last author affiliations,,,usa,TRUE,ASL,,
@@ -1041,7 +1041,7 @@ weight = others"
 10.1007/s40273-021-01015-8,34080140,study_information,,3,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
 10.1007/s40273-021-01015-8,34080140,study_information,,4,Patient-level data used,,,No,TRUE,ASL,,
 10.1007/s40273-021-01015-8,34080140,study_information,,4,Clinical Trial,Yes,No,Yes,FALSE,ASL,,
-10.1007/s40273-021-01015-8,34080140,study_information,,4,Data source name (only if observational study or clinical trial without NCT),,ou et al. (2014),,FALSE,ASL,,
+10.1007/s40273-021-01015-8,34080140,study_information,,4,Data source name (only if observational study or clinical trial without NCT),,ou et al. (2014),XXXX,FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,study_information,,4,NCT (only for clinical trial registered on clinicaltrials.gov),NCT00585195,,NCT00585195,FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,study_information,,4,Country where the clinical trial/observational study was conducted (international if more than one),international,,international,FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,study_information,,4,Phase of the clinical trial (clinical trial only),1,,1,FALSE,ASL,,
@@ -1083,7 +1083,7 @@ Covariates = from supplementary material and not from main text :
 *Justification for selecting variables = A priori expert- knowledge + Status of prognostic factor assessed in the IPD dataset"
 10.1007/s40273-021-01015-8,34080140,methodology,2,,Study 'number(s)' for treatment 1,,,1,TRUE,ASL,,
 10.1007/s40273-021-01015-8,34080140,methodology,2,,Treatment name 2,crizotinib,systemic therapy,systemic therapy,FALSE,ASL,,
-10.1007/s40273-021-01015-8,34080140,methodology,2,,Study 'number(s)' for treatment 2,4;5,4,,FALSE,ASL,,
+10.1007/s40273-021-01015-8,34080140,methodology,2,,Study 'number(s)' for treatment 2,4;5,4,4;5,FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,methodology,2,,Type of population-adjusted indirect comparisons performed,,,MAIC,TRUE,ASL,,
 10.1007/s40273-021-01015-8,34080140,methodology,2,,Anchored comparison?,,,No,TRUE,ASL,,
 10.1007/s40273-021-01015-8,34080140,methodology,2,,Form of the indirect comparison,"Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate)",Simple (ie treatments effects extracted from two studies),"Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate)",FALSE,ASL,,
@@ -1110,7 +1110,7 @@ Covariates = from supplementary material and not from main text :
 10.1007/s40273-021-01015-8,34080140,results,2,,Initial sample size of the population of interest in the IPD treatment arm,,59,59,FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,results,2,,"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",,24.5,24.5,FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,results,2,,Reporting of a weights' distribution evaluation (MAIC),,,Not mentioned,TRUE,ASL,,
-10.1007/s40273-021-01015-8,34080140,results,2,,Reporting of the list of the covariates adjusted for/matched on,No,Yes,,FALSE,ASL,,
+10.1007/s40273-021-01015-8,34080140,results,2,,Reporting of the list of the covariates adjusted for/matched on,No,Yes,Yes,FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,results,2,,Number of covariates adjusted for/matched on,,4,4,FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,results,2,,Covariates adjusted for/matched on in the indirect comparison,,"Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)","Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)",FALSE,ASL,,
 10.1007/s40273-021-01015-8,34080140,results,2,,Primary outcome: treatment effect contrast,,,HR,TRUE,ASL,,
@@ -1152,22 +1152,22 @@ Covariates = from supplementary material and not from main text :
 10.1016/j.bbmt.2020.06.008,32561336,methodology,1,,Inclusion of treatment-effect modifiers in the adjustment/matching model,,,Yes,TRUE,ASL,,
 10.1016/j.bbmt.2020.06.008,32561336,methodology,1,,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",,,No,TRUE,ASL,,
 10.1016/j.bbmt.2020.06.008,32561336,methodology,1,,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),,,No,TRUE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Treatment name 1,,axicabtagene ciloleucel,,FALSE,ASL,NA,"Safety population.
-During the study design phase (a priori), the authors convened to discuss all the potential prognostic characteristics and effect modifiers to be adjusted for in the MAIC. (Idem pour l'analyse d'efficacitÃ©)."
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Study 'number(s)' for treatment 1,,1,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Treatment name 2,,tisagenlecleucel,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Study 'number(s)' for treatment 2,,2,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Type of population-adjusted indirect comparisons performed,,MAIC,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Anchored comparison?,,No,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Form of the indirect comparison,,Simple (ie treatments effects extracted from two studies),NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Definition of a single primary outcome for the indirect comparison,,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),,rate of grades 1-2 crs (cytokine release syndrome),NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Primary outcome: variable type,,Binary (eg rates),NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Justification for selecting variables to be included in the adjustment model (in the main text),,A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion),NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Inclusion of prognostic factors in the adjustment/matching model,,Yes,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Inclusion of treatment-effect modifiers in the adjustment/matching model,,Yes,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",,No,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,methodology,2,,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),,No,NA,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Treatment name 1,,axicabtagene ciloleucel,XXXX,FALSE,ASL,NA,"Safety population.
+During the study design phase (a priori), the authors convened to discuss all the potential prognostic characteristics and effect modifiers to be adjusted for in the MAIC. (Idem pour l'analyse d'efficacité)."
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Study 'number(s)' for treatment 1,,1,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Treatment name 2,,tisagenlecleucel,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Study 'number(s)' for treatment 2,,2,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Type of population-adjusted indirect comparisons performed,,MAIC,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Anchored comparison?,,No,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Form of the indirect comparison,,Simple (ie treatments effects extracted from two studies),XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Definition of a single primary outcome for the indirect comparison,,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),,rate of grades 1-2 crs (cytokine release syndrome),XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Primary outcome: variable type,,Binary (eg rates),XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Justification for selecting variables to be included in the adjustment model (in the main text),,A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion),XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Inclusion of prognostic factors in the adjustment/matching model,,Yes,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Inclusion of treatment-effect modifiers in the adjustment/matching model,,Yes,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",,No,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,methodology,xx,,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),,No,XXXX,FALSE,ASL,,
 10.1016/j.bbmt.2020.06.008,32561336,results,1,,Sample size of the population of interest in the non IPD treatment arm,,,115,TRUE,ASL,,
 10.1016/j.bbmt.2020.06.008,32561336,results,1,,Initial sample size of the population of interest in the IPD treatment arm,101,,101,FALSE,ASL,,
 10.1016/j.bbmt.2020.06.008,32561336,results,1,,"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",,,39.59,TRUE,ASL,,
@@ -1181,19 +1181,19 @@ During the study design phase (a priori), the authors convened to discuss all th
 10.1016/j.bbmt.2020.06.008,32561336,results,1,,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",,,[0.47;0.98],TRUE,ASL,,
 10.1016/j.bbmt.2020.06.008,32561336,results,1,,Primary outcome: adjusted treatment effect,,,0.51,TRUE,ASL,,
 10.1016/j.bbmt.2020.06.008,32561336,results,1,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",,,[0.31;0.83],TRUE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Sample size of the population of interest in the non IPD treatment arm,,111,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Initial sample size of the population of interest in the IPD treatment arm,,108,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",,47.65,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Reporting of a weights' distribution evaluation (MAIC),,Not mentioned,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Reporting of the list of the covariates adjusted for/matched on,,Yes,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Number of covariates adjusted for/matched on,,7,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Covariates adjusted for/matched on in the indirect comparison,,"Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest",NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Primary outcome: treatment effect contrast,,RR,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Direction of the treatment effect contrast: IPD treatment is:,,"Numerator if ratio, or left side if difference",NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Primary outcome: unadjusted treatment effect,,2.06,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",,[1.61;2.63],NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,Primary outcome: adjusted treatment effect,,2.03,NA,FALSE,ASL,,
-10.1016/j.bbmt.2020.06.008,32561336,results,2,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",,[1.55;2.65],NA,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Sample size of the population of interest in the non IPD treatment arm,,111,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Initial sample size of the population of interest in the IPD treatment arm,,108,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC",,47.65,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Reporting of a weights' distribution evaluation (MAIC),,Not mentioned,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Reporting of the list of the covariates adjusted for/matched on,,Yes,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Number of covariates adjusted for/matched on,,7,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Covariates adjusted for/matched on in the indirect comparison,,"Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest",XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Primary outcome: treatment effect contrast,,RR,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Direction of the treatment effect contrast: IPD treatment is:,,"Numerator if ratio, or left side if difference",XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Primary outcome: unadjusted treatment effect,,2.06,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",,[1.61;2.63],XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,Primary outcome: adjusted treatment effect,,2.03,XXXX,FALSE,ASL,,
+10.1016/j.bbmt.2020.06.008,32561336,results,xx,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",,[1.55;2.65],XXXX,FALSE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,general_information,,,Medical Condition of Interest Name,metastatic advanced renal cell carcinoma,advanced renal cell carcinoma,metastatic advanced renal cell carcinoma,FALSE,ASL,NA,NA
 10.1016/j.clinthera.2015.09.013,26602976,general_information,,,Countries of first author affiliations,,,usa,TRUE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,general_information,,,Countries of last author affiliations,,,usa,TRUE,ASL,,
@@ -1203,7 +1203,7 @@ During the study design phase (a priori), the authors convened to discuss all th
 10.1016/j.clinthera.2015.09.013,26602976,general_information,,,"Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article",,,Yes,TRUE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,general_information,,,Mention of a systematic review to find the studies to compare treatments of interest,,,No,TRUE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,study_information,,1,Patient-level data used,,,Yes,TRUE,ASL,,
-10.1016/j.clinthera.2015.09.013,26602976,study_information,,1,Clinical Trial,Yes,No,XXXX,FALSE,ASL,,
+10.1016/j.clinthera.2015.09.013,26602976,study_information,,1,Clinical Trial,Yes,No,Yes,FALSE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,study_information,,1,NCT (only for clinical trial registered on clinicaltrials.gov),,,NCT00410124,TRUE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,study_information,,1,Country where the clinical trial/observational study was conducted (international if more than one),,,international,TRUE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,study_information,,1,Phase of the clinical trial (clinical trial only),,,3,TRUE,ASL,,
@@ -1236,7 +1236,7 @@ During the study design phase (a priori), the authors convened to discuss all th
 10.1016/j.clinthera.2015.09.013,26602976,results,1,,Reporting of the list of the covariates adjusted for/matched on,,,Yes,TRUE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,results,1,,Number of covariates adjusted for/matched on,,,3,TRUE,ASL,,
 10.1016/j.clinthera.2015.09.013,26602976,results,1,,Covariates adjusted for/matched on in the indirect comparison,,,"Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest",TRUE,ASL,,
-10.1016/j.clinthera.2015.09.013,26602976,results,1,,Primary outcome: treatment effect contrast,,No relative effect statistic has been calculated,NA,FALSE,ASL,,
+10.1016/j.clinthera.2015.09.013,26602976,results,1,,Primary outcome: treatment effect contrast,,No relative effect statistic has been calculated,XXXX,FALSE,ASL,,
 10.1016/j.clinthera.2015.12.017,26839044,general_information,,,Medical Condition of Interest Name,chronic hepatitis c coinfected with hiv,chronic hepatitis c + coinfection with hiv,XXXX,FALSE,ASL,NA,NA
 10.1016/j.clinthera.2015.12.017,26839044,general_information,,,Countries of first author affiliations,,,usa,TRUE,ASL,,
 10.1016/j.clinthera.2015.12.017,26839044,general_information,,,Countries of last author affiliations,,,usa,TRUE,ASL,,
@@ -1291,7 +1291,7 @@ BMI = other"
 10.1016/j.clinthera.2015.12.017,26839044,results,1,,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",,,0.002,TRUE,ASL,,
 10.1016/j.clinthera.2015.12.017,26839044,results,1,,Primary outcome: adjusted treatment effect,,,0.15,TRUE,ASL,,
 10.1016/j.clinthera.2015.12.017,26839044,results,1,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",,,<0.001,TRUE,ASL,,
-10.1016/j.clinthera.2017.08.010,28967482,general_information,,,Medical Condition of Interest Name,relapsed-refractory multiple myeloma,relapsedâ€“refractory multiple myeloma,relapsed-refractory multiple myeloma,FALSE,ASL,NA,NA
+10.1016/j.clinthera.2017.08.010,28967482,general_information,,,Medical Condition of Interest Name,relapsed-refractory multiple myeloma,relapsed–refractory multiple myeloma,relapsed-refractory multiple myeloma,FALSE,ASL,NA,NA
 10.1016/j.clinthera.2017.08.010,28967482,general_information,,,Countries of first author affiliations,,,usa,TRUE,ASL,,
 10.1016/j.clinthera.2017.08.010,28967482,general_information,,,Countries of last author affiliations,,,usa,TRUE,ASL,,
 10.1016/j.clinthera.2017.08.010,28967482,general_information,,,"Positions of study investigators (for any authors of the article, any that applies)",,,"Academic, Pharmaceutical Industry, Private Data Analysis Company",TRUE,ASL,,
@@ -1323,7 +1323,7 @@ Covariates :
 Refractoriness to bortezomib, refractoriness to lenalidomide = Past treatments for the disease of interest
 Creatinine clearance = Comorbidities
 
-""Only those predictors found to be statistically significantly (Î± = 0.20) associated with PFS were included in the final logistic regression""  ==> predictors = prognosis factors/ effect modifiers factors ????"
+""Only those predictors found to be statistically significantly (α = 0.20) associated with PFS were included in the final logistic regression""  ==> predictors = prognosis factors/ effect modifiers factors ????"
 10.1016/j.clinthera.2017.08.010,28967482,methodology,1,,Study 'number(s)' for treatment 1,,,1,TRUE,ASL,,
 10.1016/j.clinthera.2017.08.010,28967482,methodology,1,,Treatment name 2,,,daratumumab,TRUE,ASL,,
 10.1016/j.clinthera.2017.08.010,28967482,methodology,1,,Study 'number(s)' for treatment 2,,,2,TRUE,ASL,,
@@ -1344,7 +1344,7 @@ Covariates :
 Refractoriness to bortezomib, refractoriness to lenalidomide = Past treatments for the disease of interest
 Creatinine clearance = Comorbidities
 
-""Only those predictors found to be statistically significantly (Î± = 0.20) associated with PFS were included in the final logistic regression""  ==> predictors = prognosis factors/ effect modifiers factors ????"
+""Only those predictors found to be statistically significantly (α = 0.20) associated with PFS were included in the final logistic regression""  ==> predictors = prognosis factors/ effect modifiers factors ????"
 10.1016/j.clinthera.2017.08.010,28967482,methodology,2,,Study 'number(s)' for treatment 1,,,1,TRUE,ASL,,
 10.1016/j.clinthera.2017.08.010,28967482,methodology,2,,Treatment name 2,,,carfilzomib,TRUE,ASL,,
 10.1016/j.clinthera.2017.08.010,28967482,methodology,2,,Study 'number(s)' for treatment 2,,,3,TRUE,ASL,,
@@ -1507,7 +1507,7 @@ Creatinine clearance = Comorbidities
 10.1016/j.euo.2018.09.009,31412011,study_information,,1,Number of treatment arms (clinical trial only),2 or more,1,1,FALSE,ASL,,
 10.1016/j.euo.2018.09.009,31412011,study_information,,2,Patient-level data used,,,No,TRUE,ASL,,
 10.1016/j.euo.2018.09.009,31412011,study_information,,2,Clinical Trial,,,Yes,TRUE,ASL,,
-10.1016/j.euo.2018.09.009,31412011,study_information,,2,Data source name (only if observational study or clinical trial without NCT),unknown,,,FALSE,ASL,,
+10.1016/j.euo.2018.09.009,31412011,study_information,,2,Data source name (only if observational study or clinical trial without NCT),unknown,,XXXX,FALSE,ASL,,
 10.1016/j.euo.2018.09.009,31412011,study_information,,2,NCT (only for clinical trial registered on clinicaltrials.gov),,NCT00014274,NCT00014274,FALSE,ASL,,
 10.1016/j.euo.2018.09.009,31412011,study_information,,2,Country where the clinical trial/observational study was conducted (international if more than one),,international,international,FALSE,ASL,,
 10.1016/j.euo.2018.09.009,31412011,study_information,,2,Phase of the clinical trial (clinical trial only),,"2, 3","2, 3",FALSE,ASL,,
@@ -1607,7 +1607,7 @@ Prognostic factors : ""simulated treatment comparison (STC) was performed...cons
 10.1016/j.jval.2018.03.015,30314617,study_information,,2,Clinical Trial,No,Yes,No,FALSE,ASL,,
 10.1016/j.jval.2018.03.015,30314617,study_information,,2,Data source name (only if observational study or clinical trial without NCT),,,putzke et al. (2005),TRUE,ASL,,
 10.1016/j.jval.2018.03.015,30314617,study_information,,2,Country where the clinical trial/observational study was conducted (international if more than one),,usa,usa,FALSE,ASL,,
-10.1016/j.jval.2018.03.015,30314617,study_information,,2,Number of treatment arms (clinical trial only),,1,NA,FALSE,ASL,,
+10.1016/j.jval.2018.03.015,30314617,study_information,,2,Number of treatment arms (clinical trial only),,1,XXXX,FALSE,ASL,,
 10.1016/j.jval.2018.03.015,30314617,methodology,1,,Treatment name 1,,,magnetic resonance-guided focused ultrasound,TRUE,ASL,ESS found in supplementary materials,"age, disease duration = predictive factors
 
 The MAIC algorithm didn't converge (the results of the comparison are not valid) for the following comparisons :
@@ -1859,7 +1859,7 @@ Another STC with different conclusion conducted on this ITC : https://link.sprin
 10.1080/03007995.2018.1510225,30086654,results,1,,Reporting of the list of the covariates adjusted for/matched on,,,Yes,TRUE,ASL,,
 10.1080/03007995.2018.1510225,30086654,results,1,,Number of covariates adjusted for/matched on,,,6,TRUE,ASL,,
 10.1080/03007995.2018.1510225,30086654,results,1,,Covariates adjusted for/matched on in the indirect comparison,,,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)",TRUE,ASL,,
-10.1080/03007995.2018.1510225,30086654,results,1,,Primary outcome: treatment effect contrast,,No statistics were calculated,NA,FALSE,ASL,,
+10.1080/03007995.2018.1510225,30086654,results,1,,Primary outcome: treatment effect contrast,,No statistics were calculated,XXXX,FALSE,ASL,,
 10.1080/03007995.2018.1520696,30286627,general_information,,,Medical Condition of Interest Name,crizotinib-refractory anaplastic lymphoma kinase-positive non-small cell lung cancer,anaplastic lymphoma kinase-positive non-small cell lung cancer,crizotinib-refractory anaplastic lymphoma kinase-positive non-small cell lung cancer,FALSE,ASL,NA,NA
 10.1080/03007995.2018.1520696,30286627,general_information,,,Countries of first author affiliations,,,usa,TRUE,ASL,,
 10.1080/03007995.2018.1520696,30286627,general_information,,,Countries of last author affiliations,,,usa,TRUE,ASL,,
@@ -2033,10 +2033,10 @@ and prognostic factors""  ==> idem pour tous les autres formulaires.
 10.1080/03007995.2019.1585779,30786783,study_information,,2,Country where the clinical trial/observational study was conducted (international if more than one),,,international,TRUE,ASL,,
 10.1080/03007995.2019.1585779,30786783,study_information,,2,Phase of the clinical trial (clinical trial only),,,3,TRUE,ASL,,
 10.1080/03007995.2019.1585779,30786783,study_information,,2,Number of treatment arms (clinical trial only),,,2 or more,TRUE,ASL,,
-10.1080/03007995.2019.1585779,30786783,methodology,1,,Treatment name 1,cladribine tablets,cladribine,cladribine,FALSE,ASL,"Meta-regression for multiple ITC, associated to one MAIC for one specific treatment combination","""The MAIC approach also has a number of limitations including that some prognostic and effect modifiers could not be matched due to lack of reporting, statistical error arising from unobserved variables may not be quantified, and that patients receiving higher weights may unduly influence the results"" ==> Implique que les auteurs considÃ¨rent qu'ils ont appariÃ© sur des facteurs pronostiques/modificateurs d'effet.
+10.1080/03007995.2019.1585779,30786783,methodology,1,,Treatment name 1,cladribine tablets,cladribine,cladribine,FALSE,ASL,"Meta-regression for multiple ITC, associated to one MAIC for one specific treatment combination","""The MAIC approach also has a number of limitations including that some prognostic and effect modifiers could not be matched due to lack of reporting, statistical error arising from unobserved variables may not be quantified, and that patients receiving higher weights may unduly influence the results"" ==> Implique que les auteurs considèrent qu'ils ont apparié sur des facteurs pronostiques/modificateurs d'effet.
 
 ""A second
-matching scenario with only baseline clinical characteristics was then considered' + ""Table 2 presents the baseline clinical characteristics from CLARITY (before and after matching) and CARE-MS II characteristics."" ==> j'ai considÃ©rÃ© qu'ils ont utilisÃ© les covariables prÃ©sentÃ©s dans Table 2"
+matching scenario with only baseline clinical characteristics was then considered' + ""Table 2 presents the baseline clinical characteristics from CLARITY (before and after matching) and CARE-MS II characteristics."" ==> j'ai considéré qu'ils ont utilisé les covariables présentés dans Table 2"
 10.1080/03007995.2019.1585779,30786783,methodology,1,,Study 'number(s)' for treatment 1,,,1,TRUE,ASL,,
 10.1080/03007995.2019.1585779,30786783,methodology,1,,Treatment name 2,,,alemtuzumab,TRUE,ASL,,
 10.1080/03007995.2019.1585779,30786783,methodology,1,,Study 'number(s)' for treatment 2,,,2,TRUE,ASL,,
@@ -2106,7 +2106,7 @@ matching scenario with only baseline clinical characteristics was then considere
 10.1080/03007995.2021.1896489,33733983,methodology,1,,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",,,No,TRUE,ASL,,
 10.1080/03007995.2021.1896489,33733983,methodology,1,,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),Yes,No,Yes,FALSE,ASL,,
 10.1080/03007995.2021.1896489,33733983,methodology,2,,Treatment name 1,,,bosutinib,TRUE,ASL,"Conduct an unanchored MAIC weareas an unanchored one would have been possible
-**Say that they conduct unanchored because it allows to adjust for baseline characteristics better than anchored: seem to confuse Bucher unadjusted ITC and anchored MAIC?? Because unanchored MAIC is just a matter of choosing the treatment effect contrast to rely on a relative rather than an absolute endpoint. Seems like a big misunderstanding that should be clarified. Ask David and JÃ©rÃ´me to read it. The confusion between the two seems ever more clear when reading the first paragraph of page 2**: ''*Differences in imatinib dose-escalation regimens are related to both the trial design and conduct of the trial, and, therefore, cannot be adjusted for using NMAs or matching-adjusted indirect comparisons (MAICs).''* But in the discussion, their argument for not using anchored MAIC makes more sense, because they basically say that the control arm is not the same across trials.",Une MAIC par Outcome pour chacune des 2 comparisons (vs Dasatinib et vs Nilotinib)
+**Say that they conduct unanchored because it allows to adjust for baseline characteristics better than anchored: seem to confuse Bucher unadjusted ITC and anchored MAIC?? Because unanchored MAIC is just a matter of choosing the treatment effect contrast to rely on a relative rather than an absolute endpoint. Seems like a big misunderstanding that should be clarified. Ask David and Jérôme to read it. The confusion between the two seems ever more clear when reading the first paragraph of page 2**: ''*Differences in imatinib dose-escalation regimens are related to both the trial design and conduct of the trial, and, therefore, cannot be adjusted for using NMAs or matching-adjusted indirect comparisons (MAICs).''* But in the discussion, their argument for not using anchored MAIC makes more sense, because they basically say that the control arm is not the same across trials.",Une MAIC par Outcome pour chacune des 2 comparisons (vs Dasatinib et vs Nilotinib)
 10.1080/03007995.2021.1896489,33733983,methodology,2,,Study 'number(s)' for treatment 1,,,1,TRUE,ASL,,
 10.1080/03007995.2021.1896489,33733983,methodology,2,,Treatment name 2,,,dasatinib,TRUE,ASL,,
 10.1080/03007995.2021.1896489,33733983,methodology,2,,Study 'number(s)' for treatment 2,2,3,3,FALSE,ASL,,
@@ -2143,3 +2143,88 @@ matching scenario with only baseline clinical characteristics was then considere
 10.1080/03007995.2021.1896489,33733983,results,2,,Direction of the treatment effect contrast: IPD treatment is:,,,"Denominator if ratio, or rightside if difference",TRUE,ASL,,
 10.1080/03007995.2021.1896489,33733983,results,2,,Primary outcome: adjusted treatment effect,,,0.81,TRUE,ASL,,
 10.1080/03007995.2021.1896489,33733983,results,2,,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",[0.51;1.22],[0.54;1.22],[0.54;1.22],FALSE,ASL,,
+10.3111/13696998.2013.768530,23339434,general_information,NA,NA,Medical Condition of Interest Name,NA,NA,psoriatic arthritis,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,general_information,NA,NA,Countries of first author affiliations,NA,NA,usa,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,general_information,NA,NA,"Positions of study investigators (for any authors of the article, any that applies)",NA,NA,"Pharmaceutical Industry, Private Data Analysis Company",TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,general_information,NA,NA,"At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company",NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,general_information,NA,NA,Mentioned sources of funding,NA,NA,Pharmaceutical Industry,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,general_information,NA,NA,"Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article",NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,general_information,NA,NA,Mention of a systematic review to find the studies to compare treatments of interest,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,1,Patient-level data used,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,1,Clinical Trial,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,1,NCT (only for clinical trial registered on clinicaltrials.gov),NA,NA,NCT00195689,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,1,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,usa,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,1,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,1,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,2,Patient-level data used,NA,NA,No,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,2,Clinical Trial,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,2,Data source name (only if observational study or clinical trial without NCT),NA,NA,mease et al. (2004),TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,usa,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,2,Phase of the clinical trial (clinical trial only),NA,3,XXXX,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,2,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,3,Patient-level data used,NA,NA,No,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,3,Clinical Trial,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,3,Data source name (only if observational study or clinical trial without NCT),NA,antoni et al. (2005),XXXX,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,3,Country where the clinical trial/observational study was conducted (international if more than one),usa,international,international,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,3,Phase of the clinical trial (clinical trial only),2,3,3,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,3,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,study_information,NA,3,NCT (only for clinical trial registered on clinicaltrials.gov),NCT02152254,NA,NCT00051623,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Treatment name 1,NA,NA,adalimumab,TRUE,JL,"NCT00195689 seems to mistakingly report that trial as a single arm trial, while articles for this trials clearly report results for an RCT",Concomitant Therapy During Study = Other covariates
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Study 'number(s)' for treatment 1,NA,NA,1,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Treatment name 2,NA,NA,etanercept,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Study 'number(s)' for treatment 2,NA,NA,2,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Type of population-adjusted indirect comparisons performed,NA,NA,MAIC,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Anchored comparison?,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Form of the indirect comparison,NA,NA,Simple (ie treatments effects extracted from two studies),TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Definition of a single primary outcome for the indirect comparison,NA,NA,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),week 12 acr70,proportion of patients who achieved acr70 at week 12,proportion of patients who achieved acr70 at week 12,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Primary outcome: variable type,NA,NA,Binary (eg rates),TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,"Nothing mentioned, not reported",TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of prognostic factors of the variables,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,NA,No,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,1,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Treatment name 1,NA,NA,adalimumab,TRUE,JL,associated with economics analysis,"Concomitant Therapy During Study = Other covariates
+
+SF-36 Physical component and Mental component = 2 differents covariates
+
+ACR Components = 7 different covariates"
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Study 'number(s)' for treatment 1,NA,NA,1,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Treatment name 2,NA,NA,infliximab,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Study 'number(s)' for treatment 2,NA,NA,3,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Type of population-adjusted indirect comparisons performed,NA,NA,MAIC,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Anchored comparison?,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Form of the indirect comparison,NA,NA,Simple (ie treatments effects extracted from two studies),TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Definition of a single primary outcome for the indirect comparison,NA,NA,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),week 14 acr70,proportion of patients who achieved acr70 at week 14,proportion of patients who achieved acr70 at week 14,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Primary outcome: variable type,NA,NA,Binary (eg rates),TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,"Nothing mentioned, not reported",TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of prognostic factors of the variables,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,NA,No,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,methodology,2,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Sample size of the population of interest in the non IPD treatment arm,NA,NA,101,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,"If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",NA,NA,104,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Initial sample size of the population of interest in the IPD treatment arm,NA,NA,142,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,"If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",NA,NA,154,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Reporting of a weights' distribution evaluation (MAIC),NA,NA,Not mentioned,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Number of covariates adjusted for/matched on,12,9,12,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Covariates adjusted for/matched on in the indirect comparison,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest","Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Other(s)","Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest",FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Primary outcome: treatment effect contrast,Means difference,Difference in difference ([A - Placebo] - [B - Placebo]),Proportion difference,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Direction of the treatment effect contrast: IPD treatment is:,NA,NA,"Numerator if ratio, or left side if difference",TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,Primary outcome: adjusted treatment effect,18.9,9.7,9.7,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,1,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",0.034,0.055,0.055,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Sample size of the population of interest in the non IPD treatment arm,NA,NA,100,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,"If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",NA,NA,100,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Initial sample size of the population of interest in the IPD treatment arm,NA,NA,108,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,"If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",NA,NA,126,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Reporting of a weights' distribution evaluation (MAIC),NA,NA,Not mentioned,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Number of covariates adjusted for/matched on,18,16,17,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Covariates adjusted for/matched on in the indirect comparison,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)","Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Other(s)","Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest",FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Primary outcome: treatment effect contrast,Means difference,Difference in difference ([A - Placebo] - [B - Placebo]),Proportion difference,FALSE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Direction of the treatment effect contrast: IPD treatment is:,NA,NA,"Numerator if ratio, or left side if difference",TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,Primary outcome: adjusted treatment effect,NA,NA,18.9,TRUE,JL,NA,NA
+10.3111/13696998.2013.768530,23339434,results,2,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",NA,NA,0.034,TRUE,JL,NA,NA

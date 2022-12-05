@@ -53,4 +53,4 @@ Concomitant diabetes = comordbidity"
 10.1080/03007995.2022.2030112;35042448;results;1;;Primary outcome: unadjusted treatment effect;;;-0.3;TRUE;;
 10.1080/03007995.2022.2030112;35042448;results;1;;Primary outcome: adjusted treatment effect;;;-1.6;TRUE;;
 10.1080/03007995.2022.2030112;35042448;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";"[-5.3;2.2]";[-5.3-2.2];"[-5.3;2.2]";FALSE;;
-10.1080/03007995.2022.2030112;35042448;results;1;;Reporting of a weights' distribution evaluation (MAIC);;Not mentioned;;FALSE;;
+10.1080/03007995.2022.2030112;35042448;results;1;;Reporting of a weights' distribution evaluation (MAIC);;Not mentioned;Not mentioned;FALSE;;

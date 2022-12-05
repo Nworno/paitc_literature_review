@@ -1,31 +1,31 @@
-﻿doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
-10.1007/bf03261873;23113551;general_information;;;Medical Condition of Interest Name;;;attention-deficit/hyperactivity disorder;TRUE;NA;NA
-10.1007/bf03261873;23113551;general_information;;;Countries of first author affiliations;;;usa;TRUE;;
-10.1007/bf03261873;23113551;general_information;;;Countries of last author affiliations;;;usa;TRUE;;
-10.1007/bf03261873;23113551;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Pharmaceutical Industry, Private Data Analysis Company;TRUE;;
-10.1007/bf03261873;23113551;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;;
-10.1007/bf03261873;23113551;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;study_information;;1;Patient-level data used;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;study_information;;1;Clinical Trial;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00152009;TRUE;;
-10.1007/bf03261873;23113551;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;;
-10.1007/bf03261873;23113551;study_information;;1;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
-10.1007/bf03261873;23113551;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);unknown;;unknown;FALSE;;
-10.1007/bf03261873;23113551;study_information;;2;Patient-level data used;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;study_information;;2;Clinical Trial;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;NCT00150618;NCT00150618;FALSE;;
-10.1007/bf03261873;23113551;study_information;;2;Phase of the clinical trial (clinical trial only);;3;3;FALSE;;
-10.1007/bf03261873;23113551;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
-10.1007/bf03261873;23113551;study_information;;2;Data source name (only if observational study or clinical trial without NCT);sallee et al. (2009);;;FALSE;;
-10.1007/bf03261873;23113551;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);usa;;unknown;FALSE;;
-10.1007/bf03261873;23113551;study_information;;3;Patient-level data used;;;No;TRUE;;
-10.1007/bf03261873;23113551;study_information;;3;Clinical Trial;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;study_information;;3;Data source name (only if observational study or clinical trial without NCT);;;michelson et al. (2001);TRUE;;
-10.1007/bf03261873;23113551;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;usa;TRUE;;
-10.1007/bf03261873;23113551;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Treatment name 1;;;guanfacine extended-release low dose;TRUE;"not Bucher ITC, so not anchored, but use the mean placebo efficacy which has been added to the weighting model
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;Notes reviewer 1;Notes reviewer 2
+10.1007/bf03261873;23113551;general_information;NA;NA;Medical Condition of Interest Name;NA;NA;attention-deficit/hyperactivity disorder;TRUE;NA;NA
+10.1007/bf03261873;23113551;general_information;NA;NA;Countries of first author affiliations;NA;NA;usa;TRUE;NA;NA
+10.1007/bf03261873;23113551;general_information;NA;NA;Countries of last author affiliations;NA;NA;usa;TRUE;NA;NA
+10.1007/bf03261873;23113551;general_information;NA;NA;Positions of study investigators (for any authors of the article, any that applies);NA;NA;Pharmaceutical Industry, Private Data Analysis Company;TRUE;NA;NA
+10.1007/bf03261873;23113551;general_information;NA;NA;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;general_information;NA;NA;Mentioned sources of funding;NA;NA;Pharmaceutical Industry;TRUE;NA;NA
+10.1007/bf03261873;23113551;general_information;NA;NA;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;general_information;NA;NA;Mention of a systematic review to find the studies to compare treatments of interest;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;1;Patient-level data used;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;1;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;1;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NA;NCT00152009;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;1;Phase of the clinical trial (clinical trial only);NA;NA;3;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;1;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;1;Country where the clinical trial/observational study was conducted (international if more than one);unknown;NA;unknown;FALSE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;2;Patient-level data used;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;2;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;2;NCT (only for clinical trial registered on clinicaltrials.gov);NA;NCT00150618;NCT00150618;FALSE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;2;Phase of the clinical trial (clinical trial only);NA;3;3;FALSE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;2;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;2;Data source name (only if observational study or clinical trial without NCT);sallee et al. (2009);NA;NA;FALSE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;2;Country where the clinical trial/observational study was conducted (international if more than one);usa;NA;unknown;FALSE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;3;Patient-level data used;NA;NA;No;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;3;Clinical Trial;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;3;Data source name (only if observational study or clinical trial without NCT);NA;NA;michelson et al. (2001);TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;3;Country where the clinical trial/observational study was conducted (international if more than one);NA;NA;usa;TRUE;NA;NA
+10.1007/bf03261873;23113551;study_information;NA;3;Number of treatment arms (clinical trial only);NA;NA;2 or more;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Treatment name 1;NA;NA;guanfacine extended-release low dose;TRUE;"not Bucher ITC, so not anchored, but use the mean placebo efficacy which has been added to the weighting model
 other = placebo effect";"Guanfacine Low Dose
 
 Cost-effectivness (economic) analysis
@@ -37,21 +37,21 @@ Mean changes in the ADHD-RS-IV total score :
 non IPD = -17.3
 adjusted IPD = -13.6
 p = 0.07"
-10.1007/bf03261873;23113551;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Treatment name 2;;;atomoxetine;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Study 'number(s)' for treatment 2;;;3;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Anchored comparison?;;;No;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);adhd-rs-iv total score;change in the adhd-rs-iv total score from baseline to end-point;change in the adhd-rs-iv total score from baseline to end-point;FALSE;;
-10.1007/bf03261873;23113551;methodology;1;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
-10.1007/bf03261873;23113551;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;Yes;FALSE;;
-10.1007/bf03261873;23113551;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Treatment name 1;;;guanfacine extended-release mid dose;TRUE;other = placebo effect;"Guanfacine Mid Dose
+10.1007/bf03261873;23113551;methodology;1;NA;Study 'number(s)' for treatment 1;NA;NA;"1;2";TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Treatment name 2;NA;NA;atomoxetine;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Study 'number(s)' for treatment 2;NA;NA;3;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Anchored comparison?;NA;NA;No;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);adhd-rs-iv total score;change in the adhd-rs-iv total score from baseline to end-point;change in the adhd-rs-iv total score from baseline to end-point;FALSE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Primary outcome: variable type;NA;NA;Continuous (count, mean, ...);TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;Yes;FALSE;NA;NA
+10.1007/bf03261873;23113551;methodology;1;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Treatment name 1;NA;NA;guanfacine extended-release mid dose;TRUE;other = placebo effect;"Guanfacine Mid Dose
 
 Cost-effectivness (economic) analysis
 
@@ -62,21 +62,21 @@ Mean changes in the ADHD-RS-IV total score :
 non IPD = -19.6 
 adjusted IPD = -13.6
 p = 0.02"
-10.1007/bf03261873;23113551;methodology;2;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Treatment name 2;;;atomoxetine;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Study 'number(s)' for treatment 2;;;3;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Anchored comparison?;;;No;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);adhd-rs-iv total score;change in the adhd-rs-iv total score from baseline to end-point;change in the adhd-rs-iv total score from baseline to end-point;FALSE;;
-10.1007/bf03261873;23113551;methodology;2;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
-10.1007/bf03261873;23113551;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;Yes;FALSE;;
-10.1007/bf03261873;23113551;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Treatment name 1;;;guanfacine extended-release high dose;TRUE;other = placebo effect;"Guanfacine High Dose
+10.1007/bf03261873;23113551;methodology;2;NA;Study 'number(s)' for treatment 1;NA;NA;"1;2";TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Treatment name 2;NA;NA;atomoxetine;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Study 'number(s)' for treatment 2;NA;NA;3;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Anchored comparison?;NA;NA;No;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);adhd-rs-iv total score;change in the adhd-rs-iv total score from baseline to end-point;change in the adhd-rs-iv total score from baseline to end-point;FALSE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Primary outcome: variable type;NA;NA;Continuous (count, mean, ...);TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;Yes;FALSE;NA;NA
+10.1007/bf03261873;23113551;methodology;2;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Treatment name 1;NA;NA;guanfacine extended-release high dose;TRUE;other = placebo effect;"Guanfacine High Dose
 
 Cost-effectivness (economic) analysis
 
@@ -87,50 +87,50 @@ Mean changes in the ADHD-RS-IV total score :
 non IPD = -20.6 
 adjusted IPD = -13.6
 p<0.01"
-10.1007/bf03261873;23113551;methodology;3;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Treatment name 2;;;atomoxetine;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Study 'number(s)' for treatment 2;;;3;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Anchored comparison?;;;No;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Definition of a single primary outcome for the indirect comparison;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);adhd-rs-iv total score;change in the adhd-rs-iv total score from baseline to end-point;change in the adhd-rs-iv total score from baseline to end-point;FALSE;;
-10.1007/bf03261873;23113551;methodology;3;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;;
-10.1007/bf03261873;23113551;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;Yes;FALSE;;
-10.1007/bf03261873;23113551;methodology;3;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
-10.1007/bf03261873;23113551;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;84;TRUE;;
-10.1007/bf03261873;23113551;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;147;TRUE;;
-10.1007/bf03261873;23113551;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;49;TRUE;;
-10.1007/bf03261873;23113551;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
-10.1007/bf03261873;23113551;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;results;1;;Number of covariates adjusted for/matched on;;;6;TRUE;;
-10.1007/bf03261873;23113551;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);TRUE;;
-10.1007/bf03261873;23113551;results;1;;Primary outcome: treatment effect contrast;;;Means difference;TRUE;;
-10.1007/bf03261873;23113551;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;0.07;0.07;FALSE;;
-10.1007/bf03261873;23113551;results;1;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;;
-10.1007/bf03261873;23113551;results;1;;Primary outcome: adjusted treatment effect;-6;;-3,7;FALSE;;
-10.1007/bf03261873;23113551;results;2;;Sample size of the population of interest in the non IPD treatment arm;;;84;TRUE;;
-10.1007/bf03261873;23113551;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;;46;TRUE;;
-10.1007/bf03261873;23113551;results;2;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;16;TRUE;;
-10.1007/bf03261873;23113551;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
-10.1007/bf03261873;23113551;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;results;2;;Number of covariates adjusted for/matched on;;;6;TRUE;;
-10.1007/bf03261873;23113551;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);TRUE;;
-10.1007/bf03261873;23113551;results;2;;Primary outcome: treatment effect contrast;;;Means difference;TRUE;;
-10.1007/bf03261873;23113551;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.02;TRUE;;
-10.1007/bf03261873;23113551;results;2;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;;
-10.1007/bf03261873;23113551;results;2;;Primary outcome: adjusted treatment effect;-6;;-6;FALSE;;
-10.1007/bf03261873;23113551;results;3;;Sample size of the population of interest in the non IPD treatment arm;;;84;TRUE;;
-10.1007/bf03261873;23113551;results;3;;Initial sample size of the population of interest in the IPD treatment arm;;;82;TRUE;;
-10.1007/bf03261873;23113551;results;3;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;38;TRUE;;
-10.1007/bf03261873;23113551;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
-10.1007/bf03261873;23113551;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
-10.1007/bf03261873;23113551;results;3;;Number of covariates adjusted for/matched on;;;6;TRUE;;
-10.1007/bf03261873;23113551;results;3;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);TRUE;;
-10.1007/bf03261873;23113551;results;3;;Primary outcome: treatment effect contrast;;;Means difference;TRUE;;
-10.1007/bf03261873;23113551;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.07;<0.01;<0.01;FALSE;;
-10.1007/bf03261873;23113551;results;3;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;;
-10.1007/bf03261873;23113551;results;3;;Primary outcome: adjusted treatment effect;-3.7;;-7;FALSE;;
+10.1007/bf03261873;23113551;methodology;3;NA;Study 'number(s)' for treatment 1;NA;NA;"1;2";TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Treatment name 2;NA;NA;atomoxetine;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Study 'number(s)' for treatment 2;NA;NA;3;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Type of population-adjusted indirect comparisons performed;NA;NA;MAIC;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Anchored comparison?;NA;NA;No;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);adhd-rs-iv total score;change in the adhd-rs-iv total score from baseline to end-point;change in the adhd-rs-iv total score from baseline to end-point;FALSE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Primary outcome: variable type;NA;NA;Continuous (count, mean, ...);TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Nothing mentioned, not reported;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;Yes;FALSE;NA;NA
+10.1007/bf03261873;23113551;methodology;3;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);NA;NA;No;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Sample size of the population of interest in the non IPD treatment arm;NA;NA;84;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;147;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";NA;NA;49;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Number of covariates adjusted for/matched on;NA;NA;6;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Primary outcome: treatment effect contrast;NA;NA;Means difference;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;0.07;0.07;FALSE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;NA;Numerator if ratio, or left side if difference;FALSE;NA;NA
+10.1007/bf03261873;23113551;results;1;NA;Primary outcome: adjusted treatment effect;-6;NA;-3.7;FALSE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Sample size of the population of interest in the non IPD treatment arm;NA;NA;84;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;46;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";NA;NA;16;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Number of covariates adjusted for/matched on;NA;NA;6;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Primary outcome: treatment effect contrast;NA;NA;Means difference;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";NA;NA;0.02;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;NA;Numerator if ratio, or left side if difference;FALSE;NA;NA
+10.1007/bf03261873;23113551;results;2;NA;Primary outcome: adjusted treatment effect;-6;NA;-6;FALSE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Sample size of the population of interest in the non IPD treatment arm;NA;NA;84;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Initial sample size of the population of interest in the IPD treatment arm;NA;NA;82;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";NA;NA;38;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Reporting of a weights' distribution evaluation (MAIC);NA;NA;Not mentioned;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Number of covariates adjusted for/matched on;NA;NA;6;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);TRUE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Primary outcome: treatment effect contrast;NA;NA;Means difference;TRUE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.07;<0.01;<0.01;FALSE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;NA;Numerator if ratio, or left side if difference;FALSE;NA;NA
+10.1007/bf03261873;23113551;results;3;NA;Primary outcome: adjusted treatment effect;-3.7;NA;-7;FALSE;NA;NA

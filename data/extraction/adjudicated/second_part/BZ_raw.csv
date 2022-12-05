@@ -259,9 +259,9 @@ For the IPD sample size of this comparison, the size before application of inclu
 10.1186/2162-3619-2-32,24314093,results,1,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",NA,NA,0.087,TRUE,BZ,NA,NA
 10.1186/2162-3619-2-32,24314093,results,1,NA,Primary outcome: adjusted treatment effect,NA,NA,0.81,TRUE,BZ,NA,NA
 10.1186/2162-3619-2-32,24314093,results,1,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",NA,NA,0.383,TRUE,BZ,NA,NA
-10.1186/2162-3619-2-32,24314093,results,1,NA,Initial sample size of the population of interest in the IPD treatment arm,207,207,NA,FALSE,BZ,NA,NA
+10.1186/2162-3619-2-32,24314093,results,1,NA,Initial sample size of the population of interest in the IPD treatment arm,207,207,207,FALSE,BZ,NA,NA
 10.1186/2162-3619-2-32,24314093,results,2,NA,Sample size of the population of interest in the non IPD treatment arm,85,NA,85,FALSE,BZ,NA,NA
-10.1186/2162-3619-2-32,24314093,results,2,NA,Initial sample size of the population of interest in the IPD treatment arm,207,NA,NA,FALSE,BZ,NA,NA
+10.1186/2162-3619-2-32,24314093,results,2,NA,Initial sample size of the population of interest in the IPD treatment arm,207,NA,207,FALSE,BZ,NA,NA
 10.1186/2162-3619-2-32,24314093,results,2,NA,Reporting of a weights' distribution evaluation (MAIC),Not mentioned,NA,Not mentioned,FALSE,BZ,NA,NA
 10.1186/2162-3619-2-32,24314093,results,2,NA,Reporting of the list of the covariates adjusted for/matched on,Yes,NA,Yes,FALSE,BZ,NA,NA
 10.1186/2162-3619-2-32,24314093,results,2,NA,Number of covariates adjusted for/matched on,8,NA,8,FALSE,BZ,NA,NA
@@ -284,8 +284,8 @@ For the IPD sample size of this comparison, the size before application of inclu
 10.1186/2162-3619-2-32,24314093,results,3,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",NA,NA,0.695,TRUE,BZ,NA,NA
 10.1186/2162-3619-2-32,24314093,results,3,NA,Primary outcome: adjusted treatment effect,NA,NA,0.84,TRUE,BZ,NA,NA
 10.1186/2162-3619-2-32,24314093,results,3,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",NA,NA,0.578,TRUE,BZ,NA,NA
-10.1186/2162-3619-2-32,24314093,results,3,NA,Initial sample size of the population of interest in the IPD treatment arm,207,207,NA,FALSE,BZ,NA,NA
-10.1186/2162-3619-2-32,24314093,results,3,NA,"If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",203,203,NA,FALSE,BZ,NA,NA
+10.1186/2162-3619-2-32,24314093,results,3,NA,Initial sample size of the population of interest in the IPD treatment arm,207,207,207,FALSE,BZ,NA,NA
+10.1186/2162-3619-2-32,24314093,results,3,NA,"If anchored comparison, initial sample size of the population of interest in the IPD anchor arm",203,203,203,FALSE,BZ,NA,NA
 10.2147/jbm.s104074,27445511,general_information,NA,NA,Medical Condition of Interest Name,NA,NA,severe hemophilia a,TRUE,BZ,NA,NA
 10.2147/jbm.s104074,27445511,general_information,NA,NA,Countries of first author affiliations,NA,NA,usa,TRUE,BZ,NA,NA
 10.2147/jbm.s104074,27445511,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,BZ,NA,NA
@@ -441,12 +441,10 @@ For the IPD sample size of this comparison, the size before application of inclu
 10.2217/cer-2016-0085,28350241,study_information,NA,5,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,international,TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,study_information,NA,5,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,study_information,NA,5,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,methodology,1,NA,Treatment name 1,dimethyl fumarate,delayed-release dimethyl fumarate,delayed-release dimethyl fumarate,FALSE,BZ,"N nonIPD 251
-	N IPD 2651
-	ESS 1032
-	unadjusted RR pooled for GA US/EUR/CAN + direct comparison =  0.77   0.027
-	adjusted RR pooled for GA US/EUR/CAN + direct comparison = 0.76  0.047
-","Effectif non IPD (Intervention + Placebo) = 251
+10.2217/cer-2016-0085,28350241,methodology,1,NA,Treatment name 1,dimethyl fumarate,delayed-release dimethyl fumarate,delayed-release dimethyl fumarate,FALSE,BZ,"Conduct an MAIC where a direct comparison exists
+Conducted in the context of a meta-analysis
+Doesn't report the results for the individual PAITC, only for the total meta analysis. Thus effect sizes are not reported in the form, despite results being reported in the meta analysis. 
+Mixing open-label/placebo controlled and active controlled studies","Effectif non IPD (Intervention + Placebo) = 251
 Effectif IPD (Intervention + Placebo) = 2651
 ESS IPD (Intervention + Placebo) = 1032"
 10.2217/cer-2016-0085,28350241,methodology,1,NA,Study 'number(s)' for treatment 1,NA,NA,1;2,TRUE,BZ,NA,NA
@@ -512,20 +510,20 @@ ESS IPD (Intervention + Placebo) = 364"
 10.2217/cer-2016-0085,28350241,results,1,NA,Covariates adjusted for/matched on in the indirect comparison,NA,NA,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest",TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,1,NA,Primary outcome: treatment effect contrast,RR,Rate ratio,Rate ratio,FALSE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,1,NA,Direction of the treatment effect contrast: IPD treatment is:,NA,NA,"Numerator if ratio, or left side if difference",TRUE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,results,1,NA,Primary outcome: unadjusted treatment effect,0.77,NA,NA,FALSE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,results,1,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",0.027,NA,NA,FALSE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,results,1,NA,Primary outcome: adjusted treatment effect,0.76,NA,NA,FALSE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,results,1,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",0.047,NA,NA,FALSE,BZ,NA,NA
+10.2217/cer-2016-0085,28350241,results,1,NA,Primary outcome: unadjusted treatment effect,0.77,NA,XXXX,FALSE,BZ,NA,NA
+10.2217/cer-2016-0085,28350241,results,1,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",0.027,NA,XXXX,FALSE,BZ,NA,NA
+10.2217/cer-2016-0085,28350241,results,1,NA,Primary outcome: adjusted treatment effect,0.76,NA,XXXX,FALSE,BZ,NA,NA
+10.2217/cer-2016-0085,28350241,results,1,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",0.047,NA,XXXX,FALSE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,2,NA,Reporting of a weights' distribution evaluation (MAIC),NA,NA,Not mentioned,TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,2,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,2,NA,Number of covariates adjusted for/matched on,NA,NA,5,TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,2,NA,Covariates adjusted for/matched on in the indirect comparison,NA,NA,"Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest",TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,2,NA,Primary outcome: treatment effect contrast,RR,Rate ratio,Rate ratio,FALSE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,2,NA,Direction of the treatment effect contrast: IPD treatment is:,NA,NA,"Numerator if ratio, or left side if difference",TRUE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,results,2,NA,Primary outcome: unadjusted treatment effect,0.77,NA,NA,FALSE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,results,2,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",0.027,NA,NA,FALSE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,results,2,NA,Primary outcome: adjusted treatment effect,0.76,NA,NA,FALSE,BZ,NA,NA
-10.2217/cer-2016-0085,28350241,results,2,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",0.047,NA,NA,FALSE,BZ,NA,NA
+10.2217/cer-2016-0085,28350241,results,2,NA,Primary outcome: unadjusted treatment effect,0.77,NA,XXXX,FALSE,BZ,NA,NA
+10.2217/cer-2016-0085,28350241,results,2,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",0.027,NA,XXXX,FALSE,BZ,NA,NA
+10.2217/cer-2016-0085,28350241,results,2,NA,Primary outcome: adjusted treatment effect,0.76,NA,XXXX,FALSE,BZ,NA,NA
+10.2217/cer-2016-0085,28350241,results,2,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",0.047,NA,XXXX,FALSE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,3,NA,Reporting of a weights' distribution evaluation (MAIC),NA,NA,Not mentioned,TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,3,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,BZ,NA,NA
 10.2217/cer-2016-0085,28350241,results,3,NA,Number of covariates adjusted for/matched on,NA,NA,7,TRUE,BZ,NA,NA
@@ -577,7 +575,7 @@ ESS IPD (Intervention + Placebo) = 364"
 10.1155/2017/6121760,28607774,results,1,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,BZ,NA,NA
 10.1155/2017/6121760,28607774,results,1,NA,Number of covariates adjusted for/matched on,NA,NA,2,TRUE,BZ,NA,NA
 10.1155/2017/6121760,28607774,results,1,NA,Covariates adjusted for/matched on in the indirect comparison,NA,NA,Past treatments for the disease of interest,TRUE,BZ,NA,NA
-10.1155/2017/6121760,28607774,results,1,NA,Primary outcome: treatment effect contrast,NA,"Relative effects (e.g., relative risks and hazard ratios) has not been examined.",NA,FALSE,BZ,NA,NA
+10.1155/2017/6121760,28607774,results,1,NA,Primary outcome: treatment effect contrast,NA,"Relative effects (e.g., relative risks and hazard ratios) has not been examined.",XXXX,FALSE,BZ,NA,NA
 10.1634/theoncologist.2017-0103,29192016,general_information,NA,NA,Medical Condition of Interest Name,relapsed/refractory multiple myeloma,multiple myeloma,XXXX,FALSE,BZ,NA,NA
 10.1634/theoncologist.2017-0103,29192016,general_information,NA,NA,Countries of first author affiliations,NA,NA,belgium,TRUE,BZ,NA,NA
 10.1634/theoncologist.2017-0103,29192016,general_information,NA,NA,Countries of last author affiliations,NA,NA,spain,TRUE,BZ,NA,NA
@@ -758,7 +756,7 @@ covariates: prognostic factors, known, but didn't conduct a specific systematic 
 10.1080/17474086.2018.1475226,29764245,methodology,1,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,BZ,NA,NA
 10.1080/17474086.2018.1475226,29764245,results,1,NA,Sample size of the population of interest in the non IPD treatment arm,NA,NA,83,TRUE,BZ,NA,NA
 10.1080/17474086.2018.1475226,29764245,results,1,NA,Initial sample size of the population of interest in the IPD treatment arm,NA,NA,175,TRUE,BZ,NA,NA
-10.1080/17474086.2018.1475226,29764245,results,1,NA,Reporting of a weights' distribution evaluation (MAIC),NA,Not mentioned,NA,FALSE,BZ,NA,NA
+10.1080/17474086.2018.1475226,29764245,results,1,NA,Reporting of a weights' distribution evaluation (MAIC),NA,Not mentioned,Not mentioned,FALSE,BZ,NA,NA
 10.1080/17474086.2018.1475226,29764245,results,1,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,BZ,NA,NA
 10.1080/17474086.2018.1475226,29764245,results,1,NA,Number of covariates adjusted for/matched on,NA,NA,7,TRUE,BZ,NA,NA
 10.1080/17474086.2018.1475226,29764245,results,1,NA,Covariates adjusted for/matched on in the indirect comparison,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)","Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease)","Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)",FALSE,BZ,NA,NA
@@ -937,7 +935,7 @@ HR (CI95) for full exponential STC : 0.490  [0.259;0.924]
 10.2147/ceor.s203482,31564931,results,2,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",NA,NA,[0.351;0.909],TRUE,BZ,NA,NA
 10.2147/ceor.s203482,31564931,results,2,NA,Primary outcome: adjusted treatment effect,NA,NA,0.505,TRUE,BZ,NA,NA
 10.2147/ceor.s203482,31564931,results,2,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",NA,NA,[0.269;0.949],TRUE,BZ,NA,NA
-10.2147/ceor.s203482,31564931,results,2,NA,Reporting of a weights' distribution evaluation (MAIC),NA,Not mentioned,NA,FALSE,BZ,NA,NA
+10.2147/ceor.s203482,31564931,results,2,NA,Reporting of a weights' distribution evaluation (MAIC),NA,Not mentioned,XXXX,FALSE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,general_information,NA,NA,Medical Condition of Interest Name,multiple myeloma,ansplant-ineligible newly diagnosed multiple myeloma,XXXX,FALSE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,general_information,NA,NA,Countries of first author affiliations,NA,NA,greece,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,general_information,NA,NA,Countries of last author affiliations,NA,NA,usa,TRUE,BZ,NA,NA
@@ -1925,7 +1923,7 @@ Mention of the target population
 10.2147/jbm.s312885,34285621,methodology,2,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,"Nothing mentioned, not reported",TRUE,BZ,NA,NA
 10.2147/jbm.s312885,34285621,methodology,2,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of prognostic factors of the variables,TRUE,BZ,NA,NA
 10.2147/jbm.s312885,34285621,methodology,2,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,BZ,NA,NA
-10.2147/jbm.s312885,34285621,methodology,2,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",Yes,No,NA,FALSE,BZ,NA,NA
+10.2147/jbm.s312885,34285621,methodology,2,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",Yes,No,Yes,FALSE,BZ,NA,NA
 10.2147/jbm.s312885,34285621,methodology,2,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,BZ,NA,NA
 10.2147/jbm.s312885,34285621,results,1,NA,Sample size of the population of interest in the non IPD treatment arm,NA,NA,40,TRUE,BZ,NA,NA
 10.2147/jbm.s312885,34285621,results,1,NA,Initial sample size of the population of interest in the IPD treatment arm,NA,NA,45,TRUE,BZ,NA,NA
@@ -1996,7 +1994,7 @@ No ESS no unadjusted results reported",NA
 10.1080/03007995.2021.1971182,34445916,results,1,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,BZ,NA,NA
 10.1080/03007995.2021.1971182,34445916,results,1,NA,Number of covariates adjusted for/matched on,NA,NA,5,TRUE,BZ,NA,NA
 10.1080/03007995.2021.1971182,34445916,results,1,NA,Covariates adjusted for/matched on in the indirect comparison,NA,NA,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity",TRUE,BZ,NA,NA
-10.1080/03007995.2021.1971182,34445916,results,1,NA,Primary outcome: treatment effect contrast,Rate difference,Proportions difference,NA,FALSE,BZ,NA,NA
+10.1080/03007995.2021.1971182,34445916,results,1,NA,Primary outcome: treatment effect contrast,Rate difference,Proportions difference,Proportions difference,FALSE,BZ,NA,NA
 10.1080/03007995.2021.1971182,34445916,results,1,NA,Direction of the treatment effect contrast: IPD treatment is:,NA,NA,"Numerator if ratio, or left side if difference",TRUE,BZ,NA,NA
 10.1080/03007995.2021.1971182,34445916,results,1,NA,Primary outcome: adjusted treatment effect,0.714,71.39%,0.714,FALSE,BZ,NA,NA
 10.1080/03007995.2021.1971182,34445916,results,1,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",NA,NA,<0.0001,TRUE,BZ,NA,NA
@@ -2206,7 +2204,7 @@ Not clear how to decide the sample size of the anchor arms",Sensitivity analysis
 10.1210/clinem/dgab905,34922383,methodology,1,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,No,TRUE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,methodology,1,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,Yes,TRUE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,methodology,1,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,BZ,NA,NA
-10.1210/clinem/dgab905,34922383,methodology,1,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,No,NA,FALSE,BZ,NA,NA
+10.1210/clinem/dgab905,34922383,methodology,1,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,No,No,FALSE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,methodology,2,NA,Treatment name 1,semaglutide 2.0mg,semaglutide 2.0 mg,semaglutide 2.0 mg,FALSE,BZ,NA,Sensitivity analysis 1 = Unajusted comparison
 10.1210/clinem/dgab905,34922383,methodology,2,NA,Study 'number(s)' for treatment 1,NA,NA,1,TRUE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,methodology,2,NA,Treatment name 2,NA,NA,dulaglutide 4.5 mg,TRUE,BZ,NA,NA
@@ -2221,7 +2219,7 @@ Not clear how to decide the sample size of the anchor arms",Sensitivity analysis
 10.1210/clinem/dgab905,34922383,methodology,2,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,No,TRUE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,methodology,2,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,Yes,TRUE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,methodology,2,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,BZ,NA,NA
-10.1210/clinem/dgab905,34922383,methodology,2,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,No,NA,FALSE,BZ,NA,NA
+10.1210/clinem/dgab905,34922383,methodology,2,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,No,No,FALSE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,results,1,NA,Sample size of the population of interest in the non IPD treatment arm,NA,NA,616,TRUE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,results,1,NA,"If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm",NA,NA,612,TRUE,BZ,NA,NA
 10.1210/clinem/dgab905,34922383,results,1,NA,Initial sample size of the population of interest in the IPD treatment arm,NA,NA,480,TRUE,BZ,NA,NA

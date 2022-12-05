@@ -118,7 +118,7 @@ State that there hypothesis is equivalence, but only tested for efficacy; so see
 10.1111/head.14128;34021585;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.172;0.528;0.528;FALSE;;
 10.1111/head.14128;34021585;results;2;;Primary outcome: adjusted treatment effect;-5.54;-0.09;-0.09;FALSE;;
 10.1111/head.14128;34021585;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.026;0.979;0.979;FALSE;;
-10.1111/head.14128;34021585;results;2;;Sample size of the population of interest in the non IPD treatment arm;;1773;;FALSE;;
+10.1111/head.14128;34021585;results;2;;Sample size of the population of interest in the non IPD treatment arm;;1773;XXXX;FALSE;;
 10.1111/head.14128;34021585;results;3;;Initial sample size of the population of interest in the IPD treatment arm;;;257;TRUE;;
 10.1111/head.14128;34021585;results;3;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;214;TRUE;;
 10.1111/head.14128;34021585;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;TRUE;;
@@ -131,7 +131,7 @@ State that there hypothesis is equivalence, but only tested for efficacy; so see
 10.1111/head.14128;34021585;results;3;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.026;0.121;0.121;FALSE;;
 10.1111/head.14128;34021585;results;3;;Primary outcome: adjusted treatment effect;-7.37;-5.67;-5.67;FALSE;;
 10.1111/head.14128;34021585;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.009;0.025;0.025;FALSE;;
-10.1111/head.14128;34021585;results;3;;Sample size of the population of interest in the non IPD treatment arm;;955;;FALSE;;
+10.1111/head.14128;34021585;results;3;;Sample size of the population of interest in the non IPD treatment arm;;955;XXXX;FALSE;;
 10.1111/head.14128;34021585;results;4;;Initial sample size of the population of interest in the IPD treatment arm;;;257;TRUE;;
 10.1111/head.14128;34021585;results;4;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;214;TRUE;;
 10.1111/head.14128;34021585;results;4;;Reporting of a weights' distribution evaluation (MAIC);;;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;TRUE;;
@@ -144,4 +144,4 @@ State that there hypothesis is equivalence, but only tested for efficacy; so see
 10.1111/head.14128;34021585;results;4;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.528;0.172;0.172;FALSE;;
 10.1111/head.14128;34021585;results;4;;Primary outcome: adjusted treatment effect;-0.09;1.75;1.75;FALSE;;
 10.1111/head.14128;34021585;results;4;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.979;0.501;0.501;FALSE;;
-10.1111/head.14128;34021585;results;4;;Sample size of the population of interest in the non IPD treatment arm;;955;;FALSE;;
+10.1111/head.14128;34021585;results;4;;Sample size of the population of interest in the non IPD treatment arm;;955;XXXX;FALSE;;

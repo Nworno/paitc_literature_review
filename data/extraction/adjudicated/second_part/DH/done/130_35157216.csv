@@ -128,11 +128,11 @@ Mention using robust sandwich estimator, could be interesting to report whether 
 10.1007/s12325-022-02054-z;35157216;results;2;;Primary outcome: adjusted treatment effect;;;0.35;TRUE;;
 10.1007/s12325-022-02054-z;35157216;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;< 0.001;<0.001;FALSE;;
 10.1007/s12325-022-02054-z;35157216;results;3;;Sample size of the population of interest in the non IPD treatment arm;;;142;TRUE;;
-10.1007/s12325-022-02054-z;35157216;results;3;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;na;;;FALSE;;
+10.1007/s12325-022-02054-z;35157216;results;3;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;na;;XXXX;FALSE;;
 10.1007/s12325-022-02054-z;35157216;results;3;;Initial sample size of the population of interest in the IPD treatment arm;;;99;TRUE;;
 10.1007/s12325-022-02054-z;35157216;results;3;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;66;TRUE;;
-10.1007/s12325-022-02054-z;35157216;results;3;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;na;;;FALSE;;
-10.1007/s12325-022-02054-z;35157216;results;3;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";na;;;FALSE;;
+10.1007/s12325-022-02054-z;35157216;results;3;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;na;;XXXX;FALSE;;
+10.1007/s12325-022-02054-z;35157216;results;3;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";na;;XXXX;FALSE;;
 10.1007/s12325-022-02054-z;35157216;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
 10.1007/s12325-022-02054-z;35157216;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
 10.1007/s12325-022-02054-z;35157216;results;3;;Number of covariates adjusted for/matched on;7;8;7;FALSE;;

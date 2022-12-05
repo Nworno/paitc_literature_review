@@ -51,5 +51,5 @@ Use effect-modifiers selected for another MAIC (Literature) which is based on ""
 10.2217/cer-2021-0221;34751591;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.016;TRUE;;
 10.2217/cer-2021-0221;34751591;results;1;;Primary outcome: adjusted treatment effect;;;6.95;TRUE;;
 10.2217/cer-2021-0221;34751591;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.004;TRUE;;
-10.2217/cer-2021-0221;34751591;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;180;NA;FALSE;;
-10.2217/cer-2021-0221;34751591;results;1;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";;90;NA;FALSE;;
+10.2217/cer-2021-0221;34751591;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;180;XXXX;FALSE;;
+10.2217/cer-2021-0221;34751591;results;1;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";;90;XXXX;FALSE;;

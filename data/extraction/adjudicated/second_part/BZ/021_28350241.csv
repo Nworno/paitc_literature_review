@@ -37,12 +37,10 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.2217/cer-2016-0085;28350241;study_information;;5;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;study_information;;5;Phase of the clinical trial (clinical trial only);;;3;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;study_information;;5;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
-10.2217/cer-2016-0085;28350241;methodology;1;;Treatment name 1;dimethyl fumarate;delayed-release dimethyl fumarate;delayed-release dimethyl fumarate;FALSE;BZ;"N nonIPD 251
-	N IPD 2651
-	ESS 1032
-	unadjusted RR pooled for GA US/EUR/CAN + direct comparison =  0.77   0.027
-	adjusted RR pooled for GA US/EUR/CAN + direct comparison = 0.76  0.047
-";"Effectif non IPD (Intervention + Placebo) = 251
+10.2217/cer-2016-0085;28350241;methodology;1;;Treatment name 1;dimethyl fumarate;delayed-release dimethyl fumarate;delayed-release dimethyl fumarate;FALSE;BZ;"Conduct an MAIC where a direct comparison exists
+Conducted in the context of a meta-analysis
+Doesn't report the results for the individual PAITC, only for the total meta analysis. Thus effect sizes are not reported in the form, despite results being reported in the meta analysis. 
+Mixing open-label/placebo controlled and active controlled studies ";"Effectif non IPD (Intervention + Placebo) = 251
 Effectif IPD (Intervention + Placebo) = 2651
 ESS IPD (Intervention + Placebo) = 1032"
 10.2217/cer-2016-0085;28350241;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2";TRUE;BZ;;
@@ -108,20 +106,20 @@ ESS IPD (Intervention + Placebo) = 364"
 10.2217/cer-2016-0085;28350241;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;results;1;;Primary outcome: treatment effect contrast;RR;Rate ratio;Rate ratio;FALSE;BZ;;
 10.2217/cer-2016-0085;28350241;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
-10.2217/cer-2016-0085;28350241;results;1;;Primary outcome: unadjusted treatment effect;0.77;;NA;FALSE;BZ;;
-10.2217/cer-2016-0085;28350241;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.027;;NA;FALSE;BZ;;
-10.2217/cer-2016-0085;28350241;results;1;;Primary outcome: adjusted treatment effect;0.76;;NA;FALSE;BZ;;
-10.2217/cer-2016-0085;28350241;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.047;;NA;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Primary outcome: unadjusted treatment effect;0.77;;XXXX;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.027;;XXXX;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;Primary outcome: adjusted treatment effect;0.76;;XXXX;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.047;;XXXX;FALSE;BZ;;
 10.2217/cer-2016-0085;28350241;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;results;2;;Number of covariates adjusted for/matched on;;;5;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;results;2;;Primary outcome: treatment effect contrast;RR;Rate ratio;Rate ratio;FALSE;BZ;;
 10.2217/cer-2016-0085;28350241;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
-10.2217/cer-2016-0085;28350241;results;2;;Primary outcome: unadjusted treatment effect;0.77;;NA;FALSE;BZ;;
-10.2217/cer-2016-0085;28350241;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.027;;NA;FALSE;BZ;;
-10.2217/cer-2016-0085;28350241;results;2;;Primary outcome: adjusted treatment effect;0.76;;NA;FALSE;BZ;;
-10.2217/cer-2016-0085;28350241;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.047;;NA;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Primary outcome: unadjusted treatment effect;0.77;;XXXX;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.027;;XXXX;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;Primary outcome: adjusted treatment effect;0.76;;XXXX;FALSE;BZ;;
+10.2217/cer-2016-0085;28350241;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.047;;XXXX;FALSE;BZ;;
 10.2217/cer-2016-0085;28350241;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
 10.2217/cer-2016-0085;28350241;results;3;;Number of covariates adjusted for/matched on;;;7;TRUE;BZ;;

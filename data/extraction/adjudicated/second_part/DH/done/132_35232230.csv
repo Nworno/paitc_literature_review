@@ -140,7 +140,7 @@ Justification for the need of a population adjusted indirect comparison:
 10.2217/fon-2021-1102;35232230;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
 10.2217/fon-2021-1102;35232230;results;3;;Number of covariates adjusted for/matched on;;;4;TRUE;;
 10.2217/fon-2021-1102;35232230;results;3;;Covariates adjusted for/matched on in the indirect comparison;Age, Sex, Past treatments for the disease of interest, Other(s);Age, Sex, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Other(s);Age, Sex, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Comorbidities and medical history (beside pathology/disease of interest in the comparison);FALSE;;
-10.2217/fon-2021-1102;35232230;results;3;;Primary outcome: treatment effect contrast;Median difference;Means difference;;FALSE;;
+10.2217/fon-2021-1102;35232230;results;3;;Primary outcome: treatment effect contrast;Median difference;Means difference;Median difference;FALSE;;
 10.2217/fon-2021-1102;35232230;results;3;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
 10.2217/fon-2021-1102;35232230;results;3;;Primary outcome: unadjusted treatment effect;;;15.2;TRUE;;
 10.2217/fon-2021-1102;35232230;results;3;;Primary outcome: adjusted treatment effect;;;-10.5;TRUE;;

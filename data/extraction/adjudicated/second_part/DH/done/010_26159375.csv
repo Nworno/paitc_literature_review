@@ -261,7 +261,7 @@ No access to supplementary materials"
 10.2217/cer.15.33;26159375;results;3;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
 10.2217/cer.15.33;26159375;results;3;;Primary outcome: adjusted treatment effect;;;0.4;TRUE;;
 10.2217/cer.15.33;26159375;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[-8.9;9.7]";TRUE;;
-10.2217/cer.15.33;26159375;results;3;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;na;;;FALSE;;
+10.2217/cer.15.33;26159375;results;3;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;NA;;XXXX;FALSE;;
 10.2217/cer.15.33;26159375;results;3;;Initial sample size of the population of interest in the IPD treatment arm;324;;324;FALSE;;
 10.2217/cer.15.33;26159375;results;4;;Sample size of the population of interest in the non IPD treatment arm;;;327;TRUE;;
 10.2217/cer.15.33;26159375;results;4;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
@@ -280,7 +280,7 @@ No access to supplementary materials"
 10.2217/cer.15.33;26159375;results;5;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";"[30.3;48.9]";"[30.3;48.9] p<0.05";"[30.3;48.9]";FALSE;;
 10.2217/cer.15.33;26159375;results;5;;Initial sample size of the population of interest in the IPD treatment arm;324;;324;FALSE;;
 10.2217/cer.15.33;26159375;results;6;;Sample size of the population of interest in the non IPD treatment arm;540;266;266;FALSE;;
-10.2217/cer.15.33;26159375;results;6;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;AN;;FALSE;;
+10.2217/cer.15.33;26159375;results;6;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;NA;XXXX;FALSE;;
 10.2217/cer.15.33;26159375;results;6;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
 10.2217/cer.15.33;26159375;results;6;;Reporting of the list of the covariates adjusted for/matched on;;;No;TRUE;;
 10.2217/cer.15.33;26159375;results;6;;Primary outcome: treatment effect contrast;;;Rate difference;TRUE;;

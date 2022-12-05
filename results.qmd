@@ -100,6 +100,10 @@ results_df <- results_df %>%
     questions ==  "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm" ~ "ess_anchor",
     questions ==  "If anchored, total ESS IPD" ~ "ess_total",
     questions == "Type of population-adjusted indirect comparisons performed" ~ "paitc_type",
+    questions == "Primary outcome: treatment effect contrast" ~ "contrast",
+    questions == "Primary outcome: unadjusted treatment effect" ~ "unadjusted_effect", 
+    questions == "Primary outcome: adjusted treatment effect" ~ "adjusted_effect",
+    questions == "Direction of the treatment effect contrast: IPD treatment is:" ~ "effect_direction",
     TRUE ~ questions
   ))
 ```
@@ -122,6 +126,18 @@ wide_results <- paitc_results %>%
   filter(section == "results") %>% 
   pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer)
 ```
+
+```{r Direction for improvement}
+# Manually writing which direction for the treatment contrast effect to make it benefitial
+left_join(wide_methodo, wide_results) %>%
+  select(primary_outcome_name, 
+         primary_outcome_type, 
+         contrast) %>%
+  distinct() %>% 
+  write_tsv("data/extraction/adjudicated/outcome_benefits_raw.tsv")
+
+```
+
 
 # Articles general Information
 
@@ -626,8 +642,9 @@ long_sample_size_df %>%
          ipd_yn == "Total") %>%
   mutate(sample_size_type = factor(sample_size_type, levels = c("Original", "ESS", "Difference", "Rapport"))) %>% 
   # filter(ipd_yn == "Total") %>% 
-  ggplot(aes(y = value)) +
-  geom_boxplot() + 
+  ggplot(aes(x = 1, y = value)) +
+  geom_violin() + 
+  geom_jitter(width = 0.2) + 
   facet_wrap(~ sample_size_type,
              scales = "free",
              ncol = 4, 
@@ -636,6 +653,95 @@ long_sample_size_df %>%
   labs(title = "Sample Size Reduction in MAIC", 
        y = "Sample Size", 
        x = NULL)
+
+```
+
+### Treatments relative effects 
+
+```{r}
+
+renaming_outcomes <- c(
+  "Incidence Rate Ratio" = "Rates: OR/RR/means ratio", 
+  "Rate ratio" = "Rates: OR/RR/means ratio", 
+  "OR" = "Rates: OR/RR/means ratio", 
+  "RR" = "Rates: OR/RR/means ratio", 
+  "Means Ratio" = "Rates: OR/RR/means ratio", 
+  "Means difference" = "Means/medians difference", 
+  "Median difference" = "Means/medians difference", 
+  "RMST difference at 12 months" = "Means/medians difference",
+  "Risk difference" = "Risk difference", 
+  "Rate difference" = "Rate difference", 
+  "HR" = "HR", 
+  "Proportion difference" = "Proportions difference"
+)
+
+
+
+wide_results %>% names()
+
+#TODO: Many NA for the treatment contrast effect --> to be investigated
+
+wide_results_outcome <- wide_results %>% 
+   mutate(contrast = replace_in_vec(contrast, renaming_outcomes)) %>% 
+  select(doi, n_itc, contrast, effect_direction, unadjusted_lb_ci, unadjusted_ub_ci, adjusted_lb_ci,
+         adjusted_ub_ci, unadjusted_significant, adjusted_significant,
+         unadjusted_ci_cutoff, adjusted_ci_cutoff,
+         unadjusted_num_pval, adjusted_num_pval, 
+         unadjusted_effect, adjusted_effect) %>% 
+  pivot_longer(names_pattern = "((?:un)?adjusted)(_)(.*)", 
+               cols = !c(doi, n_itc, contrast, effect_direction), 
+               names_to = c("adjustment", NA, "indicator"), 
+               values_to = "values") %>%
+  pivot_wider(id_cols = c(doi, n_itc, contrast, effect_direction, adjustment), 
+              names_from = indicator, 
+              values_from = values) %>% 
+  mutate(across(c(lb_ci, ub_ci, num_pval, effect, ci_cutoff), as.numeric)) 
+
+left_side_outcome <- wide_results_outcome %>% 
+  filter(effect_direction == "Numerator if ratio, or left side if difference")
+
+right_side_outcome <- wide_results_outcome %>% 
+  filter(effect_direction == "Denominator if ratio, or rightside if difference") %>% 
+  mutate(across(c(lb_ci, ub_ci, effect),
+                .fns = function(x) {
+                  ifelse(ci_cutoff == 0, -x, 
+                         ifelse(ci_cutoff == 1, 1/x, NA))
+                })
+  ) %>% 
+  mutate(lb_ci_temp = ub_ci, 
+         ub_ci = lb_ci, 
+         lb_ci = lb_ci_temp, 
+         lb_ci_temp = NULL)
+
+wide_results_outcome <- bind_rows(left_side_outcome, right_side_outcome)
+
+
+wide_results_outcome %>% 
+  #TODO: fix contrast == NA
+  filter(!is.na(contrast)) %>%
+  ggplot(aes(x = adjustment, y = effect, color = significant)) +
+  geom_jitter(width = 0.1) +
+  geom_hline(aes(yintercept = ci_cutoff), linetype = "dashed", color = "black") + 
+  facet_wrap(~ contrast, scales = "free_y") + 
+  labs(title = "Treatment contrast effects: point estimates",
+       subtitle = "IPD is numerator for rates/ratio, left side differences", 
+       y = "Estimate", 
+       x = NULL
+       )
+    
+
+long_results_outcome %>% 
+  filter(indicator == "effect") %>%
+  ggplot(aes(x = adjustment, y = values)) +
+  geom_jitter(width = 0.1) +
+  facet_wrap(~ contrast, scales = "free_y")
+
+```
+
+
+```{r}
+
+
 
 ```
 

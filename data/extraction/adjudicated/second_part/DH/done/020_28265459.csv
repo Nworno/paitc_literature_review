@@ -48,4 +48,4 @@
 10.1186/s40734-017-0051-5;28265459;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);<0.001;0.135;0.135;FALSE;;
 10.1186/s40734-017-0051-5;28265459;results;1;;Primary outcome: adjusted treatment effect;-35.3;-35.30%;-35.30%;FALSE;;
 10.1186/s40734-017-0051-5;28265459;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;0.063;0.063;FALSE;;
-10.1186/s40734-017-0051-5;28265459;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";45;;;FALSE;;
+10.1186/s40734-017-0051-5;28265459;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";45;;XXXX;FALSE;;

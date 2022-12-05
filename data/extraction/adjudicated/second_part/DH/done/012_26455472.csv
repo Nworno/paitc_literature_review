@@ -140,7 +140,7 @@ BMI = others covariates"
 10.1185/03007995.2015.1106934;26455472;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
 10.1185/03007995.2015.1106934;26455472;results;2;;Primary outcome: adjusted treatment effect;;;4.26;TRUE;;
 10.1185/03007995.2015.1106934;26455472;results;3;;Sample size of the population of interest in the non IPD treatment arm;;;95;TRUE;;
-10.1185/03007995.2015.1106934;26455472;results;3;;Initial sample size of the population of interest in the IPD treatment arm;30;31;NA;FALSE;;
+10.1185/03007995.2015.1106934;26455472;results;3;;Initial sample size of the population of interest in the IPD treatment arm;30;31;30;FALSE;;
 10.1185/03007995.2015.1106934;26455472;results;3;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;14;TRUE;;
 10.1185/03007995.2015.1106934;26455472;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;;
 10.1185/03007995.2015.1106934;26455472;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;;
@@ -159,7 +159,7 @@ BMI = others covariates"
 10.1185/03007995.2015.1106934;26455472;results;4;;Primary outcome: treatment effect contrast;;;OR;TRUE;;
 10.1185/03007995.2015.1106934;26455472;results;4;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;;
 10.1185/03007995.2015.1106934;26455472;results;4;;Primary outcome: adjusted treatment effect;;;6.69;TRUE;;
-10.1185/03007995.2015.1106934;26455472;results;4;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;na;;;FALSE;;
+10.1185/03007995.2015.1106934;26455472;results;4;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;NA;;XXXX;FALSE;;
 10.1185/03007995.2015.1106934;26455472;results;5;;Sample size of the population of interest in the non IPD treatment arm;;;109;TRUE;;
 10.1185/03007995.2015.1106934;26455472;results;5;;Initial sample size of the population of interest in the IPD treatment arm;30;19;19;FALSE;;
 10.1185/03007995.2015.1106934;26455472;results;5;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;17;TRUE;;

@@ -124,6 +124,6 @@ Say seven variable were matched on but give 8 variables in table 1"
 10.1177/17588359211049639;34616492;results;4;;Number of covariates adjusted for/matched on;8;7;8;FALSE;;
 10.1177/17588359211049639;34616492;results;4;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;TRUE;;
 10.1177/17588359211049639;34616492;results;4;;Primary outcome: treatment effect contrast;;;HR;TRUE;;
-10.1177/17588359211049639;34616492;results;4;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;Denominator if ratio, or rightside if difference;;FALSE;;
+10.1177/17588359211049639;34616492;results;4;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;Denominator if ratio, or rightside if difference;Numerator if ratio, or left side if difference;FALSE;;
 10.1177/17588359211049639;34616492;results;4;;Primary outcome: adjusted treatment effect;0.55;0.7;0.55;FALSE;;
 10.1177/17588359211049639;34616492;results;4;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";"[0.43;0.70]";"[0.51;0.97]";"[0.43;0.70]";FALSE;;

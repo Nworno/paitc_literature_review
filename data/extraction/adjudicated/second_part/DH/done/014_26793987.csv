@@ -56,5 +56,5 @@ Rate difference after adjustment = 1 -  0.993 = 0.007"
 10.2217/cer.15.69;26793987;results;1;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;Denominator if ratio, or rightside if difference;Numerator if ratio, or left side if difference;FALSE;;
 10.2217/cer.15.69;26793987;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.004;TRUE;;
 10.2217/cer.15.69;26793987;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.398;TRUE;;
-10.2217/cer.15.69;26793987;results;1;;Primary outcome: unadjusted treatment effect;-0.048;;;FALSE;;
-10.2217/cer.15.69;26793987;results;1;;Primary outcome: adjusted treatment effect;-0.007;;;FALSE;;
+10.2217/cer.15.69;26793987;results;1;;Primary outcome: unadjusted treatment effect;-0.048;;XXXX;FALSE;;
+10.2217/cer.15.69;26793987;results;1;;Primary outcome: adjusted treatment effect;-0.007;;XXXX;FALSE;;

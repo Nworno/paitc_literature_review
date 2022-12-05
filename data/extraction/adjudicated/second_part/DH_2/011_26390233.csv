@@ -1,0 +1,102 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;reviewer;Notes reviewer 1;Notes reviewer 2
+10.2217/cer.15.49;26390233;general_information;;;Medical Condition of Interest Name;;;hepatitis c genotype 3;TRUE;JL;NA;NA
+10.2217/cer.15.49;26390233;general_information;;;Countries of first author affiliations;;;usa;TRUE;JL;;
+10.2217/cer.15.49;26390233;general_information;;;Countries of last author affiliations;;;usa;TRUE;JL;;
+10.2217/cer.15.49;26390233;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Pharmaceutical Industry, Private Data Analysis Company;TRUE;JL;;
+10.2217/cer.15.49;26390233;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;JL;;
+10.2217/cer.15.49;26390233;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;1;Patient-level data used;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;1;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02032901;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);international;usa;XXXX;FALSE;JL;;
+10.2217/cer.15.49;26390233;study_information;;1;Phase of the clinical trial (clinical trial only);;;3;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;1;Number of treatment arms (clinical trial only);;;1;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;2;Patient-level data used;;;No;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;2;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT01682720;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;2;Phase of the clinical trial (clinical trial only);;;3;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;3;Patient-level data used;;;No;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;3;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;3;Data source name (only if observational study or clinical trial without NCT);;;ferenci et al. (2008);TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;austria;XXXX;FALSE;JL;;
+10.2217/cer.15.49;26390233;study_information;;3;Number of treatment arms (clinical trial only);1;2 or more;XXXX;FALSE;JL;;
+10.2217/cer.15.49;26390233;study_information;;4;Patient-level data used;;;No;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;4;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT00077636;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;4;Phase of the clinical trial (clinical trial only);;;4;TRUE;JL;;
+10.2217/cer.15.49;26390233;study_information;;4;Number of treatment arms (clinical trial only);1;2 or more;XXXX;FALSE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Treatment name 1;;;daclatasvir + sofosbuvir;TRUE;JL;"SVR rate difference not reported in the paper, but statistical test reported for it and the rate difference can be calculated
+bmi = other
+Prior interferon based treatment = 2 variables
+Race = 2 variables (race and ethnicity, Hispanic/non hispanic = 2 variables)";"No statistics were calculated in this study :
+SVR12 non IPD = 85.2%
+SVR12 IPD before adjustment = 89.6%  (p = 0.216)
+SVR12 IPD after adjustment = 88.8%  (p = 0.537)
+
+The list of the covariates adjusted for/matched on = from Table 1"
+10.2217/cer.15.49;26390233;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Treatment name 2;;;sofosbuvir + ribavirin;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Study 'number(s)' for treatment 2;;;2;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Anchored comparison?;;;No;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);sustained virologic response;sustained virologic response at week 12 post-treatment (svr12);sustained virologic response at week 12 post-treatment (svr12);FALSE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Primary outcome: variable type;;;Binary (eg rates);TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;No;FALSE;JL;;
+10.2217/cer.15.49;26390233;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Treatment name 1;;;daclatasvir + sofosbuvir;TRUE;JL;"SVR rate difference not reported in the paper, but statistical test reported for it and the rate difference can be calculated
+bmi = other";"No statistics were calculated in this study :
+SVR24 non IPD = 66.5%
+SVR12 IPD before adjustment = 87.8%  (p<0.001)
+SVR12 IPD after adjustment = 95.6%  (p<0.001)
+
+The list of the covariates adjusted for/matched on = from Table 2
+
+BMI = others covariates"
+10.2217/cer.15.49;26390233;methodology;2;;Study 'number(s)' for treatment 1;;;1;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Treatment name 2;peginterferon-alfa + ribavirin;peginterferon-alfa + ribavirine;peginterferon-alfa + ribavirin;FALSE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Study 'number(s)' for treatment 2;;;"3;4";TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Anchored comparison?;;;No;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Form of the indirect comparison;;;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);sustained virologic response;rate of svr12 in patients treated with dcv + sof (study 1). the rate of svr24 in patients treated with a/r (studies 3 and 4);rate of svr12 in patients treated with dcv + sof (study 1). the rate of svr24 in patients treated with a/r (studies 3 and 4);FALSE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Primary outcome: variable type;;;Binary (eg rates);TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Nothing mentioned, not reported;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);Yes;No;No;FALSE;JL;;
+10.2217/cer.15.49;26390233;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;250;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;144;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Number of covariates adjusted for/matched on;12;11;11;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Past treatments for the disease of interest, Other(s);TRUE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Primary outcome: treatment effect contrast;Rate difference;;Rate difference;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Primary outcome: unadjusted treatment effect;4.4;;4.40%;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.216;;0.216;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;1;;Primary outcome: adjusted treatment effect;3.6;;3.60%;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.537;;0.537;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Sample size of the population of interest in the non IPD treatment arm;;;492;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;;74;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Reporting of a weights' distribution evaluation (MAIC);;;Not mentioned;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Number of covariates adjusted for/matched on;;;4;TRUE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Other(s);TRUE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Primary outcome: treatment effect contrast;Rate difference;;Rate difference;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Direction of the treatment effect contrast: IPD treatment is:;Numerator if ratio, or left side if difference;;Numerator if ratio, or left side if difference;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Primary outcome: unadjusted treatment effect;21.3;;21.30%;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);<0.001;;<0.001;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;2;;Primary outcome: adjusted treatment effect;18.9;;18.90%;FALSE;JL;;
+10.2217/cer.15.49;26390233;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";<0.001;;<0.001;FALSE;JL;;

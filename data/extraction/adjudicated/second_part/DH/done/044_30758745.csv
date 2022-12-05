@@ -33,7 +33,7 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;Yes;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);NA;NA;No;TRUE;NA;NA
-10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);Yes;No;NA;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);Yes;No;No;FALSE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Treatment name 1;NA;NA;blinatumomab;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Study 'number(s)' for treatment 1;NA;NA;1;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Treatment name 2;NA;NA;inotuzumab ozogamicin;TRUE;NA;NA

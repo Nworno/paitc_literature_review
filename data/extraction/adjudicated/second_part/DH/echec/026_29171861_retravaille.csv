@@ -219,7 +219,7 @@ covariates : weight = other"
 10.1111/bjd.16140;29171861;results;5;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
 10.1111/bjd.16140;29171861;results;5;NA;Number of covariates adjusted for/matched on;NA;NA;8;TRUE;NA;NA
 10.1111/bjd.16140;29171861;results;5;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s);TRUE;NA;NA
-10.1111/bjd.16140;29171861;results;5;NA;Primary outcome: treatment effect contrast;Risk difference;Rate difference;NA;FALSE;NA;NA
+10.1111/bjd.16140;29171861;results;5;NA;Primary outcome: treatment effect contrast;Risk difference;Rate difference;Risk difference;FALSE;NA;NA
 10.1111/bjd.16140;29171861;results;5;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
 10.1111/bjd.16140;29171861;results;5;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);0.21;0.26;0.21;FALSE;NA;NA
 10.1111/bjd.16140;29171861;results;5;NA;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";0.33;0.21;0.26;FALSE;NA;NA

@@ -29,7 +29,7 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.2147/jbm.s206806;31417326;study_information;;4;Clinical Trial;;;Yes;TRUE;;
 10.2147/jbm.s206806;31417326;study_information;;4;Data source name (only if observational study or clinical trial without NCT);;tarantino et al. (2004);tarantino et al. (2004);FALSE;;
 10.2147/jbm.s206806;31417326;study_information;;4;Number of treatment arms (clinical trial only);1;2 or more;XXXX;FALSE;;
-10.2147/jbm.s206806;31417326;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);NCT00157157;;;FALSE;;
+10.2147/jbm.s206806;31417326;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);NCT00157157;;XXXX;FALSE;;
 10.2147/jbm.s206806;31417326;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);international;;XXXX;FALSE;;
 10.2147/jbm.s206806;31417326;study_information;;4;Phase of the clinical trial (clinical trial only);3;;XXXX;FALSE;;
 10.2147/jbm.s206806;31417326;study_information;;5;Patient-level data used;;;No;TRUE;;
@@ -70,7 +70,7 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.2147/jbm.s206806;31417326;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;;
 10.2147/jbm.s206806;31417326;methodology;3;;Treatment name 1;;;bay 94-9027;TRUE;NA;NA
 10.2147/jbm.s206806;31417326;methodology;3;;Study 'number(s)' for treatment 1;;;1;TRUE;;
-10.2147/jbm.s206806;31417326;methodology;3;;Treatment name 2;rahf-pfm 2004;rahf-pfm (2004 study);;FALSE;;
+10.2147/jbm.s206806;31417326;methodology;3;;Treatment name 2;rahf-pfm 2004;rahf-pfm (2004 study);rahf-pfm 2004;FALSE;;
 10.2147/jbm.s206806;31417326;methodology;3;;Study 'number(s)' for treatment 2;;;4;TRUE;;
 10.2147/jbm.s206806;31417326;methodology;3;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;;
 10.2147/jbm.s206806;31417326;methodology;3;;Anchored comparison?;;;No;TRUE;;

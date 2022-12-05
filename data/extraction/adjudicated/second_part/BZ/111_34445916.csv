@@ -46,7 +46,7 @@ No ESS no unadjusted results reported";NA
 10.1080/03007995.2021.1971182;34445916;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;BZ;;
 10.1080/03007995.2021.1971182;34445916;results;1;;Number of covariates adjusted for/matched on;;;5;TRUE;BZ;;
 10.1080/03007995.2021.1971182;34445916;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity;TRUE;BZ;;
-10.1080/03007995.2021.1971182;34445916;results;1;;Primary outcome: treatment effect contrast;Rate difference;Proportions difference;;FALSE;BZ;;
+10.1080/03007995.2021.1971182;34445916;results;1;;Primary outcome: treatment effect contrast;Rate difference;Proportions difference;Proportions difference;FALSE;BZ;;
 10.1080/03007995.2021.1971182;34445916;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
 10.1080/03007995.2021.1971182;34445916;results;1;;Primary outcome: adjusted treatment effect;0.714;71.39%;0.714;FALSE;BZ;;
 10.1080/03007995.2021.1971182;34445916;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;<0.0001;TRUE;BZ;;

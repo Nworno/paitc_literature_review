@@ -75,9 +75,9 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1186/2162-3619-2-32;24314093;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.087;TRUE;BZ;;
 10.1186/2162-3619-2-32;24314093;results;1;;Primary outcome: adjusted treatment effect;;;0.81;TRUE;BZ;;
 10.1186/2162-3619-2-32;24314093;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.383;TRUE;BZ;;
-10.1186/2162-3619-2-32;24314093;results;1;;Initial sample size of the population of interest in the IPD treatment arm;207;207;NA;FALSE;BZ;;
+10.1186/2162-3619-2-32;24314093;results;1;;Initial sample size of the population of interest in the IPD treatment arm;207;207;207;FALSE;BZ;;
 10.1186/2162-3619-2-32;24314093;results;2;;Sample size of the population of interest in the non IPD treatment arm;85;;85;FALSE;BZ;;
-10.1186/2162-3619-2-32;24314093;results;2;;Initial sample size of the population of interest in the IPD treatment arm;207;;NA;FALSE;BZ;;
+10.1186/2162-3619-2-32;24314093;results;2;;Initial sample size of the population of interest in the IPD treatment arm;207;;207;FALSE;BZ;;
 10.1186/2162-3619-2-32;24314093;results;2;;Reporting of a weights' distribution evaluation (MAIC);Not mentioned;;Not mentioned;FALSE;BZ;;
 10.1186/2162-3619-2-32;24314093;results;2;;Reporting of the list of the covariates adjusted for/matched on;Yes;;Yes;FALSE;BZ;;
 10.1186/2162-3619-2-32;24314093;results;2;;Number of covariates adjusted for/matched on;8;;8;FALSE;BZ;;
@@ -100,5 +100,5 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1186/2162-3619-2-32;24314093;results;3;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;0.695;TRUE;BZ;;
 10.1186/2162-3619-2-32;24314093;results;3;;Primary outcome: adjusted treatment effect;;;0.84;TRUE;BZ;;
 10.1186/2162-3619-2-32;24314093;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;0.578;TRUE;BZ;;
-10.1186/2162-3619-2-32;24314093;results;3;;Initial sample size of the population of interest in the IPD treatment arm;207;207;NA;FALSE;BZ;;
-10.1186/2162-3619-2-32;24314093;results;3;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;203;203;NA;FALSE;BZ;;
+10.1186/2162-3619-2-32;24314093;results;3;;Initial sample size of the population of interest in the IPD treatment arm;207;207;207;FALSE;BZ;;
+10.1186/2162-3619-2-32;24314093;results;3;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;203;203;203;FALSE;BZ;;

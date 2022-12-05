@@ -26,7 +26,11 @@ first_part <- bind_rows(first_part_ASL, first_part_BZ) %>%
   filter(decision != "XXXX")
 
 stopifnot(
-  first_part %>% filter(decision == "unknown") %>% pull(questions) %>% unique() == "Country where the clinical trial/observational study was conducted (international if more than one)"
+  # checking that no other unknown left in any other questions than CT country (after DM)
+  first_part %>%
+    filter(decision == "unknown") %>%
+    pull(questions) %>%
+    unique() == "Country where the clinical trial/observational study was conducted (international if more than one)"
 )
 stopifnot(!any(is.na(first_part$decision)))
 
@@ -34,49 +38,28 @@ stopifnot(!any(is.na(first_part$decision)))
 
 second_part_ASL <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/ASL.csv"),
                             col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
-                            col_types = c("cccccc"))
+                            col_types = c("ccccccc"))
 second_part_BZ <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/BZ_raw.csv"),
                            col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
-                           col_types = c("cccccc"))
+                           col_types = c("ccccccc"))
 second_part_DH <- read_csv(file.path(dir_data, "extraction/adjudicated/second_part/DH_raw.csv"),
                            col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
-                           col_types = c("cccccc"))
+                           col_types = c("ccccccc"))
 
-# PLACEHOLDER: Loading Jerome adjudication ----------------------------------------------
-# files_JL <- list.files(file.path(dir_data, "extraction/adjudicated/second_part/JL"),
-#                        full.names = TRUE,
-#                        recursive = TRUE,
-#                        pattern = ".csv")
-#
-# second_part_JL <- lapply(X = files_JL,
-#                          FUN = read_csv2,
-#                          col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
-#                          col_types = c("cccccc"))
-
-second_part <- bind_rows(second_part_ASL, second_part_BZ, second_part_DH
-                         # , second_part_JL
-                         ) %>%
-  filter(`Ind studies num` != "xx" | is.na(`Ind studies num`))
-
-
-# Resolving problems 'manually' -----------------------------------------------
-
-## Removing non numerical answers for the sample size questions
-# second_part[!is.na(second_part$decision) & (second_part$decision == "Non anchored comparison"), "decision"] <- NA
+second_part <- bind_rows(second_part_ASL, second_part_BZ, second_part_DH) %>%
+  filter(`Ind studies num` != "xx" | is.na(`Ind studies num`)) %>%
+  filter(`ITC num` != "xx" | is.na(`ITC num`)) %>%
+  # keeping the NAs in the decision column for now,
+  # to check afterward that there are none left in the methods/results sections
+  # (there could be some left in the rows of the first_part)
+  filter(decision != "XXXX" | is.na(decision))
 
 
 # Bring together questions of first and second part -----------
 
 second_part_subset <- anti_join(second_part, first_part, by = c("doi", "section", "ITC num", "Ind studies num", "questions"))
 
-#TODO: NA présent, à corriger
-second_part_DH %>% bind_rows() %>% filter(is.na(decision)) %>% View()
-second_part_ASL %>% filter(is.na(decision)) %>% View()
-second_part_BZ %>% bind_rows() %>% filter(is.na(decision)) %>% View()
-# Pour l'instant, filtrage de ces NA
-second_part_subset <- second_part_subset %>% filter(!is.na(decision))
-
-
+# On 02/12/2022: manual correction of the different files --> replacing NA by XXXX into the individual files, before generation of the 'raw file'. asl 02/12/2022, DH and BZ done on 05/12/2022.
 stopifnot(!any(is.na(second_part_subset$decision)))
 stopifnot(!any(is.na(second_part_subset %>% filter(section %in% c("methodology", "results")) %>% pull(`ITC num`))))
 second_part_subset <- second_part_subset %>%
@@ -88,8 +71,6 @@ second_part_subset <- second_part_subset %>%
 
 # DM steps:
 # - Retrieve supplementary adjudicated columns (total sample size, included covariates)
-# - Check for answers with xxxx
-# - Check for comparisons with xx
 
 sup_columns <- read_csv(file.path(dir_data,
                                   "extraction/adjudicated/second_part/sup_columns_adjudicated.csv"),
@@ -114,13 +95,13 @@ long_results <- bind_rows(first_part, second_part_subset, sup_columns) %>%
     study_number = as.integer(study_number)
   )
 
+# Types checking
 test <- long_results %>%
   pivot_wider(id_cols = c("doi", "n_itc", "study_number"), names_from = "questions", values_from = "answer") %>%
   select(all_of(numerical_questions)) %>%
   mutate(across(.fns = function(x) ifelse(x %>% as.numeric() %>% is.na(), x, NA))) %>%
   select(where(~ any(!is.na(.x)))) %>%
   filter(if_any(.cols = everything(), .fns = ~ !is.na(.x)))
-
 # Correcting non numeric answers in numerical columns
 long_results[grepl("%", long_results$answer), "answer"] <- long_results[grepl("%", long_results$answer), "answer", drop = TRUE] %>%
   sub(pattern = "%", replacement = "", x = .)
@@ -142,6 +123,7 @@ df_pvalues <- df_pvalues %>%
   ) %>%
   mutate(across(.cols = c(lb_ci, ub_ci, pval), .fns = str_trim)) %>%
   mutate(across(.cols = c(lb_ci, ub_ci), .fns = as.numeric),
+         # a warning is expected here
          num_pval = as.numeric(pval))
 
 df_outcomes <- long_results %>%
@@ -182,8 +164,8 @@ df_significance <- left_join(df_pvalues, df_outcomes, by = c("doi", "section", "
            grepl("^<", pval) ~ TRUE,
            num_pval < 0.05 ~ TRUE,
            num_pval >= 0.05 ~ FALSE,
-           lb_ci < ci_cutoff & ub_ci > ci_cutoff ~ TRUE,
-           lb_ci >= ci_cutoff | ub_ci <= ci_cutoff ~ FALSE,
+           lb_ci <= ci_cutoff & ub_ci >= ci_cutoff ~ FALSE,
+           !is.na(lb_ci) & !is.na(ub_ci) ~ TRUE,
            TRUE ~ NA
          )
   ) %>%
@@ -207,9 +189,11 @@ long_results_final <- mutate(long_results, across(.fns = as.character)) %>%
   # to discard article removed at the very end
   semi_join(filter(flow_chart, included), by = "doi")
 
-
-# Writing final table of results -----------------------------------------
+# Writing final table of results to use for stats -------------------------
 long_results_final %>% write_tsv("data/to_use_for_stats/long_results_final.tsv")
+
+
+
 
 # Treatments and ATC ------------------------------------------------------
 ttt_df <- read_tsv("data/mapping/treatment_mapping.tsv") %>%
@@ -384,6 +368,9 @@ decision_atc_mapped <- second_part_subset %>%
 decision_atc_mapped %>% write_tsv(file.path(dir_data, "to_use_for_stats/decision_atc_mapped.tsv"))
 
 
+
+
+
 # ICD mapping -------------------------------------------------------------
 
 
@@ -426,50 +413,3 @@ conditions_mapped <- conditions_mapping %>%
               values_fn = function(...) paste(..., collapse = "; "))
 
 conditions_mapped %>% write_tsv("data/to_use_for_stats/decision_icd_mapped.tsv")
-
-# ARCHIVE -----------------------------------------------------------------
-
-## create temp results file ------------------------------------------------
-
-TEMPORARY <- FALSE
-if (TEMPORARY) {
-  second_part_ASL_BZ <- bind_rows(second_part_ASL, second_part_BZ)
-  # temp_results_second_part <- read_csv2("data/extraction/raw/comparison_answers2022-09-21.csv") %>%
-    mutate(across(.fns = as.character)) %>%
-    mutate(decision = ifelse(decision == "XXXX", "", decision),
-           decision = ifelse(decision == "", ifelse(`reviewer 2` != "", `reviewer 2`, `reviewer 1`), decision)) %>%
-    select(doi, PMID, section, `ITC num`, `Ind studies num`, questions, decision) %>%
-    anti_join(second_part_ASL_BZ, by = c("doi")) %>%
-    anti_join(first_part, by = c("doi", "section", "Ind studies num", "questions"))
-  second_part <- bind_rows(second_part_ASL_BZ, temp_results_second_part)
-} else {
-  ## Jerome's results
-  files_JL <- list.files(file.path(dir_data, "extraction/adjudicated/second_part_JL"), full.names = TRUE)
-  second_part_JL <- do.call(bind_rows, lapply(X = files_JL,
-                                              FUN = read_csv2,
-                                              col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
-                                              col_types = c("cccccc")))
-  ## David's results
-  files_DH <- list.files(file.path(dir_data, "extraction/adjudicated/second_part_DH"), full.names = TRUE)
-  second_part_DH <- do.call(bind_rows, lapply(X = files_DH,
-                                              FUN = read_csv2,
-                                              col_select = all_of(c("doi", "section", "ITC num", "Ind studies num", "questions", "decision")),
-                                              col_types = c("cccccc")))
-
-  second_part <- bind_rows(second_part_ASL, second_part_BZ, second_part_DH, second_part_JL)
-}
-
-
-
-if (2 + 2 == 5) {
-  long_results_w_notes %>%
-    mutate(answer = ifelse(decision == "XXXX", "", decision),
-           answer = ifelse(answer == "", ifelse(`reviewer 1` != "", `reviewer 1`, `reviewer 2`), answer)) %>%
-    rename(answer = decision,
-           `ITC num` = "n_itc",
-           `Ind studies num` = "study_number") %>%
-    select(doi, PMID, section, n_itc, study_number, questions, answer) %>%
-    write_excel_csv("data/extraction/extraction_results.csv")
-  write_excel_csv2(df_ttt, "data/extraction/ttt_names.csv")
-  write_excel_csv2(df_condition, "data/extraction/condition_names.csv")
-}

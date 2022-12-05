@@ -1,0 +1,134 @@
+doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decision;identical;reviewer;Notes reviewer 1;Notes reviewer 2
+10.2217/cer-2021-0216;35040693;general_information;;;Medical Condition of Interest Name;spinal muscular atrophy;ypes 1 spinal muscularatrophy;XXXX;FALSE;JL;NA;NA
+10.2217/cer-2021-0216;35040693;general_information;;;Countries of first author affiliations;;;switzerland;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;general_information;;;Countries of last author affiliations;;;uk;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;general_information;;;Positions of study investigators (for any authors of the article, any that applies);;;Pharmaceutical Industry, Private Data Analysis Company;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;general_information;;;At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;general_information;;;Mentioned sources of funding;;;Pharmaceutical Industry;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;general_information;;;Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;general_information;;;Mention of a systematic review to find the studies to compare treatments of interest;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;1;Patient-level data used;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;1;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;1;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02913482;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;1;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;1;Phase of the clinical trial (clinical trial only);;;2, 3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;1;Number of treatment arms (clinical trial only);;;1;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;2;Patient-level data used;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;2;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;2;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02908685;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;2;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;2;Phase of the clinical trial (clinical trial only);;;2, 3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;2;Number of treatment arms (clinical trial only);;;2 or more;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;3;Patient-level data used;;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;3;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;3;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02193074;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;3;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;3;Phase of the clinical trial (clinical trial only);;;3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;3;Number of treatment arms (clinical trial only);;;2 or more;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;4;Patient-level data used;;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;4;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;4;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT02292537;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;4;Country where the clinical trial/observational study was conducted (international if more than one);;;international;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;4;Phase of the clinical trial (clinical trial only);;;3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;4;Number of treatment arms (clinical trial only);;;2 or more;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;5;Patient-level data used;;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;5;Clinical Trial;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;5;NCT (only for clinical trial registered on clinicaltrials.gov);;;NCT03306277;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;5;Country where the clinical trial/observational study was conducted (international if more than one);usa;;XXXX;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;5;Phase of the clinical trial (clinical trial only);;;3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;study_information;;5;Number of treatment arms (clinical trial only);;;1;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Treatment name 1;;;risdiplam;TRUE;JL;"Discuss the scale of the outcome **in the supplemental materials**
+Exhaustive presentation of the methodology in supplemental materials
+Separation of treatment effect modifiers and prognostic factors";"MAIC
+
+SMA1"
+10.2217/cer-2021-0216;35040693;methodology;1;;Study 'number(s)' for treatment 1;;;1;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Treatment name 2;;;nusinersen;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Study 'number(s)' for treatment 2;;;3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Anchored comparison?;;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);event-free survival;event-free surviva;event-free survival;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Primary outcome: variable type;;;Time-to-event;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Justification for selecting variables to be included in the adjustment model (in the main text);;;A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);No;Yes;Yes;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;1;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Treatment name 1;;;risdiplam;TRUE;JL;NA;"STC
+
+SMA1"
+10.2217/cer-2021-0216;35040693;methodology;2;;Study 'number(s)' for treatment 1;;;1;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Treatment name 2;onasemnogene abeparvovec;onasemnogeneabeparvovec;onasemnogene abeparvovec;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Study 'number(s)' for treatment 2;;;5;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Type of population-adjusted indirect comparisons performed;;;STC;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Anchored comparison?;;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;event-free survival;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Primary outcome: variable type;;;Time-to-event;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Justification for selecting variables to be included in the adjustment model (in the main text);;;A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Inclusion of treatment-effect modifiers in the adjustment/matching model;No;Yes;Yes;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;2;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Treatment name 1;;;risdiplam;TRUE;JL;"Mentions that the matching was not successful, so limited interpreation for the results of this MAIC
+";"MAIC
+
+SMA2/3"
+10.2217/cer-2021-0216;35040693;methodology;3;;Study 'number(s)' for treatment 1;;;2;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Treatment name 2;;;nusinersen;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Study 'number(s)' for treatment 2;;;4;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Type of population-adjusted indirect comparisons performed;;;MAIC;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Anchored comparison?;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Definition of a single primary outcome for the indirect comparison;;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);rulm change from baseline;the 12-month rulm (revised upper limb module) score change from baseline;the 12-month rulm (revised upper limb module) score change from baseline;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Primary outcome: variable type;;;Continuous (count, mean, ...);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Justification for selecting variables to be included in the adjustment model (in the main text);;;A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion), Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Inclusion of treatment-effect modifiers in the adjustment/matching model;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc);No;Yes;Yes;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;methodology;3;;Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale);;;No;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Sample size of the population of interest in the non IPD treatment arm;;;121;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Initial sample size of the population of interest in the IPD treatment arm;;;58;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;36.5;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Reporting of a weights' distribution evaluation (MAIC);;;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Number of covariates adjusted for/matched on;;;3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Primary outcome: treatment effect contrast;;;HR;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Primary outcome: unadjusted treatment effect;;;0.24;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;"[0.09;0.46]";TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;Primary outcome: adjusted treatment effect;;;0.2;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.06;0.42]";TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Sample size of the population of interest in the non IPD treatment arm;;;22;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Initial sample size of the population of interest in the IPD treatment arm;;;58;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;58;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Number of covariates adjusted for/matched on;;;2;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Primary outcome: treatment effect contrast;;;HR;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Primary outcome: unadjusted treatment effect;1.532;1.53;1.532;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;"[0.721;2.665]";TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;Primary outcome: adjusted treatment effect;0.936;0.94;0.936;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;results;2;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";"[0.033;4.064]";"[0.03;4.06]";"[0.033;4.064]";FALSE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Sample size of the population of interest in the non IPD treatment arm;126;84;126;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm;126;42;126;FALSE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Initial sample size of the population of interest in the IPD treatment arm;;;43;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;"Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC";;;28.3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;If anchored comparison, initial sample size of the population of interest in the IPD anchor arm;;;25;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;"If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm";;;8.8;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Reporting of a weights' distribution evaluation (MAIC);;;Yes, mentions that the weights distribution has been studied, and weights distribution reported in main article or supplemental materials;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Reporting of the list of the covariates adjusted for/matched on;;;Yes;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Number of covariates adjusted for/matched on;;;3;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Covariates adjusted for/matched on in the indirect comparison;;;Age, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease);TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Primary outcome: treatment effect contrast;;;Means difference;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Primary outcome: unadjusted treatment effect;;;-0.6;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;"[-2.24;1.22]";TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;Primary outcome: adjusted treatment effect;;;-0.49;TRUE;JL;;
+10.2217/cer-2021-0216;35040693;results;3;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[-3.33;2.53]";TRUE;JL;;
