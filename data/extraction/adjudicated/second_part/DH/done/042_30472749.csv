@@ -91,7 +91,7 @@ BMI = others"
 10.1111/jdv.15369;30472749;methodology;3;NA;Form of the indirect comparison;NA;NA;Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate);TRUE;NA;NA
 10.1111/jdv.15369;30472749;methodology;3;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;Yes;TRUE;NA;NA
 10.1111/jdv.15369;30472749;methodology;3;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);pasi 75 locf;psoriasis area severity index (pasi) 75 responders rate;psoriasis area severity index (pasi) 75 responders rate;FALSE;NA;NA
-10.1111/jdv.15369;30472749;methodology;3;NA;Primary outcome: variable type;NA;NA;pasi 75 locf;TRUE;NA;NA
+10.1111/jdv.15369;30472749;methodology;3;NA;Primary outcome: variable type;NA;NA;Binary (eg rates);TRUE;NA;NA
 10.1111/jdv.15369;30472749;methodology;3;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion);TRUE;NA;NA
 10.1111/jdv.15369;30472749;methodology;3;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of prognostic factors of the variables;TRUE;NA;NA
 10.1111/jdv.15369;30472749;methodology;3;NA;Inclusion of treatment-effect modifiers in the adjustment/matching model;NA;NA;No discussion (in the main text) of the status of treatment-effect modifiers of the variables;TRUE;NA;NA

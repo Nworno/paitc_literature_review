@@ -27,7 +27,7 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Anchored comparison?;NA;NA;Yes;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Form of the indirect comparison;NA;NA;Simple (ie treatments effects extracted from two studies);TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
-10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);restricted mean survival time at 12 months;overall survival;overall survival;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);restricted mean survival time at 12 months;overall survival;restricted mean survival time;FALSE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Primary outcome: variable type;NA;NA;Time-to-event;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;1;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No;TRUE;NA;NA
@@ -42,7 +42,7 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Anchored comparison?;NA;NA;No;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Form of the indirect comparison;NA;NA;Simple (ie treatments effects extracted from two studies);TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Definition of a single primary outcome for the indirect comparison;NA;NA;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;NA;NA
-10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);restricted mean survival time at 12 months;overall survival;overall survival;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);restricted mean survival time at 12 months;overall survival;restricted mean survival time;FALSE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Primary outcome: variable type;NA;NA;Time-to-event;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Justification for selecting variables to be included in the adjustment model (in the main text);NA;NA;Status of prognostic factor/treatment effect modified assessed in the IPD dataset;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;methodology;2;NA;Inclusion of prognostic factors in the adjustment/matching model;NA;NA;No;TRUE;NA;NA
@@ -57,7 +57,7 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1007/s12325-019-0873-7;30758745;results;1;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;1;NA;Number of covariates adjusted for/matched on;NA;NA;9;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;1;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;TRUE;NA;NA
-10.1007/s12325-019-0873-7;30758745;results;1;NA;Primary outcome: treatment effect contrast;Means difference;RMST difference at 12 months;RMST difference at 12 months;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;1;NA;Primary outcome: treatment effect contrast;Means difference;RMST difference at 12 months;Means difference;FALSE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;1;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;1;NA;Primary outcome: unadjusted treatment effect;NA;NA;1.02;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;1;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);NA;NA;0.16;TRUE;NA;NA
@@ -70,7 +70,7 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1007/s12325-019-0873-7;30758745;results;2;NA;Reporting of the list of the covariates adjusted for/matched on;NA;NA;Yes;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;2;NA;Number of covariates adjusted for/matched on;NA;NA;9;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;2;NA;Covariates adjusted for/matched on in the indirect comparison;NA;NA;Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest;TRUE;NA;NA
-10.1007/s12325-019-0873-7;30758745;results;2;NA;Primary outcome: treatment effect contrast;Means difference;RMST difference at 12 months;RMST difference at 12 months;FALSE;NA;NA
+10.1007/s12325-019-0873-7;30758745;results;2;NA;Primary outcome: treatment effect contrast;Means difference;RMST difference at 12 months;Means difference;FALSE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;2;NA;Direction of the treatment effect contrast: IPD treatment is:;NA;NA;Numerator if ratio, or left side if difference;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;2;NA;Primary outcome: unadjusted treatment effect;NA;NA;-0.18;TRUE;NA;NA
 10.1007/s12325-019-0873-7;30758745;results;2;NA;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);NA;NA;0.69;TRUE;NA;NA

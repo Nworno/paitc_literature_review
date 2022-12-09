@@ -1,6 +1,6 @@
 ---
-title: "results_stats"
-format: html
+title: "PAITC Systematic Review Results"
+format: pdf
 ---
 
 ```{r config knitr, echo=FALSE}
@@ -61,52 +61,14 @@ included_articles <- filter(flow_chart_df, included)
 
 results_df <- left_join(results_df, all_articles_id[, c("doi", "PMID")], by = "doi")
 
-# 12 articles manquants, voir une fois qu'on aura tous les articles avec Jérôme
-# pour l'instant ne fonctionne pas car manque les articles à adjudiquer par Jérôme
-# stopifnot(identical(
-#   unique(included_articles$PMID)[order(unique(included_articles$PMID))],
-#   unique(results_df$PMID)[order(unique(results_df$PMID))]
-# ))
+stopifnot(identical(
+  unique(included_articles$PMID)[order(unique(included_articles$PMID))],
+  unique(results_df$PMID)[order(unique(results_df$PMID))]
+))
 
 included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
 ```
 
-
-```{r Discarding xx answers}
-
-results_df <- results_df %>% 
-  filter(!answer == "xx") %>% 
-  #TODO: check these NAs upstream
-  filter(!is.na(answer))
-
-```
-
-```{r Renaming questions}
-results_df <- results_df %>% 
-  mutate(questions = case_when(
-    questions == "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)" ~ "primary_outcome_name", 
-    questions == "Primary outcome: variable type" ~ "primary_outcome_type",
-    questions == "Definition of a single primary outcome for the indirect comparison" ~ "primary_outcome_yn",
-    questions == "Anchored comparison?" ~ "anchored_yn",
-    #TODO: check that there wasn't a parsing error for answer below, since the part after the ';' seems to have been discarded
-    questions == "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC" ~ "ess_ttt", 
-    questions ==  "If anchored, total initial sample size IPD" ~ "n_ipd_total",
-    questions ==  "If anchored, total sample size non IPD" ~ "n_nonipd_total",
-    questions ==  "Initial sample size of the population of interest in the IPD treatment arm" ~ "n_ipd_ttt",
-    questions ==  "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm" ~ "n_ipd_anchor",
-    questions ==  "Sample size of the population of interest in the non IPD treatment arm" ~ "n_nonipd_ttt",
-    questions ==  "If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm" ~ "n_nonipd_anchor",
-    questions ==  "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC" ~ "ess_ttt",
-    questions ==  "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm" ~ "ess_anchor",
-    questions ==  "If anchored, total ESS IPD" ~ "ess_total",
-    questions == "Type of population-adjusted indirect comparisons performed" ~ "paitc_type",
-    questions == "Primary outcome: treatment effect contrast" ~ "contrast",
-    questions == "Primary outcome: unadjusted treatment effect" ~ "unadjusted_effect", 
-    questions == "Primary outcome: adjusted treatment effect" ~ "adjusted_effect",
-    questions == "Direction of the treatment effect contrast: IPD treatment is:" ~ "effect_direction",
-    TRUE ~ questions
-  ))
-```
 
 ```{r Creating section data frames}
 general_information_df <- results_df[results_df$section == "general_information",]
@@ -127,15 +89,9 @@ wide_results <- paitc_results %>%
   pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer)
 ```
 
-```{r Direction for improvement}
-# Manually writing which direction for the treatment contrast effect to make it benefitial
-left_join(wide_methodo, wide_results) %>%
-  select(primary_outcome_name, 
-         primary_outcome_type, 
-         contrast) %>%
-  distinct() %>% 
-  write_tsv("data/extraction/adjudicated/outcome_benefits_raw.tsv")
-
+```{r Wide methodo results}
+wide_methodo_results <- paitc_results %>% 
+  pivot_wider(id_cols = c(doi, n_itc), names_from = questions, values_from = answer)
 ```
 
 
@@ -146,6 +102,7 @@ general_information_df <- general_information_df %>%
   select(-n_itc, -study_number, -section, -PMID) %>% 
   select(answer, everything())
 ```
+
 
 ## Journals
 
@@ -312,6 +269,34 @@ general_information_df %>%
        y = "Count")
 ```
 
+## Ties with pharmaceutical industry 
+
+
+
+```{r}
+ties_w_pharma_df <- general_information_df %>% 
+  filter(questions %in% c("Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article", 
+                          "Positions of study investigators (for any authors of the article, any that applies)")) %>% 
+  pivot_wider(id_cols = doi, names_from = questions, values_from = answer) %>% 
+  mutate(ties_pharma = ifelse(!grepl("Pharmaceutical", `Positions of study investigators (for any authors of the article, any that applies)`) & 
+                                `Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article` != "Yes", FALSE, TRUE)) 
+
+```
+
+```{r}
+general_information_df %>% 
+  filter(questions == "Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article") %>% 
+  count(answer) %>% 
+  ggplot(aes(x = answer, y = n, label = n)) +
+  geom_bar(stat = "identity") +
+  geom_label() +
+  coord_flip() + 
+  labs(x = NULL,
+       title = "Ties with pharmaceutical industry", 
+       y = "Count")
+```
+
+
 ## Fundings
 
 ```{r}
@@ -326,6 +311,7 @@ general_information_df %>%
        title = "Mentioned of source of fundings", 
        y = "Count")
 ```
+
 
 
 ## Investigated medical conditions
@@ -379,12 +365,6 @@ conditions_df %>%
 
 # Results
 
-```{r}
-wide_methodo_results <- paitc_results %>% 
-  pivot_wider(id_cols = c(doi, n_itc), names_from = questions, values_from = answer)
-```
-
-
 
 ```{r data management to determine IPD/nonIPD treatments}
 ttt_ipd_df <- paitc_results %>% 
@@ -407,7 +387,7 @@ ttt_ipd_df <- paitc_results %>%
   )
 
 stopifnot(
-  "Some combinations of doi-n_itc-treatment must be assigned both IPD and non IPD" = nrow(distinct(ttt_ipd_df, doi, `treatment number`, n_itc, `Treatment name`, IPD)) == nrow(distinct(ttt_ipd_df, doi, n_itc, IPD))
+  "Some combinations of doi-n_itc-treatment are assigned both IPD and non IPD" = nrow(distinct(ttt_ipd_df, doi, `treatment number`, n_itc, `Treatment name`, IPD)) == nrow(distinct(ttt_ipd_df, doi, n_itc, IPD))
 )
 
 ```
@@ -452,6 +432,8 @@ individual_studies_questions <- c(
 
 individual_study_df %>% 
   mutate(answer = str_to_title(answer)) %>% 
+  #TODO: fix this "Xx'
+  filter(answer != "Xx") %>%
   pivot_wider(names_from = questions, values_from = answer) %>% 
   select(all_of(individual_studies_questions)) %>% 
   tableby(`Patient-level data used` ~ ., data = .) %>% 
@@ -488,21 +470,20 @@ wide_methodo_results %>%
 list_questions_methodo <- c(
   "Type of population-adjusted indirect comparisons performed" = "paitc_type",
   "Anchored comparison?" = "anchored_yn",
-  "Form of the indirect comparison" = "Form of the indirect comparison",
+  "Form of the indirect comparison" = "paitc_form",
   "Definition of a single primary outcome for the indirect comparison" = "primary_outcome_yn",
   # "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)" = "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)", #TODO --> non UTF8 characther somewhere, to be fixed
   "Primary outcome: variable type" = "primary_outcome_type",
   # "Justification for selecting variables to be included in the adjustment model (in the main text)" = "Justification for selecting variables to be included in the adjustment model (in the main text)",
-  "Inclusion of prognostic factors in the adjustment/matching model" = "Inclusion of prognostic factors in the adjustment/matching model",
-  "Inclusion of treatment-effect modifiers in the adjustment/matching model" = "Inclusion of treatment-effect modifiers in the adjustment/matching model",
-  "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)" = "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",
-  "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)" = "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)"
+  "Inclusion of prognostic factors in the adjustment/matching model" = "prognostic_factors_yn",
+  "Inclusion of treatment-effect modifiers in the adjustment/matching model" = "ttt_effect_modifiers_yn",
+  "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)" = "weights_model_yn",
+  "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)" = "scale_choice_yn"
 )
 ```
 
 
-
-```{r}
+```{r, results='asis'}
 wide_methodo %>%
   select(all_of(list_questions_methodo)) %>% 
   # Apparently select rename the columns using the names of list_questions_methodo ...
@@ -513,10 +494,8 @@ wide_methodo %>%
 ### Variables selection justification
 
 
-
-```{r DM Variables selection}
+```{r DM Variables selection, results='asis'}
 variables_selection <- wide_methodo %>% 
-  rename(variables_justification = `Justification for selecting variables to be included in the adjustment model (in the main text)`) %>%
   select(doi, n_itc, variables_justification) %>% 
   # because the complete item for this one is "Nothing mentioned, not reported", thus simplyfying it
   mutate(variables_justification = variables_justification %>% 
@@ -524,12 +503,12 @@ variables_selection <- wide_methodo %>%
            map(~ str_trim(.x)) %>% 
            map(~ .x[.x != "not reported"])) %>%
   mutate(no_justification = sapply(variables_justification, function(x) any(x == "Nothing mentioned")), 
-         wrong_justification = sapply(variables_justification,
-                                      function(x) all(x %in% c(
-                                        "Nothing mentioned",
-                                        "Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier)",
-                                        "Status of prognostic factor/treatment effect modified assessed in the IPD dataset"
-                                      )))
+         incorrect_or_no_justification = sapply(variables_justification,
+                                          function(x) all(x %in% c(
+                                            "Nothing mentioned",
+                                            "Statistical imbalanced between treatment groups (independently of the status of prognostic/effect modifier)",
+                                            "Status of prognostic factor/treatment effect modified assessed in the IPD dataset"
+                                          )))
   )
 
 
@@ -544,31 +523,15 @@ justif <- variables_selection %>%
 
 # Variables selection
 justif_binary <- variables_selection %>% 
-  tableby(~ no_justification + wrong_justification, data = .) 
+  tableby(~ no_justification + incorrect_or_no_justification, data = .) 
 
+justif_binary %>% 
+  summary(title = "Covariates selection justification")
 # merge(justif, justif_binary, all = FALSE)
 
 #TODO: stratifying by anchored/unanchored, and STC/MAIC as outcome
 
 ```
-
-### Outcomes 
-
-```{r}
-#TODO: group outcome names in larger categories
-wide_methodo  %>% 
-  mutate(primary_outcome_name = stringr::str_to_title(primary_outcome_name)) %>% 
-  add_count(primary_outcome_name, name = "primary_outcome_name_n") %>% 
-  mutate(primary_outcome_name = forcats::fct_reorder(primary_outcome_name,
-                                                     primary_outcome_name_n, 
-                                                     .desc = TRUE)) %>% 
- # TODO : fix missing outcome name 
-  tableby( primary_outcome_yn ~  primary_outcome_type + primary_outcome_name ,
-           data = .) %>% 
-  summary()
-```
-
-
 
 ### Sample sizes
 
@@ -617,9 +580,10 @@ long_sample_size_df <- wide_sample_size_df %>%
   )
 ```
 
-```{r}
+```{r, results='asis'}
 wide_sample_size_df %>% 
   mutate(
+    anchored_yn = ifelse(anchored_yn == "Yes", "Anchored", "Unanchored"),
     n_ipd_yn = ifelse(is.na(n_ipd_total) & is.na(n_ipd_ttt), "No", "Yes"), 
     n_nonipd_yn = ifelse(is.na(n_nonipd_total) & is.na(n_nonipd_ttt), "No", "Yes"), 
     ess_yn = ifelse(is.na(ess_ttt) & is.na(ess_total), "No", "Yes"), 
@@ -656,11 +620,32 @@ long_sample_size_df %>%
 
 ```
 
-### Treatments relative effects 
+
+
+### Outcomes 
+
+
+```{r, results='asis'}
+
+funded_pharma <- general_information_df %>% select(doi, )
+wide_methodo_results  %>% 
+  mutate(across(.cols = c(outcome_short_name, primary_outcome_name), 
+                .fns = stringr::str_to_title)
+  ) %>% 
+  add_count(primary_outcome_name, name = "primary_outcome_name_n") %>% 
+  mutate(primary_outcome_name = forcats::fct_reorder(primary_outcome_name,
+                                                     primary_outcome_name_n, 
+                                                     .desc = TRUE)) %>% 
+ # TODO : fix missing outcome name 
+  tableby( primary_outcome_yn ~  primary_outcome_type + outcome_short_name,
+           data = .) %>% 
+  summary()
+```
+
+### Treatment effect estimates
 
 ```{r}
-
-renaming_outcomes <- c(
+renaming_contrast <- c(
   "Incidence Rate Ratio" = "Rates: OR/RR/means ratio", 
   "Rate ratio" = "Rates: OR/RR/means ratio", 
   "OR" = "Rates: OR/RR/means ratio", 
@@ -669,33 +654,37 @@ renaming_outcomes <- c(
   "Means difference" = "Means/medians difference", 
   "Median difference" = "Means/medians difference", 
   "RMST difference at 12 months" = "Means/medians difference",
-  "Risk difference" = "Risk difference", 
-  "Rate difference" = "Rate difference", 
-  "HR" = "HR", 
-  "Proportion difference" = "Proportions difference"
+  "Risk difference" = "Risk/Rate difference", 
+  "Rate difference" = "Risk/Rate difference", 
+  "HR" = "Hazard Ratio", 
+  "Proportion difference" = "Proportion difference",
+  "Proportions difference" = "Proportion difference"
 )
 
 
 
-wide_results %>% names()
-
-#TODO: Many NA for the treatment contrast effect --> to be investigated
-
-wide_results_outcome <- wide_results %>% 
-   mutate(contrast = replace_in_vec(contrast, renaming_outcomes)) %>% 
-  select(doi, n_itc, contrast, effect_direction, unadjusted_lb_ci, unadjusted_ub_ci, adjusted_lb_ci,
-         adjusted_ub_ci, unadjusted_significant, adjusted_significant,
-         unadjusted_ci_cutoff, adjusted_ci_cutoff,
-         unadjusted_num_pval, adjusted_num_pval, 
-         unadjusted_effect, adjusted_effect) %>% 
+wide_results_outcome <- wide_methodo_results %>% 
+   mutate(contrast = replace_in_vec(contrast, renaming_contrast)) %>% 
+  select(doi, n_itc, contrast, effect_direction, unadjusted_lb_ci, unadjusted_ub_ci,
+         adjusted_lb_ci, adjusted_ub_ci, unadjusted_significant, adjusted_significant, 
+         effect_cutoff, unadjusted_num_pval, adjusted_num_pval, unadjusted_effect, 
+         adjusted_effect, direction_benefit, outcome_short_name) %>% 
   pivot_longer(names_pattern = "((?:un)?adjusted)(_)(.*)", 
-               cols = !c(doi, n_itc, contrast, effect_direction), 
+               cols = !c(doi, n_itc, contrast, effect_direction, direction_benefit, outcome_short_name, effect_cutoff), 
                names_to = c("adjustment", NA, "indicator"), 
                values_to = "values") %>%
-  pivot_wider(id_cols = c(doi, n_itc, contrast, effect_direction, adjustment), 
+  pivot_wider(id_cols = c(doi, n_itc, contrast, effect_direction, adjustment, direction_benefit, outcome_short_name, effect_cutoff), 
               names_from = indicator, 
               values_from = values) %>% 
-  mutate(across(c(lb_ci, ub_ci, num_pval, effect, ci_cutoff), as.numeric)) 
+  mutate(across(c(lb_ci, ub_ci, num_pval, effect, effect_cutoff), as.numeric)) 
+
+
+# Standarsize what is beneficial for IPD
+# stopifnot(all(!is.na(wide_results_outcome$direction_benefit)))
+# stopifnot(all(!is.na(wide_results_outcome$effect)))
+# table(is.na(wide_results_outcome$effect), useNA = "always")
+# table(is.na(wide_results_outcome$effect_cutoff), useNA = "always")
+# wide_results_outcome %>% filter(!is.na(effect) & is.na(effect_cutoff)) %>% View()
 
 left_side_outcome <- wide_results_outcome %>% 
   filter(effect_direction == "Numerator if ratio, or left side if difference")
@@ -704,8 +693,7 @@ right_side_outcome <- wide_results_outcome %>%
   filter(effect_direction == "Denominator if ratio, or rightside if difference") %>% 
   mutate(across(c(lb_ci, ub_ci, effect),
                 .fns = function(x) {
-                  ifelse(ci_cutoff == 0, -x, 
-                         ifelse(ci_cutoff == 1, 1/x, NA))
+                  ifelse(effect_cutoff == 0, -x, ifelse(effect_cutoff == 1, 1/x, NA))
                 })
   ) %>% 
   mutate(lb_ci_temp = ub_ci, 
@@ -713,35 +701,259 @@ right_side_outcome <- wide_results_outcome %>%
          lb_ci = lb_ci_temp, 
          lb_ci_temp = NULL)
 
-wide_results_outcome <- bind_rows(left_side_outcome, right_side_outcome)
+wide_results_outcome <- bind_rows(left_side_outcome, right_side_outcome) %>%
+  select(-effect_direction) %>%
+# Creating binary variable distinguishing estimates beneficial for IPD:
+  mutate(benefit_ipd = case_when(
+    direction_benefit == "inferior" & effect <= effect_cutoff ~ TRUE,
+    direction_benefit == "superior" & effect >= effect_cutoff ~ TRUE,
+    !is.na(effect) ~ FALSE,
+    TRUE ~ NA)
+  )
+```
 
 
-wide_results_outcome %>% 
-  #TODO: fix contrast == NA
+```{r, eval = FALSE}
+wide_results_outcome %>%
+  #TODO: see what is the best to do with contrast == NA
   filter(!is.na(contrast)) %>%
   ggplot(aes(x = adjustment, y = effect, color = significant)) +
   geom_jitter(width = 0.1) +
-  geom_hline(aes(yintercept = ci_cutoff), linetype = "dashed", color = "black") + 
-  facet_wrap(~ contrast, scales = "free_y") + 
+  geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
+  facet_wrap(~ contrast, scales = "free_y") +
   labs(title = "Treatment contrast effects: point estimates",
-       subtitle = "IPD is numerator for rates/ratio, left side differences", 
-       y = "Estimate", 
+       subtitle = "IPD is numerator for rates/ratio, left side differences",
+       y = "Estimate",
        x = NULL
-       )
-    
+  )
 
-long_results_outcome %>% 
-  filter(indicator == "effect") %>%
-  ggplot(aes(x = adjustment, y = values)) +
-  geom_jitter(width = 0.1) +
-  facet_wrap(~ contrast, scales = "free_y")
 
+```
+
+
+## Results benefit IPD
+```{r, results='asis'}
+wide_results_outcome %>% 
+  left_join(ties_w_pharma_df, by = "doi") %>% 
+  tableby(benefit_ipd ~ significant, strata = ties_pharma, data = .) %>% 
+  summary(title = "Treatment point estimate benefits IPD") 
+```
+
+```{r, fig.width=14, fig.height=12}
+outcomes_df <- wide_results_outcome %>% 
+  select(doi, n_itc, adjustment, contrast, direction_benefit, outcome_short_name, effect_cutoff, significant, benefit_ipd, effect) %>% 
+  filter(!is.na(effect)) %>% 
+  # Creating a variable where a beneficial effect for IPD is always inferior to threshold
+  mutate(effect_benefit = case_when(
+    direction_benefit == "superior" & effect_cutoff == 0 ~ -effect, 
+    direction_benefit == "superior" & effect_cutoff == 1 ~ 1/effect,
+    TRUE ~ effect,
+  ), 
+  significant_char = case_when(
+    significant == "TRUE" ~ "Yes",
+    significant == "FALSE" ~ "No", 
+    is.na(significant) ~ "Unknown")) 
+
+num_comparison_df <- outcomes_df %>% 
+  distinct(n_itc, doi, contrast) %>% 
+  group_by(contrast) %>% 
+  mutate(num_comparison = 1:n()) %>% 
+  ungroup()
+
+outcomes_df <- outcomes_df %>% 
+  left_join(num_comparison_df)
+```
+
+
+```{r, fig.width=14, fig.height=12}
+labelling_data <- data.frame(
+  contrast = unique(outcomes_df$contrast), 
+  left_side = "Favors IPD", 
+  right_side = "Favors non-IPD"
+) %>%
+  left_join(distinct(outcomes_df, contrast, effect_cutoff)) %>% 
+  left_join(summarise(group_by(outcomes_df[, c("contrast", "effect", "num_comparison")], contrast),
+                      left_x = min(effect), 
+                      right_x = max(effect), 
+                      max_num_comparison = max(num_comparison)))
+```
+
+
+```{r, fig.width=14, fig.height=16}
+outcomes_df %>% 
+  ggplot(aes(x = effect_benefit, y = num_comparison, color = significant_char, shape = adjustment)) + 
+  geom_point(size = 3) +
+  geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black") +
+  # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
+  scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
+  # geom_text(data = labelling_data,
+  #           aes(label = left_side, x = (effect_cutoff + left_x) / 2, y = max_num_comparison *1.2),
+  #           inherit.aes = FALSE, 
+  #           size = 5) +
+  # geom_text(data = labelling_data,
+  #           aes(label = right_side, x = (effect_cutoff + right_x) / 2, y = max_num_comparison *1.2),
+  #           inherit.aes = FALSE, 
+  #           size = 5) +
+  # annotate("text", -Inf, Inf, label = "Favors IPD", hjust = -1, vjust = 2, size = 5) +
+  # annotate("text", -Inf, Inf, label = "Favors non-IPD", hjust = -2.5, vjust = 2, size = 5) +
+  facet_wrap(~ contrast, scales = "free") + 
+  labs(title = "PAITC treatment effects point estimates", 
+       subtitle = "Left side of vertical dashed line favors IPD", 
+       color = "5% significance level", 
+       shape = "Adjustment",
+       x = "Treatment effect point estimate", 
+       y = NULL) +
+  theme(legend.position = "bottom",
+        text = element_text(size = 14),
+        axis.text.y = element_blank(),
+        axis.text = element_text(size = 14), 
+        axis.title = element_text(size = 16), 
+        plot.title = element_text(size = 20), 
+        plot.subtitle = element_text(size = 18, face = c("bold.italic")), 
+        legend.text = element_text(size = 16),
+        legend.box.just = "top",
+        legend.box = "vertical") + 
+  guides(shape = guide_legend(override.aes = list(color = "black")))
+```
+
+```{r, fig.width=14, fig.height=16}
+outcomes_plot <- outcomes_df %>% 
+  # select(num_comparison, contrast, effect_cutoff, adjustment, effect) %>% 
+  # Keeping only data with both unadjusted and adjusted effect
+  pivot_wider(id_cols = c(num_comparison, contrast),
+              names_from = adjustment,
+              values_from = effect) %>%
+  filter(!is.na(adjusted) & ! is.na(unadjusted)) %>%
+  pivot_longer(cols = c("adjusted", "unadjusted"), names_to = "adjustment", values_to = "effect") %>% 
+  left_join(outcomes_df[, c("num_comparison", "contrast", "adjustment", "significant_char", "effect_cutoff")], 
+            by = c("num_comparison", "contrast", "adjustment")) %>% 
+  ggplot() + 
+  geom_point(aes(y = num_comparison,
+             color = significant_char, 
+             x = effect,
+             shape = adjustment,
+             group = adjustment), size = 3) + 
+  geom_line(aes(y = num_comparison,
+             x = effect,
+             group = num_comparison), size = 0.5, color = "darkgrey", linetype = 1) +
+  geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black") +
+  scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) + 
+  facet_wrap(~ contrast, scales = "free") + 
+  # facet_zoom(xlim = c(-2, 2)) +
+  labs(title = "PAITC: distance between adjusted and not-adjusted treatment effects point estimates", 
+       subtitle = "Vertical dashed lines represent absence of treatment effect difference",
+       color = "5% significance level", 
+       shape = "Adjustment",
+       x = "Treatment effect point estimate", 
+       y = NULL) +
+  theme(legend.position = "bottom",
+        axis.text.y = element_blank(),
+        text = element_text(size = 14),
+        axis.text = element_text(size = 14), 
+        axis.title = element_text(size = 16), 
+        plot.title = element_text(size = 20), 
+        plot.subtitle = element_text(size = 18, face = c("bold.italic")), 
+        legend.text = element_text(size = 16),
+        legend.box.just = "top",
+        legend.box = "vertical") + 
+  guides(shape = guide_legend(override.aes = list(color = "black")))
+outcomes_plot
 ```
 
 
 ```{r}
+library("ggforce")
+library("patchwork")
+plot1 <-  outcomes_df %>% 
+  # select(num_comparison, contrast, effect_cutoff, adjustment, effect) %>% 
+  # Keeping only data with both unadjusted and adjusted effect
+  pivot_wider(id_cols = c(num_comparison, contrast),
+              names_from = adjustment,
+              values_from = effect) %>%
+  filter(!is.na(adjusted) & ! is.na(unadjusted), 
+         contrast == "Rates: OR/RR/means ratio") %>%
+  pivot_longer(cols = c("adjusted", "unadjusted"), names_to = "adjustment", values_to = "effect") %>% 
+  left_join(outcomes_df[, c("num_comparison", "contrast", "adjustment", "significant_char", "effect_cutoff")], 
+            by = c("num_comparison", "contrast", "adjustment")) %>% 
+  ggplot() + 
+   geom_point(aes(y = num_comparison,
+                  color = significant_char, 
+                  x = effect,
+                  shape = adjustment,
+                  group = adjustment), size = 3) + 
+   geom_line(aes(y = num_comparison,
+                 x = effect,
+                 group = num_comparison), size = 0.5, color = "darkgrey", linetype = 1) +
+   geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black") +
+   scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
+   facet_zoom(xlim = c(0, 6)) +
+   # facet_wrap(~ contrast, scales = "free") + 
+   labs(title = "", 
+        subtitle = "Rates: OR/RR/means ratio",
+        color = "5% significance level", 
+        shape = "Adjustment",
+        x = "Treatment effect point estimate", 
+        y = NULL) +
+   theme(legend.position = "bottom",
+         axis.text.y = element_blank(),
+         text = element_text(size = 14),
+         axis.text = element_text(size = 14), 
+         axis.title = element_text(size = 16), 
+         plot.title = element_text(size = 20), 
+         plot.subtitle = element_text(size = 18, face = c("bold.italic")), 
+         legend.text = element_text(size = 16),
+         legend.box.just = "top",
+         legend.box = "vertical") + 
+   guides(shape = guide_legend(override.aes = list(color = "black")))  +
+  theme(strip.background = element_rect(fill = "grey"))
 
-
-
+plot2 <- outcomes_df %>% 
+  # select(num_comparison, contrast, effect_cutoff, adjustment, effect) %>% 
+  # Keeping only data with both unadjusted and adjusted effect
+  pivot_wider(id_cols = c(num_comparison, contrast),
+              names_from = adjustment,
+              values_from = effect) %>%
+  filter(!is.na(adjusted) & ! is.na(unadjusted), 
+         contrast == "Means/medians difference") %>%
+  pivot_longer(cols = c("adjusted", "unadjusted"), names_to = "adjustment", values_to = "effect") %>% 
+  left_join(outcomes_df[, c("num_comparison", "contrast", "adjustment", "significant_char", "effect_cutoff")], 
+            by = c("num_comparison", "contrast", "adjustment")) %>% 
+  ggplot() + 
+   geom_point(aes(y = num_comparison,
+                  color = significant_char, 
+                  x = effect,
+                  shape = adjustment,
+                  group = adjustment), size = 3) + 
+   geom_line(aes(y = num_comparison,
+                 x = effect,
+                 group = num_comparison), size = 0.5, color = "darkgrey", linetype = 1) +
+   geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black") +
+   scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
+   facet_zoom(xlim = c(-3, 3)) +
+   # facet_wrap(~ contrast, scales = "free") + 
+   labs(title = "", 
+        subtitle = "Means/medians difference",
+        color = "5% significance level", 
+        shape = "Adjustment",
+        x = "Treatment effect point estimate", 
+        y = NULL) +
+   theme(legend.position = "bottom",
+         axis.text.y = element_blank(),
+         text = element_text(size = 14),
+         axis.text = element_text(size = 14), 
+         axis.title = element_text(size = 16), 
+         plot.title = element_text(size = 20), 
+         plot.subtitle = element_text(size = 18, face = c("bold.italic")), 
+         legend.text = element_text(size = 16),
+         legend.box.just = "top",
+         legend.box = "vertical") + 
+   guides(shape = guide_legend(override.aes = list(color = "black"))) +
+  theme(strip.background = element_rect(fill = "grey"))
 ```
+
+
+```{r, fig.height=14, fig.width=12}
+plot1 + plot2
+```
+
 

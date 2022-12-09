@@ -1735,7 +1735,7 @@ BMI = others",NA
 10.1111/jdv.15369,30472749,methodology,3,NA,Form of the indirect comparison,NA,NA,"Aggregation of multiple studies to estimate individual treatment effects (e.g. meta-analysis in a first step to estimate treatment A effect, then population adjusted indirect comparison using treatment A effect estimate)",TRUE,NA,NA,NA
 10.1111/jdv.15369,30472749,methodology,3,NA,Definition of a single primary outcome for the indirect comparison,NA,NA,Yes,TRUE,NA,NA,NA
 10.1111/jdv.15369,30472749,methodology,3,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),pasi 75 locf,psoriasis area severity index (pasi) 75 responders rate,psoriasis area severity index (pasi) 75 responders rate,FALSE,NA,NA,NA
-10.1111/jdv.15369,30472749,methodology,3,NA,Primary outcome: variable type,NA,NA,pasi 75 locf,TRUE,NA,NA,NA
+10.1111/jdv.15369,30472749,methodology,3,NA,Primary outcome: variable type,NA,NA,Binary (eg rates),TRUE,NA,NA,NA
 10.1111/jdv.15369,30472749,methodology,3,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,"Status of prognostic factor/treatment effect modified assessed in the IPD dataset, A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion)",TRUE,NA,NA,NA
 10.1111/jdv.15369,30472749,methodology,3,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of prognostic factors of the variables,TRUE,NA,NA,NA
 10.1111/jdv.15369,30472749,methodology,3,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,NA,NA,NA
@@ -1828,7 +1828,7 @@ BMI = others",NA
 10.1007/s12325-019-0873-7,30758745,methodology,1,NA,Anchored comparison?,NA,NA,Yes,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,1,NA,Form of the indirect comparison,NA,NA,Simple (ie treatments effects extracted from two studies),TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,1,NA,Definition of a single primary outcome for the indirect comparison,NA,NA,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",TRUE,NA,NA,NA
-10.1007/s12325-019-0873-7,30758745,methodology,1,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),restricted mean survival time at 12 months,overall survival,overall survival,FALSE,NA,NA,NA
+10.1007/s12325-019-0873-7,30758745,methodology,1,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),restricted mean survival time at 12 months,overall survival,restricted mean survival time,FALSE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,1,NA,Primary outcome: variable type,NA,NA,Time-to-event,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,1,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,Status of prognostic factor/treatment effect modified assessed in the IPD dataset,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,1,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,No,TRUE,NA,NA,NA
@@ -1843,7 +1843,7 @@ BMI = others",NA
 10.1007/s12325-019-0873-7,30758745,methodology,2,NA,Anchored comparison?,NA,NA,No,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,2,NA,Form of the indirect comparison,NA,NA,Simple (ie treatments effects extracted from two studies),TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,2,NA,Definition of a single primary outcome for the indirect comparison,NA,NA,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",TRUE,NA,NA,NA
-10.1007/s12325-019-0873-7,30758745,methodology,2,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),restricted mean survival time at 12 months,overall survival,overall survival,FALSE,NA,NA,NA
+10.1007/s12325-019-0873-7,30758745,methodology,2,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),restricted mean survival time at 12 months,overall survival,restricted mean survival time,FALSE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,2,NA,Primary outcome: variable type,NA,NA,Time-to-event,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,2,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,Status of prognostic factor/treatment effect modified assessed in the IPD dataset,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,methodology,2,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,No,TRUE,NA,NA,NA
@@ -1858,7 +1858,7 @@ BMI = others",NA
 10.1007/s12325-019-0873-7,30758745,results,1,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,1,NA,Number of covariates adjusted for/matched on,NA,NA,9,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,1,NA,Covariates adjusted for/matched on in the indirect comparison,NA,NA,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest",TRUE,NA,NA,NA
-10.1007/s12325-019-0873-7,30758745,results,1,NA,Primary outcome: treatment effect contrast,Means difference,RMST difference at 12 months,RMST difference at 12 months,FALSE,NA,NA,NA
+10.1007/s12325-019-0873-7,30758745,results,1,NA,Primary outcome: treatment effect contrast,Means difference,RMST difference at 12 months,Means difference,FALSE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,1,NA,Direction of the treatment effect contrast: IPD treatment is:,NA,NA,"Numerator if ratio, or left side if difference",TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,1,NA,Primary outcome: unadjusted treatment effect,NA,NA,1.02,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,1,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",NA,NA,0.16,TRUE,NA,NA,NA
@@ -1871,7 +1871,7 @@ BMI = others",NA
 10.1007/s12325-019-0873-7,30758745,results,2,NA,Reporting of the list of the covariates adjusted for/matched on,NA,NA,Yes,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,2,NA,Number of covariates adjusted for/matched on,NA,NA,9,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,2,NA,Covariates adjusted for/matched on in the indirect comparison,NA,NA,"Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity, Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest",TRUE,NA,NA,NA
-10.1007/s12325-019-0873-7,30758745,results,2,NA,Primary outcome: treatment effect contrast,Means difference,RMST difference at 12 months,RMST difference at 12 months,FALSE,NA,NA,NA
+10.1007/s12325-019-0873-7,30758745,results,2,NA,Primary outcome: treatment effect contrast,Means difference,RMST difference at 12 months,Means difference,FALSE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,2,NA,Direction of the treatment effect contrast: IPD treatment is:,NA,NA,"Numerator if ratio, or left side if difference",TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,2,NA,Primary outcome: unadjusted treatment effect,NA,NA,-0.18,TRUE,NA,NA,NA
 10.1007/s12325-019-0873-7,30758745,results,2,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",NA,NA,0.69,TRUE,NA,NA,NA
@@ -4204,7 +4204,7 @@ Initial sample size IPD = 193 ??",NA
 10.2217/fon-2020-0823,33052055,methodology,7,NA,Anchored comparison?,NA,NA,No,TRUE,NA,NA,NA
 10.2217/fon-2020-0823,33052055,methodology,7,NA,Form of the indirect comparison,NA,NA,Simple (ie treatments effects extracted from two studies),TRUE,NA,NA,NA
 10.2217/fon-2020-0823,33052055,methodology,7,NA,Definition of a single primary outcome for the indirect comparison,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",Yes,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",FALSE,NA,NA,NA
-10.2217/fon-2020-0823,33052055,methodology,7,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),NA,NA,"No primary outcome defined, or multiple primary outcomes without any clear distinction between them",TRUE,NA,NA,NA
+10.2217/fon-2020-0823,33052055,methodology,7,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),NA,NA,overall survival,TRUE,NA,NA,NA
 10.2217/fon-2020-0823,33052055,methodology,7,NA,Primary outcome: variable type,NA,NA,Time-to-event,TRUE,NA,NA,NA
 10.2217/fon-2020-0823,33052055,methodology,7,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose),TRUE,NA,NA,NA
 10.2217/fon-2020-0823,33052055,methodology,7,NA,Inclusion of prognostic factors in the adjustment/matching model,NA,NA,Yes,TRUE,NA,NA,NA

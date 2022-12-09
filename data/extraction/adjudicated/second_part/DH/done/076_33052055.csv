@@ -346,7 +346,7 @@ Initial sample size IPD = 193 ??"
 10.2217/fon-2020-0823;33052055;methodology;7;;Anchored comparison?;;;No;TRUE;;
 10.2217/fon-2020-0823;33052055;methodology;7;;Form of the indirect comparison;;;Simple (ie treatments effects extracted from two studies);TRUE;;
 10.2217/fon-2020-0823;33052055;methodology;7;;Definition of a single primary outcome for the indirect comparison;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;Yes;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;FALSE;;
-10.2217/fon-2020-0823;33052055;methodology;7;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;No primary outcome defined, or multiple primary outcomes without any clear distinction between them;TRUE;;
+10.2217/fon-2020-0823;33052055;methodology;7;;Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined);;;overall survival;TRUE;;
 10.2217/fon-2020-0823;33052055;methodology;7;;Primary outcome: variable type;;;Time-to-event;TRUE;;
 10.2217/fon-2020-0823;33052055;methodology;7;;Justification for selecting variables to be included in the adjustment model (in the main text);;;Literature based (clinically or methodologically relevant to adjust on these variables based on the literature search conducted for this specific purpose);TRUE;;
 10.2217/fon-2020-0823;33052055;methodology;7;;Inclusion of prognostic factors in the adjustment/matching model;;;Yes;TRUE;;
