@@ -363,4 +363,7 @@ flow_chart_df <- subset_final_df %>%
 stopifnot(nrow(flow_chart_df) == nrow(final_df))
 stopifnot(sum(flow_chart_df$included) == sum(is.na(included_articles_final$included)))
 
-write_csv(flow_chart_df, "data/to_use_for_stats/flow_chart.csv")
+# All included articles have been read entirely, by definition
+flow_chart_df %>%
+  mutate(full_article = ifelse(included, TRUE, full_article)) %>%
+  write_csv("data/to_use_for_stats/flow_chart.csv")

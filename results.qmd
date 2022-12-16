@@ -313,7 +313,6 @@ general_information_df %>%
 ```
 
 
-
 ## Investigated medical conditions
 
 ```{r fig.width=12}
@@ -382,6 +381,7 @@ ttt_ipd_df <- paitc_results %>%
               filter(questions == "Patient-level data used") %>% 
               pivot_wider(names_from = questions, values_from = answer) %>% 
               rename(IPD = `Patient-level data used`) %>% 
+              mutate(IPD = stringr::str_to_title(IPD)) %>% 
               select(doi, study_number, IPD), 
             by = c("doi" = "doi", "Study 'number(s)' for treatment" = "study_number")
   )
@@ -394,6 +394,39 @@ stopifnot(
 
 
 ### Treatments
+
+```{r Finding out similar comparisons}
+
+ipd_non_ipd_df <- ttt_ipd_df %>%
+  distinct(doi, `Treatment name`, n_itc, IPD) %>% 
+  left_join(distinct(ttt_mapped[, c("decision", "first", "second", "third", "car_t_cells")]),
+            by = c("Treatment name" = "decision")) %>% 
+  pivot_wider(id_cols = c(doi, n_itc), names_from = c("IPD"), values_from = "first") %>% 
+  left_join(conditions_df[, c("doi", "concept_name_ICD10 Hierarchy")], by = "doi") %>% 
+  distinct(doi, Yes, No, `concept_name_ICD10 Hierarchy`) %>% 
+  rename(condition = `concept_name_ICD10 Hierarchy`)
+
+ipd_non_ipd_df 
+
+inverted_ipd <- ipd_non_ipd_df %>% 
+  mutate(Yes_temp = No, No = Yes, Yes = Yes_temp) %>% 
+  select(doi_inv = doi, Yes, No, condition)
+
+same_comparisons <- inverted_ipd %>%
+  inner_join(ipd_non_ipd_df,
+             by = c("Yes", "No", "condition")) %>% 
+  select(doi, doi_inv, everything()) %>% 
+  filter(doi != doi_inv) %>% 
+  rowwise() %>% 
+  mutate(doi_pair = list(sort(c(doi, doi_inv)))) %>%
+  ungroup() %>% 
+  distinct(doi_pair, Yes, No, condition) %>% 
+  unnest_wider(doi_pair, names_sep = "_")
+same_comparisons %>% write_tsv("data/extraction/adjudicated/similar_comparisons.tsv")
+
+```
+
+
 ```{r, fig.height = 18}
 
 ttt_ipd_df %>% 

@@ -24,7 +24,7 @@ first_part_BZ <- read_csv(file.path(dir_data, "extraction/adjudicated/first_part
                           col_types = c("cccccc"))
 first_part <- bind_rows(first_part_ASL, first_part_BZ) %>%
   filter(decision != "XXXX") %>%
-  filter(tolower(`Ind studies num`) != "xx" | is.na(`Ind studies num`)) %>%
+  filter(tolower(`Ind studies num`) != "xx" | is.na(`Ind studies num`))
 
 
 stopifnot(
@@ -401,7 +401,12 @@ ttt_df_mapped_final <- ttt_df_mapped %>%
       !is.na(others) ~ others,
       TRUE ~ NA_character_
     )) %>%
-  distinct(ttt_name, final_classification_code, final_classification_name, `CAR-T cells`)
+  distinct(
+    ttt_name,
+    final_classification_code,
+    final_classification_name,
+    `CAR-T cells`
+  )
 
 list_replacing_ttt_manual <- c(
   "etoposide-ifosfamide" = "etoposide - ifosfamide",

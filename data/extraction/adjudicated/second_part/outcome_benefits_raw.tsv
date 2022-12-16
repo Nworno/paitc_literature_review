@@ -1,0 +1,112 @@
+primary_outcome_name	primary_outcome_type	contrast	unadjusted_ci_cutoff	adjusted_ci_cutoff
+change from baseline in proptosis in mm	Continuous (count, mean, ...)	Means difference	0	0
+3 point mace (cardiovascular death, non-fatal myocardial infraction, non-fatal stroke)	Time-to-event	HR	NA	1
+change in the adhd-rs-iv total score from baseline to end-point	Continuous (count, mean, ...)	Means difference	NA	0
+overall survival	Time-to-event	HR	1	1
+overall survival	Time-to-event	HR	NA	1
+no evidence of disease activity (neda)	Binary (eg rates)	RR	1	1
+progression-free survival	Time-to-event	HR	1	1
+overall response rate	Binary (eg rates)	NA	NA	NA
+complete response rate	Binary (eg rates)	OR	1	1
+complete remission rate	Binary (eg rates)	OR	1	1
+metastasis-free survival	Time-to-event	HR	NA	1
+fatigue occurrence	Binary (eg rates)	OR	NA	1
+arrhythmia recurrence	Time-to-event	HR	1	1
+restricted mean survival time	Time-to-event	Means difference	0	0
+number of etdrs (early treatment diabetic retinopathy study) letters gained vs baseline after 2 years	Continuous (count, mean, ...)	Median difference	NA	0
+overall survival	Time-to-event	Median difference	NA	0
+mean annualized bleeding rates	Continuous (count, mean, ...)	Means difference	0	0
+mean annualised bleeding rate	Continuous (count, mean, ...)	Means difference	0	0
+objective response rate (orr)	Binary (eg rates)	OR	1	1
+annualized bleeding rate (abr),	Binary (eg rates)	RR	1	1
+annualized bleeding rate (abr)	Binary (eg rates)	RR	1	1
+grade >= 3 treatment emergent adverse event	Binary (eg rates)	RR	1	1
+time to deterioration in quality of life	Time-to-event	HR	NA	1
+investigator’s static global assessment improvement score of 0–1	Binary (eg rates)	OR	1	1
+progression-free survival	Time-to-event	HR	NA	1
+the mean change from baseline in the adhd-rs-iv total score at the final on-treatment assessment prior to down-titration	Continuous (count, mean, ...)	Means difference	0	0
+change from baseline for the hamilton rating scale for depression	Continuous (count, mean, ...)	Means difference	0	0
+annualized relapse rate	Continuous (count, mean, ...)	RR	NA	1
+response rates for acr 20 (american college of rheumatology) at week 24	Binary (eg rates)	Rate difference	NA	0
+acr 20 response rate at week 12	Binary (eg rates)	RR	NA	1
+acr 20 response rate at week 16	Binary (eg rates)	RR	NA	1
+proportions of patients achieving 70 improvement in the acr criteria (acr70) at month 3	Binary (eg rates)	Means difference	0	0
+proportions of patients achieving 50 improvement in the acr criteria (acr50)at month 3,	Binary (eg rates)	Means difference	0	0
+Overall Survival	Time-to-event	HR	1	1
+progression-free survival	Time-to-event	NA	NA	NA
+sustained virologic response at week 12 post-treatment	Binary (eg rates)	Rate difference	0	0
+overall response rate	Binary (eg rates)	Rate difference	0	0
+clinical rating scale for tremor part c at 1 month	Continuous (count, mean, ...)	Means difference	0	0
+annualized relapse rate	Binary (eg rates)	Rate difference	NA	0
+annualized relapse rate	Binary (eg rates)	RR	1	1
+cytogenetic response rate	Binary (eg rates)	NA	NA	NA
+objective response rate	Binary (eg rates)	OR	1	1
+confirmed disability progression	Time-to-event	HR	1	1
+time to confirmed disability progression at six months (cdp-6)	Time-to-event	HR	NA	1
+the proportion of patients who experienced cdp-6 (confirmed disability progression at six months) by 96 weeks based on an increase in edss alone	Binary (eg rates)	OR	NA	1
+time to confirmed disability progression at three months (cdp-3)	Time-to-event	HR	NA	1
+major molecular response at 24 months	Binary (eg rates)	OR	NA	1
+major molecular response by 24 months	Binary (eg rates)	OR	NA	1
+event-free survival	Time-to-event	HR	NA	1
+overall response rate	Binary (eg rates)	OR	1	1
+proportion of patients with transfusion avoidance	Binary (eg rates)	Proportions difference	NA	0
+change in systolic blood pressures from baseline to following 8 weeks of treatment	Continuous (count, mean, ...)	Means difference	NA	0
+rate of psoriasis area severity index (pasi) 75 improvement responders	Binary (eg rates)	Risk difference	0	0
+overall response rate	Binary (eg rates)	OR	1	NA
+physician's global assessment treatment success	Binary (eg rates)	Rate difference	NA	0
+15-month changes from baseline in mnis+7ionis (modified neuropathy impairment score +7)	Continuous (count, mean, ...)	Means difference	0	0
+30 days post-vaccination serotype-specific opa (opsonophagocytic activity)	Continuous (count, mean, ...)	Means Ratio	1	1
+treatment-emergent adjudicated major bleeding	Binary (eg rates)	RR	NA	1
+5-year change in radiographic adjacent-level degeneration	Binary (eg rates)	OR	1	1
+Risk of fall	Binary (eg rates)	Risk difference	NA	0
+psoriasis area severity index 75 response rate at week 12	Binary (eg rates)	Risk difference	0	0
+ocs (oral corticosteroids) dosage reduction from baseline to week 24	Continuous (count, mean, ...)	Means difference	0	0
+change from baseline in hba1c	Continuous (count, mean, ...)	Means difference	0	0
+change in midas (migraine disability assessment) from baseline to 12 weeks	Continuous (count, mean, ...)	Means difference	0	0
+progression-free survival	Time-to-event	Median difference	NA	NA
+physician global assessment (pga) 0/1 responders rate	Binary (eg rates)	Proportions difference	NA	0
+psoriasis area severity index (pasi) 75 responders rate	Binary (eg rates)	Proportions difference	NA	0
+psoriasis area severity index (pasi) 75 responders rate	pasi 75 locf	Proportions difference	NA	0
+change in pain (vas scale) from baseline to 6 months	Continuous (count, mean, ...)	Means difference	0	0
+objective response rate	Binary (eg rates)	NA	NA	NA
+annualized relapse rate (arr) at 1 year	Binary (eg rates)	Rate difference	NA	0
+annual rate of clinically significant exacerbations	Binary (eg rates)	RR	1	1
+major molecular response by 12 months	Binary (eg rates)	Rate difference	0	0
+major molecular response by 12 months	Binary (eg rates)	Rate difference	NA	0
+sustained viral response	Binary (eg rates)	OR	NA	NA
+overall adverse events	Binary (eg rates)	Risk difference	0	0
+square root transformed abr : annualized bleed rates at 1 year (all bleed)	Continuous (count, mean, ...)	Means difference	0	0
+annualized bleed rates for all bleeds (1-year)	Continuous (count, mean, ...)	Means difference	0	0
+annualized bleeding rate	Continuous (count, mean, ...)	Means difference	0	0
+mean annualized bleeding rate	Binary (eg rates)	Incidence Rate Ratio	NA	1
+annualized bleeding rate (abr)	Continuous (count, mean, ...)	Incidence Rate Ratio	NA	1
+mean annualized bleeding rate	Continuous (count, mean, ...)	Incidence Rate Ratio	1	1
+proportions of patients who achieved pasi 90 (psoriasis area severity index) at weeks 12	Binary (eg rates)	Risk difference	NA	0
+hba1c change from baseline to week 12	Continuous (count, mean, ...)	Means difference	0	0
+annualized relapse rate at 2 years	Continuous (count, mean, ...)	Rate ratio	NA	NA
+12-week confirmed disability progression	Binary (eg rates)	RR	1	1
+american college of rheumatology (acr) responses rate at week 24	Binary (eg rates)	OR	NA	1
+american college of rheumatology (acr) responses at week 54	Binary (eg rates)	OR	NA	1
+percentage of patients whose lowest hourly recorded heart rate was <45 bpm in the first 6 h after their first dose ( first-dose cardiac monitoring outcomes)	Binary (eg rates)	Risk difference	NA	0
+risk of any adverse events at year 1 (1-year outcomes)	Binary (eg rates)	Risk difference	NA	0
+risk of any adverse effect at 2 years	Binary (eg rates)	Risk difference	NA	0
+the mean change in the updrs part iii score at week 12 from predose to the following timepoints postdose: 15 (apomorphine sublingual film) or 20 (levodopa),30 and 60 min.	Continuous (count, mean, ...)	Means difference	0	0
+event-free survival	Time-to-event	HR	1	1
+the 12-month rulm (revised upper limb module) score change from baseline	Continuous (count, mean, ...)	Means difference	0	0
+global quality of life (european organisation for research and treatment of cancerquality of life questionnaire core 30 items) change from baseline	Continuous (count, mean, ...)	Means difference	0	0
+sustained virologic response	Binary (eg rates)	Rate difference	NA	0
+sustained virologic response at week 12 post-treatment (svr12)	Binary (eg rates)	Rate difference	0	0
+rate of svr12 in patients treated with dcv + sof (study 1). the rate of svr24 in patients treated with a/r (studies 3 and 4)	Binary (eg rates)	Rate difference	0	0
+No primary outcome defined, or multiple primary outcomes without any clear distinction between them	Time-to-event	HR	1	1
+objective response rate (orr)	Binary (eg rates)	RR	1	1
+progression-free survival	Time-to-event	Median difference	NA	0
+overall survival	Time-to-event	Median difference	NA	NA
+proportion of patients who achieved acr70 at week 12	Binary (eg rates)	Proportion difference	NA	NA
+proportion of patients who achieved acr70 at week 14	Binary (eg rates)	Proportion difference	NA	NA
+overall survival (os)	Time-to-event	HR	NA	1
+downstaging failures	Binary (eg rates)	None	NA	NA
+day 28 overall response rate (orr)	Binary (eg rates)	RR	1	1
+assessment of spondylarthritis international society (asas) 20 response rate at week 8	Binary (eg rates)	OR	NA	1
+assessment of spondylarthritis international society (asas) 20 response rate at week 16	Binary (eg rates)	OR	NA	1
+acr 20 (american college of rheumatology ) response rates at week 12	Binary (eg rates)	OR	NA	1
+acr 20 (american college of rheumatology ) response rates at week 24	Binary (eg rates)	OR	NA	1
