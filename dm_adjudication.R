@@ -275,7 +275,6 @@ significance_df <- left_join(pvalues_df, contrasts_df, by = c("doi", "n_itc")) %
   drop_na(answer)
 
 
-
 long_results_final <- filter(long_results, section %in% c("general_information", "study_information")) %>%
   bind_rows(long_methodo_results_df) %>%
   mutate(across(everything(), .fns = as.character)) %>%

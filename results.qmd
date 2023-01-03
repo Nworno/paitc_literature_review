@@ -275,11 +275,10 @@ general_information_df %>%
 
 ```{r}
 ties_w_pharma_df <- general_information_df %>% 
-  filter(questions %in% c("Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article", 
-                          "Positions of study investigators (for any authors of the article, any that applies)")) %>% 
+  filter(questions %in% c("Positions of study investigators (for any authors of the article, any that applies)", 
+                          "Mentioned sources of funding")) %>% 
   pivot_wider(id_cols = doi, names_from = questions, values_from = answer) %>% 
-  mutate(ties_pharma = ifelse(!grepl("Pharmaceutical", `Positions of study investigators (for any authors of the article, any that applies)`) & 
-                                `Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article` != "Yes", FALSE, TRUE)) 
+  mutate(ties_pharma = ifelse(grepl("Pharmaceutical", `Positions of study investigators (for any authors of the article, any that applies)`) | grepl("Pharmaceutical Industry", `Mentioned sources of funding`), TRUE, FALSE))
 
 ```
 
@@ -292,7 +291,7 @@ general_information_df %>%
   geom_label() +
   coord_flip() + 
   labs(x = NULL,
-       title = "Ties with pharmaceutical industry", 
+       title = "Ties with pharma in COI section", 
        y = "Count")
 ```
 
@@ -406,12 +405,10 @@ ipd_non_ipd_df <- ttt_ipd_df %>%
   distinct(doi, Yes, No, `concept_name_ICD10 Hierarchy`) %>% 
   rename(condition = `concept_name_ICD10 Hierarchy`)
 
-ipd_non_ipd_df 
 
 inverted_ipd <- ipd_non_ipd_df %>% 
   mutate(Yes_temp = No, No = Yes, Yes = Yes_temp) %>% 
   select(doi_inv = doi, Yes, No, condition)
-
 same_comparisons <- inverted_ipd %>%
   inner_join(ipd_non_ipd_df,
              by = c("Yes", "No", "condition")) %>% 
@@ -422,7 +419,6 @@ same_comparisons <- inverted_ipd %>%
   ungroup() %>% 
   distinct(doi_pair, Yes, No, condition) %>% 
   unnest_wider(doi_pair, names_sep = "_")
-same_comparisons %>% write_tsv("data/extraction/adjudicated/similar_comparisons.tsv")
 
 ```
 
@@ -571,7 +567,7 @@ justif_binary %>%
 ```{r}
 wide_sample_size_df <- wide_results %>% 
   left_join(distinct(wide_methodo, doi, n_itc, `anchored_yn`, paitc_type)) %>% 
-  select(anchored_yn, paitc_type, contains(c("n_ipd", "n_nonipd", "ess"))) %>%
+  select(doi, n_itc, anchored_yn, paitc_type, contains(c("n_ipd", "n_nonipd", "ess"))) %>%
   mutate(across(contains(c("n_ipd", "n_nonipd", "ess")), as.integer)) %>% 
   mutate(
     n_ipd_total = case_when(
@@ -598,6 +594,7 @@ wide_sample_size_df <- wide_results %>%
          rapport_ess_total = ess_total / n_ipd_total)
 
 long_sample_size_df <- wide_sample_size_df %>% 
+  select(-doi, -n_itc) %>% 
   pivot_longer(cols = !all_of(c("anchored_yn", "paitc_type"))) %>% 
   mutate(ipd_yn = case_when(
     grepl("total", name) ~ "Total",
@@ -678,23 +675,37 @@ wide_methodo_results  %>%
 ### Treatment effect estimates
 
 ```{r}
+# renaming_contrast <- c(
+#   "Incidence Rate Ratio" = "Rates: OR/RR/means ratio", 
+#   "Rate ratio" = "Rates: OR/RR/means ratio", 
+#   "OR" = "Rates: OR/RR/means ratio", 
+#   "RR" = "Rates: OR/RR/means ratio", 
+#   "Means Ratio" = "Rates: OR/RR/means ratio", 
+#   "Means difference" = "Means/medians difference", 
+#   "Median difference" = "Means/medians difference", 
+#   "RMST difference at 12 months" = "Means/medians difference",
+#   "Risk difference" = "Risk/Rate difference", 
+#   "Rate difference" = "Risk/Rate difference", 
+#   "HR" = "Hazard Ratio", 
+#   "Proportion difference" = "Proportion difference",
+#   "Proportions difference" = "Proportion difference"
+# )
+
 renaming_contrast <- c(
-  "Incidence Rate Ratio" = "Rates: OR/RR/means ratio", 
-  "Rate ratio" = "Rates: OR/RR/means ratio", 
-  "OR" = "Rates: OR/RR/means ratio", 
-  "RR" = "Rates: OR/RR/means ratio", 
-  "Means Ratio" = "Rates: OR/RR/means ratio", 
-  "Means difference" = "Means/medians difference", 
-  "Median difference" = "Means/medians difference", 
-  "RMST difference at 12 months" = "Means/medians difference",
-  "Risk difference" = "Risk/Rate difference", 
-  "Rate difference" = "Risk/Rate difference", 
-  "HR" = "Hazard Ratio", 
-  "Proportion difference" = "Proportion difference",
-  "Proportions difference" = "Proportion difference"
+  "Incidence Rate Ratio" = "Rates/ratio", 
+  "Rate ratio" = "Rates/ratio", 
+  "OR" = "Rates/ratio", 
+  "RR" = "Rates/ratio", 
+  "Means Ratio" = "Rates/ratio", 
+  "Means difference" = "Difference", 
+  "Median difference" = "Difference", 
+  "RMST difference at 12 months" = "Difference",
+  "Risk difference" = "Difference", 
+  "Rate difference" = "Difference", 
+  "HR" = "Rates/ratio", 
+  "Proportion difference" = "Difference",
+  "Proportions difference" = "Difference"
 )
-
-
 
 wide_results_outcome <- wide_methodo_results %>% 
    mutate(contrast = replace_in_vec(contrast, renaming_contrast)) %>% 
@@ -754,6 +765,7 @@ wide_results_outcome %>%
   geom_jitter(width = 0.1) +
   geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
   facet_wrap(~ contrast, scales = "free_y") +
+  scale_y_continuous(trans = "log10") +
   labs(title = "Treatment contrast effects: point estimates",
        subtitle = "IPD is numerator for rates/ratio, left side differences",
        y = "Estimate",
@@ -763,12 +775,19 @@ wide_results_outcome %>%
 
 ```
 
+```{r}
+wide_results_outcome %>% 
+  left_join(ties_w_pharma_df, by = "doi") %>% 
+  filter(adjustment == "adjusted", significant == "TRUE", ties_pharma, !benefit_ipd) %>% 
+  View()
+```
+
 
 ## Results benefit IPD
 ```{r, results='asis'}
 wide_results_outcome %>% 
   left_join(ties_w_pharma_df, by = "doi") %>% 
-  tableby(benefit_ipd ~ significant, strata = ties_pharma, data = .) %>% 
+  tableby(benefit_ipd ~ significant, strata = adjustment, data = .) %>% 
   summary(title = "Treatment point estimate benefits IPD") 
 ```
 
@@ -819,16 +838,6 @@ outcomes_df %>%
   geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black") +
   # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
   scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
-  # geom_text(data = labelling_data,
-  #           aes(label = left_side, x = (effect_cutoff + left_x) / 2, y = max_num_comparison *1.2),
-  #           inherit.aes = FALSE, 
-  #           size = 5) +
-  # geom_text(data = labelling_data,
-  #           aes(label = right_side, x = (effect_cutoff + right_x) / 2, y = max_num_comparison *1.2),
-  #           inherit.aes = FALSE, 
-  #           size = 5) +
-  # annotate("text", -Inf, Inf, label = "Favors IPD", hjust = -1, vjust = 2, size = 5) +
-  # annotate("text", -Inf, Inf, label = "Favors non-IPD", hjust = -2.5, vjust = 2, size = 5) +
   facet_wrap(~ contrast, scales = "free") + 
   labs(title = "PAITC treatment effects point estimates", 
        subtitle = "Left side of vertical dashed line favors IPD", 
@@ -848,6 +857,117 @@ outcomes_df %>%
         legend.box = "vertical") + 
   guides(shape = guide_legend(override.aes = list(color = "black")))
 ```
+
+
+
+```{r }
+outcomes_df %>% 
+  left_join(
+    wide_sample_size_df %>% 
+      mutate(n_ipd_total = ifelse(anchored_yn == "Yes", n_ipd_total/2, n_ipd_total)) %>% 
+      select(doi, n_itc, n_ipd_total), 
+    by = c("doi", "n_itc")
+  ) %>% 
+  filter(adjustment == "adjusted") %>% 
+  ggplot(aes(x = adjustment,
+             y = effect_benefit,
+             # shape = adjustment
+             )) + 
+  # geom_violin() +
+  geom_boxplot(fill = "white", outlier.shape = NA, width = 0.5) +
+  geom_point(aes(x = n_ipd_total, color = significant_char), size = 1, width = 0.05, alpha = 0.5) +
+  geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
+  # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
+  # scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
+  facet_wrap( ~ contrast, scales = "free", ncol = 1) + 
+  coord_flip() + 
+  labs(title = "PAITC treatment effects point estimates", 
+       subtitle = "Left side of vertical dashed line favors IPD treatment", 
+       color = "5% significance level", 
+       shape = "Adjustment",
+         y = "Relative treatment effect estimate", 
+       x = NULL) +
+  theme(legend.position = "right",
+        # text = element_text(size = 14),
+        axis.text.y = element_blank(),
+        # axis.text = element_text(size = 14), 
+        # axis.title = element_text(size = 16), 
+        # plot.title = element_text(size = 20), 
+        plot.subtitle = element_text(face = c("bold.italic")), 
+        # legend.text = element_text(size = 16),
+        legend.box.just = "top",
+        legend.box = "horizontal") + 
+  guides(shape = guide_legend(override.aes = list(color = "black")))
+```
+
+```{r}
+outcomes_df %>% 
+  filter(adjustment == "adjusted") %>% 
+  mutate(contrast = factor(contrast, 
+                           levels = c("Difference", "Rates/ratio"), 
+                           labels = c("Mesure de l'effet : différence absolue", 
+                                      "Mesure de l'effet : rates/ratio"))) %>% 
+  ggplot(aes(x = adjustment,
+             y = effect_benefit,
+             # shape = adjustment
+             )) + 
+  geom_boxplot(fill = "white", outlier.shape = NA, width = 0.5) +
+  geom_jitter(aes(color = significant_char), size = 1, width = 0.05, alpha = 0.7) +
+  geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
+  # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
+  # scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
+  facet_wrap( ~ contrast, scales = "free", ncol = 1) + 
+  coord_flip() + 
+  scale_color_discrete(labels = c("Non", "Inconnu", "Oui")) + 
+  labs(title = "Estimation de l'effet de traitement, ajustée via PAITC", 
+       subtitle = "Côté gauche de la ligne verticale en pointillée montre un \neffet en faveur du traitement avec données individuelles", 
+       color = "Effet statistiquement \nsignificatif (alpha = 5%)", 
+       y = "Effet de traitement relatif", 
+       x = NULL) +
+  theme(legend.position = "right",
+        axis.text.y = element_blank(),
+        plot.subtitle = element_text(face = c("bold.italic")), 
+        legend.box.just = "top",
+        legend.box = "horizontal") + 
+  guides(shape = guide_legend(override.aes = list(color = "black")))
+ggsave(filename = "boxplot_effet_fr.png")
+```
+
+
+```{r}
+outcomes_df %>% 
+  filter(adjustment == "adjusted") %>% 
+  mutate(contrast = factor(contrast, 
+                           levels = c("Difference", "Rates/ratio"), 
+                           labels = c("Mesure de l'effet : différence absolue", 
+                                      "Mesure de l'effet : rates/ratio"))) %>% 
+  ggplot(aes(x = adjustment,
+             y = effect_benefit,
+             # shape = adjustment
+             )) + 
+  geom_boxplot(fill = "white", outlier.shape = NA, width = 0.5) +
+  geom_jitter(aes(color = significant_char), size = 1, width = 0.05, alpha = 0.7) +
+  geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
+  # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
+  # scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
+  facet_wrap( ~ contrast, scales = "free", ncol = 1) + 
+  coord_flip() + 
+  scale_color_discrete(labels = c("Non", "Inconnu", "Oui")) + 
+  labs(title = "Estimation de l'effet de traitement, ajustée via PAITC", 
+       subtitle = "Côté gauche de la ligne verticale en pointillée montre un \neffet en faveur du traitement avec données individuelles", 
+       color = "Effet statistiquement \nsignificatif (alpha = 5%)", 
+       y = "Effet de traitement relatif", 
+       x = NULL) +
+  theme(legend.position = "right",
+        axis.text.y = element_blank(),
+        plot.subtitle = element_text(face = c("bold.italic")), 
+        legend.box.just = "top",
+        legend.box = "horizontal") + 
+  guides(shape = guide_legend(override.aes = list(color = "black")))
+ggsave(filename = "boxplot_effet_fr.png")
+```
+
+
 
 ```{r, fig.width=14, fig.height=16}
 outcomes_plot <- outcomes_df %>% 

@@ -4865,7 +4865,7 @@ doi	section	n_itc	study_number	questions	answer
 10.1016/j.msard.2021.102972	methodology	1	NA	ttt_effect_modifiers_yn	Yes
 10.1016/j.msard.2021.102972	methodology	1	NA	weights_model_yn	No
 10.1016/j.msard.2021.102972	methodology	1	NA	scale_choice_yn	No
-10.1016/j.msard.2021.102972	results	1	NA	contrast	Rate difference
+10.1016/j.msard.2021.102972	results	1	NA	contrast	OR
 10.1016/j.msard.2021.102972	results	1	NA	direction_benefit	inferior
 10.1016/j.msard.2021.102972	results	1	NA	n_nonipd_ttt	2290
 10.1016/j.msard.2021.102972	results	1	NA	n_ipd_ttt	880
@@ -4887,7 +4887,7 @@ doi	section	n_itc	study_number	questions	answer
 10.1016/j.msard.2021.102972	results	1	NA	n_ipd_anchor	NA
 10.1016/j.msard.2021.102972	results	1	NA	ess_anchor	NA
 10.1016/j.msard.2021.102972	results	1	NA	p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX	NA
-10.1016/j.msard.2021.102972	results	1	NA	effect_cutoff	0
+10.1016/j.msard.2021.102972	results	1	NA	effect_cutoff	1
 10.1016/j.msard.2021.102972	results	1	NA	adjusted_lb_ci	0.62
 10.1016/j.msard.2021.102972	results	1	NA	adjusted_ub_ci	0.84
 10.1016/j.msard.2021.102972	results	1	NA	adjusted_significant	TRUE
@@ -7612,9 +7612,9 @@ doi	section	n_itc	study_number	questions	answer
 10.1080/14760584.2021.1994858	results	1	NA	list_covariates	Age, Sex
 10.1080/14760584.2021.1994858	results	1	NA	effect_direction	Numerator if ratio, or left side if difference
 10.1080/14760584.2021.1994858	results	1	NA	unadjusted_effect	0.89
-10.1080/14760584.2021.1994858	results	1	NA	unadjusted_pval_char	<0.001
+10.1080/14760584.2021.1994858	results	1	NA	unadjusted_pval_char	[0.74;1.07]
 10.1080/14760584.2021.1994858	results	1	NA	adjusted_effect	0.91
-10.1080/14760584.2021.1994858	results	1	NA	adjusted_pval_char	<0.001
+10.1080/14760584.2021.1994858	results	1	NA	adjusted_pval_char	[0.76;1.10]
 10.1080/14760584.2021.1994858	results	1	NA	geographical region	NA
 10.1080/14760584.2021.1994858	results	1	NA	n_ipd_total	3033
 10.1080/14760584.2021.1994858	results	1	NA	ess_total	1710
@@ -7624,10 +7624,12 @@ doi	section	n_itc	study_number	questions	answer
 10.1080/14760584.2021.1994858	results	1	NA	ess_anchor	NA
 10.1080/14760584.2021.1994858	results	1	NA	p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX	NA
 10.1080/14760584.2021.1994858	results	1	NA	effect_cutoff	1
-10.1080/14760584.2021.1994858	results	1	NA	unadjusted_pval	<0.001
-10.1080/14760584.2021.1994858	results	1	NA	unadjusted_significant	TRUE
-10.1080/14760584.2021.1994858	results	1	NA	adjusted_pval	<0.001
-10.1080/14760584.2021.1994858	results	1	NA	adjusted_significant	TRUE
+10.1080/14760584.2021.1994858	results	1	NA	unadjusted_lb_ci	0.74
+10.1080/14760584.2021.1994858	results	1	NA	unadjusted_ub_ci	1.07
+10.1080/14760584.2021.1994858	results	1	NA	unadjusted_significant	FALSE
+10.1080/14760584.2021.1994858	results	1	NA	adjusted_lb_ci	0.76
+10.1080/14760584.2021.1994858	results	1	NA	adjusted_ub_ci	1.1
+10.1080/14760584.2021.1994858	results	1	NA	adjusted_significant	FALSE
 10.1080/14760584.2021.1994858	study_information	NA	1	Patient-level data used	Yes
 10.1080/14760584.2021.1994858	study_information	NA	1	Clinical Trial	Yes
 10.1080/14760584.2021.1994858	study_information	NA	1	NCT (only for clinical trial registered on clinicaltrials.gov)	NCT03950622

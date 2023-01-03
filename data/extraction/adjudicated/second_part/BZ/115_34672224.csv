@@ -33,7 +33,7 @@ doi;PMID;section;ITC num;Ind studies num;questions;reviewer 1;reviewer 2;decisio
 10.1080/14760584.2021.1994858;34672224;study_information;;4;Number of treatment arms (clinical trial only);;;2 or more;TRUE;BZ;;
 10.1080/14760584.2021.1994858;34672224;methodology;1;;Treatment name 1;15-valent pneumococcal conjugate vaccine;v114 (vaxneuvance, a 15-valent pneumococcal conjugate vaccine);15-valent pneumococcal conjugate vaccine;FALSE;BZ;"Don't report the ESS for each arm, but globally for the whole reweighted IPD arms: 1710. The number reported in Table 1 are just the sum of the weights, not the ESS
 
-Not any outcome that stands out, but outcomes reported for every STs tested, without any pooled estimate. Therefore the first one reported in the results text happens to be ST4: 0.89 <0.001 (**one sided pvalue**); 0.91 <0.001";"Résultat du serotype 1
+Not any outcome that stands out, but outcomes reported for every STs tested, without any pooled estimate. Therefore the first one reported in the results text happens to be ST4: 0.89 <0.001 (**one sided pvalue**); 0.91 <0.001";"Rï¿½sultat du serotype 1
 ESS IPD (2 arms) = 1710"
 10.1080/14760584.2021.1994858;34672224;methodology;1;;Study 'number(s)' for treatment 1;;;"1;2;3";TRUE;BZ;;
 10.1080/14760584.2021.1994858;34672224;methodology;1;;Treatment name 2;20-valent pneumococcal conjugate vaccine;pcv20 (prevnar 20, a 20-valent pneumococcal conjugate vaccine);20-valent pneumococcal conjugate vaccine;FALSE;BZ;;
@@ -60,6 +60,6 @@ ESS IPD (2 arms) = 1710"
 10.1080/14760584.2021.1994858;34672224;results;1;;Primary outcome: treatment effect contrast;Means Ratio;GMT ratios (Geometric mean rate ratio);Means Ratio;FALSE;BZ;;
 10.1080/14760584.2021.1994858;34672224;results;1;;Direction of the treatment effect contrast: IPD treatment is:;;;Numerator if ratio, or left side if difference;TRUE;BZ;;
 10.1080/14760584.2021.1994858;34672224;results;1;;Primary outcome: unadjusted treatment effect;0.89;1.17;0.89;FALSE;BZ;serotype 4 instead of 1;
-10.1080/14760584.2021.1994858;34672224;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;<0.001;TRUE;BZ;;
+10.1080/14760584.2021.1994858;34672224;results;1;;p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY]);;;"[0.74;1.07]";TRUE;BZ;;
 10.1080/14760584.2021.1994858;34672224;results;1;;Primary outcome: adjusted treatment effect;0.91;1.19;0.91;FALSE;BZ;serotype 4 instead of 1;
-10.1080/14760584.2021.1994858;34672224;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;<0.001;TRUE;BZ;;
+10.1080/14760584.2021.1994858;34672224;results;1;;"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])";;;"[0.76;1.10]";TRUE;BZ;;

@@ -28,10 +28,10 @@ second_part_DH <- lapply(X = files_DH,
 
 second_part_DH %>% write_csv(file.path(dir_data, "extraction/adjudicated/second_part/DH_raw.csv"))
 
-
-file_ASL <- lapply(list.files("data/extraction/to_review/new_adjudication/ASL", full.names = TRUE, pattern = ".csv"),
-                   FUN = read_csv2,
-                   col_types = c("ccccccccccccc")) %>%
-  bind_rows()
-
-write_csv(file_ASL, "C:/Users/aserret-larmande/git_repos/paic_literature_review/data/extraction/to_review/new_adjudication/file_ASL.csv")
+#
+# file_ASL <- lapply(list.files("data/extraction/to_review/new_adjudication/ASL", full.names = TRUE, pattern = ".csv"),
+#                    FUN = read_csv2,
+#                    col_types = c("ccccccccccccc")) %>%
+#   bind_rows()
+#
+# write_csv(file_ASL, "C:/Users/aserret-larmande/git_repos/paic_literature_review/data/extraction/to_review/new_adjudication/file_ASL.csv")

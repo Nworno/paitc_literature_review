@@ -1,4 +1,4 @@
-Yes	No	condition	doi_pair_1	doi_pair_2	similar	
+Yes	No	condition	doi_pair_1	doi_pair_2	opposite	
 Glucagon-like peptide-1 (GLP-1) analogues	Glucagon-like peptide-1 (GLP-1) analogues	Type 2 diabetes mellitus	10.1002/edm2.259	10.1111/dom.14497	No	
 Glucagon-like peptide-1 (GLP-1) analogues	Glucagon-like peptide-1 (GLP-1) analogues	Type 2 diabetes mellitus	10.1002/edm2.259	10.1210/clinem/dgab905	No	
 Other protein kinase inhibitors	Other protein kinase inhibitors	Malignant neoplasm of liver and intrahepatic bile ducts	10.1007/s00432-021-03602-w	10.1007/s12325-020-01378-y	Yes	
@@ -20,73 +20,73 @@ Blood coagulation factors	Blood coagulation factors	Hereditary factor VIII defic
 Blood coagulation factors	Blood coagulation factors	Hereditary factor VIII deficiency	10.1007/s12325-021-01853-0	10.2147/jbm.s206806	No	
 Blood coagulation factors	Blood coagulation factors	Hereditary factor VIII deficiency	10.1007/s12325-021-01853-0	10.2147/jbm.s321288	No	
 Anti-androgens	Anti-androgens	Malignant neoplasm of prostate	10.1007/s12325-021-01885-6	10.1097/ju.0000000000001767	Yes	
-Other immunosuppressants	Selective immunosuppressants	Multiple sclerosis	10.1007/s40263-021-00805-0	10.1080/03007995.2016.1248380		
-Interleukin inhibitors	Tumor necrosis factor alpha (TNF-a) inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.1007/s40744-018-0106-6		
-Interleukin inhibitors	Tumor necrosis factor alpha (TNF-a) inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.2217/cer-2018-0141		
-Interleukin inhibitors	Tumor necrosis factor alpha (TNF-a) inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.5152/eurjrheum.2019.19057		
-Tumor necrosis factor alpha (TNF-a) inhibitors	Interleukin inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.1007/s40744-018-0106-6		
-Selective immunosuppressants	Selective immunosuppressants	Other rheumatoid arthritis	10.1007/s40744-020-00257-w	10.1136/rmdopen-2019-001131		
-Vascular endothelial growth factor receptor (VEGFR) tyrosine kinase inhibitors	Mammalian target of rapamycin (mTOR) kinase inhibitors	"Malignant neoplasm of kidney, except renal pelvis"	10.1016/j.clinthera.2015.09.013	10.1186/s12885-018-5157-0		
-Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.1016/j.clinthera.2015.12.017	10.2217/cer.15.33		
-Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.1016/j.clinthera.2015.12.017	10.2217/cer.15.49		
-Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.1016/j.clinthera.2015.12.017	10.2217/cer.15.69		
-Monoclonal antibodies	Other immunosuppressants	Multiple myeloma and malignant plasma cell neoplasms	10.1016/j.clinthera.2017.08.010	10.1634/theoncologist.2017-0103		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1016/j.jtho.2016.05.029	10.1080/03007995.2018.1520696		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1016/j.jtho.2016.05.029	10.1080/03007995.2018.1541443		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1016/j.jtho.2016.05.029	10.1080/13696998.2018.1443111		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1016/j.jtho.2016.05.029	10.2217/fon-2021-1102		
-Monoclonal antibodies	Monoclonal antibodies	Malignant neoplasm of bronchus and lung	10.1016/j.lungcan.2021.03.020	10.2217/imt-2021-0273		
-Monoclonal antibodies	Monoclonal antibodies	Malignant neoplasm of bronchus and lung	10.1016/j.lungcan.2021.03.020	10.3390/cancers12123648		
+Other immunosuppressants	Selective immunosuppressants	Multiple sclerosis	10.1007/s40263-021-00805-0	10.1080/03007995.2016.1248380	No	
+Interleukin inhibitors	Tumor necrosis factor alpha (TNF-a) inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.1007/s40744-018-0106-6	Yes	
+Interleukin inhibitors	Tumor necrosis factor alpha (TNF-a) inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.2217/cer-2018-0141	No	
+Interleukin inhibitors	Tumor necrosis factor alpha (TNF-a) inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.5152/eurjrheum.2019.19057	No	
+Tumor necrosis factor alpha (TNF-a) inhibitors	Interleukin inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.1007/s40744-018-0106-6	Yes	
+Selective immunosuppressants	Selective immunosuppressants	Other rheumatoid arthritis	10.1007/s40744-020-00257-w	10.1136/rmdopen-2019-001131	No	
+Vascular endothelial growth factor receptor (VEGFR) tyrosine kinase inhibitors	Mammalian target of rapamycin (mTOR) kinase inhibitors	"Malignant neoplasm of kidney, except renal pelvis"	10.1016/j.clinthera.2015.09.013	10.1186/s12885-018-5157-0	Yes	not the same trials though
+Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.1016/j.clinthera.2015.12.017	10.2217/cer.15.33	No	
+Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.1016/j.clinthera.2015.12.017	10.2217/cer.15.49	No	
+Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.1016/j.clinthera.2015.12.017	10.2217/cer.15.69	No	
+Monoclonal antibodies	Other immunosuppressants	Multiple myeloma and malignant plasma cell neoplasms	10.1016/j.clinthera.2017.08.010	10.1634/theoncologist.2017-0103	Yes	not the same trials though
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1016/j.jtho.2016.05.029	10.1080/03007995.2018.1520696	No	
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1016/j.jtho.2016.05.029	10.1080/03007995.2018.1541443	No	
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1016/j.jtho.2016.05.029	10.1080/13696998.2018.1443111	Yes	not the same trials though
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1016/j.jtho.2016.05.029	10.2217/fon-2021-1102	No	
+Monoclonal antibodies	Monoclonal antibodies	Malignant neoplasm of bronchus and lung	10.1016/j.lungcan.2021.03.020	10.2217/imt-2021-0273	No	
+Monoclonal antibodies	Monoclonal antibodies	Malignant neoplasm of bronchus and lung	10.1016/j.lungcan.2021.03.020	10.3390/cancers12123648	No	
 Selective immunosuppressants	Selective immunosuppressants	Multiple sclerosis	10.1016/j.msard.2021.102972	10.1080/03007995.2020.1747999	No	
 Selective immunosuppressants	Selective immunosuppressants	Multiple sclerosis	10.1016/j.msard.2021.102972	10.2217/cer-2019-0169	No	
-Selective immunosuppressants	Other immunosuppressants	Multiple sclerosis	10.1007/s12325-014-0167-z	10.1080/03007995.2016.1248380		
-Selective immunosuppressants	Other immunosuppressants	Multiple sclerosis	10.1007/s40263-021-00805-0	10.1080/03007995.2016.1248380		
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2018.1510225	10.1080/03007995.2019.1605239		
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2018.1510225	10.1080/03007995.2021.1896489		
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2018.1510225	10.1185/03007995.2011.576238		
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2018.1510225	10.1185/03007995.2014.977992		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1520696	10.1080/03007995.2018.1541443		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1520696	10.1080/13696998.2018.1443111		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1520696	10.2217/fon-2021-1102		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1541443	10.1080/13696998.2018.1443111		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1541443	10.2217/fon-2021-1102		
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2019.1605239	10.1080/03007995.2021.1896489		
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2019.1605239	10.1185/03007995.2011.576238		
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2019.1605239	10.1185/03007995.2014.977992		
+Selective immunosuppressants	Other immunosuppressants	Multiple sclerosis	10.1007/s12325-014-0167-z	10.1080/03007995.2016.1248380	Yes	
+Selective immunosuppressants	Other immunosuppressants	Multiple sclerosis	10.1007/s40263-021-00805-0	10.1080/03007995.2016.1248380	No	
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2018.1510225	10.1080/03007995.2019.1605239	No	
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2018.1510225	10.1080/03007995.2021.1896489	No	
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2018.1510225	10.1185/03007995.2011.576238	No	
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2018.1510225	10.1185/03007995.2014.977992	No	
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1520696	10.1080/03007995.2018.1541443	No	
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1520696	10.1080/13696998.2018.1443111	No	
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1520696	10.2217/fon-2021-1102	No	
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1541443	10.1080/13696998.2018.1443111	No	"Same analyses, but 10.1080/13696998.2018.1443111 is the economics one, published earlier than the efficacy one (10.1080/03007995.2018.1541443)"
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/03007995.2018.1541443	10.2217/fon-2021-1102	No	
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2019.1605239	10.1080/03007995.2021.1896489	No	
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2019.1605239	10.1185/03007995.2011.576238	No	
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2019.1605239	10.1185/03007995.2014.977992	No	
 Selective immunosuppressants	Selective immunosuppressants	Multiple sclerosis	10.1080/03007995.2020.1747999	10.2217/cer-2019-0169	No	
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2021.1896489	10.1185/03007995.2011.576238		
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2021.1896489	10.1185/03007995.2014.977992		
-Other drugs for disorders of the musculo-skeletal system	Other drugs for disorders of the musculo-skeletal system	Spinal muscular atrophy and related syndromes	10.1080/03007995.2021.1947216	10.2217/cer-2021-0216		
-Interleukin inhibitors	Interleukin inhibitors	Psoriasis	10.1080/09546634.2020.1747592	10.1111/bjd.16140		
-Interleukin inhibitors	Interleukin inhibitors	Psoriasis	10.1080/09546634.2020.1747592	10.2147/ptt.s326121		
-NA	NA	Multiple myeloma and malignant plasma cell neoplasms	10.1080/10428194.2019.1675881	10.1080/10428194.2019.1682571		
-ANTINEOPLASTIC AGENTS	Other antineoplastic agents	Non-follicular lymphoma	10.1080/10428194.2021.2010069	10.1186/s13045-021-01144-9		
-Monoclonal antibodies	Proteasome inhibitors	Multiple myeloma and malignant plasma cell neoplasms	10.1080/10428194.2022.2047962	10.2217/imt-2020-0266		
-Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/13696998.2018.1443111	10.2217/fon-2021-1102		
-Interleukin inhibitors	Interleukin inhibitors	Psoriasis	10.1111/bjd.16140	10.2147/ptt.s326121		
-Other systemic drugs for obstructive airway diseases	Other systemic drugs for obstructive airway diseases	Asthma	10.1111/cea.13561	10.1183/13993003.01393-2018		
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2021.1896489	10.1185/03007995.2011.576238	No	
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1080/03007995.2021.1896489	10.1185/03007995.2014.977992	No	
+Other drugs for disorders of the musculo-skeletal system	Other drugs for disorders of the musculo-skeletal system	Spinal muscular atrophy and related syndromes	10.1080/03007995.2021.1947216	10.2217/cer-2021-0216	No	
+Interleukin inhibitors	Interleukin inhibitors	Psoriasis	10.1080/09546634.2020.1747592	10.1111/bjd.16140	No	
+Interleukin inhibitors	Interleukin inhibitors	Psoriasis	10.1080/09546634.2020.1747592	10.2147/ptt.s326121	No	
+NA	NA	Multiple myeloma and malignant plasma cell neoplasms	10.1080/10428194.2019.1675881	10.1080/10428194.2019.1682571	No	
+ANTINEOPLASTIC AGENTS	Other antineoplastic agents	Non-follicular lymphoma	10.1080/10428194.2021.2010069	10.1186/s13045-021-01144-9	No	
+Monoclonal antibodies	Proteasome inhibitors	Multiple myeloma and malignant plasma cell neoplasms	10.1080/10428194.2022.2047962	10.2217/imt-2020-0266	No	
+Anaplastic lymphoma kinase (ALK) inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.1080/13696998.2018.1443111	10.2217/fon-2021-1102	No	
+Interleukin inhibitors	Interleukin inhibitors	Psoriasis	10.1111/bjd.16140	10.2147/ptt.s326121	No	
+Other systemic drugs for obstructive airway diseases	Other systemic drugs for obstructive airway diseases	Asthma	10.1111/cea.13561	10.1183/13993003.01393-2018	No	Identical comparisons but with different outcomes
 Glucagon-like peptide-1 (GLP-1) analogues	Glucagon-like peptide-1 (GLP-1) analogues	Type 2 diabetes mellitus	10.1111/dom.14497	10.1210/clinem/dgab905	No	"semaglutide 1.0 left, and 2.0 right, vs same nonIPD comparator, and same teams"
-Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1185/03007995.2011.576238	10.1185/03007995.2014.977992		
-Other protein kinase inhibitors	Mammalian target of rapamycin (mTOR) kinase inhibitors	Malignant neoplasm of pancreas	10.1186/2162-3619-2-32	10.2217/cer-2018-0020		
-Mammalian target of rapamycin (mTOR) kinase inhibitors	Vascular endothelial growth factor receptor (VEGFR) tyrosine kinase inhibitors	"Malignant neoplasm of kidney, except renal pelvis"	10.1016/j.clinthera.2015.09.013	10.1186/s12885-018-5157-0		
-Other antineoplastic agents	ANTINEOPLASTIC AGENTS	Non-follicular lymphoma	10.1080/10428194.2021.2010069	10.1186/s13045-021-01144-9		
-Other immunosuppressants	Monoclonal antibodies	Multiple myeloma and malignant plasma cell neoplasms	10.1016/j.clinthera.2017.08.010	10.1634/theoncologist.2017-0103		
-Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s163478	10.2147/cmar.s325043		
-Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s163478	10.2217/cer-2020-0272		
-Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s163478	10.2217/cer-2021-0221		
-Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s325043	10.2217/cer-2020-0272		
-Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s325043	10.2217/cer-2021-0221		
+Bcr-abl tyrosine kinase inhibitors	Bcr-abl tyrosine kinase inhibitors	Myeloid leukaemia	10.1185/03007995.2011.576238	10.1185/03007995.2014.977992	No	Identical comparisons but with different outcomes
+Other protein kinase inhibitors	Mammalian target of rapamycin (mTOR) kinase inhibitors	Malignant neoplasm of pancreas	10.1186/2162-3619-2-32	10.2217/cer-2018-0020	Yes	
+Mammalian target of rapamycin (mTOR) kinase inhibitors	Vascular endothelial growth factor receptor (VEGFR) tyrosine kinase inhibitors	"Malignant neoplasm of kidney, except renal pelvis"	10.1016/j.clinthera.2015.09.013	10.1186/s12885-018-5157-0	Yes	not the same trials though
+Other antineoplastic agents	ANTINEOPLASTIC AGENTS	Non-follicular lymphoma	10.1080/10428194.2021.2010069	10.1186/s13045-021-01144-9	No	
+Other immunosuppressants	Monoclonal antibodies	Multiple myeloma and malignant plasma cell neoplasms	10.1016/j.clinthera.2017.08.010	10.1634/theoncologist.2017-0103	Yes	not the same trials though
+Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s163478	10.2147/cmar.s325043	No	Identical comparisons from different trials
+Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s163478	10.2217/cer-2020-0272	Yes	not the same trials though
+Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s163478	10.2217/cer-2021-0221	No	
+Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s325043	10.2217/cer-2020-0272	Yes	not the same trials though
+Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2147/cmar.s325043	10.2217/cer-2021-0221	No	
 Blood coagulation factors	Blood coagulation factors	Hereditary factor VIII deficiency	10.2147/jbm.s104074	10.2147/jbm.s206806	No	
 Blood coagulation factors	Blood coagulation factors	Hereditary factor VIII deficiency	10.2147/jbm.s104074	10.2147/jbm.s321288	No	
 Blood coagulation factors	Blood coagulation factors	Hereditary factor VIII deficiency	10.2147/jbm.s206806	10.2147/jbm.s321288	No	
-Mammalian target of rapamycin (mTOR) kinase inhibitors	Other protein kinase inhibitors	Malignant neoplasm of pancreas	10.1186/2162-3619-2-32	10.2217/cer-2018-0020		
-Tumor necrosis factor alpha (TNF-a) inhibitors	Interleukin inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.2217/cer-2018-0141		
-Anaplastic lymphoma kinase (ALK) inhibitors	Other protein kinase inhibitors	Malignant neoplasm of bronchus and lung	10.2217/cer-2020-0063	10.2217/fon-2021-1102		
-Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2217/cer-2020-0272	10.2217/cer-2021-0221		
-Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.2217/cer.15.33	10.2217/cer.15.49		
-Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.2217/cer.15.33	10.2217/cer.15.69		
-Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.2217/cer.15.49	10.2217/cer.15.69		
-Other protein kinase inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.2217/cer-2020-0063	10.2217/fon-2021-1102		
-Proteasome inhibitors	Monoclonal antibodies	Multiple myeloma and malignant plasma cell neoplasms	10.1080/10428194.2022.2047962	10.2217/imt-2020-0266		
-Monoclonal antibodies	Monoclonal antibodies	Malignant neoplasm of bronchus and lung	10.2217/imt-2021-0273	10.3390/cancers12123648		
-Tumor necrosis factor alpha (TNF-a) inhibitors	Interleukin inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.5152/eurjrheum.2019.19057		
+Mammalian target of rapamycin (mTOR) kinase inhibitors	Other protein kinase inhibitors	Malignant neoplasm of pancreas	10.1186/2162-3619-2-32	10.2217/cer-2018-0020	Yes	same as line 70 ...
+Tumor necrosis factor alpha (TNF-a) inhibitors	Interleukin inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.2217/cer-2018-0141	No	
+Anaplastic lymphoma kinase (ALK) inhibitors	Other protein kinase inhibitors	Malignant neoplasm of bronchus and lung	10.2217/cer-2020-0063	10.2217/fon-2021-1102	Yes	
+Cyclin-dependent kinase (CDK) inhibitors	Cyclin-dependent kinase (CDK) inhibitors	Malignant neoplasm of breast	10.2217/cer-2020-0272	10.2217/cer-2021-0221	No	identical comparisons with different outcomes
+Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.2217/cer.15.33	10.2217/cer.15.49	No	
+Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.2217/cer.15.33	10.2217/cer.15.69	No	Identical comparisons but with different populations
+Antivirals for treatment of HCV infections	Antivirals for treatment of HCV infections	Chronic viral hepatitis	10.2217/cer.15.49	10.2217/cer.15.69	No	
+Other protein kinase inhibitors	Anaplastic lymphoma kinase (ALK) inhibitors	Malignant neoplasm of bronchus and lung	10.2217/cer-2020-0063	10.2217/fon-2021-1102	Yes	same as line 84
+Proteasome inhibitors	Monoclonal antibodies	Multiple myeloma and malignant plasma cell neoplasms	10.1080/10428194.2022.2047962	10.2217/imt-2020-0266	No	
+Monoclonal antibodies	Monoclonal antibodies	Malignant neoplasm of bronchus and lung	10.2217/imt-2021-0273	10.3390/cancers12123648	No	
+Tumor necrosis factor alpha (TNF-a) inhibitors	Interleukin inhibitors	Psoriasis	10.1007/s40744-017-0070-6	10.5152/eurjrheum.2019.19057	No	
