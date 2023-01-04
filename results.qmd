@@ -703,8 +703,8 @@ renaming_contrast <- c(
   "Risk difference" = "Difference", 
   "Rate difference" = "Difference", 
   "HR" = "Rates/ratio", 
-  "Proportion difference" = "Difference",
-  "Proportions difference" = "Difference"
+  "Proportion difference" = "Proportion difference",
+  "Proportions difference" = "Proportion difference"
 )
 
 wide_results_outcome <- wide_methodo_results %>% 
@@ -862,12 +862,6 @@ outcomes_df %>%
 
 ```{r }
 outcomes_df %>% 
-  left_join(
-    wide_sample_size_df %>% 
-      mutate(n_ipd_total = ifelse(anchored_yn == "Yes", n_ipd_total/2, n_ipd_total)) %>% 
-      select(doi, n_itc, n_ipd_total), 
-    by = c("doi", "n_itc")
-  ) %>% 
   filter(adjustment == "adjusted") %>% 
   ggplot(aes(x = adjustment,
              y = effect_benefit,
@@ -875,8 +869,8 @@ outcomes_df %>%
              )) + 
   # geom_violin() +
   geom_boxplot(fill = "white", outlier.shape = NA, width = 0.5) +
-  geom_point(aes(x = n_ipd_total, color = significant_char), size = 1, width = 0.05, alpha = 0.5) +
-  geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
+  geom_jitter(aes(color = significant_char), size = 1, width = 0.05, alpha = 0.7) +
+ geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
   # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
   # scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
   facet_wrap( ~ contrast, scales = "free", ncol = 1) + 
@@ -901,36 +895,78 @@ outcomes_df %>%
 ```
 
 ```{r}
-outcomes_df %>% 
-  filter(adjustment == "adjusted") %>% 
+plot_layout <- outcomes_df %>%   
+  left_join(
+    wide_sample_size_df %>% 
+      mutate(n_ipd_total = ifelse(anchored_yn == "Yes", n_ipd_total/2, n_ipd_total)) %>% 
+      select(doi, n_itc, n_ipd_total), 
+    by = c("doi", "n_itc")
+  ) %>% 
+  filter(adjustment == "adjusted", 
+         contrast == "Rates/ratio") %>% 
   mutate(contrast = factor(contrast, 
                            levels = c("Difference", "Rates/ratio"), 
                            labels = c("Mesure de l'effet : différence absolue", 
                                       "Mesure de l'effet : rates/ratio"))) %>% 
-  ggplot(aes(x = adjustment,
-             y = effect_benefit,
-             # shape = adjustment
-             )) + 
-  geom_boxplot(fill = "white", outlier.shape = NA, width = 0.5) +
-  geom_jitter(aes(color = significant_char), size = 1, width = 0.05, alpha = 0.7) +
-  geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
-  # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
-  # scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
-  facet_wrap( ~ contrast, scales = "free", ncol = 1) + 
-  coord_flip() + 
-  scale_color_discrete(labels = c("Non", "Inconnu", "Oui")) + 
-  labs(title = "Estimation de l'effet de traitement, ajustée via PAITC", 
-       subtitle = "Côté gauche de la ligne verticale en pointillée montre un \neffet en faveur du traitement avec données individuelles", 
+  ggplot(aes(x = effect_benefit, y = n_ipd_total, color = significant_char)) + 
+  scale_x_continuous(trans = "log10",
+                     breaks = c(0.01, 0.1, 1, 10, 100),
+                     labels = c("0,01", "0,1", "1", "10", "100")) +
+  scale_y_continuous(trans = "log10") +
+  scale_color_manual(labels = c("Yes" = "Oui", "No" = "Non", "Unknown" = "Inconnu"),
+                       limits = c("Yes", "No", "Unknown"), 
+                       values = c("Yes" = "#E84646", "No" = "#65ADC2", "Unknown" = "#233B43")) +
+  labs(title = "Estimation de l'effet de traitement, ajustée via PAIC (rapports et ratio)", 
+       subtitle = "Côté gauche de la ligne verticale en pointillée montre un effet en faveur du traitement \navec données individuelles", 
        color = "Effet statistiquement \nsignificatif (alpha = 5%)", 
-       y = "Effet de traitement relatif", 
-       x = NULL) +
-  theme(legend.position = "right",
-        axis.text.y = element_blank(),
-        plot.subtitle = element_text(face = c("bold.italic")), 
+       y = "Taille échantillon bras traitement données ind.", 
+       x = "\nTaille d'effet") +
+  theme(legend.position = "bottom",
+        axis.title = element_text(size = 10),
+        legend.title = element_text(size = 10),
+        plot.subtitle = element_text(size = 10, face = c("bold.italic")), 
+        plot.title = element_text(size = 13),
         legend.box.just = "top",
-        legend.box = "horizontal") + 
-  guides(shape = guide_legend(override.aes = list(color = "black")))
-ggsave(filename = "boxplot_effet_fr.png")
+        legend.box = "vertical") + 
+  guides(shape = guide_legend(override.aes = list(color = "black"))) +
+  geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black")
+
+```
+
+
+```{r}
+plot_layout +
+  geom_point() +
+  coord_cartesian(xlim = c(0.01, 100), ylim = c(20, NA), clip = "off", expand = TRUE) +
+  annotate("text", label = "\nFavorise données agrégées", x = 10, y = 9, size = 3) +
+  geom_segment(aes(x = 1.2, xend = 90, y = 9, yend = 9),
+               size = 0.7,
+               arrow = arrow(length = unit(0.2,"cm")),
+               inherit.aes = FALSE) +
+  annotate("text", label = "\nFavorise données individuelles", x = 0.1, y = 9, size = 3) +
+  geom_segment(aes(x = 0.82, xend = 0.011, y = 9, yend = 9),
+               size = 0.7,
+               arrow = arrow(length = unit(0.2,"cm")),
+               inherit.aes = FALSE) +
+    theme(legend.position = "bottom",
+        axis.title = element_text(size = 10),
+        legend.title = element_text(size = 10),
+        plot.subtitle = element_blank(), 
+        plot.title = element_text(size = 13),
+        legend.box.just = "top",
+        legend.box = "vertical")
+
+ggsave("funnel_plot_ratio.jpg")
+```
+
+
+
+```{r}
+plot_layout +
+  geom_boxplot(aes(x = effect_benefit, y = significant_char), fill = "white", outlier.shape = NA, width = 0.2) +
+  scale_y_discrete()
+ggsave("test.png")
+
 ```
 
 

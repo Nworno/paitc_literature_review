@@ -182,7 +182,13 @@ wide_methodo_results_df <- long_results %>%
       # "1" and "0" as characters to be able to pivot into longer column at next step
       contrast %in% c("HR", "RR", "OR", "Means Ratio", "Incidence Rate Ratio", "Rate ratio") ~ "1",
       contrast %in% c("Means difference", "Median difference", "Rate difference", "Risk difference", "Proportions difference", "Proportion difference") ~ "0",
-      TRUE ~ NA_character_)
+      TRUE ~ NA_character_),
+    effect = case_when(
+      #TODO: to be checked if new data are eventually added, works so far because
+      # for the first extraction, all proportion differences are actually percentage differences
+      contrast %in% c("Proportions difference", "Proportion difference") ~ effect / 100,
+      TRUE ~ contrast
+    )
   ) %>%
   select(primary_outcome_name, outcome_short_name, primary_outcome_type, contrast, direction_benefit, everything())
 
