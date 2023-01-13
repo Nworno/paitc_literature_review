@@ -183,14 +183,25 @@ wide_methodo_results_df <- long_results %>%
       contrast %in% c("HR", "RR", "OR", "Means Ratio", "Incidence Rate Ratio", "Rate ratio") ~ "1",
       contrast %in% c("Means difference", "Median difference", "Rate difference", "Risk difference", "Proportions difference", "Proportion difference") ~ "0",
       TRUE ~ NA_character_),
-    effect = case_when(
-      #TODO: to be checked if new data are eventually added, works so far because
+    unadjusted_effect = case_when(
+      #TODO: to be checked if new data is eventually added, works so far because
       # for the first extraction, all proportion differences are actually percentage differences
-      contrast %in% c("Proportions difference", "Proportion difference") ~ effect / 100,
-      TRUE ~ contrast
+      contrast %in% c("Proportions difference", "Proportion difference") ~ as.character(as.numeric(unadjusted_effect) / 100),
+      TRUE ~ unadjusted_effect
+    ),
+    adjusted_effect = case_when(
+      #TODO: to be checked if new data is eventually added, works so far because
+      # for the first extraction, all proportion differences are actually percentage differences
+      contrast %in% c("Proportions difference", "Proportion difference") ~ as.character(as.numeric(adjusted_effect) / 100),
+      TRUE ~ adjusted_effect
     )
   ) %>%
-  select(primary_outcome_name, outcome_short_name, primary_outcome_type, contrast, direction_benefit, everything())
+  select(primary_outcome_name,
+         outcome_short_name,
+         primary_outcome_type,
+         contrast,
+         direction_benefit,
+         everything())
 
 # Creating the file to manually enter which directions makes a given treatment contrast effect beneficial
 if (FALSE) {
@@ -207,6 +218,7 @@ if (FALSE) {
 if (wide_methodo_results_df %>%
    filter(is.na(direction_benefit) & !is.na(contrast)) %>%
    nrow() != 0) {
+  # Reviewing cases with missing direction benefit
   View(
     wide_methodo_results_df %>%
       filter(is.na(direction_benefit) & !is.na(contrast)) %>%
@@ -231,7 +243,8 @@ stopifnot(all(!is.na(long_methodo_results_df$section)))
 
 # DM pvalues --------------------------------------------------------------
 
-pvalues_df <- long_results %>% filter(questions %in% c("unadjusted_pval_char", "adjusted_pval_char")) %>%
+pvalues_df <- long_results %>%
+  filter(questions %in% c("unadjusted_pval_char", "adjusted_pval_char")) %>%
   mutate(lb_ci = str_extract(answer, "(?<=\\[).+(?=;)"),
          ub_ci = str_extract(answer, "(?<=;).+(?=\\])"),
          # pattern compliqué pour prendre en compte les cas ou l'IC et la pvalues sont simultanément reportés
@@ -241,6 +254,11 @@ pvalues_df <- long_results %>% filter(questions %in% c("unadjusted_pval_char", "
   mutate(across(.cols = c(lb_ci, ub_ci), .fns = as.numeric),
          # a warning is expected here
          num_pval = as.numeric(pval))
+# %>%
+#   left_join(long_results %>%
+#               select(-study_number) %>%
+#               filter(questions %in% c("unadjusted_effect", "adjusted_effect"))) %>%
+
 
 tryCatch(
   stopifnot(pvalues_df %>%
@@ -265,6 +283,9 @@ significance_df <- left_join(pvalues_df, contrasts_df, by = c("doi", "n_itc")) %
     !is.na(lb_ci) & !is.na(ub_ci) ~ TRUE,
     TRUE ~ NA
   )) %>%
+  # mutate(z_value = qnorm(num_pval/2, lower.tail = FALSE),
+  #        se_effect = (abs(ub_ci - lb_ci)) / 2 * qnorm(0.975),
+  #        z_value = effect / se_effect) %>%
   mutate(adjustment = ifelse(grepl("^adjusted_", questions), "adjusted",
                              ifelse(grepl("^unadjusted_", questions), "unadjusted", NA))) %>%
   mutate(across(.cols = everything(), .fns = as.character)) %>%

@@ -3117,9 +3117,9 @@ doi	section	n_itc	study_number	questions	answer
 10.1007/s40744-020-00257-w	results	1	NA	n_covariates	7
 10.1007/s40744-020-00257-w	results	1	NA	list_covariates	Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity
 10.1007/s40744-020-00257-w	results	1	NA	effect_direction	Numerator if ratio, or left side if difference
-10.1007/s40744-020-00257-w	results	1	NA	unadjusted_effect	9.60
+10.1007/s40744-020-00257-w	results	1	NA	unadjusted_effect	0.096
 10.1007/s40744-020-00257-w	results	1	NA	unadjusted_pval_char	0.018
-10.1007/s40744-020-00257-w	results	1	NA	adjusted_effect	9.90
+10.1007/s40744-020-00257-w	results	1	NA	adjusted_effect	0.099
 10.1007/s40744-020-00257-w	results	1	NA	adjusted_pval_char	0.019
 10.1007/s40744-020-00257-w	results	1	NA	geographical region	NA
 10.1007/s40744-020-00257-w	results	1	NA	n_ipd_total	NA
@@ -3146,9 +3146,9 @@ doi	section	n_itc	study_number	questions	answer
 10.1007/s40744-020-00257-w	results	2	NA	n_covariates	7
 10.1007/s40744-020-00257-w	results	2	NA	list_covariates	Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Race/ethnicity
 10.1007/s40744-020-00257-w	results	2	NA	effect_direction	Numerator if ratio, or left side if difference
-10.1007/s40744-020-00257-w	results	2	NA	unadjusted_effect	12.70
+10.1007/s40744-020-00257-w	results	2	NA	unadjusted_effect	0.127
 10.1007/s40744-020-00257-w	results	2	NA	unadjusted_pval_char	0.008
-10.1007/s40744-020-00257-w	results	2	NA	adjusted_effect	12.90
+10.1007/s40744-020-00257-w	results	2	NA	adjusted_effect	0.129
 10.1007/s40744-020-00257-w	results	2	NA	adjusted_pval_char	0.011
 10.1007/s40744-020-00257-w	results	2	NA	geographical region	NA
 10.1007/s40744-020-00257-w	results	2	NA	n_ipd_total	NA
@@ -6151,7 +6151,7 @@ doi	section	n_itc	study_number	questions	answer
 10.1080/03007995.2021.1971182	results	1	NA	effect_direction	Numerator if ratio, or left side if difference
 10.1080/03007995.2021.1971182	results	1	NA	unadjusted_effect	NA
 10.1080/03007995.2021.1971182	results	1	NA	unadjusted_pval_char	NA
-10.1080/03007995.2021.1971182	results	1	NA	adjusted_effect	0.714
+10.1080/03007995.2021.1971182	results	1	NA	adjusted_effect	0.00714
 10.1080/03007995.2021.1971182	results	1	NA	adjusted_pval_char	<0.0001
 10.1080/03007995.2021.1971182	results	1	NA	geographical region	NA
 10.1080/03007995.2021.1971182	results	1	NA	n_ipd_total	NA
@@ -8751,7 +8751,7 @@ doi	section	n_itc	study_number	questions	answer
 10.1111/jdv.15369	results	1	NA	effect_direction	Numerator if ratio, or left side if difference
 10.1111/jdv.15369	results	1	NA	unadjusted_effect	NA
 10.1111/jdv.15369	results	1	NA	unadjusted_pval_char	NA
-10.1111/jdv.15369	results	1	NA	adjusted_effect	22.3
+10.1111/jdv.15369	results	1	NA	adjusted_effect	0.223
 10.1111/jdv.15369	results	1	NA	adjusted_pval_char	<0.001
 10.1111/jdv.15369	results	1	NA	geographical region	No
 10.1111/jdv.15369	results	1	NA	n_ipd_total	NA
@@ -8776,7 +8776,7 @@ doi	section	n_itc	study_number	questions	answer
 10.1111/jdv.15369	results	2	NA	effect_direction	Numerator if ratio, or left side if difference
 10.1111/jdv.15369	results	2	NA	unadjusted_effect	NA
 10.1111/jdv.15369	results	2	NA	unadjusted_pval_char	NA
-10.1111/jdv.15369	results	2	NA	adjusted_effect	17.3
+10.1111/jdv.15369	results	2	NA	adjusted_effect	0.173
 10.1111/jdv.15369	results	2	NA	adjusted_pval_char	<0.001
 10.1111/jdv.15369	results	2	NA	geographical region	NA
 10.1111/jdv.15369	results	2	NA	n_ipd_total	NA
@@ -8801,7 +8801,7 @@ doi	section	n_itc	study_number	questions	answer
 10.1111/jdv.15369	results	3	NA	effect_direction	Numerator if ratio, or left side if difference
 10.1111/jdv.15369	results	3	NA	unadjusted_effect	NA
 10.1111/jdv.15369	results	3	NA	unadjusted_pval_char	NA
-10.1111/jdv.15369	results	3	NA	adjusted_effect	19.2
+10.1111/jdv.15369	results	3	NA	adjusted_effect	0.192
 10.1111/jdv.15369	results	3	NA	adjusted_pval_char	0.009
 10.1111/jdv.15369	results	3	NA	geographical region	No
 10.1111/jdv.15369	results	3	NA	n_ipd_total	NA
@@ -8827,7 +8827,7 @@ doi	section	n_itc	study_number	questions	answer
 10.1111/jdv.15369	results	4	NA	effect_direction	Numerator if ratio, or left side if difference
 10.1111/jdv.15369	results	4	NA	unadjusted_effect	NA
 10.1111/jdv.15369	results	4	NA	unadjusted_pval_char	NA
-10.1111/jdv.15369	results	4	NA	adjusted_effect	-4.4
+10.1111/jdv.15369	results	4	NA	adjusted_effect	-0.044
 10.1111/jdv.15369	results	4	NA	adjusted_pval_char	0.451
 10.1111/jdv.15369	results	4	NA	geographical region	NA
 10.1111/jdv.15369	results	4	NA	n_ipd_total	NA
@@ -15719,7 +15719,7 @@ doi	section	n_itc	study_number	questions	answer
 10.3111/13696998.2013.768530	results	1	NA	effect_direction	Numerator if ratio, or left side if difference
 10.3111/13696998.2013.768530	results	1	NA	unadjusted_effect	NA
 10.3111/13696998.2013.768530	results	1	NA	unadjusted_pval_char	NA
-10.3111/13696998.2013.768530	results	1	NA	adjusted_effect	9.7
+10.3111/13696998.2013.768530	results	1	NA	adjusted_effect	0.097
 10.3111/13696998.2013.768530	results	1	NA	adjusted_pval_char	0.055
 10.3111/13696998.2013.768530	results	1	NA	geographical region	NA
 10.3111/13696998.2013.768530	results	1	NA	n_ipd_total	NA
@@ -15745,7 +15745,7 @@ doi	section	n_itc	study_number	questions	answer
 10.3111/13696998.2013.768530	results	2	NA	effect_direction	Numerator if ratio, or left side if difference
 10.3111/13696998.2013.768530	results	2	NA	unadjusted_effect	NA
 10.3111/13696998.2013.768530	results	2	NA	unadjusted_pval_char	NA
-10.3111/13696998.2013.768530	results	2	NA	adjusted_effect	18.9
+10.3111/13696998.2013.768530	results	2	NA	adjusted_effect	0.189
 10.3111/13696998.2013.768530	results	2	NA	adjusted_pval_char	0.034
 10.3111/13696998.2013.768530	results	2	NA	geographical region	NA
 10.3111/13696998.2013.768530	results	2	NA	n_ipd_total	NA

@@ -32,17 +32,23 @@ ggthemr::ggthemr("fresh")
 
 
 ```{r}
-all_articles_info <- read_csv("data/articles_selection/all_articles_info.csv", col_types = cols(.default = "c"))
-all_articles_id <- read_csv("data/articles_selection/articles_id.csv", col_types = cols(.default = "c"))
+all_articles_info <- read_csv("data/articles_selection/all_articles_info.csv",
+                              col_types = cols(.default = "c"))
+all_articles_id <- read_csv("data/articles_selection/articles_id.csv",
+                            col_types = cols(.default = "c"))
 # extraction_list <- read_csv("data/articles_selection/included_articles_after_review.csv", col_types = cols(.default = "c)))
-flow_chart_df <- read_csv("data/to_use_for_stats/flow_chart.csv", col_types = cols(included = "l",
-                                                                                   full_article = "l",
-                                                                                   third = "l",
-                                                                                   during_extraction = "l",
-                                                                                   .default = "c"))
-results_df <- read_tsv("data/to_use_for_stats/long_results_final.tsv", col_types = cols(.default = "c"))
-ttt_mapped <- read_tsv("data/to_use_for_stats/decision_atc_mapped.tsv", col_types = cols(.default = "c", car_t_cells = "l"))
-conditions_mapped <- read_tsv("data/to_use_for_stats/decision_icd_mapped.tsv", col_types = cols(.default = "c"))
+flow_chart_df <- read_csv("data/to_use_for_stats/flow_chart.csv",
+                          col_types = cols(included = "l",
+                                           full_article = "l",
+                                           third = "l",
+                                           during_extraction = "l",
+                                           .default = "c"))
+results_df <- read_tsv("data/to_use_for_stats/long_results_final.tsv",
+                       col_types = cols(.default = "c"))
+ttt_mapped <- read_tsv("data/to_use_for_stats/decision_atc_mapped.tsv",
+                       col_types = cols(.default = "c", car_t_cells = "l"))
+conditions_mapped <- read_tsv("data/to_use_for_stats/decision_icd_mapped.tsv",
+                              col_types = cols(.default = "c"))
 ```
 
 
@@ -66,7 +72,9 @@ stopifnot(identical(
   unique(results_df$PMID)[order(unique(results_df$PMID))]
 ))
 
-included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
+included_articles_info <- semi_join(all_articles_info,
+                                    included_articles,
+                                    by = "PMID")
 ```
 
 
@@ -103,6 +111,15 @@ general_information_df <- general_information_df %>%
   select(answer, everything())
 ```
 
+# DM mapping conditions to article 
+```{r}
+conditions_df <- general_information_df %>% 
+  filter(questions == "Medical Condition of Interest Name") %>% 
+  left_join(conditions_mapped, by = c("answer" = "condition_name"))
+# conditions_df
+stopifnot(!any(is.na(conditions_df$`concept_name_ICD10 Chapter`)))
+```
+
 
 ## Journals
 
@@ -130,14 +147,15 @@ included_articles_info %>%
 ```{r Publication date}
 ## Publication dates
 publication_date_df <- included_articles_info %>%
-  select(EDAT) %>%
+  select(PMID, EDAT) %>%
   mutate(publication_date = as_date(EDAT, format = "%Y/%m/%d %H:%M"),
          publication_year = year(publication_date),
          publication_date_q = lubridate::quarter(publication_date, with_year = TRUE),
          publication_date_s = lubridate::semester(publication_date, with_year = TRUE),
          publication_date_s = ifelse(round(publication_date_s %% 0.2, 1) == 0.1,
                                       trunc(publication_date_s),
-                                      trunc(publication_date_s) + 0.5))
+                                      trunc(publication_date_s) + 0.5)) %>%
+  left_join(all_articles_id[, c("PMID", "doi")], by ="PMID")
 
 
 publication_date_df %>%
@@ -312,17 +330,6 @@ general_information_df %>%
 ```
 
 
-## Investigated medical conditions
-
-```{r fig.width=12}
-conditions_df <- general_information_df %>% 
-  filter(questions == "Medical Condition of Interest Name") %>% 
-  left_join(conditions_mapped, by = c("answer" = "condition_name"))
-# conditions_df
-stopifnot(!any(is.na(conditions_df$`concept_name_ICD10 Chapter`)))
-```
-
-
 ```{r fig.width=12, fig.height=10}
 conditions_df %>% 
   count(`concept_name_ICD10 Hierarchy`, `concept_code_ICD10 Hierarchy`) %>% 
@@ -361,7 +368,6 @@ conditions_df %>%
 
 ```
 
-# Results
 
 
 ```{r data management to determine IPD/nonIPD treatments}
@@ -392,7 +398,7 @@ stopifnot(
 ```
 
 
-### Treatments
+## Treatments
 
 ```{r Finding out similar comparisons}
 
@@ -446,6 +452,17 @@ ttt_ipd_df %>%
         plot.title = element_text(size = 22), 
         plot.subtitle = element_text(size = 20))
 ```
+
+## Systematic review
+
+```{r}
+general_information_df %>% 
+  filter(questions %in% c("Mention of a systematic review to find the studies to compare treatments of interest", "At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company")) %>% 
+  pivot_wider(names_from = questions, values_from = answer) %>% 
+  tableby(`At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company` ~ `Mention of a systematic review to find the studies to compare treatments of interest`, data = .) %>% 
+  summary()
+```
+
 
 
 ## Individual studies 
@@ -519,6 +536,7 @@ wide_methodo %>%
   tableby(list(`Type of population-adjusted indirect comparisons performed`, `Anchored comparison?`) ~ ., data = .) %>% 
   summary()
 ```
+
 
 ### Variables selection justification
 
@@ -616,11 +634,28 @@ wide_sample_size_df %>%
     anchored_yn = ifelse(anchored_yn == "Yes", "Anchored", "Unanchored"),
     n_ipd_yn = ifelse(is.na(n_ipd_total) & is.na(n_ipd_ttt), "No", "Yes"), 
     n_nonipd_yn = ifelse(is.na(n_nonipd_total) & is.na(n_nonipd_ttt), "No", "Yes"), 
-    ess_yn = ifelse(is.na(ess_ttt) & is.na(ess_total), "No", "Yes"), 
+    ess_yn = ifelse(is.na(ess_ttt) & is.na(ess_total), "No", "Yes")
 ) %>% 
+  left_join(publication_date_df) %>% 
+  mutate(after_2018 = if_else(publication_date >= as.Date("2018-01-01"), "since 2018", "before 2018")) %>% 
+  tableby(list(anchored_yn, paitc_type) ~ n_ipd_yn + n_nonipd_yn + ess_yn, strata = after_2018, data = .) %>% 
+  summary()
+```
+
+```{r}
+wide_sample_size_df %>% 
+  mutate(
+    anchored_yn = ifelse(anchored_yn == "Yes", "Anchored", "Unanchored"),
+    n_ipd_yn = ifelse(is.na(n_ipd_total) & is.na(n_ipd_ttt), "No", "Yes"), 
+    n_nonipd_yn = ifelse(is.na(n_nonipd_total) & is.na(n_nonipd_ttt), "No", "Yes"), 
+    ess_yn = ifelse(is.na(ess_ttt) & is.na(ess_total), "No", "Yes"),
+) %>% 
+  left_join(general_information_df)
   tableby(list(anchored_yn, paitc_type) ~ n_ipd_yn + n_nonipd_yn + ess_yn, data = .) %>% 
   summary()
 ```
+
+
 
 ```{r Sample size reduction, fig.width = 14}
 
