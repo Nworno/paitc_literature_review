@@ -85,7 +85,6 @@ subset_sup_columns <- semi_join(sup_columns, second_part_subset, by = c("doi", "
 
 
 # answers sanity checking --------------------------------------------------------
-source("questions_sections.R")
 
 
 long_results <- bind_rows(first_part, second_part_subset, subset_sup_columns) %>%
@@ -312,6 +311,42 @@ long_results_final <- filter(long_results, section %in% c("general_information",
 
 # Writing final table of results to use for stats -------------------------
 long_results_final %>% write_tsv("data/to_use_for_stats/long_results_final.tsv")
+
+
+
+# Subsetting articles information df on articles included in the r --------
+all_articles_info <- read_csv("data/articles_selection/all_articles_info.csv",
+                              col_types = cols(.default = "c"))
+all_articles_id <- read_csv("data/articles_selection/articles_id.csv",
+                            col_types = cols(.default = "c")) %>%
+  mutate(DOI = tolower(DOI)) %>%
+  rename(doi = DOI)
+flow_chart_df <- read_csv("data/to_use_for_stats/flow_chart.csv",
+                          col_types = cols(included = "l",
+                                           full_article = "l",
+                                           third = "l",
+                                           during_extraction = "l",
+                                           .default = "c"))
+
+included_articles_info <- all_articles_id %>%
+  # Subseting articles information for only the ones included in the review
+  semi_join(filter(flow_chart_df, included),
+            by = "PMID") %>%
+# Joining information from 2 files exported from Pubmed: id and information
+  left_join(all_articles_info,
+            by = "PMID") %>%
+  rename_with(tolower) %>%
+  select(doi, pmid, everything())
+
+# Testing whether included_articles only contains information for the included articles
+stopifnot(identical(
+  unique(included_articles$PMID)[order(unique(included_articles$PMID))],
+  unique(long_results_final$PMID)[order(unique(long_results_final$PMID))]
+))
+
+write_csv(included_articles_info, "data/included_articles_info.csv")
+
+
 
 
 

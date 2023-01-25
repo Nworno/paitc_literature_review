@@ -25,6 +25,7 @@ library(lubridate)
 library(ggthemr)
 library(arsenal)
 library(flextable)
+library(forcats)
 
 source("R_snippets.R")
 ggthemr::ggthemr("fresh")
@@ -32,17 +33,8 @@ ggthemr::ggthemr("fresh")
 
 
 ```{r}
-all_articles_info <- read_csv("data/articles_selection/all_articles_info.csv",
-                              col_types = cols(.default = "c"))
-all_articles_id <- read_csv("data/articles_selection/articles_id.csv",
-                            col_types = cols(.default = "c"))
-# extraction_list <- read_csv("data/articles_selection/included_articles_after_review.csv", col_types = cols(.default = "c)))
-flow_chart_df <- read_csv("data/to_use_for_stats/flow_chart.csv",
-                          col_types = cols(included = "l",
-                                           full_article = "l",
-                                           third = "l",
-                                           during_extraction = "l",
-                                           .default = "c"))
+included_articles_info <- read_csv("data/included_articles_info.csv", 
+                                   col_types = cols(.default = "c"))
 results_df <- read_tsv("data/to_use_for_stats/long_results_final.tsv",
                        col_types = cols(.default = "c"))
 ttt_mapped <- read_tsv("data/to_use_for_stats/decision_atc_mapped.tsv",
@@ -52,83 +44,164 @@ conditions_mapped <- read_tsv("data/to_use_for_stats/decision_icd_mapped.tsv",
 ```
 
 
-```{r}
+```{r Renaming questions}
 source("questions_sections.R")
-methodology_questions <- questions_sections$methodology %>% unname()
-```
-
-
-```{r}
-# selection articles ---------------------------------------------------------
-all_articles_id <- all_articles_id %>%
-  mutate(DOI = tolower(DOI)) %>%
-  rename(doi = DOI)
-included_articles <- filter(flow_chart_df, included)
-
-results_df <- left_join(results_df, all_articles_id[, c("doi", "PMID")], by = "doi")
-
-stopifnot(identical(
-  unique(included_articles$PMID)[order(unique(included_articles$PMID))],
-  unique(results_df$PMID)[order(unique(results_df$PMID))]
-))
-
-included_articles_info <- semi_join(all_articles_info,
-                                    included_articles,
-                                    by = "PMID")
+renaming_questions_list <- flatten_list(questions_sections)
+results_df$questions <- replace_in_vec(results_df$questions, renaming_questions_list)
 ```
 
 
 ```{r Creating section data frames}
-general_information_df <- results_df[results_df$section == "general_information",]
+general_information_df <- results_df[results_df$section == "general_information", c("doi", "questions", "answer")]
 individual_study_df <- results_df[results_df$section == "study_information",]
 paitc_results <- results_df[results_df$section %in% c("methodology", "results"), ]
 ```
 
 ```{r Wide methodo}
-wide_methodo <- paitc_results %>% 
-  filter(section == "methodology") %>% 
-  pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer)
-```
-
-
-```{r Wide results}
-wide_results <- paitc_results %>% 
-  filter(section == "results") %>% 
-  pivot_wider(id_cols = c(doi, PMID, n_itc), names_from = questions, values_from = answer)
-```
-
-```{r Wide methodo results}
 wide_methodo_results <- paitc_results %>% 
   pivot_wider(id_cols = c(doi, n_itc), names_from = questions, values_from = answer)
 ```
 
 
-# Articles general Information
+# DM Articles general Information
 
 ```{r}
-general_information_df <- general_information_df %>% 
-  select(-n_itc, -study_number, -section, -PMID) %>% 
-  select(answer, everything())
+articles_level_df <- general_information_df %>% 
+  pivot_wider(id_cols = doi, names_from = questions, values_from = answer) %>% 
+  # adding articles information
+  left_join(included_articles_info, by = "doi") %>% 
+  # adding conditions information
+  left_join(conditions_mapped, by = "condition_name")
+stopifnot(!any(is.na(articles_level_df$`concept_name_ICD10 Chapter`)))
 ```
 
-# DM mapping conditions to article 
+```{r DM authors affiliations}
+articles_level_df <- articles_level_df %>% 
+  # Manually correcting variation introduced during the review process 
+  mutate(positions = if_else(
+    positions == "Academic, Private Data Analysis Company, Pharmaceutical Industry",
+    "Academic, Pharmaceutical Industry, Private Data Analysis Company",
+    positions)) %>%
+  mutate(positions_list = str_split(positions, ", "), 
+         value_filling = c(TRUE)) %>% 
+  unnest(positions_list) %>% 
+  pivot_wider(names_from = positions_list, values_from = value_filling, values_fill = FALSE)
+```
+
+```{r Individual comparisons count}
+articles_level_df <- articles_level_df[, "doi"] %>% 
+  left_join(distinct(paitc_results, doi, n_itc)) %>% 
+  count(doi, name = "paic_count") %>% 
+  right_join(articles_level_df)
+  
+```
+
+
+```{r Various mutate steps: countries, year}
+articles_level_df <- articles_level_df %>% 
+  # Manually correcting variation introduced during the review process 
+  mutate(across(c(country_first_author, country_last_author), 
+         .fns = ~ ifelse(tolower(.x) %in% c("usa", "uk"),
+                         str_to_upper(.x),
+                         str_to_title(.x))), 
+         `publication year` = as.numeric(`publication year`), 
+         funded_pharma = grepl(x = funding_source, pattern = "Pharmaceutical", perl = TRUE),
+         pharma_authorship_funding = funded_pharma | `Pharmaceutical Industry`
+  ) %>% 
+  rename(journal_title = `journal/book`)
+```
+
+## Statistics article level
+
 ```{r}
-conditions_df <- general_information_df %>% 
-  filter(questions == "Medical Condition of Interest Name") %>% 
-  left_join(conditions_mapped, by = c("answer" = "condition_name"))
-# conditions_df
-stopifnot(!any(is.na(conditions_df$`concept_name_ICD10 Chapter`)))
+formula_article_level <- formulize(y = "", x = ".")
+```
+
+```{r}
+# grouping last levels for display in tableby : eg for displaying only top countries 
+# Meaningful if factor is ordered by frequency
+grouping_last_levels <- function(x, n_first_levels, grouping_label = "Other") {
+  last_levels <- levels(x)[n_first_levels + 1:length(levels(x))]
+  new_names_last_levels <- rep(grouping_label, length(last_levels))
+  new_levels <- c(levels(x)[1:n_first_levels], new_names_last_levels)
+  levels(x) <- new_levels
+  return(x)
+}
 ```
 
 
-## Journals
+```{r}
+description_articles <- articles_level_df %>% 
+  select(`publication year`, country_first_author, country_last_author, methodologist_yn, 
+         `Pharmaceutical Industry`, Academic, `Private Data Analysis Company`, 
+         journal_title, `concept_name_ICD10 Chapter`, pharma_authorship_funding, 
+         paic_count) %>% 
+  set_labels(value = swap_names_values(renaming_questions_list)) %>% 
+  mutate(`publication year` = as.factor(ifelse(`publication year` < 2020,
+                                               "January 1st 2010 - December 31st 2019",
+                                               "January 1st 2020 - April 2nd 2022")),
+         across(where(is.logical), 
+                .fns = ~ factor(ifelse(.x, "Yes", "No"), levels = c("Yes", "No"))),
+         across(c(country_first_author, country_last_author), 
+                .fns = ~ fct_infreq(.x) %>% grouping_last_levels(n_first_levels = 3)), 
+         methodologist_yn = fct_infreq(methodologist_yn),
+         journal_title = grouping_last_levels(fct_infreq(journal_title), 6), 
+         `concept_name_ICD10 Chapter` = grouping_last_levels(fct_infreq(`concept_name_ICD10 Chapter`), 6)
+  ) %>% 
+  tableby(formula_article_level, 
+          data = ., 
+          numeric.stats = c("sum", "mean", "median", "q1q3", "max"), 
+          )
+```
+
+```{r}
+# See there https://github.com/hms-dbmi/Access-to-Data-using-PIC-SURE-API/blob/master/NHLBI_BioData_Catalyst/R/ORCHID_COVID19.ipynb
+# Doesn't work very well
+# table_description_articles <- as_tibble(description_articles)
+# table_description_articles[, c('Total', 'Overall')] <- table_description_articles %>% 
+#   select(Total, Overall) %>% 
+#   apply(c(1, 2), 
+#         function(elem) {
+#           elem_bis <- unlist(elem)
+#           ifelse(elem != '', 
+#                  unlist(elem_bis) %>%
+#                    round(1) %>%
+#                    paste0(collapse = ' (') %>%
+#                    paste0(')'),
+#                  elem_bis
+#           )
+#         }
+#   )
+
+# But as.dataframe(summary(table_df))) is much more promising
+# table_description_articles %>% 
+#   flextable() %>% 
+#   flextable::save_as_docx(path = "output_tables/articles_information_table.docx")
+```
+
+```{r, include=FALSE, results = "hide", }
+# Needs to be run from the console, or remove inline output chunk options
+arsenal::write2word(description_articles,
+                    "articles_information_table.docx",
+                    title = "Articles description",
+                    quiet = TRUE)
+# Because write2word doesn't work with the path output_tables/articles_information_table.docx ...
+file.rename(from = "articles_information_table.docx", 
+            to = "output_tables/articles_information_table.docx")
+```
+
+
+
+## Plots
+
+### Journals
 
 ```{r Publication journals, fig.height=18}
 #TODO: rajouter IF
 ## Authors specific affiliations would need to be parsed and retrieved through pubv1_info.txt --> regex looking at ". " preceded by a ", " or "^"
-included_articles_info %>%
-  mutate("journal_title" = JT,
-         "journal_title_short" = TA) %>%
+articles_level_df %>%
+  mutate("journal_title" = jt,
+         "journal_title_short" = ta) %>%
   group_by(journal_title_short) %>%
   summarise(count = n()) %>%
   arrange(desc(count)) %>%
@@ -142,20 +215,20 @@ included_articles_info %>%
        x = "Journals",
        y = "Articles count")
 ```
-
+### Publication date
 
 ```{r Publication date}
 ## Publication dates
-publication_date_df <- included_articles_info %>%
-  select(PMID, EDAT) %>%
-  mutate(publication_date = as_date(EDAT, format = "%Y/%m/%d %H:%M"),
+publication_date_df <- articles_level_df %>%
+  select(pmid, edat) %>%
+  mutate(publication_date = as_date(edat, format = "%Y/%m/%d %H:%M"),
          publication_year = year(publication_date),
          publication_date_q = lubridate::quarter(publication_date, with_year = TRUE),
          publication_date_s = lubridate::semester(publication_date, with_year = TRUE),
          publication_date_s = ifelse(round(publication_date_s %% 0.2, 1) == 0.1,
                                       trunc(publication_date_s),
                                       trunc(publication_date_s) + 0.5)) %>%
-  left_join(all_articles_id[, c("PMID", "doi")], by ="PMID")
+  left_join(included_articles_info[, c("pmid", "doi")], by ="pmid")
 
 
 publication_date_df %>%
@@ -172,14 +245,14 @@ publication_date_df %>%
        y = "Publication counts")
 ```
 ```{r Intervals between articles received and accepted}
-publication_dates_df <- included_articles_info %>% mutate(
-  received_date = str_extract(PHST, "[^\\].]+(?=\\[received\\])") %>% str_trim() %>% as_datetime(format = "%Y/%m/%d %H:%M"),
-  accepted_date = str_extract(PHST, "[^\\].]+(?=\\[accepted\\])") %>% str_trim() %>% as_datetime(format = "%Y/%m/%d %H:%M"),
-  pubmed_date = str_extract(PHST, "[^\\].]+(?=\\[pubmed\\])") %>% str_trim() %>% as_datetime(format = "%Y/%m/%d %H:%M"), 
+publication_dates_df <- articles_level_df %>% mutate(
+  received_date = str_extract(phst, "[^\\].]+(?=\\[received\\])") %>% str_trim() %>% as_datetime(format = "%Y/%m/%d %H:%M"),
+  accepted_date = str_extract(phst, "[^\\].]+(?=\\[accepted\\])") %>% str_trim() %>% as_datetime(format = "%Y/%m/%d %H:%M"),
+  pubmed_date = str_extract(phst, "[^\\].]+(?=\\[pubmed\\])") %>% str_trim() %>% as_datetime(format = "%Y/%m/%d %H:%M"), 
   time_acceptation = accepted_date - received_date, 
   time_publication_pubmed = pubmed_date - received_date
 ) %>% 
-  select(PHST, received_date, accepted_date, time_acceptation, time_publication_pubmed, pubmed_date, PMID, PT, TA, PL, JT)
+  select(phst, received_date, accepted_date, time_acceptation, time_publication_pubmed, pubmed_date, pmid, pt, ta, pl, jt)
 
 publication_dates_df %>% 
   pivot_longer(cols = c(time_acceptation, time_publication_pubmed), names_to = "time_type", values_to = "time") %>% 
@@ -190,44 +263,32 @@ publication_dates_df %>%
   labs(x = "Time in months", "publication count", 
        title = "Time between submission and acceptation")
 ```
-## Authors' affiliations
-
-```{r Authors affiliations}
-authors_affiliation_df <- general_information_df %>% 
-  filter(questions == "Positions of study investigators (for any authors of the article, any that applies)") %>%
-  # Manually correcting variation introduced during the review process 
-  mutate(answer = if_else(answer == "Academic, Private Data Analysis Company, Pharmaceutical Industry",
-                         "Academic, Pharmaceutical Industry, Private Data Analysis Company",
-                         answer)) %>%
-  select(doi, answer) %>% 
-  mutate(positions = str_split(answer, ", ")) %>% 
-  unnest(positions)
-```
-
+### Author's position
 
 ```{r }
-authors_affiliation_df %>% 
-  distinct(doi, answer) %>% 
-  count(answer) %>% {
-  ggplot(., aes(x = answer, y = n)) +
-  geom_bar(stat = "identity") +
-  geom_label(aes(label = n), 
-             position = position_stack(vjust = 0.5)) + 
-  coord_flip() + 
-  scale_x_discrete(limits = rev(.$answer)) +
-  labs(x = NULL, y = "Articles count", title = "Authors' positions") +
-  theme(axis.text.y = element_text(size = 8))
-}
+articles_level_df %>% 
+  count(positions) %>% {
+    ggplot(., aes(x = positions, y = n)) +
+      geom_bar(stat = "identity") +
+      geom_label(aes(label = n), 
+                 position = position_stack(vjust = 0.5)) + 
+      coord_flip() + 
+      scale_x_discrete(limits = rev(.$positions)) +
+      labs(x = NULL, y = "Articles count", title = "Authors' positions") +
+      theme(axis.text.y = element_text(size = 8))
+  }
 ```
 
 
 ```{r}
-authors_affiliation_df %>% 
-  group_by(positions) %>% 
-  summarise(counts = n()) %>% 
-  ggplot(aes(x = positions, y = counts)) +
+articles_level_df %>% 
+  pivot_longer(cols = c(Academic, `Pharmaceutical Industry`, `Private Data Analysis Company`), 
+               names_to = "position") %>% 
+  filter(value) %>% 
+  count(position) %>% 
+  ggplot(aes(x = position, y = n)) +
   geom_bar(stat = "identity") +
-  geom_label(aes(y = 150, label = counts),
+  geom_label(aes(y = 150, label = n),
              position = position_stack(vjust = 0.5),
              color = "black",
              show.legend = FALSE) + 
@@ -239,9 +300,7 @@ authors_affiliation_df %>%
 
 
 ```{r }
-authors_affiliation_df %>% 
-  mutate(counter = TRUE) %>% 
-  pivot_wider(names_from = positions, values_from = counter, values_fill = FALSE) %>% 
+articles_level_df %>% 
   mutate(collaboration = Academic & `Pharmaceutical Industry`) %>% 
   count(collaboration) %>% 
   ggplot(aes(x = collaboration, y = n)) + 
@@ -253,33 +312,30 @@ authors_affiliation_df %>%
        title = "Academics/Pharmaceutical Collaborations")
 ```
 
-### First and last authors positions
+#### First and last authors country
 
 ```{r}
-general_information_df %>% 
-  mutate(answer = ifelse(tolower(answer) %in% c("usa", "uk"),
-                         str_to_upper(answer),
-                         str_to_title(answer))) %>% 
-  filter(questions %in% c("Countries of first author affiliations", "Countries of last author affiliations")) %>% 
-  count(questions, answer) %>%
-  ggplot(aes(x = reorder(answer, n), y = n)) + 
+articles_level_df %>% 
+  pivot_longer(cols = c(country_first_author, country_last_author), 
+               names_to = "author", 
+               values_to = "country") %>% 
+  count(author, country) %>%
+  ggplot(aes(x = reorder(country, n), y = n)) + 
   geom_bar(stat = "identity") + 
-  facet_grid(" ~ questions") + 
+  facet_grid(" ~ author") + 
   coord_flip() + 
   labs(title = "Countries", 
        x = NULL, 
        y = "Article count")
-  
 ```
 
-## Methodology departments
+### Methodology departments
 
 
 ```{r}
-general_information_df %>% 
-  filter(questions == "At least one author affiliated with a department of Biostatistics, Epidemiology, Public Health, Pharmacoepidemiology, or a Clinical Research unit, or private data analysis company") %>% 
-  count(answer) %>% 
-  ggplot(aes(x = answer, y = n, label = n)) +
+articles_level_df %>% 
+  count(methodologist_yn) %>% 
+  ggplot(aes(x = methodologist_yn, y = n, label = n)) +
   geom_bar(stat = "identity") +
   geom_label() +
   labs(x = "Affiliation with a methodology department/data-analysis company", 
@@ -287,12 +343,12 @@ general_information_df %>%
        y = "Count")
 ```
 
-## Ties with pharmaceutical industry 
+### Ties with pharmaceutical industry 
 
 
 
 ```{r}
-ties_w_pharma_df <- general_information_df %>% 
+ties_w_pharma_df <- articles_level_df %>% 
   filter(questions %in% c("Positions of study investigators (for any authors of the article, any that applies)", 
                           "Mentioned sources of funding")) %>% 
   pivot_wider(id_cols = doi, names_from = questions, values_from = answer) %>% 
@@ -301,10 +357,9 @@ ties_w_pharma_df <- general_information_df %>%
 ```
 
 ```{r}
-general_information_df %>% 
-  filter(questions == "Ties with pharmaceutical industry mentionned in competing interest/conflict of interest/disclaimer, or any equivalent section in the article") %>% 
-  count(answer) %>% 
-  ggplot(aes(x = answer, y = n, label = n)) +
+articles_level_df %>% 
+  count(pharmaceutical_ties_yn) %>% 
+  ggplot(aes(x = pharmaceutical_ties_yn, y = n, label = n)) +
   geom_bar(stat = "identity") +
   geom_label() +
   coord_flip() + 
@@ -314,13 +369,12 @@ general_information_df %>%
 ```
 
 
-## Fundings
+### Fundings
 
 ```{r}
-general_information_df %>% 
-  filter(questions == "Mentioned sources of funding") %>% 
-  count(answer) %>% 
-  ggplot(aes(x = answer, y = n, label = n)) +
+articles_level_df %>% 
+  count(funding_source) %>% 
+  ggplot(aes(x = funding_source, y = n, label = n)) +
   geom_bar(stat = "identity") +
   geom_label() +
   coord_flip() + 
@@ -328,10 +382,10 @@ general_information_df %>%
        title = "Mentioned of source of fundings", 
        y = "Count")
 ```
-
+### Conditions
 
 ```{r fig.width=12, fig.height=10}
-conditions_df %>% 
+articles_level_df %>% 
   count(`concept_name_ICD10 Hierarchy`, `concept_code_ICD10 Hierarchy`) %>% 
   mutate(across(where(is.character), as.factor)) %>% 
   ggplot(aes(x = reorder(`concept_name_ICD10 Hierarchy`, as.numeric(`concept_code_ICD10 Hierarchy`)),
@@ -351,7 +405,7 @@ conditions_df %>%
 
 
 ```{r fig.width=12}
-conditions_df %>% 
+articles_level_df %>% 
   count(`concept_name_ICD10 Chapter`, `concept_code_ICD10 Chapter`) %>% 
   mutate(across(where(is.character), as.factor)) %>% 
   ggplot(aes(x = reorder(`concept_name_ICD10 Chapter`, as.numeric(`concept_code_ICD10 Chapter`)),
@@ -369,6 +423,9 @@ conditions_df %>%
 ```
 
 
+# Comparison level
+
+## Treatments
 
 ```{r data management to determine IPD/nonIPD treatments}
 ttt_ipd_df <- paitc_results %>% 
@@ -396,9 +453,6 @@ stopifnot(
 )
 
 ```
-
-
-## Treatments
 
 ```{r Finding out similar comparisons}
 

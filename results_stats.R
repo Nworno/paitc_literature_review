@@ -15,7 +15,10 @@ source("R_snippets.R")
 ggthemr::ggthemr("fresh")
 
 all_articles_info <- read_csv("data/articles_selection/all_articles_info.csv", col_types = cols(.default = "c"))
-all_articles_id <- read_csv("data/articles_selection/articles_id.csv", col_types = cols(.default = "c"))
+all_articles_id <- read_csv(file.path(data_dir, "articles_selection/articles_id.csv"),
+                            col_types = cols(.default = "c"))  %>%
+  mutate(DOI = tolower(DOI)) %>%
+  rename(doi = DOI)
 # extraction_list <- read_csv("data/articles_selection/included_articles_after_review.csv", col_types = cols(.default = "c)))
 flow_chart_df <- read_csv("data/to_use_for_stats/flow_chart.csv", col_types = cols(included = "l",
                                                                                    full_article = "l",
@@ -31,24 +34,10 @@ source("questions_sections.R")
 methodology_questions <- questions_sections$methodology %>% unname()
 
 # selection articles ---------------------------------------------------------
-all_articles_id <- all_articles_id %>%
-  mutate(DOI = tolower(DOI)) %>%
-  rename(doi = DOI)
 included_articles <- filter(flow_chart_df, included)
+included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
 
 results_df <- left_join(results_df, all_articles_id[, c("doi", "PMID")], by = "doi")
-
-# 12 articles manquants, voir une fois qu'on aura tous les articles avec Jérôme
-# pour l'instant ne fonctionne pas car manque les articles à adjudiquer par Jérôme
-# stopifnot(identical(
-#   unique(included_articles$PMID)[order(unique(included_articles$PMID))],
-#   unique(results_df$PMID)[order(unique(results_df$PMID))]
-# ))
-
-
-# joins -------------------------------------------------------------------
-
-included_articles_info <- semi_join(all_articles_info, included_articles, by = "PMID")
 
 # articles metadata -------------------------------------------------------
 

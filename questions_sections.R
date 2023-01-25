@@ -68,7 +68,7 @@ questions_sections <- list(
     "Primary outcome: unadjusted treatment effect" = "contrast_effect_unadjusted_value",
     "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])" = "contrast_effect_unadjusted_pvalci",
     "Primary outcome: adjusted treatment effect" = "contrast_effect_adjusted_value",
-    "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])" = "contrast_effect_adjusted_pvalci"
+    "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX" = "contrast_effect_adjusted_pvalci"
   ),
   "Notes" = c("notes")
 )

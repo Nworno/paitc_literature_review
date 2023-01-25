@@ -1,0 +1,57 @@
+
+
+Table: Articles description
+
+|                                                                                                                      | Overall (N=134) |
+|:---------------------------------------------------------------------------------------------------------------------|:---------------:|
+|**publication year**                                                                                                  |                 |
+|&nbsp;&nbsp;&nbsp;January 1st 2010 - December 31st 2019                                                               |   55 (41.0%)    |
+|&nbsp;&nbsp;&nbsp;January 1st 2020 - April 2nd 2022                                                                   |   79 (59.0%)    |
+|**country_first_author**                                                                                              |                 |
+|&nbsp;&nbsp;&nbsp;USA                                                                                                 |   68 (50.7%)    |
+|&nbsp;&nbsp;&nbsp;UK                                                                                                  |   19 (14.2%)    |
+|&nbsp;&nbsp;&nbsp;Canada                                                                                              |    9 (6.7%)     |
+|&nbsp;&nbsp;&nbsp;Other                                                                                               |   38 (28.4%)    |
+|**country_last_author**                                                                                               |                 |
+|&nbsp;&nbsp;&nbsp;USA                                                                                                 |   68 (50.7%)    |
+|&nbsp;&nbsp;&nbsp;UK                                                                                                  |   15 (11.2%)    |
+|&nbsp;&nbsp;&nbsp;Germany                                                                                             |    13 (9.7%)    |
+|&nbsp;&nbsp;&nbsp;Other                                                                                               |   38 (28.4%)    |
+|**methodologist_yn**                                                                                                  |                 |
+|&nbsp;&nbsp;&nbsp;Yes                                                                                                 |   122 (91.0%)   |
+|&nbsp;&nbsp;&nbsp;Not mentioned                                                                                       |    12 (9.0%)    |
+|**Pharmaceutical Industry**                                                                                           |                 |
+|&nbsp;&nbsp;&nbsp;Yes                                                                                                 |   126 (94.0%)   |
+|&nbsp;&nbsp;&nbsp;No                                                                                                  |    8 (6.0%)     |
+|**Academic**                                                                                                          |                 |
+|&nbsp;&nbsp;&nbsp;Yes                                                                                                 |   97 (72.4%)    |
+|&nbsp;&nbsp;&nbsp;No                                                                                                  |   37 (27.6%)    |
+|**Private Data Analysis Company**                                                                                     |                 |
+|&nbsp;&nbsp;&nbsp;Yes                                                                                                 |   110 (82.1%)   |
+|&nbsp;&nbsp;&nbsp;No                                                                                                  |   24 (17.9%)    |
+|**journal_title**                                                                                                     |                 |
+|&nbsp;&nbsp;&nbsp;Adv Ther                                                                                            |   19 (14.2%)    |
+|&nbsp;&nbsp;&nbsp;J Comp Eff Res                                                                                      |   16 (11.9%)    |
+|&nbsp;&nbsp;&nbsp;Curr Med Res Opin                                                                                   |   15 (11.2%)    |
+|&nbsp;&nbsp;&nbsp;Leuk Lymphoma                                                                                       |    6 (4.5%)     |
+|&nbsp;&nbsp;&nbsp;J Blood Med                                                                                         |    5 (3.7%)     |
+|&nbsp;&nbsp;&nbsp;Clin Ther                                                                                           |    4 (3.0%)     |
+|&nbsp;&nbsp;&nbsp;Other                                                                                               |   69 (51.5%)    |
+|**concept_name_ICD10 Chapter**                                                                                        |                 |
+|&nbsp;&nbsp;&nbsp;Neoplasms                                                                                           |   72 (53.7%)    |
+|&nbsp;&nbsp;&nbsp;Diseases of the nervous system                                                                      |   15 (11.2%)    |
+|&nbsp;&nbsp;&nbsp;Diseases of the skin and subcutaneous tissue                                                        |    11 (8.2%)    |
+|&nbsp;&nbsp;&nbsp;Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism |    8 (6.0%)     |
+|&nbsp;&nbsp;&nbsp;Certain infectious and parasitic diseases                                                           |    6 (4.5%)     |
+|&nbsp;&nbsp;&nbsp;Endocrine, nutritional and metabolic diseases                                                       |    5 (3.7%)     |
+|&nbsp;&nbsp;&nbsp;Other                                                                                               |   17 (12.7%)    |
+|**pharma_authorship_funding**                                                                                         |                 |
+|&nbsp;&nbsp;&nbsp;Yes                                                                                                 |   130 (97.0%)   |
+|&nbsp;&nbsp;&nbsp;No                                                                                                  |    4 (3.0%)     |
+|**paic_count**                                                                                                        |                 |
+|&nbsp;&nbsp;&nbsp;Sum                                                                                                 |     289.000     |
+|&nbsp;&nbsp;&nbsp;Mean                                                                                                |      2.157      |
+|&nbsp;&nbsp;&nbsp;Median                                                                                              |      1.000      |
+|&nbsp;&nbsp;&nbsp;Q1, Q3                                                                                              |  1.000, 2.750   |
+|&nbsp;&nbsp;&nbsp;Max                                                                                                 |     20.000      |
+
