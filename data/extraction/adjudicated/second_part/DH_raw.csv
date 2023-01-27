@@ -2793,7 +2793,7 @@ Clairance créat = comorbidité
 10.1007/s12325-019-01156-5,31813086,methodology,1,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),metastasis free survival,metastasis-free survival,metastasis-free survival,FALSE,NA,NA,NA
 10.1007/s12325-019-01156-5,31813086,methodology,1,NA,Primary outcome: variable type,NA,NA,Time-to-event,TRUE,NA,NA,NA
 10.1007/s12325-019-01156-5,31813086,methodology,1,NA,Justification for selecting variables to be included in the adjustment model (in the main text),"Nothing mentioned, not reported",A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion),A priori expert-knowledge (clinically or methodologically relevant to adjust on these variables based on experts/clinicians opinion),FALSE,NA,NA,NA
-10.1007/s12325-019-01156-5,31813086,methodology,1,NA,Inclusion of prognostic factors in the adjustment/matching model,No,No discussion (in the main text) of the status of prognostic factors of the variables,No discussion (in the main text) of the status of prognostic factors of the variables,FALSE,NA,NA,NA
+10.1007/s12325-019-01156-5,31813086,methodology,1,NA,Inclusion of prognostic factors in the adjustment/matching model,No,No discussion (in the main text) of the status of prognostic factors of the variables,No,FALSE,NA,NA,NA
 10.1007/s12325-019-01156-5,31813086,methodology,1,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,Yes,TRUE,NA,NA,NA
 10.1007/s12325-019-01156-5,31813086,methodology,1,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,NA,No,TRUE,NA,NA,NA
 10.1007/s12325-019-01156-5,31813086,methodology,1,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,NA,NA,NA
@@ -6981,7 +6981,7 @@ covariates : weight = other",NA
 10.1111/bjd.16140,29171861,methodology,xx,NA,Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined),pasi 75 at week 12,psoriasis area severity index 75 response rate at week 12,psoriasis area severity index 75 response rate at week 12,FALSE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,xx,NA,Primary outcome: variable type,NA,NA,Binary (eg rates),TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,xx,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,"Nothing mentioned, not reported",TRUE,NA,NA,NA
-10.1111/bjd.16140,29171861,methodology,xx,NA,Inclusion of prognostic factors in the adjustment/matching model,No discussion (in the main text) of the status of prognostic factors of the variables,No,No discussion (in the main text) of the status of prognostic factors of the variables,FALSE,NA,NA,NA
+10.1111/bjd.16140,29171861,methodology,xx,NA,Inclusion of prognostic factors in the adjustment/matching model,No discussion (in the main text) of the status of prognostic factors of the variables,No,No,FALSE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,xx,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,Yes,TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,xx,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",No,Yes,No,FALSE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,xx,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,NA,NA,NA
@@ -7018,7 +7018,7 @@ covariates : weight = other",NA
 10.1111/bjd.16140,29171861,methodology,3,NA,Primary outcome: variable type,NA,NA,Binary (eg rates),TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,3,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,"Nothing mentioned, not reported",TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,3,NA,Inclusion of prognostic factors in the adjustment/matching model,No discussion (in the main text) of the status of prognostic factors of the variables,No,No discussion (in the main text) of the status of prognostic factors of the variables,FALSE,NA,NA,NA
-10.1111/bjd.16140,29171861,methodology,3,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,Yes,TRUE,NA,NA,NA
+10.1111/bjd.16140,29171861,methodology,3,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,3,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,NA,No,TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,3,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,xx,NA,Treatment name 1,NA,NA,ixekizumab,TRUE,"SG separate etanercept anchored
@@ -7054,7 +7054,7 @@ covariates : weight = other",NA
 10.1111/bjd.16140,29171861,methodology,5,NA,Primary outcome: variable type,NA,NA,Binary (eg rates),TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,5,NA,Justification for selecting variables to be included in the adjustment model (in the main text),NA,NA,"Nothing mentioned, not reported",TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,5,NA,Inclusion of prognostic factors in the adjustment/matching model,No discussion (in the main text) of the status of prognostic factors of the variables,No,No discussion (in the main text) of the status of prognostic factors of the variables,FALSE,NA,NA,NA
-10.1111/bjd.16140,29171861,methodology,5,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,Yes,TRUE,NA,NA,NA
+10.1111/bjd.16140,29171861,methodology,5,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,5,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,NA,No,TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,5,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,NA,NA,NA
 10.1111/bjd.16140,29171861,methodology,xx,NA,Treatment name 1,NA,NA,ixekizumab,TRUE,"SG separate ustekinumab anchored

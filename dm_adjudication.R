@@ -12,7 +12,12 @@ source("questions_sections.R")
 WRITE <- FALSE
 dir_data <- "data"
 
-flow_chart <- read_csv(file.path(dir_data, "to_use_for_stats/flow_chart.csv"))
+flow_chart_df <- read_csv("data/to_use_for_stats/flow_chart.csv",
+                          col_types = cols(included = "l",
+                                           full_article = "l",
+                                           third = "l",
+                                           during_extraction = "l",
+                                           .default = "c"))
 
 # DM adjudication first part ----------------------------------------------
 
@@ -116,97 +121,66 @@ long_results[long_results$answer == "Non anchored comparison" & grepl("^If ancho
 
 
 # Renaming questions ------------------------------------------------------
-
-long_results <- long_results %>%
-  mutate(questions = case_when(
-    questions == "Primary Outcome Name (first one mentioned in the text of the results part if no primary outcome defined)" ~ "primary_outcome_name",
-    questions == "Primary outcome: variable type" ~ "primary_outcome_type",
-    questions == "Definition of a single primary outcome for the indirect comparison" ~ "primary_outcome_yn",
-    questions == "Anchored comparison?" ~ "anchored_yn",
-    #TODO: check that there wasn't a parsing error for answer below, since the part after the ';' seems to have been discarded
-    questions == "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC" ~ "ess_ttt",
-    questions ==  "If anchored, total initial sample size IPD" ~ "n_ipd_total",
-    questions ==  "If anchored, total sample size non IPD" ~ "n_nonipd_total",
-    questions ==  "Initial sample size of the population of interest in the IPD treatment arm" ~ "n_ipd_ttt",
-    questions ==  "If anchored comparison, initial sample size of the population of interest in the IPD anchor arm" ~ "n_ipd_anchor",
-    questions ==  "Sample size of the population of interest in the non IPD treatment arm" ~ "n_nonipd_ttt",
-    questions ==  "If anchored comparison, sample size of the population of interest in the non IPD treatment anchor arm" ~ "n_nonipd_anchor",
-    questions ==  "Sample size in the IPD treatment arm used in the indirect comparison, ie effective sample size after reweighting for MAIC; or sample size used in the regression model for STC" ~ "ess_ttt",
-    questions ==  "If anchored comparison, effective sample size after reweighting for MAIC; or sample size used in the regression model for STC in the IPD anchor arm" ~ "ess_anchor",
-    questions ==  "If anchored, total ESS IPD" ~ "ess_total",
-    questions == "Type of population-adjusted indirect comparisons performed" ~ "paitc_type",
-    questions == "Primary outcome: treatment effect contrast" ~ "contrast",
-    questions == "Primary outcome: unadjusted treatment effect" ~ "unadjusted_effect",
-    questions == "Primary outcome: adjusted treatment effect" ~ "adjusted_effect",
-    questions == "Direction of the treatment effect contrast: IPD treatment is:" ~ "effect_direction",
-    questions == "Justification for selecting variables to be included in the adjustment model (in the main text)" ~ "variables_justification",
-    questions == "Inclusion of prognostic factors in the adjustment/matching model" ~ "prognostic_factors_yn",
-    questions == "Inclusion of treatment-effect modifiers in the adjustment/matching model" ~ "ttt_effect_modifiers_yn",
-    questions == "Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)" ~ "weights_model_yn",
-    questions == "Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale)" ~ "scale_choice_yn",
-    questions == "Reporting of a weights' distribution evaluation (MAIC)" ~ "weights_evaluation_yn",
-    questions == "Reporting of the list of the covariates adjusted for/matched on" ~ "list_covariates_yn",
-    questions == "Number of covariates adjusted for/matched on" ~ "n_covariates",
-    questions == "Covariates adjusted for/matched on in the indirect comparison" ~ "list_covariates",
-    questions == "p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])" ~ "unadjusted_pval_char",
-    questions == "p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])" ~ "adjusted_pval_char",
-    questions == "Form of the indirect comparison" ~ "paitc_form",
-    TRUE ~ questions
-  ))
-
+source("questions_sections.R")
+renaming_questions_list <- flatten_list(questions_sections)
+long_results$questions <- replace_in_vec(long_results$questions, renaming_questions_list)
 
 
 # DM outcomes -------------------------------------------------------------
 # Loading the manually edited file about treatment contrast effect
 outcomes_datamanaged <- read_tsv("data/extraction/adjudicated/second_part/outcome_benefits_datamanaged.tsv") %>%
-  select(primary_outcome_name, outcome_short_name, primary_outcome_type, contrast, direction_benefit)
+  select(primary_outcome_name, outcome_short_name, contrast, direction_benefit) %>%
+  # outcome_name and primary_outcome_name, and contrast_effect_type and contrast differ,
+  # differ because outcomes_benefits_datamanaged file manually edited before renaming change
+  rename(outcome_name = primary_outcome_name,
+         contrast_effect_type = contrast)
 
 wide_methodo_results_df <- long_results %>%
   filter(section %in% c("methodology", "results")) %>%
   pivot_wider(id_cols = c(doi, n_itc), names_from = questions, values_from = answer) %>%
-  left_join(distinct(outcomes_datamanaged, primary_outcome_name, outcome_short_name)) %>%
-  left_join(distinct(outcomes_datamanaged, outcome_short_name, contrast, direction_benefit)) %>%
+  left_join(distinct(outcomes_datamanaged, outcome_name, outcome_short_name)) %>%
+  left_join(distinct(outcomes_datamanaged, outcome_short_name, contrast_effect_type, direction_benefit)) %>%
   # harmonizing the outcome_types and contrasts
   mutate(
-    contrast = case_when(
-      outcome_short_name == "ACR Response Rate" & contrast == "Means difference" ~ "Proportion difference",
-      contrast == "None" ~ NA_character_,
-      TRUE ~ contrast),
-    primary_outcome_type = case_when(
+    contrast_effect_type = case_when(
+      outcome_short_name == "ACR Response Rate" & contrast_effect_type == "Means difference" ~ "Proportion difference",
+      contrast_effect_type == "None" ~ NA_character_,
+      TRUE ~ contrast_effect_type),
+    outcome_variable_type = case_when(
       # because Mean annualized bleeding rate varies between 0 and +\inf
       outcome_short_name == "Mean Annualized Bleeding Rate" ~ "Continuous (count, mean, ...)",
-      TRUE ~ primary_outcome_type
+      TRUE ~ outcome_variable_type
     ),
     effect_cutoff = case_when(
       # "1" and "0" as characters to be able to pivot into longer column at next step
-      contrast %in% c("HR", "RR", "OR", "Means Ratio", "Incidence Rate Ratio", "Rate ratio") ~ "1",
-      contrast %in% c("Means difference", "Median difference", "Rate difference", "Risk difference", "Proportions difference", "Proportion difference") ~ "0",
+      contrast_effect_type %in% c("HR", "RR", "OR", "Means Ratio", "Incidence Rate Ratio", "Rate ratio") ~ "1",
+      contrast_effect_type %in% c("Means difference", "Median difference", "Rate difference", "Risk difference", "Proportions difference", "Proportion difference") ~ "0",
       TRUE ~ NA_character_),
-    unadjusted_effect = case_when(
+    contrast_effect_unadjusted_value = case_when(
       #TODO: to be checked if new data is eventually added, works so far because
       # for the first extraction, all proportion differences are actually percentage differences
-      contrast %in% c("Proportions difference", "Proportion difference") ~ as.character(as.numeric(unadjusted_effect) / 100),
-      TRUE ~ unadjusted_effect
+      contrast_effect_type %in% c("Proportions difference", "Proportion difference") ~ as.character(as.numeric(contrast_effect_unadjusted_value) / 100),
+      TRUE ~ contrast_effect_unadjusted_value
     ),
-    adjusted_effect = case_when(
+    contrast_effect_adjusted_value = case_when(
       #TODO: to be checked if new data is eventually added, works so far because
       # for the first extraction, all proportion differences are actually percentage differences
-      contrast %in% c("Proportions difference", "Proportion difference") ~ as.character(as.numeric(adjusted_effect) / 100),
-      TRUE ~ adjusted_effect
+      contrast_effect_type %in% c("Proportions difference", "Proportion difference") ~ as.character(as.numeric(contrast_effect_adjusted_value) / 100),
+      TRUE ~ contrast_effect_adjusted_value
     )
   ) %>%
-  select(primary_outcome_name,
+  select(outcome_name,
          outcome_short_name,
-         primary_outcome_type,
-         contrast,
+         outcome_variable_type,
+         contrast_effect_type,
          direction_benefit,
          everything())
 
 # Creating the file to manually enter which directions makes a given treatment contrast effect beneficial
 if (FALSE) {
   wide_methodo_results_df %>%
-    select(primary_outcome_name,
-           primary_outcome_type,
+    select(outcome_name,
+           outcome_variable_type,
            contrast,
            effect_cutoff) %>%
     distinct() %>%
@@ -215,13 +189,13 @@ if (FALSE) {
 
 
 if (wide_methodo_results_df %>%
-   filter(is.na(direction_benefit) & !is.na(contrast)) %>%
+   filter(is.na(direction_benefit) & !is.na(contrast_effect_type)) %>%
    nrow() != 0) {
   # Reviewing cases with missing direction benefit
   View(
     wide_methodo_results_df %>%
-      filter(is.na(direction_benefit) & !is.na(contrast)) %>%
-      select(doi, primary_outcome_name, outcome_short_name, primary_outcome_type, contrast, direction_benefit)
+      filter(is.na(direction_benefit) & !is.na(contrast_effect_type)) %>%
+      select(doi, outcome_name, outcome_short_name, outcome_variable_type, contrast_effect_type, direction_benefit)
   )
 }
 
@@ -243,7 +217,7 @@ stopifnot(all(!is.na(long_methodo_results_df$section)))
 # DM pvalues --------------------------------------------------------------
 
 pvalues_df <- long_results %>%
-  filter(questions %in% c("unadjusted_pval_char", "adjusted_pval_char")) %>%
+  filter(questions %in% c("contrast_effect_unadjusted_pvalci", "contrast_effect_adjusted_pvalci")) %>%
   mutate(lb_ci = str_extract(answer, "(?<=\\[).+(?=;)"),
          ub_ci = str_extract(answer, "(?<=;).+(?=\\])"),
          # pattern compliqué pour prendre en compte les cas ou l'IC et la pvalues sont simultanément reportés
@@ -253,12 +227,6 @@ pvalues_df <- long_results %>%
   mutate(across(.cols = c(lb_ci, ub_ci), .fns = as.numeric),
          # a warning is expected here
          num_pval = as.numeric(pval))
-# %>%
-#   left_join(long_results %>%
-#               select(-study_number) %>%
-#               filter(questions %in% c("unadjusted_effect", "adjusted_effect"))) %>%
-
-
 tryCatch(
   stopifnot(pvalues_df %>%
               filter(if_all(.cols = c(lb_ci, ub_ci, pval), .fns = is.na)) %>%
@@ -271,7 +239,7 @@ tryCatch(
 )
 
 contrasts_df <- wide_methodo_results_df %>%
-  select(doi, n_itc, contrast, effect_cutoff)
+  select(doi, n_itc, contrast_effect_type, effect_cutoff)
 
 significance_df <- left_join(pvalues_df, contrasts_df, by = c("doi", "n_itc")) %>%
   mutate(significant = case_when(
@@ -285,8 +253,8 @@ significance_df <- left_join(pvalues_df, contrasts_df, by = c("doi", "n_itc")) %
   # mutate(z_value = qnorm(num_pval/2, lower.tail = FALSE),
   #        se_effect = (abs(ub_ci - lb_ci)) / 2 * qnorm(0.975),
   #        z_value = effect / se_effect) %>%
-  mutate(adjustment = ifelse(grepl("^adjusted_", questions), "adjusted",
-                             ifelse(grepl("^unadjusted_", questions), "unadjusted", NA))) %>%
+  mutate(adjustment = ifelse(grepl("_adjusted_", questions), "adjusted",
+                             ifelse(grepl("_unadjusted_", questions), "unadjusted", NA))) %>%
   mutate(across(.cols = everything(), .fns = as.character)) %>%
   pivot_longer(cols = c("lb_ci", "ub_ci", "pval", "num_pval", "significant"),
                names_to = "indicator",
@@ -294,7 +262,7 @@ significance_df <- left_join(pvalues_df, contrasts_df, by = c("doi", "n_itc")) %
   pivot_wider(names_from = c("adjustment", "indicator"),
               values_from = "values",
               names_sep = "_") %>%
-  select(-questions, -answer, -contrast, -effect_cutoff) %>%
+  select(-questions, -answer, -contrast_effect_type, -effect_cutoff) %>%
   pivot_longer(cols = !c(doi, section, n_itc, study_number),
                names_to = "questions",
                values_to = "answer") %>%
@@ -307,29 +275,22 @@ long_results_final <- filter(long_results, section %in% c("general_information",
   bind_rows(significance_df) %>%
   arrange(doi, section, n_itc, study_number) %>%
   # to discard article removed at the very end
-  semi_join(filter(flow_chart, included), by = "doi")
+  semi_join(filter(flow_chart_df, included), by = "doi")
 
 # Writing final table of results to use for stats -------------------------
 long_results_final %>% write_tsv("data/to_use_for_stats/long_results_final.tsv")
 
 
-
-# Subsetting articles information df on articles included in the r --------
+# Subsetting articles information df on articles included in the results ----
 all_articles_info <- read_csv("data/articles_selection/all_articles_info.csv",
                               col_types = cols(.default = "c"))
 all_articles_id <- read_csv("data/articles_selection/articles_id.csv",
                             col_types = cols(.default = "c")) %>%
   mutate(DOI = tolower(DOI)) %>%
   rename(doi = DOI)
-flow_chart_df <- read_csv("data/to_use_for_stats/flow_chart.csv",
-                          col_types = cols(included = "l",
-                                           full_article = "l",
-                                           third = "l",
-                                           during_extraction = "l",
-                                           .default = "c"))
 
 included_articles_info <- all_articles_id %>%
-  # Subseting articles information for only the ones included in the review
+  # Subsetting articles information for only the ones included in the review
   semi_join(filter(flow_chart_df, included),
             by = "PMID") %>%
 # Joining information from 2 files exported from Pubmed: id and information
@@ -340,12 +301,11 @@ included_articles_info <- all_articles_id %>%
 
 # Testing whether included_articles only contains information for the included articles
 stopifnot(identical(
-  unique(included_articles$PMID)[order(unique(included_articles$PMID))],
-  unique(long_results_final$PMID)[order(unique(long_results_final$PMID))]
+  unique(included_articles_info$doi)[order(unique(included_articles_info$doi))],
+  unique(long_results_final$doi)[order(unique(long_results_final$doi))]
 ))
 
 write_csv(included_articles_info, "data/included_articles_info.csv")
-
 
 
 
@@ -489,10 +449,10 @@ str_transformation <- function(x) {
     str_split("(\\+)|(\\s-\\s)|(\\set\\s)|(\\sor\\s)|(\\sand\\s)|(/)|(followed\\sby)")
 }
 
-wide_ttt_parsed <- second_part_subset %>%
-  filter(questions %in% c("Treatment name 1", "Treatment name 2")) %>%
-  distinct(decision) %>%
-  rename(ttt_name = decision) %>%
+wide_ttt_parsed <- long_results_final  %>%
+  filter(questions %in% c("treatment_name_ipd", "treatment_name_nonipd")) %>%
+  distinct(answer) %>%
+  rename(ttt_name = answer) %>%
   mutate(ttt_parsed = str_transformation(ttt_name)) %>%
   unnest_wider(ttt_parsed) %>%
   rename("first" = "...1", "second" = "...2", "third" = "...3") %>%
@@ -521,18 +481,14 @@ ttt_atc_mapped <- long_ttt_parsed %>%
          third = final_classification_name_third) %>%
   select(ttt_name, first, second, third, car_t_cells)
 
-decision_atc_mapped <- second_part_subset %>%
-  filter(questions %in% c("Treatment name 1", "Treatment name 2")) %>%
-  left_join(ttt_atc_mapped, by = c("decision" = "ttt_name"))
+decision_atc_mapped <- long_results_final  %>%
+  filter(questions %in% c("treatment_name_ipd", "treatment_name_nonipd")) %>%
+  left_join(ttt_atc_mapped, by = c("answer" = "ttt_name"))
 
 decision_atc_mapped %>% write_tsv(file.path(dir_data, "to_use_for_stats/decision_atc_mapped.tsv"))
 
 
-
-
-
 # ICD mapping -------------------------------------------------------------
-
 
 icd <- read_tsv("data/mapping/classification_ICDWHO/CONCEPT.csv") %>%
   select(all_of(c("concept_id", "concept_code", "concept_class_id", "concept_name")))
