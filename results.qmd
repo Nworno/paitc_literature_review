@@ -32,11 +32,23 @@ ggthemr::ggthemr("fresh")
 ```
 
 ```{r}
+# because for some reason tableby2word can't write in a subfolder directly
 tableby2word <- function(tableby_obj, path, ...) {
-  # because for some reason tableby2word can't write in a subfolder directly
   short_path <- str_extract(path, "(?<=/)[^/]*$")
-  write2word(tableby_obj, short_path, ...)
+  write2word(tableby_obj, short_path, quiet = TRUE, reference_docx = "word_style_ref_01.docx", ...)
   file.rename(short_path, path)
+}
+```
+
+```{r}
+# grouping last levels for display in tableby : eg for displaying only top countries 
+# Meaningful if factor is ordered by frequency
+grouping_last_levels <- function(x, n_first_levels, grouping_label = "Other") {
+  last_levels <- levels(x)[n_first_levels + 1:length(levels(x))]
+  new_names_last_levels <- rep(grouping_label, length(last_levels))
+  new_levels <- c(levels(x)[1:n_first_levels], new_names_last_levels)
+  levels(x) <- new_levels
+  return(x)
 }
 ```
 
@@ -62,11 +74,11 @@ conditions_mapped <- read_tsv("data/to_use_for_stats/decision_icd_mapped.tsv",
 ```
 
 
-```{r Creating section data frames}
-general_information_df <- results_df[results_df$section == "general_information", c("doi", "questions", "answer")]
-individual_study_df <- results_df[results_df$section == "study_information",]
-paic_results <- results_df[results_df$section %in% c("methodology", "results"), ]
-```
+<!-- ```{r Creating section data frames} -->
+<!-- general_information_df <- results_df[results_df$section == "general_information", c("doi", "questions", "answer")] -->
+<!-- individual_study_df <- results_df[results_df$section == "study_information",] -->
+<!-- paic_results <- results_df[results_df$section %in% c("methodology", "results"), ] -->
+<!-- ``` -->
 
 # DM articles comparison level
 
@@ -117,9 +129,10 @@ articles_level_df <- articles_level_df %>%
          .fns = ~ ifelse(tolower(.x) %in% c("usa", "uk"),
                          str_to_upper(.x),
                          str_to_title(.x))), 
-         `publication year` = as.numeric(`publication year`), 
+         publication_year = as.numeric(`publication year`), 
          funded_pharma = grepl(x = funding_source, pattern = "Pharmaceutical", perl = TRUE),
-         pharma_authorship_funding = funded_pharma | `Pharmaceutical Industry`
+         pharma_authorship_funding = funded_pharma | `Pharmaceutical Industry`, 
+         publication_date = as_date(edat, format = "%Y/%m/%d %H:%M")
   ) %>% 
   rename(journal_title = `journal/book`)
 ```
@@ -159,22 +172,10 @@ articles_level_df <- comparison_level_df %>%
 formula_article_level <- formulize(y = "", x = ".")
 ```
 
-```{r}
-# grouping last levels for display in tableby : eg for displaying only top countries 
-# Meaningful if factor is ordered by frequency
-grouping_last_levels <- function(x, n_first_levels, grouping_label = "Other") {
-  last_levels <- levels(x)[n_first_levels + 1:length(levels(x))]
-  new_names_last_levels <- rep(grouping_label, length(last_levels))
-  new_levels <- c(levels(x)[1:n_first_levels], new_names_last_levels)
-  levels(x) <- new_levels
-  return(x)
-}
-```
-
 
 ```{r}
 description_articles <- articles_level_df %>% 
-  select(`publication year`, country_first_author, country_last_author, methodologist_yn, 
+  select(publication_date, publication_year, country_first_author, country_last_author, methodologist_yn, 
          `Pharmaceutical Industry`, Academic, `Private Data Analysis Company`, 
          journal_title, `concept_name_ICD10 Chapter`, pharma_authorship_funding, 
          paic_count, paic_conducted) %>% 
@@ -183,7 +184,7 @@ description_articles <- articles_level_df %>%
                        "paic_conducted" = "PAIC conducted"
                        )
   ) %>% 
-  mutate(`publication year` = as.factor(ifelse(`publication year` < 2020,
+  mutate(publication_year = as.factor(ifelse(publication_year < 2020,
                                                "January 1st 2010 - December 31st 2019",
                                                "January 1st 2020 - April 2nd 2022")),
          across(where(is.logical), 
@@ -194,47 +195,116 @@ description_articles <- articles_level_df %>%
          journal_title = grouping_last_levels(fct_infreq(journal_title), 6), 
          `concept_name_ICD10 Chapter` = grouping_last_levels(fct_infreq(`concept_name_ICD10 Chapter`), 6)
   ) %>% 
-  tableby(formula_article_level, 
+  tableby(~ ., 
           data = ., 
           numeric.stats = c("sum", "mean", "median", "q1q3", "max"), 
           )
 ```
 
 ```{r}
-summary(description_articles)
+summary(description_articles_df)
 ```
 
 ```{r}
 # See there https://github.com/hms-dbmi/Access-to-Data-using-PIC-SURE-API/blob/master/NHLBI_BioData_Catalyst/R/ORCHID_COVID19.ipynb
 # Doesn't work very well
 # table_description_articles <- as_tibble(description_articles)
-# table_description_articles[, c('Total', 'Overall')] <- table_description_articles %>% 
-#   select(Total, Overall) %>% 
-#   apply(c(1, 2), 
-#         function(elem) {
-#           elem_bis <- unlist(elem)
-#           ifelse(elem != '', 
-#                  unlist(elem_bis) %>%
-#                    round(1) %>%
-#                    paste0(collapse = ' (') %>%
-#                    paste0(')'),
-#                  elem_bis
-#           )
-#         }
-#   )
 
-# But as.dataframe(summary(table_df))) is much more promising
-# table_description_articles %>% 
-#   flextable() %>% 
-#   flextable::save_as_docx(path = "output_tables/articles_information_table.docx")
 ```
 
-```{r, include=FALSE, results = "hide", }
-# Needs to be run from the console, or remove inline output chunk options
+
+```{r}
+separate_elements <- function(col, ...) {
+  col %>% 
+    lapply(function(elem) {
+      elem_bis <- unlist(elem)
+      ifelse(length(elem_bis) != 1,
+             unlist(elem_bis) %>%
+               round(1) %>%
+               paste0(collapse = ' (') %>%
+               paste0(')'),
+             elem_bis
+      )}) %>% 
+    as.character()
+}
+```
+
+
+```{r}
+library(flextable)
+description_articles_df <- as_tibble(description_articles)
+
+description_articles %>%
+  summary() %>% 
+  flextable()
+
+str(description_articles)
+
+label_total <- glue::glue("Total (n = {nrow(articles_level_df)})")
+
+flextable_description_articles <- description_articles_df %>% 
+  select(variable = term, modalities = label, last_col()) %>% 
+  mutate(variable = if_else(Total == "", modalities, NA_character_), 
+         modalities = if_else(Total != "", modalities, NA_character_)
+         ) %>% 
+  mutate(across(c(Total), .fns = separate_elements), 
+         variable = replace_in_vec(variable, swap_names_values(renaming_questions_list))) %>% 
+  flextable()
+
+indic_hlines <- (which(!is.na(flextable_description_articles$body$dataset$variable)) - 1)
+indic_hlines <- indic_hlines[2: length(indic_hlines)]
+flextable_description_articles %>% 
+  # set_header_labels(values = c("label" = "test1", "Overall" = "test2", "Total" = "test3")) %>%
+  set_header_labels(values = c("variable" = "",
+                               "modalities" = "",
+                               "Total" = label_total)) %>%
+  add_header_row(values = c("", "n (%)"), colwidths = c(2, 1), top = FALSE ) %>% 
+  flextable::align(i = 1, j = 1:2, align = "center", part = "header") %>% 
+  flextable::theme_booktabs() %>% 
+  hline(i = indic_hlines, part = "body", border = fp_border(width = 2)) %>% 
+  autofit()
+
+```
+
+
+```{r}
+# kableExtra can only save to html/png/pdf
+# 
+# library(kableExtra)
+# description_articles %>% 
+#   as_tibble() %>% 
+#   select(label, Overall, Total) %>% 
+#   kableExtra::kbl() %>% 
+#   kable_minimal() %>% 
+#   kableExtra::kable_styling(bootstrap_options = c("striped"), 
+#                             full_width = FALSE,
+#                             position = "left", 
+#                             font_size = 12) %>% 
+#   column_spec(1, width = "20em") %>%
+#   column_spec(2, width = "10em") %>% 
+#   column_spec(3, width = "10em") %>% 
+#   add_header_above(c(" ", "No. (%)" = 2), align = 'left') %>% 
+#   row_spec(0, bold = TRUE, extra_css = "font-size: medium") %>%
+#   row_spec(c(3, 10, 15), underline = FALSE, bold = TRUE, align = 'left') %>%
+#   column_spec(1, background = 'FDEBD0') %>% 
+#   pack_rows('Demographics', 1, 20, indent = FALSE, label_row_css = "text-align: left; font-style: italic") %>%
+# pack_rows('COVID-19 Symptoms', 20, 22, indent = FALSE, label_row_css = "text-align: left; font-style: italic")
+
+```
+
+
+```{r}
+description_articles %>% 
+  as_tibble() %>% 
+  separate_elements() %>% 
+  flextable() %>%
+  flextable::save_as_docx(path = "output_tables/articles_information_table.docx")
+```
+
+```{r}
 tableby2word(description_articles,
              "output_tables/articles_information_table.docx",
-             title = "Articles description",
-             quiet = TRUE)
+             title = "Articles description")
 ```
 
 
@@ -680,12 +750,7 @@ variables_selection_df <- comparison_level_df %>%
 
 ```{r DM variables adjustment}
 
-replacement_list_covariates <- c(
-  coll("Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease)") = "Disease history",
-  "Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...)" = "Performance Score"
-)
-
-covariates_adjustment_df <- comparison_level_df_dm %>% 
+covariates_adjustment_df <- comparison_level_df %>% 
   select(doi, n_itc, covariates_names, adjustment_geographical) %>% 
   mutate(
     covariates_names = str_replace_all(covariates_names,
@@ -718,6 +783,32 @@ covariates_adjustment_df <- comparison_level_df_dm %>%
   select(-covariates_names, -adjustment_geographical)
 ```
 
+```{r DM contrast effect}
+# TODO: retravailler ça en fonction de la lecture de la problématique des 
+# échelles d'outcomes de Phillippo
+renaming_contrast <- c(
+  "Incidence Rate Ratio" = "Rates/ratio", 
+  "Rate ratio" = "Rates/ratio", 
+  "OR" = "Rates/ratio", 
+  "RR" = "Rates/ratio", 
+  "Means Ratio" = "Rates/ratio", 
+  "HR" = "Rates/ratio", 
+  "Means difference" = "Means/median difference", 
+  "Median difference" = "Means/median difference", 
+  "RMST difference at 12 months" = "Means/median difference",
+  "Risk difference" = "Rates/ratio difference", 
+  "Rate difference" = "Rates/ratio difference", 
+  "Proportion difference" = "Rates/ratio difference",
+  "Proportions difference" = "Rates/ratio difference"
+)
+
+comparison_level_df <- comparison_level_df %>% 
+   mutate(contrast_effect_type = replace_in_vec(contrast_effect_type, renaming_contrast))
+```
+
+
+
+
 
 ```{r DM comparison level df}
 comparison_level_df_dm <- comparison_level_df %>% 
@@ -730,8 +821,13 @@ comparison_level_df_dm <- comparison_level_df %>%
   mutate(across(c(act_ipd, act_nonipd), 
                 .fns = ~ grouping_last_levels(fct_infreq(.x), 5)), 
          paic_type = fct_infreq(paic_type), 
-         anchored_yn = factor(anchored_yn, levels = c("Yes", "No"))
-         ) %>% 
+         anchored_yn = factor(anchored_yn, levels = c("Yes", "No")),
+         covariates_n = as.numeric(covariates_n), 
+         unadjusted_yn = !is.na(contrast_effect_unadjusted_value), 
+         adjusted_yn = !is.na(contrast_effect_adjusted_value), 
+         across(c(contrast_effect_unadjusted_value, contrast_effect_adjusted_value), as.numeric), 
+         perc_change_effect = abs(contrast_effect_unadjusted_value - contrast_effect_adjusted_value) * 100 / abs(contrast_effect_unadjusted_value)
+  ) %>% 
   # Dropping variables referring to sample sizes
   select(doi, n_itc, !any_of(names(wide_sample_size_df))) %>% 
   # Adding sample size DM
@@ -742,7 +838,56 @@ comparison_level_df_dm <- comparison_level_df %>%
   set_labels(swap_names_values(renaming_questions_list))
 ```
 
-## Description comparisons
+
+
+
+```{r DM: adjustment level data frame}
+adjustment_level_df <- comparison_level_df %>% 
+  select(doi, n_itc, contrast_effect_type, contrast_effect_direction,
+         unadjusted_lb_ci, unadjusted_ub_ci,
+         adjusted_lb_ci, adjusted_ub_ci, unadjusted_significant, adjusted_significant, 
+         effect_cutoff, unadjusted_num_pval, adjusted_num_pval, contrast_effect_unadjusted_value, 
+         contrast_effect_adjusted_value, direction_benefit, outcome_short_name) %>% 
+  pivot_longer(names_pattern = "((?:un)?adjusted)(_)(.*)", 
+               cols = !c(doi, n_itc, contrast_effect_type, contrast_effect_direction, direction_benefit, outcome_short_name, effect_cutoff), 
+               names_to = c("adjustment", NA, "indicator"), 
+               values_to = "values") %>%
+  pivot_wider(id_cols = c(doi, n_itc, contrast_effect_type, contrast_effect_direction, adjustment, direction_benefit, outcome_short_name, effect_cutoff), 
+              names_from = indicator, 
+              values_from = values) %>% 
+  rename(effect = value) %>% 
+  mutate(across(c(lb_ci, ub_ci, num_pval, effect, effect_cutoff), as.numeric))
+
+left_side_outcome <- adjustment_level_df %>% 
+  filter(contrast_effect_direction == "Numerator if ratio, or left side if difference")
+
+right_side_outcome <- adjustment_level_df %>% 
+  filter(contrast_effect_direction == "Denominator if ratio, or rightside if difference") %>% 
+  mutate(across(c(lb_ci, ub_ci, effect),
+                .fns = function(x) {
+                  ifelse(effect_cutoff == 0, -x, ifelse(effect_cutoff == 1, 1/x, NA))
+                })
+  ) %>% 
+  mutate(lb_ci_temp = ub_ci, 
+         ub_ci = lb_ci, 
+         lb_ci = lb_ci_temp, 
+         lb_ci_temp = NULL)
+
+adjustment_level_df <- bind_rows(left_side_outcome, right_side_outcome) %>%
+  select(-contrast_effect_direction) %>%
+# Creating binary variable distinguishing estimates beneficial for IPD:
+  mutate(benefit_ipd = case_when(
+    direction_benefit == "inferior" & effect <= effect_cutoff ~ TRUE,
+    direction_benefit == "superior" & effect >= effect_cutoff ~ TRUE,
+    !is.na(effect) ~ FALSE,
+    TRUE ~ NA)
+  )
+```
+
+
+## Comparison level: methods
+
+### Description comparisons
 
 
 ```{r, results='asis'}
@@ -755,7 +900,7 @@ description_comparisons <- comparison_level_df_dm %>%
 tableby2word(description_comparisons, "output_tables/description_comparison.docx")
 ```
 
-## Correct model adjustment
+### Correct model adjustment
 
 ```{r}
 correct_adjustment <- comparison_level_df_dm %>% 
@@ -773,11 +918,12 @@ tableby2word(correct_adjustment, "output_tables/correct_adjustment.docx")
 ```
 
 
-## Correct variables justification 
+### Correct variables justification 
 
 ```{r}
 variables_justification <- comparison_level_df_dm %>% 
-  select(no_justification, expertise, literature, statistics_ipd, imbalance, justification_char, anchored_yn) %>% 
+  select(no_justification, expertise, literature, statistics_ipd,
+         imbalance, justification_char, anchored_yn) %>% 
   tableby( anchored_yn ~ ., data = .)
 ```
 
@@ -790,12 +936,12 @@ tableby2word(variables_justification, "output_tables/variables_justification.doc
 ```
 
 
-## Main methodological aspects
+### Main methodological aspects
 
 ```{r}
 main_methods <- comparison_level_df_dm %>%
   left_join(articles_level_df[, c("doi", "systematic_review_yn")]) %>% 
-  select(systematic_review_yn, primary_outcome_yn, ss_ipd_yn, ss_nonipd_yn, ss_adjusted_yn, reduction_ess_percent) %>% 
+  select(systematic_review_yn, primary_outcome_yn, ss_ipd_yn, ss_nonipd_yn, ss_adjusted_yn) %>% 
   tableby( ~ ., data = .) 
 ```
 
@@ -808,16 +954,75 @@ summary(main_methods)
 tableby2word(main_methods, "output_tables/main_methods.docx")
 ```
 
-## Secondary methodological aspects
+### Secondary methodological aspects
 
 ```{r}
-comparison_level_df_dm %>% 
+#TODO: rajouter aspect sur l'échelle de la comparaison
+secondary_methods <- comparison_level_df_dm %>% 
   select(outcome_variable_type, contrast_effect_type, 
-         covariates_n, #TODO: reprendre d'ici , rajouter les noms des covariables sur lesquels c'est ajusté
-         , scale_choice_yn, 
-         adjustment_model_details_yn)
+         scale_choice_yn, adjustment_model_details_yn) %>% 
+  tableby( ~ ., data = .)
 ```
 
+```{r}
+summary(secondary_methods)
+```
+
+```{r}
+tableby2word(secondary_methods, "output_tables/secondary_methods.docx")
+```
+
+
+### Adjustment variables
+
+```{r}
+adjustment_variables <- covariates_adjustment_df %>% 
+  left_join(comparison_level_df_dm[, c("doi", "n_itc", "covariates_n")]) %>%
+  select(-doi, -n_itc) %>% 
+  tableby( ~ ., data = .)
+```
+
+```{r}
+adjustment_variables %>% summary()
+```
+
+```{r}
+tableby2word(adjustment_variables, "output_tables/adjustment_variables.docx")
+```
+
+## Comparisons level: results
+
+### Results at the comparison level
+
+```{r}
+results_tableby <- comparison_level_df_dm %>% 
+  select(unadjusted_yn, adjusted_yn, reduction_ess_percent, weights_yn, 
+         reduction_ess_percent, perc_change_effect) %>% 
+  tableby( ~ ., data = ., 
+           control = tableby.control(numeric.stats = c("median", "q1q3","range", "meansd")))
+summary(results_tableby)
+```
+
+```{r}
+tableby2word(results_tableby, "output_tables/results_tableby.docx")
+```
+
+### Results at the adjustment level
+
+```{r Adjustment level results}
+adjustment_level_tableby <- adjustment_level_df %>% 
+  select(adjustment, significant, benefit_ipd) %>% 
+  tableby(adjustment ~ benefit_ipd, data = ., strata = significant)
+```
+
+```{r}
+adjustment_level_tableby %>% 
+  summary()
+```
+
+```{r}
+tableby2word(adjustment_level_tableby, "output_tables/adjustement_level.docx")
+```
 
 ## Figures 
 
@@ -898,89 +1103,6 @@ wide_methodo_results  %>%
 ```
 
 ### Treatment effect estimates
-
-```{r}
-# renaming_contrast <- c(
-#   "Incidence Rate Ratio" = "Rates: OR/RR/means ratio", 
-#   "Rate ratio" = "Rates: OR/RR/means ratio", 
-#   "OR" = "Rates: OR/RR/means ratio", 
-#   "RR" = "Rates: OR/RR/means ratio", 
-#   "Means Ratio" = "Rates: OR/RR/means ratio", 
-#   "Means difference" = "Means/medians difference", 
-#   "Median difference" = "Means/medians difference", 
-#   "RMST difference at 12 months" = "Means/medians difference",
-#   "Risk difference" = "Risk/Rate difference", 
-#   "Rate difference" = "Risk/Rate difference", 
-#   "HR" = "Hazard Ratio", 
-#   "Proportion difference" = "Proportion difference",
-#   "Proportions difference" = "Proportion difference"
-# )
-
-renaming_contrast <- c(
-  "Incidence Rate Ratio" = "Rates/ratio", 
-  "Rate ratio" = "Rates/ratio", 
-  "OR" = "Rates/ratio", 
-  "RR" = "Rates/ratio", 
-  "Means Ratio" = "Rates/ratio", 
-  "Means difference" = "Difference", 
-  "Median difference" = "Difference", 
-  "RMST difference at 12 months" = "Difference",
-  "Risk difference" = "Difference", 
-  "Rate difference" = "Difference", 
-  "HR" = "Rates/ratio", 
-  "Proportion difference" = "Proportion difference",
-  "Proportions difference" = "Proportion difference"
-)
-
-wide_results_outcome <- wide_methodo_results %>% 
-   mutate(contrast = replace_in_vec(contrast, renaming_contrast)) %>% 
-  select(doi, n_itc, contrast, effect_direction, unadjusted_lb_ci, unadjusted_ub_ci,
-         adjusted_lb_ci, adjusted_ub_ci, unadjusted_significant, adjusted_significant, 
-         effect_cutoff, unadjusted_num_pval, adjusted_num_pval, unadjusted_effect, 
-         adjusted_effect, direction_benefit, outcome_short_name) %>% 
-  pivot_longer(names_pattern = "((?:un)?adjusted)(_)(.*)", 
-               cols = !c(doi, n_itc, contrast, effect_direction, direction_benefit, outcome_short_name, effect_cutoff), 
-               names_to = c("adjustment", NA, "indicator"), 
-               values_to = "values") %>%
-  pivot_wider(id_cols = c(doi, n_itc, contrast, effect_direction, adjustment, direction_benefit, outcome_short_name, effect_cutoff), 
-              names_from = indicator, 
-              values_from = values) %>% 
-  mutate(across(c(lb_ci, ub_ci, num_pval, effect, effect_cutoff), as.numeric)) 
-
-
-# Standarsize what is beneficial for IPD
-# stopifnot(all(!is.na(wide_results_outcome$direction_benefit)))
-# stopifnot(all(!is.na(wide_results_outcome$effect)))
-# table(is.na(wide_results_outcome$effect), useNA = "always")
-# table(is.na(wide_results_outcome$effect_cutoff), useNA = "always")
-# wide_results_outcome %>% filter(!is.na(effect) & is.na(effect_cutoff)) %>% View()
-
-left_side_outcome <- wide_results_outcome %>% 
-  filter(effect_direction == "Numerator if ratio, or left side if difference")
-
-right_side_outcome <- wide_results_outcome %>% 
-  filter(effect_direction == "Denominator if ratio, or rightside if difference") %>% 
-  mutate(across(c(lb_ci, ub_ci, effect),
-                .fns = function(x) {
-                  ifelse(effect_cutoff == 0, -x, ifelse(effect_cutoff == 1, 1/x, NA))
-                })
-  ) %>% 
-  mutate(lb_ci_temp = ub_ci, 
-         ub_ci = lb_ci, 
-         lb_ci = lb_ci_temp, 
-         lb_ci_temp = NULL)
-
-wide_results_outcome <- bind_rows(left_side_outcome, right_side_outcome) %>%
-  select(-effect_direction) %>%
-# Creating binary variable distinguishing estimates beneficial for IPD:
-  mutate(benefit_ipd = case_when(
-    direction_benefit == "inferior" & effect <= effect_cutoff ~ TRUE,
-    direction_benefit == "superior" & effect >= effect_cutoff ~ TRUE,
-    !is.na(effect) ~ FALSE,
-    TRUE ~ NA)
-  )
-```
-
 
 ```{r, eval = FALSE}
 wide_results_outcome %>%

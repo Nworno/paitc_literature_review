@@ -15477,7 +15477,7 @@ doi	section	n_itc	study_number	questions	answer
 10.3390/biom11060780	results	1	NA	ss_adjusted_ttt_ipd	NA
 10.3390/biom11060780	results	1	NA	weights_yn	Not mentioned
 10.3390/biom11060780	results	1	NA	covariates_yn	Yes
-10.3390/biom11060780	results	1	NA	covariates_n	NA
+10.3390/biom11060780	results	1	NA	covariates_n	7
 10.3390/biom11060780	results	1	NA	covariates_names	Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Performance score (ECOG PS, Karnofsky, Lansky, OMS, Ranson, ...), Past treatments for the disease of interest, Comorbidities and medical history (beside pathology/disease of interest in the comparison)
 10.3390/biom11060780	results	1	NA	contrast_effect_direction	Denominator if ratio, or rightside if difference
 10.3390/biom11060780	results	1	NA	contrast_effect_unadjusted_value	NA
