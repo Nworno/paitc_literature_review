@@ -309,7 +309,6 @@ write_csv(included_articles_info, "data/included_articles_info.csv")
 
 
 
-
 # Treatments and ATC ------------------------------------------------------
 ttt_df <- read_tsv("data/mapping/treatment_mapping.tsv") %>%
   mutate("CAR-T cells" = ifelse(!is.na(`CAR-T cells`), TRUE, FALSE)) %>%
@@ -366,8 +365,8 @@ N06AX29 <- ttt_mapping %>%
     `concept_code_ancestor_ATC 4th` = "N06AX",
     `concept_name_ancestor_ATC 1st` = "NERVOUS SYSTEM",
     `concept_name_ancestor_ATC 2nd` = "PSYCHOANALEPTICS",
-    `concept_name_ancestor_ATC 3nd` = "ANTIDEPRESSANTS",
-    `concept_name_ancestor_ATC 4nd` = "OTHER ANTIDEPRESSANTS"
+    `concept_name_ancestor_ATC 3rd` = "ANTIDEPRESSANTS",
+    `concept_name_ancestor_ATC 4th` = "OTHER ANTIDEPRESSANTS"
   )
 
 L04AA54 <- ttt_mapping %>%
@@ -379,8 +378,8 @@ L04AA54 <- ttt_mapping %>%
     `concept_code_ancestor_ATC 4th` = "L04AA",
     `concept_name_ancestor_ATC 1st` = "NERVOUS ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS",
     `concept_name_ancestor_ATC 2nd` = "IMMUNOSUPPRESSANTS",
-    `concept_name_ancestor_ATC 3nd` = "IMMUNOSUPPRESSANTS",
-    `concept_name_ancestor_ATC 4nd` = "Selective immunosuppressants"
+    `concept_name_ancestor_ATC 3rd` = "IMMUNOSUPPRESSANTS",
+    `concept_name_ancestor_ATC 4th` = "Selective immunosuppressants"
   )
 
 
@@ -394,8 +393,8 @@ car_t_cells <- ttt_mapping %>%
     `concept_code_ancestor_ATC 4th` = "L01XL",
     `concept_name_ancestor_ATC 1st` = "ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS",
     `concept_name_ancestor_ATC 2nd` = "ANTINEOPLASTIC AGENTS",
-    `concept_name_ancestor_ATC 3nd` = "OTHER ANTINEOPLASTIC AGENTS",
-    `concept_name_ancestor_ATC 4nd` = "ANTINEOPLASTIC CELL AND GENE THERAPY"
+    `concept_name_ancestor_ATC 3rd` = "OTHER ANTINEOPLASTIC AGENTS",
+    `concept_name_ancestor_ATC 4th` = "ANTINEOPLASTIC CELL AND GENE THERAPY"
   )
 
 curated <- bind_rows(L01EX, N06AX29, L04AA54, car_t_cells)
@@ -408,26 +407,28 @@ ttt_df_mapped <- ttt_df %>% left_join(atc_mapping_final, by = "ATC code") %>%
 # Checking that all ttt names found in extraction have either ATC ancestors mapped or something written in 'others' column
 stopifnot(!is.na(ttt_df_mapped$others) | !is.na(ttt_df_mapped$`concept_code_ancestor_ATC 2nd`))
 
-ttt_df_mapped_final <- ttt_df_mapped %>%
-  mutate(final_classification_code = case_when(
-    !is.na(`concept_code_ancestor_ATC 4th`) ~ `concept_code_ancestor_ATC 4th`,
-    !is.na(`concept_code_ancestor_ATC 3rd`) ~ `concept_code_ancestor_ATC 3rd`,
-    !is.na(`concept_code_ancestor_ATC 2nd`) ~ `concept_code_ancestor_ATC 2nd`,
-    TRUE ~ NA_character_
-    ),
-    final_classification_name = case_when(
-      !is.na(`concept_name_ancestor_ATC 4th`) ~ `concept_name_ancestor_ATC 4th`,
-      !is.na(`concept_name_ancestor_ATC 3rd`) ~ `concept_name_ancestor_ATC 3rd`,
-      !is.na(`concept_name_ancestor_ATC 2nd`) ~ `concept_name_ancestor_ATC 2nd`,
-      !is.na(others) ~ others,
-      TRUE ~ NA_character_
-    )) %>%
-  distinct(
-    ttt_name,
-    final_classification_code,
-    final_classification_name,
-    `CAR-T cells`
-  )
+# ttt_df_mapped_final <- ttt_df_mapped %>%
+#   mutate(final_classification_code = case_when(
+#     # !is.na(`concept_code_ancestor_ATC 4th`) ~ `concept_code_ancestor_ATC 4th`,
+#     !is.na(`concept_code_ancestor_ATC 3rd`) ~ `concept_code_ancestor_ATC 3rd`,
+#     # !is.na(`concept_code_ancestor_ATC 2nd`) ~ `concept_code_ancestor_ATC 2nd`,
+#     TRUE ~ NA_character_
+#     ),
+#     final_classification_name = case_when(
+#       # !is.na(`concept_name_ancestor_ATC 4th`) ~ `concept_name_ancestor_ATC 4th`,
+#       !is.na(`concept_name_ancestor_ATC 3rd`) ~ `concept_name_ancestor_ATC 3rd`,
+#       # !is.na(`concept_name_ancestor_ATC 2nd`) ~ `concept_name_ancestor_ATC 2nd`,
+#       !is.na(others) ~ others,
+#       TRUE ~ "Others (No ATC 3rd-level code)"
+#     )) %>%
+#   distinct(
+#     ttt_name,
+#     `concept_name_ancestor_ATC 3rd`,
+#     `concept_code_ancestor_ATC 3rd`,
+#     `CAR-T cells`
+#   ) %>%
+#   rename(atc_3rd_name = final_classification_name,
+#          atc_3rd_code = final_classification_code)
 
 list_replacing_ttt_manual <- c(
   "etoposide-ifosfamide" = "etoposide - ifosfamide",
@@ -449,41 +450,54 @@ str_transformation <- function(x) {
     str_split("(\\+)|(\\s-\\s)|(\\set\\s)|(\\sor\\s)|(\\sand\\s)|(/)|(followed\\sby)")
 }
 
-wide_ttt_parsed <- long_results_final  %>%
+long_ttt_parsed <- long_results_final  %>%
   filter(questions %in% c("treatment_name_ipd", "treatment_name_nonipd")) %>%
   distinct(answer) %>%
   rename(ttt_name = answer) %>%
   mutate(ttt_parsed = str_transformation(ttt_name)) %>%
-  unnest_wider(ttt_parsed) %>%
-  rename("first" = "...1", "second" = "...2", "third" = "...3") %>%
-  mutate(across(.cols = all_of(c("first", "second", "third")),
-                .fns = str_squish)
-  ) %>%
+  unnest_longer(ttt_parsed) %>%
+  mutate(ttt_parsed = str_squish(ttt_parsed)) %>%
   distinct()
 
-long_ttt_parsed <- wide_ttt_parsed %>%
-  pivot_longer(cols = c("first", "second", "third"),
-               names_to = "instance",
-               values_to = "ttt_parsed") %>%
-  filter(!is.na(ttt_parsed))
+  # mutate(across(.cols = all_of(c("first", "second", "third", "fourt")),
+  #               .fns = str_squish)
+  # ) %>%
+  # distinct()
+
+# long_ttt_parsed <- wide_ttt_parsed %>%
+#   pivot_longer(cols = c("first", "second", "third", "fourth"),
+#                names_to = "instance",
+#                values_to = "ttt_parsed") %>%
+#   filter(!is.na(ttt_parsed))
 
 ttt_atc_mapped <- long_ttt_parsed %>%
-  left_join(ttt_df_mapped_final, by = c("ttt_parsed" = "ttt_name")) %>%
-  filter(!is.na(final_classification_name)) %>%
-  pivot_wider(id_cols = "ttt_name",
-              names_from = "instance",
-              values_from = c("final_classification_name", "CAR-T cells")) %>%
-  rowwise() %>%
-  mutate(car_t_cells = any(`CAR-T cells_first`, `CAR-T cells_second`, `CAR-T cells_third`, na.rm = TRUE)) %>%
-  ungroup() %>%
-  rename(first = final_classification_name_first,
-         second = final_classification_name_second,
-         third = final_classification_name_third) %>%
-  select(ttt_name, first, second, third, car_t_cells)
+  inner_join(ttt_df_mapped, by = c("ttt_parsed" = "ttt_name"))
+
+long_ttt_parsed %>% anti_join(ttt_df_mapped, by = c("ttt_parsed" = "ttt_name")) %>% View()
+  # filter(!is.na(final_classification_name)) %>%
+  # pivot_wider(id_cols = "ttt_name",
+  #             names_from = "instance",
+  #             values_from = c("final_classification_name", "CAR-T cells")) %>%
+  # rowwise() %>%
+  # mutate(car_t_cells = any(`CAR-T cells_first`, `CAR-T cells_second`, `CAR-T cells_third`, na.rm = TRUE)) %>%
+  # ungroup() %>%
+  # rename(first = final_classification_name_first,
+  #        second = final_classification_name_second,
+  #        third = final_classification_name_third) %>%
+  # select(ttt_name, first, second, third, car_t_cells)
 
 decision_atc_mapped <- long_results_final  %>%
   filter(questions %in% c("treatment_name_ipd", "treatment_name_nonipd")) %>%
-  left_join(ttt_atc_mapped, by = c("answer" = "ttt_name"))
+  left_join(ttt_atc_mapped, by = c("answer" = "ttt_name")) %>%
+  rename(car_t_cells = `CAR-T cells`,
+         atc_code = `ATC code`)
+if(nrow(long_results_final  %>%
+       filter(questions %in% c("treatment_name_ipd", "treatment_name_nonipd")) %>%
+       anti_join(ttt_atc_mapped, by = c("answer" = "ttt_name"))) != 0) {
+  View(nrow(long_results_final  %>%
+              filter(questions %in% c("treatment_name_ipd", "treatment_name_nonipd")) %>%
+              anti_join(ttt_atc_mapped, by = c("answer" = "ttt_name"))))
+}
 
 decision_atc_mapped %>% write_tsv(file.path(dir_data, "to_use_for_stats/decision_atc_mapped.tsv"))
 

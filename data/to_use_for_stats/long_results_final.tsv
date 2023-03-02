@@ -6589,9 +6589,9 @@ doi	section	n_itc	study_number	questions	answer
 10.1080/10428194.2019.1682571	methodology	1	NA	outcome_name	overall survival
 10.1080/10428194.2019.1682571	methodology	1	NA	outcome_short_name	Overall Survival
 10.1080/10428194.2019.1682571	methodology	1	NA	outcome_variable_type	Time-to-event
-10.1080/10428194.2019.1682571	methodology	1	NA	treatment_name_ipd	daratumumab–bortezomib–melphalan–prednisone
+10.1080/10428194.2019.1682571	methodology	1	NA	treatment_name_ipd	daratumumab-bortezomib-melphalan-prednisone
 10.1080/10428194.2019.1682571	methodology	1	NA	studies_number_ipd	1
-10.1080/10428194.2019.1682571	methodology	1	NA	treatment_name_nonipd	lenalidomide–dexamethasone continuous
+10.1080/10428194.2019.1682571	methodology	1	NA	treatment_name_nonipd	lenalidomide-dexamethasone continuous
 10.1080/10428194.2019.1682571	methodology	1	NA	studies_number_nonipd	2
 10.1080/10428194.2019.1682571	methodology	1	NA	paic_type	MAIC
 10.1080/10428194.2019.1682571	methodology	1	NA	anchored_yn	No
@@ -6605,9 +6605,9 @@ doi	section	n_itc	study_number	questions	answer
 10.1080/10428194.2019.1682571	methodology	2	NA	outcome_name	overall survival
 10.1080/10428194.2019.1682571	methodology	2	NA	outcome_short_name	Overall Survival
 10.1080/10428194.2019.1682571	methodology	2	NA	outcome_variable_type	Time-to-event
-10.1080/10428194.2019.1682571	methodology	2	NA	treatment_name_ipd	daratumumab–bortezomib–melphalan–prednisone
+10.1080/10428194.2019.1682571	methodology	2	NA	treatment_name_ipd	daratumumab-bortezomib-melphalan-prednisone
 10.1080/10428194.2019.1682571	methodology	2	NA	studies_number_ipd	1
-10.1080/10428194.2019.1682571	methodology	2	NA	treatment_name_nonipd	lenalidomide–dexamethasone 18 months (rd18)
+10.1080/10428194.2019.1682571	methodology	2	NA	treatment_name_nonipd	lenalidomide-dexamethasone 18 months (rd18)
 10.1080/10428194.2019.1682571	methodology	2	NA	studies_number_nonipd	2
 10.1080/10428194.2019.1682571	methodology	2	NA	paic_type	MAIC
 10.1080/10428194.2019.1682571	methodology	2	NA	anchored_yn	No
@@ -6621,9 +6621,9 @@ doi	section	n_itc	study_number	questions	answer
 10.1080/10428194.2019.1682571	methodology	3	NA	outcome_name	overall survival
 10.1080/10428194.2019.1682571	methodology	3	NA	outcome_short_name	Overall Survival
 10.1080/10428194.2019.1682571	methodology	3	NA	outcome_variable_type	Time-to-event
-10.1080/10428194.2019.1682571	methodology	3	NA	treatment_name_ipd	daratumumab–bortezomib–melphalan–prednisone
+10.1080/10428194.2019.1682571	methodology	3	NA	treatment_name_ipd	daratumumab-bortezomib-melphalan-prednisone
 10.1080/10428194.2019.1682571	methodology	3	NA	studies_number_ipd	1
-10.1080/10428194.2019.1682571	methodology	3	NA	treatment_name_nonipd	melphalan–prednisone–thalidomide
+10.1080/10428194.2019.1682571	methodology	3	NA	treatment_name_nonipd	melphalan-prednisone-thalidomide
 10.1080/10428194.2019.1682571	methodology	3	NA	studies_number_nonipd	2
 10.1080/10428194.2019.1682571	methodology	3	NA	paic_type	MAIC
 10.1080/10428194.2019.1682571	methodology	3	NA	anchored_yn	No
@@ -12483,7 +12483,6 @@ doi	section	n_itc	study_number	questions	answer
 10.2217/cer-2020-0069	study_information	NA	6	ct_yn	No
 10.2217/cer-2020-0069	study_information	NA	6	data_source_name	miano et al. (2012)
 10.2217/cer-2020-0069	study_information	NA	6	country_study	italy
-10.2217/cer-2020-0069	study_information	NA	6	ct_arms	1
 10.2217/cer-2020-0069	study_information	NA	7	ipd_yn	No
 10.2217/cer-2020-0069	study_information	NA	7	ct_yn	No
 10.2217/cer-2020-0069	study_information	NA	7	data_source_name	von stackelbeg et al. (2010)
@@ -13635,9 +13634,9 @@ doi	section	n_itc	study_number	questions	answer
 10.2217/cer.15.69	results	1	NA	covariates_n	11
 10.2217/cer.15.69	results	1	NA	covariates_names	Age, Sex, Disease severity/disease history (ie past conditions or symptoms directly related to the disease of interest, eg history of venous thromboembolism in sickle cell disease), Past treatments for the disease of interest, Other(s)
 10.2217/cer.15.69	results	1	NA	contrast_effect_direction	Numerator if ratio, or left side if difference
-10.2217/cer.15.69	results	1	NA	contrast_effect_unadjusted_value	NA
+10.2217/cer.15.69	results	1	NA	contrast_effect_unadjusted_value	-0.048
 10.2217/cer.15.69	results	1	NA	contrast_effect_unadjusted_pvalci	0.004
-10.2217/cer.15.69	results	1	NA	contrast_effect_adjusted_value	NA
+10.2217/cer.15.69	results	1	NA	contrast_effect_adjusted_value	-0.007
 10.2217/cer.15.69	results	1	NA	contrast_effect_adjusted_pvalci	0.398
 10.2217/cer.15.69	results	1	NA	adjustment_geographical	No
 10.2217/cer.15.69	results	1	NA	ss_total_ipd	NA

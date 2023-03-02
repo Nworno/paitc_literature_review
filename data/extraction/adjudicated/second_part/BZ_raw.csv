@@ -956,12 +956,12 @@ HR (CI95) for full exponential STC : 0.490  [0.259;0.924]
 10.1080/10428194.2019.1682571,31686559,study_information,NA,2,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,international,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,study_information,NA,2,Phase of the clinical trial (clinical trial only),NA,NA,3,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,study_information,NA,2,Number of treatment arms (clinical trial only),NA,NA,2 or more,TRUE,BZ,NA,NA
-10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Treatment name 1,daratumumab–bortezomib–melphalan–prednisone,d-vmp (daratumumab–bortezomib–melphalan–prednisone),daratumumab–bortezomib–melphalan–prednisone,FALSE,BZ,NA,"Rd continuous: lenalidomide and dexamethasone given in 28-day
+10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Treatment name 1,daratumumab-bortezomib-melphalan-prednisone,d-vmp (daratumumab-bortezomib-melphalan-prednisone),daratumumab-bortezomib-melphalan-prednisone,FALSE,BZ,NA,"Rd continuous: lenalidomide and dexamethasone given in 28-day
 cycles until disease progressioN
 
 Renal function = Comorbitity"
 10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Study 'number(s)' for treatment 1,NA,NA,1,TRUE,BZ,NA,NA
-10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Treatment name 2,lenalidomide–dexamethasone continuou,lenalidomide–dexamethasone,lenalidomide–dexamethasone continuous,FALSE,BZ,NA,NA
+10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Treatment name 2,lenalidomide-dexamethasone continuou,lenalidomide-dexamethasone,lenalidomide-dexamethasone continuous,FALSE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Study 'number(s)' for treatment 2,NA,NA,2,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Type of population-adjusted indirect comparisons performed,NA,NA,MAIC,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Anchored comparison?,NA,NA,No,TRUE,BZ,NA,NA
@@ -974,11 +974,11 @@ Renal function = Comorbitity"
 10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,1,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,NA,No,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,1,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,BZ,NA,NA
-10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Treatment name 1,daratumumab–bortezomib–melphalan–prednisone,d-vmp (daratumumab–bortezomib–melphalan–prednisone),daratumumab–bortezomib–melphalan–prednisone,FALSE,BZ,NA,"Rd 18: lenalidomide and dexamethasone given for 18 cycles
+10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Treatment name 1,daratumumab-bortezomib-melphalan-prednisone,d-vmp (daratumumab-bortezomib-melphalan-prednisone),daratumumab-bortezomib-melphalan-prednisone,FALSE,BZ,NA,"Rd 18: lenalidomide and dexamethasone given for 18 cycles
 
 Renal function = Comorbitity"
 10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Study 'number(s)' for treatment 1,NA,NA,1,TRUE,BZ,NA,NA
-10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Treatment name 2,lenalidomide–dexamethasone 18 months (rd18),lenalidomide–dexamethasone,lenalidomide–dexamethasone 18 months (rd18),FALSE,BZ,NA,NA
+10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Treatment name 2,lenalidomide-dexamethasone 18 months (rd18),lenalidomide-dexamethasone,lenalidomide-dexamethasone 18 months (rd18),FALSE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Study 'number(s)' for treatment 2,NA,NA,2,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Type of population-adjusted indirect comparisons performed,NA,NA,MAIC,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Anchored comparison?,NA,NA,No,TRUE,BZ,NA,NA
@@ -991,11 +991,11 @@ Renal function = Comorbitity"
 10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Inclusion of treatment-effect modifiers in the adjustment/matching model,NA,NA,No discussion (in the main text) of the status of treatment-effect modifiers of the variables,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,2,NA,"Mention of the MAIC weights estimation model / STC adjustment model details in the main text **or supplemental materials** (ie matching on first moment, second moment, including interaction term, etc)",NA,NA,No,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,2,NA,Discussion of the choice of the scale for the outcome in the main text (ie natural outcome scale vs transformed outcome scale),NA,NA,No,TRUE,BZ,NA,NA
-10.1080/10428194.2019.1682571,31686559,methodology,3,NA,Treatment name 1,daratumumab–bortezomib–melphalan–prednisone,d-vmp (daratumumab–bortezomib–melphalan–prednisone),daratumumab–bortezomib–melphalan–prednisone,FALSE,BZ,NA,"MPT: melphalan/prednisone/thalidomide
+10.1080/10428194.2019.1682571,31686559,methodology,3,NA,Treatment name 1,daratumumab-bortezomib-melphalan-prednisone,d-vmp (daratumumab-bortezomib-melphalan-prednisone),daratumumab-bortezomib-melphalan-prednisone,FALSE,BZ,NA,"MPT: melphalan/prednisone/thalidomide
 
 Renal function = Comorbitity"
 10.1080/10428194.2019.1682571,31686559,methodology,3,NA,Study 'number(s)' for treatment 1,NA,NA,1,TRUE,BZ,NA,NA
-10.1080/10428194.2019.1682571,31686559,methodology,3,NA,Treatment name 2,melphalan–prednisone–thalidomide,melphalan–prednisone–thalidomide (mpt),melphalan–prednisone–thalidomide,FALSE,BZ,NA,NA
+10.1080/10428194.2019.1682571,31686559,methodology,3,NA,Treatment name 2,melphalan-prednisone-thalidomide,melphalan-prednisone-thalidomide (mpt),melphalan-prednisone-thalidomide,FALSE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,3,NA,Study 'number(s)' for treatment 2,NA,NA,2,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,3,NA,Type of population-adjusted indirect comparisons performed,NA,NA,MAIC,TRUE,BZ,NA,NA
 10.1080/10428194.2019.1682571,31686559,methodology,3,NA,Anchored comparison?,NA,NA,No,TRUE,BZ,NA,NA

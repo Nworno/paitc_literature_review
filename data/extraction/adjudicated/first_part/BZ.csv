@@ -1591,7 +1591,7 @@
 10.2217/cer-2020-0069,32602756,study_information,NA,6,Clinical Trial,Yes,No,No,FALSE,DH,NA,NA
 10.2217/cer-2020-0069,32602756,study_information,NA,6,Data source name (only if observational study or clinical trial without NCT),NA,NA,miano et al. (2012),TRUE,DH,NA,NA
 10.2217/cer-2020-0069,32602756,study_information,NA,6,Country where the clinical trial/observational study was conducted (international if more than one),NA,NA,italy,TRUE,DH,NA,NA
-10.2217/cer-2020-0069,32602756,study_information,NA,6,Number of treatment arms (clinical trial only),1,NA,1,FALSE,DH,NA,NA
+10.2217/cer-2020-0069,32602756,study_information,NA,6,Number of treatment arms (clinical trial only),NA,NA,NA,FALSE,DH,NA,NA
 10.2217/cer-2020-0069,32602756,study_information,NA,7,Patient-level data used,NA,NA,No,TRUE,DH,NA,NA
 10.2217/cer-2020-0069,32602756,study_information,NA,7,Clinical Trial,Yes,No,No,FALSE,DH,NA,NA
 10.2217/cer-2020-0069,32602756,study_information,NA,7,Data source name (only if observational study or clinical trial without NCT),NA,NA,von stackelbeg et al. (2010),TRUE,DH,NA,NA

@@ -832,8 +832,8 @@ Rate difference after adjustment = 1 -  0.993 = 0.007",NA
 10.2217/cer.15.69,26793987,results,1,NA,Direction of the treatment effect contrast: IPD treatment is:,"Numerator if ratio, or left side if difference","Denominator if ratio, or rightside if difference","Numerator if ratio, or left side if difference",FALSE,NA,NA,NA
 10.2217/cer.15.69,26793987,results,1,NA,"p-value for the unadjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX-Y.YY])",NA,NA,0.004,TRUE,NA,NA,NA
 10.2217/cer.15.69,26793987,results,1,NA,"p-value for the adjusted treatment effect (or 95 CI if pvalue is not provided, written as [X.XX;Y.YY])",NA,NA,0.398,TRUE,NA,NA,NA
-10.2217/cer.15.69,26793987,results,1,NA,Primary outcome: unadjusted treatment effect,-0.048,NA,XXXX,FALSE,NA,NA,NA
-10.2217/cer.15.69,26793987,results,1,NA,Primary outcome: adjusted treatment effect,-0.007,NA,XXXX,FALSE,NA,NA,NA
+10.2217/cer.15.69,26793987,results,1,NA,Primary outcome: unadjusted treatment effect,-0.048,NA,-0.048,FALSE,NA,NA,NA
+10.2217/cer.15.69,26793987,results,1,NA,Primary outcome: adjusted treatment effect,-0.007,NA,-0.007,FALSE,NA,NA,NA
 10.1016/j.jtho.2016.05.029,27288979,general_information,NA,NA,Medical Condition of Interest Name,advanced or metastatic non-small cell lung cancer,advanced non-small cell lung cancer (nsclc),XXXX,FALSE,NA,NA,NA
 10.1016/j.jtho.2016.05.029,27288979,general_information,NA,NA,Countries of first author affiliations,NA,NA,singapore,TRUE,NA,NA,NA
 10.1016/j.jtho.2016.05.029,27288979,general_information,NA,NA,Countries of last author affiliations,NA,NA,canada,TRUE,NA,NA,NA

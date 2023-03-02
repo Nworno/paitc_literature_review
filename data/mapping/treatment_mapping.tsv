@@ -1,4 +1,4 @@
-ttt_name	simplified	category_1	category-1bis	category_2 (second level ATC, therapeutic subgroup)	ATC code		CAR-T cells	others
+ttt_name	simplified	category_1	category-1bis	"category_2 (second level ATC, therapeutic subgroup)"	ATC code		CAR-T cells	others
 [177lu]lu-dota-tat	[177lu]lu-dota-tate	Peptide receptor radionucleide therapy		cancer therapy	V10XX04			
 [177lu]lu-dota-tate	[177lu]lu-dota-tate	Peptide receptor radionucleide therapy			V10XX04			
 /- second stem-cell transplantation (salvage-2)	stem-cell transplantation				NA	procedure		procedure
@@ -14,7 +14,7 @@ adt	Androgen deprivation therapy			Endocrine therapy	L02BB
 alectinib	alectinib	ALK inhibitor	Protein kinase inhibitor	Antineoplastic agent	L01ED03			
 alemtuzumab	alemtuzumab	Monoclonal antibody anti-CD52		Immunosupressants	L04AA34			
 amlodipine	amlodipine	Selective calcium channel blocker		Cardiovascular system	C08CA01			
-amlodipine 10mg,	amlodipine	Selective calcium channel blocker		Cardiovascular system	C08CA01			
+"amlodipine 10mg,"	amlodipine	Selective calcium channel blocker		Cardiovascular system	C08CA01			
 amlodipine 5 mg	amlodipine	Selective calcium channel blocker		Cardiovascular system	C08CA01			
 apalutamide	apalutamide	Anti-androgen		Endocrine therapy	L02BB05			
 apomorphine sublingual film	apomorphine	Dopamine agonist		Anti-parkinson drug	G04BE07			
@@ -37,11 +37,11 @@ bendamustine	bendamustine	Nitrogen mustard analogues	Alkylating agent	Antineopla
 benralizumab	benralizumab	Monoclonal antibody Anti-IL-5Rα	Interleukin inhibitors	Drug for obstructive airway diseases (Antiasthmatic)	R03DX10			
 best supportive care	Best supportive care				NA			supportive or standard of care
 best supportive care (bsc)	Best supportive care				NA			supportive or standard of care
-betamethasone dipropionate aerosol foam	betamethasone dipropionate	Glucocorticoids		CORTICOSTEROIDS, DERMATOLOGICAL PREPARATIONS	D07XC01			
+betamethasone dipropionate aerosol foam	betamethasone dipropionate	Glucocorticoids		"CORTICOSTEROIDS, DERMATOLOGICAL PREPARATIONS"	D07XC01			
 bevacizumab	bevacizumab	Anti-VEGF antibody	Also used for age related macular degeneration	Antineoplastic agent	L01XC07			
 binimetinib	binimetinib	Mitogen-activated protein kinase (MEK) inhibitors	Protein kinase inhibitor	Antineoplastic agent	L01EE03			
-bisoprolol	bisoprolol	Beta blocking agents, selective		Cardiovascular system	C07AB07			
-bisoprolol 5 mg	bisoprolol	Beta blocking agents, selective		Cardiovascular system	C07AB07			
+bisoprolol	bisoprolol	"Beta blocking agents, selective"		Cardiovascular system	C07AB07			
+bisoprolol 5 mg	bisoprolol	"Beta blocking agents, selective"		Cardiovascular system	C07AB07			
 blinatumomab	blinatumomab	Bispecific T cell Engager (BiTE) monoclonal antibody		Antineoplastic agent	L01XC19			
 boceprevir	boceprevir	HCV protease inhibitor	Antivirals for treatment of HCV infections	Antivirals for systemic use	J05AP03			
 bortezomib	bortezomib	Proteasome inhibitors		Antineoplastic agent	L01XG01			
@@ -99,7 +99,7 @@ decitabine	decitabine	Pyrimidine analogues	Antimetabolites	Antineoplastic agent	
 delayed- release dimethyl fumarate	dimethyl fumarate	NRF2 Activator		Immunosupressants	L04AX07			
 delayed-release dimethyl fumarate	dimethyl fumarate	NRF2 Activator		Immunosupressants	L04AX07			
 deutetrabenazine	deutetrabenazine	vesiclar monoamine transporter type 2 inhibitor		Other nervous system drugs	N07XX16			
-dexamethasone	dexamethasone	Glucocorticoids		Could fit different classifications	H02AB02	H02AB02 is for systemic use, different ATC code for dexamethasone: A01AC02;C05AA09;D07AB19;D10AA03;H02AB02;R01AD03;S01BA01;S02BA06;S03BA01 all of them but H02AB02 are for local use		
+dexamethasone	dexamethasone	Glucocorticoids		Could fit different classifications	H02AB02	"H02AB02 is for systemic use, different ATC code for dexamethasone: A01AC02;C05AA09;D07AB19;D10AA03;H02AB02;R01AD03;S01BA01;S02BA06;S03BA01 all of them but H02AB02 are for local use"		
 dimethyl fumarate	dimethyl fumarate	NRF2 Activator		Immunosupressants	L04AX07			
 dimethyl fumarate 240 mg twice daily	dimethyl fumarate	NRF2 Activator		Immunosupressants	L04AX07			
 dulaglutide	dulaglutide	Glucagon-like peptide-1 (GLP-1) analogues		antidiabetic	A10BJ05			
@@ -159,7 +159,7 @@ infliximab	infliximab	TNF-α inhibitor monoclonal antibody		Immunosupressants	L0
 inotersen	inotersen	Antisense oligonucleotides		Other nervous system drugs	N07XX15			
 inotuzumab ozogamicin	inotuzumab ozogamicin	CD22-directed antibody-drug conjugates		Antineoplastic agent	L01XC26			
 intravenous methylprednisolone	Methylprednisolone	Glucocorticoids			H02AB04			
-intravitreally administered aflibercept (ivt-afl) : one injection every 8 weeks in the first year followed by prorenata regimen in the second year,	Methylprednisolone	Glucocorticoids			S01LA05			
+"intravitreally administered aflibercept (ivt-afl) : one injection every 8 weeks in the first year followed by prorenata regimen in the second year,"	Methylprednisolone	Glucocorticoids			S01LA05			
 intravitreally administered aflibercept (ivt-afl) with 2 weeks adjustment	Methylprednisolone	Glucocorticoids			S01LA05			
 intravitreally administered aflibercept 8 weeks	Methylprednisolone	Glucocorticoids			S01LA05			
 intravitreally administered aflibercept treat-	Methylprednisolone	Glucocorticoids			S01LA05			
@@ -173,22 +173,22 @@ lenalidomide-dexamethasone continuou					L04AX04;H02AB02
 lenvatinib	lenvatinib	receptor tyrosine kinase (RTK) inhibitor	Protein kinase inhibitor	Antineoplastic agent	L01EX08			
 letrozole	letrozole	Hormone antagonist		Endocrine therapy	L02BG04			
 levodopa inhalation powder	levodopa	Dopa and dopa derivatives		Anti-parkinson drug	N04BA01			
-liso-cel	lisocabtagene maraleucel	CD19-directed chimeric antigen receptor (CAR) T-cell	chimeric antigen receptor (CAR) T-cell therapy	Antineoplastic agent	L01XL	not yet assigned, defaulting to the category where other CAR-T cells have been assigned	TRUE	
-lisocabtagene	lisocabtagene maraleucel	CD19-directed chimeric antigen receptor (CAR) T-cell	chimeric antigen receptor (CAR) T-cell therapy	Antineoplastic agent	L01XL	not yet assigned, defaulting to the ATC 44th level category where other CAR-T cells have been assigned	TRUE	
-lisocabtagene maraleucel	lisocabtagene maraleucel	CD19-directed chimeric antigen receptor (CAR) T-cell	chimeric antigen receptor (CAR) T-cell therapy	Antineoplastic agent	L01XL	not yet assigned, defaulting to the category where other CAR-T cells have been assigned	TRUE	
+liso-cel	lisocabtagene maraleucel	CD19-directed chimeric antigen receptor (CAR) T-cell	chimeric antigen receptor (CAR) T-cell therapy	Antineoplastic agent	L01XL	"not yet assigned, defaulting to the category where other CAR-T cells have been assigned"	TRUE	
+lisocabtagene	lisocabtagene maraleucel	CD19-directed chimeric antigen receptor (CAR) T-cell	chimeric antigen receptor (CAR) T-cell therapy	Antineoplastic agent	L01XL	"not yet assigned, defaulting to the ATC 44th level category where other CAR-T cells have been assigned"	TRUE	
+lisocabtagene maraleucel	lisocabtagene maraleucel	CD19-directed chimeric antigen receptor (CAR) T-cell	chimeric antigen receptor (CAR) T-cell therapy	Antineoplastic agent	L01XL	"not yet assigned, defaulting to the category where other CAR-T cells have been assigned"	TRUE	
 lorlatinib	lorlatinib	ALK inhibitor	Protein kinase inhibitor	Antineoplastic agent	L01ED05			
 low-dos ecytarabine	cytarabine	Pyrimidine analogues	Antimetabolites	Antineoplastic agent	L01BC01			
 low-dose cytarabine	cytarabine	Pyrimidine analogues	Antimetabolites	Antineoplastic agent	L01BC01			
 low-dose cytarabine.	cytarabine	Pyrimidine analogues	Antimetabolites	Antineoplastic agent	L01BC01			
-low-dose dexamethasone	dexamethasone	Glucocorticoids		Could fit different classifications	H02AB02	H02AB02 is for systemic use, different ATC code for dexamethasone: A01AC02;C05AA09;D07AB19;D10AA03;H02AB02;R01AD03;S01BA01;S02BA06;S03BA01 all of them but H02AB02 are for local use		
+low-dose dexamethasone	dexamethasone	Glucocorticoids		Could fit different classifications	H02AB02	"H02AB02 is for systemic use, different ATC code for dexamethasone: A01AC02;C05AA09;D07AB19;D10AA03;H02AB02;R01AD03;S01BA01;S02BA06;S03BA01 all of them but H02AB02 are for local use"		
 magnetic resonance-guided focused ultrasound					NA	procedure		procedure
 melphalan-prednisone-thalidomide					L01AA03;L04AX02;H02AB07			
 melphalan-prednisone-thalidomide (mpt)					L01AA03;L04AX02;H02AB07			
 mepolizumab	mepolizumab	Anti-IL-5 monoclonal antibody	Interleukin inhibitors	Drug for obstructive airway diseases (Antiasthmatic)	R03DX09			
 methotrexate	methotrexate	Folic acid analogues	Antimetabolites	Antineoplastic agent / Immunosupressants	L01BA01			
 midostaurin	midostaurin	Other protein kinase inhibitor	Protein kinase inhibitor	Antineoplastic agent	L01EX10			
-modified bortezomib-melphalan-prednisone schedules					L01AA03;L01XG01;H02AB07			
-modified vmp (bortezomib/melphalan/prednisone) schedule					L01AA03;L01XG01;H02AB07			
+modified bortezomib-melphalan-prednisone schedules					L01XG01;L01AA03;H02AB07			
+modified vmp (bortezomib/melphalan/prednisone) schedule					L01XG01;L01AA03;H02AB07			
 nab-paclitaxel	nab-paclitaxel	Taxane		Antineoplastic agent	L01CD01			
 natalizumab	natalizumab	Anti-integrin alpha-4 monoclonal antibody		Immunosupressants	L04AA23			
 nilotinib	nilotinib	BCR-ABL tyrosine kinase inhibitors  	Protein kinase inhibitor	Antineoplastic agent	L01EA03			
@@ -209,7 +209,7 @@ palliative therapy/salvage therapy					L01
 panitumumab	panitumumab	Monoclonal antibody EGFR inhibitor		Antineoplastic agent	L01XC08			
 panobinostat	panobinostat	Histone deacetylase (HDAC) inhibitors		Antineoplastic agent	L01XH03			
 patisiran	patisiran	mall interfering RNA (siRNA)		Other nervous system drugs	N07XX12			
-pcv20 (prevnar 20, a 20-valent pneumococcal conjugate vaccine)	pneumoccocal vaccine	Vaccine			J07AL			
+"pcv20 (prevnar 20, a 20-valent pneumococcal conjugate vaccine)"	pneumoccocal vaccine	Vaccine			J07AL			
 pegcetacoplan	pegcetacoplan	Complement C3 inhibitor	complement inhibitor	Immunosupressants ? complement inhibitor ?	L04AA54			
 peginterferon alfa- 2a	pegInterferon alfa-2a	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB11			
 peginterferon alfa-2a	pegInterferon alfa-2a	Interferons		Immunostimulant ? or immunomodulator ? antineoplastic ?	L03AB11			
@@ -331,7 +331,7 @@ unilateral deep brain stimulation					NA	procedure		procedure
 unilateral deep brain stimulation (dbs)					NA	procedure		procedure
 upadacitinib	upadacitinib	JAK 1 inhibitor		Immunosupressants	L04AA44			
 upadacitinib monotherapy	upadacitinib	JAK 1 inhibitor		Immunosupressants	L04AA44			
-v114 (vaxneuvance, a 15-valent pneumococcal conjugate vaccine)	Pneumococcal vaccine	Vaccine			J07AL			
+"v114 (vaxneuvance, a 15-valent pneumococcal conjugate vaccine)"	Pneumococcal vaccine	Vaccine			J07AL			
 velcade	Bortezomib	Proteasome inhibitors		Antineoplastic agent	L01XG01			
 vemurafenib	vemurafenib	B-Raf serine-threonine kinase (BRAF) inhibitors	Protein kinase inhibitor	Antineoplastic agent	L01EC01			
 venetoclax	venetoclax	BCL-2 inhibitor		Antineoplastic agent	L01XX52			
@@ -342,3 +342,35 @@ vismodegib	vismodegib	Hedgehog pathway inhibitors		Antineoplastic agent	L01XJ01
 vmp (bortezomib/melphalan/prednisone)					L01AA03;L01XG01;H02AB07			
 xxl protocol downstaging					L01			
 xxl trial downstaging protocol					L01			
+semaglutide 0.5  +  1 mg	semaglutide	Glucagon-like peptide-1 (GLP-1) analogues		antidiabetic	A10BJ06			
+intravitreally administered aflibercept (ivt-afl) : one injection every 8 weeks in the first year followed by prorenata regimen in the second year	aflibercept	aflibercept; ophthalmic			S01LA05			
+thermocool smarttouch /thermocool smarttouch sf catheter with ai (stai)					NA	procedure		procedure
+transarterial radioembolization					NA	procedure		procedure
+pimecrolimus 1	pimecrolimus	calcineurin inhibitor	agent for dermatitis	Dermatological preparation	D11AH02			
+tacrolimus 0.03	tacrolimus	Calcineurin inhibitors		Immunosupressants	D11AH01			
+vmp (bortezomib/melphalan/prednisone)					L01XG01;L01AA03;H02AB07			
+modified vmp schedule					L01XG01;L01AA03;H02AB07			
+calcipotriene 0.005/betamethasone dipropionate 0.064% foam					D05AX02;D07XC01			
+halobetasol 0.01/tazarotene 0.045%					D07AC21;D05AX05			
+st + ard of care					NA	procedure		procedure
+total disc replacement					NA	procedure		procedure
+fusion					NA	procedure		procedure
+clofarabine + etoposide plus cyclophosphamide					L01BB06;L01CB01;L01AA01			
+polychemotherapy/high-dose single-agent regimens/stem-cell transplantation (salvage-1)					NA	procedure		procedure
+palliative therapy/salvage therapy <b1> second stem-cell transplantation (salvage-2)					NA	procedure		procedure
+intravitreally administered aflibercept (ivt-afl) : one injection every 8 weeks in the first year	aflibercept	aflibercept; ophthalmic			S01LA05			
+thermocool smarttouch					NA	procedure		procedure
+vmp (bortezomib					L01XG01;L01AA03;H02AB07			
+daratumumab-bortezomib-melphalan-prednisone					L01XC24;L01XG01;L01AA03;H02AB07			
+lenalidomide-dexamethasone continuous					L04AX04;H02AB02			
+lenalidomide-dexamethasone 18 months (rd18)					L04AX04;H02AB02			
+melphalan-prednisone-thalidomide					L01AA03;L04AX02;H02AB07			
+calcipotriene 0.005					D05AX02			
+betamethasone dipropionate 0.064% foam					D07XC01			
+halobetasol 0.01					D07AC21			
+tazarotene 0.045%					D05AX05			
+etoposide plus cyclophosphamide					L01CB01;L01AA01			
+polychemotherapy					L01XA			
+stem-cell transplantation (salvage-1)					NA	procedure		procedure
+palliative therapy					NA	procedure		procedure
+salvage therapy ? second stem-cell transplantation (salvage-2)					NA	procedure		procedure

@@ -7,10 +7,6 @@ library("data.table")
 
 folder_input_rayyan <- "data/articles_selection"
 
-# Read original pubmed search export csv
-
-csv_pubmed <- read_csv(file.path(folder_input_rayyan, "pubv1_info.csv"))
-
 
 # Formatting file from pubmed to rayyan format ----------------------------
 file_raw <- fread(file = file.path(folder_input_rayyan, "pubmed-indirecttr-set_abstract.txt"),
@@ -18,7 +14,7 @@ file_raw <- fread(file = file.path(folder_input_rayyan, "pubmed-indirecttr-set_a
                   header = FALSE,
                   fill = TRUE,
                   strip.white = FALSE,
-                  sep=""
+                  sep = ""
 )
 
 file_sep <- file_raw %>% separate(col = V1,

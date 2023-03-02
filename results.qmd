@@ -22,14 +22,24 @@ library(tidyr)
 library(tibble)
 library(purrr)
 library(lubridate)
+library(ggplot2)
 library(ggthemr)
 library(arsenal)
 library(flextable)
 library(forcats)
+library(kableExtra)
+library(glue)
 
 source("R_snippets.R")
 ggthemr::ggthemr("fresh")
 ```
+
+```{r}
+article_path <- "C:/Users/aserret-larmande/Documents/these/research/articles_redaction/paic_methodological_review"
+article_table_path <- file.path(article_path, "tables")
+article_figure_path <- file.path(article_path, "figures")
+```
+
 
 ```{r}
 # because for some reason tableby2word can't write in a subfolder directly
@@ -59,6 +69,115 @@ renaming_questions_list <- flatten_list(questions_sections)
 ```
 
 
+```{r }
+separate_elements <- function(col, ...) {
+  col %>% 
+    lapply(function(elem) {
+      elem_bis <- unlist(elem)
+      ifelse(length(elem_bis) != 1,
+             unlist(elem_bis) %>%
+               round(1) %>%
+               paste0(collapse = ' (') %>%
+               paste0(')'),
+             elem_bis
+      )}) %>% 
+    as.character()
+}
+```
+
+
+```{r DM tableby to flextable}
+set_flextable_defaults(padding.top = 2, padding.bottom = 1)
+
+format_flextable <- function(flextable_obj) {
+  # indic_hlines <- (which(!is.na(flextable_obj$body$dataset$variable)) - 1)
+  # indic_hlines <- indic_hlines[2:length(indic_hlines)]
+  
+  indic_hlines <- rle(flextable_obj$body$dataset$variable)$lengths %>%
+    accumulate(.f = add)
+
+    ncols <- ncol(flextable_obj$body$dataset)
+  WIDTH_WORD <- 16
+  flextable_obj %>%   
+    set_header_labels(values = c("variable" = "",
+                                 "modalities" = "")) %>%
+    add_header_row(values = c("", "n (%)"), colwidths = c(2, ncols - 2), top = TRUE) %>%
+    align(i = 1, j = 1:2, align = "center", part = "header") %>% 
+    theme_booktabs() %>% 
+    align(j = 1, align = "left", part  = "all") %>% 
+    align(j = 2, align = "right", part = "all") %>% 
+    align(j = 3:ncol_keys(.), align = "center", part  = "all") %>% 
+    padding(padding.top = 2, padding.bottom = 1, part = "body") %>% 
+    bold(j = 1) %>% 
+    bold(i = c(1, 2), part = "header") %>% 
+    hline(i = indic_hlines, part = "body", border = officer::fp_border(width = 2)) %>%
+    hline(i = 2, part = "header", border = officer::fp_border(width = 2)) %>% 
+    width(j = NULL, WIDTH_WORD / ncols, unit = "cm") %>% 
+    width(j = "Total", width = 4, unit = "cm") %>% 
+    merge_v(j = 1, target = "variable") %>% 
+    line_spacing(i = NULL, j = NULL, space = 2, part = "header") %>% 
+    line_spacing(i = NULL, j = NULL, space = 1, part = "body")
+}
+
+tableby_to_flextable <- function(tableby_obj, ...) {
+  tableby_df <- tableby_obj %>% as_tibble()
+  col_names <- tableby_df %>% select(...) %>% names()
+  
+  
+  any_strata <- length(unique(tableby_df[["strata.term"]])) != 1
+  # if(any_strata) {
+  #   rle_out <- rle(tableby_df$strata.term)
+  #   indices <- c(1, 1 + rle_out$lengths[length(rle_out$values) -1])
+  #   tableby_df[, "strata.term"] <- ""
+  #   tableby_df[indices, "strata.term"] <- rle_out$values
+  # }
+  flextable_obj <- tableby_df %>% 
+    select(any_of(ifelse(any_strata, "strata.term", "__discard__")),
+           variable = term, modalities = label, all_of(col_names)) %>% 
+    mutate(variable = if_else(Total == "", modalities, NA_character_), 
+           modalities = if_else(Total != "", modalities, NA_character_)) %>% 
+    mutate(across(.cols = all_of(col_names), .fns = separate_elements), 
+           variable = replace_in_vec(variable, swap_names_values(renaming_questions_list))) %>%
+    tidyr::fill(variable, .direction = "down") %>% 
+    filter(modalities != "No" | is.na(modalities)) %>% 
+    # filter(!is.na(modalities)) %>% 
+    flextable()
+}
+```
+
+
+```{r tableby to kable}
+dm_tableby <- function(tableby_obj, ...) {
+  tableby_df <- tableby_obj %>% as_tibble()
+  
+  col_names <- tableby_df %>% select(...) %>% names()
+  
+  any_strata <- length(unique(tableby_df[["strata.term"]])) != 1
+  if(any_strata) {
+    rle_out <- rle(tableby_df$strata.term)
+    indices <- c(1, 1 + rle_out$lengths[length(rle_out$values) -1])
+    tableby_df[, "strata.term"] <- ""
+    tableby_df[indices, "strata.term"] <- rle_out$values
+  }
+  
+  tableby_df_dm <- tableby_df %>% 
+    select(any_of(ifelse(any_strata, "strata.term", "__discard__")),
+           variable = term, modalities = label, all_of(col_names)) %>% 
+    mutate(variable = if_else(Total == "", modalities, NA_character_), 
+           modalities = if_else(Total != "", modalities, NA_character_)
+    ) %>% 
+    mutate(across(.cols = all_of(col_names), .fns = separate_elements), 
+           variable = replace_in_vec(variable, swap_names_values(renaming_questions_list)))
+  
+  indic_hlines <- (which(!is.na(tableby_df_dm$variable)))
+  indic_hlines <- indic_hlines
+  ncols <- ncol(tableby_df_dm)
+  tableby_df_dm 
+  # # kable(format = "latex") 
+  #   kbl(format = "latex", booktabs = T) 
+}
+```
+
 
 ```{r}
 included_articles_info <- read_csv("data/included_articles_info.csv", 
@@ -67,18 +186,17 @@ results_df <- read_tsv("data/to_use_for_stats/long_results_final.tsv",
                        col_types = cols(.default = "c"))
 ttt_mapped <- read_tsv("data/to_use_for_stats/decision_atc_mapped.tsv",
                        col_types = cols(.default = "c", car_t_cells = "l")) %>% 
-  distinct(answer, first, second, third, car_t_cells) %>% 
   rename(treatment_name = answer)
 conditions_mapped <- read_tsv("data/to_use_for_stats/decision_icd_mapped.tsv",
                               col_types = cols(.default = "c"))
 ```
 
 
-<!-- ```{r Creating section data frames} -->
-<!-- general_information_df <- results_df[results_df$section == "general_information", c("doi", "questions", "answer")] -->
-<!-- individual_study_df <- results_df[results_df$section == "study_information",] -->
-<!-- paic_results <- results_df[results_df$section %in% c("methodology", "results"), ] -->
-<!-- ``` -->
+```{r Creating section data frames}
+general_information_df <- results_df[results_df$section == "general_information", c("doi", "questions", "answer")]
+individual_study_df <- results_df[results_df$section == "study_information",]
+paic_results <- results_df[results_df$section %in% c("methodology", "results"), ]
+```
 
 # DM articles comparison level
 
@@ -142,7 +260,7 @@ articles_level_df <- comparison_level_df %>%
   group_by(doi) %>% 
   summarise(at_least_one_maic = any(paic_type == "MAIC"), 
             at_least_one_stc = any(paic_type == "STC"),
-            at_least_one_mlnmr = any(paic_type == "Multilevel network meta-regression"), 
+            at_least_one_mlnmr = any(paic_type == "ML-NMR"), 
             at_least_other_paic = !any(
               at_least_one_maic,
               at_least_one_stc, 
@@ -165,8 +283,7 @@ articles_level_df <- comparison_level_df %>%
 ```  
 
 
-
-## Statistics article level
+# Statistics article level
 
 ```{r}
 formula_article_level <- formulize(y = "", x = ".")
@@ -175,15 +292,10 @@ formula_article_level <- formulize(y = "", x = ".")
 
 ```{r}
 description_articles <- articles_level_df %>% 
-  select(publication_date, publication_year, country_first_author, country_last_author, methodologist_yn, 
-         `Pharmaceutical Industry`, Academic, `Private Data Analysis Company`, 
+  select(publication_year, country_first_author, country_last_author, methodologist_yn, 
+         `Pharmaceutical Industry`, Academic, `Private Data Analysis Company`, positions,
          journal_title, `concept_name_ICD10 Chapter`, pharma_authorship_funding, 
-         paic_count, paic_conducted) %>% 
-  set_labels(value = c(swap_names_values(renaming_questions_list), 
-                       "paic_count" = "Count PAIC", 
-                       "paic_conducted" = "PAIC conducted"
-                       )
-  ) %>% 
+         paic_count, paic_conducted, systematic_review_yn) %>% 
   mutate(publication_year = as.factor(ifelse(publication_year < 2020,
                                                "January 1st 2010 - December 31st 2019",
                                                "January 1st 2020 - April 2nd 2022")),
@@ -195,118 +307,31 @@ description_articles <- articles_level_df %>%
          journal_title = grouping_last_levels(fct_infreq(journal_title), 6), 
          `concept_name_ICD10 Chapter` = grouping_last_levels(fct_infreq(`concept_name_ICD10 Chapter`), 6)
   ) %>% 
-  tableby(~ ., 
+  set_labels(value = c("paic_count" = "Count PAIC", 
+                        swap_names_values(renaming_questions_list),
+                       "paic_conducted" = "Type of PAIC conducted", 
+                       "publication_date" = "Publication date", 
+                       "publication_year" = "Publication period", 
+                       "journal_title" = "Journal Title", 
+                       "concept_name_ICD10 Chapter" = "Condition (ICD-10 chapter)", 
+                       "pharma_authorship_funding" = "Funded pharmaceutical industry", 
+                       "methodologist_yn" = "Methodological department or CRO"
+                       # Default label list in the end so previous labels overwrite it
+                       )
+  ) %>% 
+  tableby(methodologist_yn ~ ., 
           data = ., 
           numeric.stats = c("sum", "mean", "median", "q1q3", "max"), 
+          digits = 1L
           )
 ```
 
 ```{r}
-summary(description_articles_df)
+tableby_to_flextable(description_articles, Yes, `Not mentioned`, Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue::glue("Total (n = {nrow(articles_level_df)})"))) %>% 
+  flextable::save_as_docx(path = file.path(article_table_path, "/articles_information_table.docx"))
 ```
-
-```{r}
-# See there https://github.com/hms-dbmi/Access-to-Data-using-PIC-SURE-API/blob/master/NHLBI_BioData_Catalyst/R/ORCHID_COVID19.ipynb
-# Doesn't work very well
-# table_description_articles <- as_tibble(description_articles)
-
-```
-
-
-```{r}
-separate_elements <- function(col, ...) {
-  col %>% 
-    lapply(function(elem) {
-      elem_bis <- unlist(elem)
-      ifelse(length(elem_bis) != 1,
-             unlist(elem_bis) %>%
-               round(1) %>%
-               paste0(collapse = ' (') %>%
-               paste0(')'),
-             elem_bis
-      )}) %>% 
-    as.character()
-}
-```
-
-
-```{r}
-library(flextable)
-description_articles_df <- as_tibble(description_articles)
-
-description_articles %>%
-  summary() %>% 
-  flextable()
-
-str(description_articles)
-
-label_total <- glue::glue("Total (n = {nrow(articles_level_df)})")
-
-flextable_description_articles <- description_articles_df %>% 
-  select(variable = term, modalities = label, last_col()) %>% 
-  mutate(variable = if_else(Total == "", modalities, NA_character_), 
-         modalities = if_else(Total != "", modalities, NA_character_)
-         ) %>% 
-  mutate(across(c(Total), .fns = separate_elements), 
-         variable = replace_in_vec(variable, swap_names_values(renaming_questions_list))) %>% 
-  flextable()
-
-indic_hlines <- (which(!is.na(flextable_description_articles$body$dataset$variable)) - 1)
-indic_hlines <- indic_hlines[2: length(indic_hlines)]
-flextable_description_articles %>% 
-  # set_header_labels(values = c("label" = "test1", "Overall" = "test2", "Total" = "test3")) %>%
-  set_header_labels(values = c("variable" = "",
-                               "modalities" = "",
-                               "Total" = label_total)) %>%
-  add_header_row(values = c("", "n (%)"), colwidths = c(2, 1), top = FALSE ) %>% 
-  flextable::align(i = 1, j = 1:2, align = "center", part = "header") %>% 
-  flextable::theme_booktabs() %>% 
-  hline(i = indic_hlines, part = "body", border = fp_border(width = 2)) %>% 
-  autofit()
-
-```
-
-
-```{r}
-# kableExtra can only save to html/png/pdf
-# 
-# library(kableExtra)
-# description_articles %>% 
-#   as_tibble() %>% 
-#   select(label, Overall, Total) %>% 
-#   kableExtra::kbl() %>% 
-#   kable_minimal() %>% 
-#   kableExtra::kable_styling(bootstrap_options = c("striped"), 
-#                             full_width = FALSE,
-#                             position = "left", 
-#                             font_size = 12) %>% 
-#   column_spec(1, width = "20em") %>%
-#   column_spec(2, width = "10em") %>% 
-#   column_spec(3, width = "10em") %>% 
-#   add_header_above(c(" ", "No. (%)" = 2), align = 'left') %>% 
-#   row_spec(0, bold = TRUE, extra_css = "font-size: medium") %>%
-#   row_spec(c(3, 10, 15), underline = FALSE, bold = TRUE, align = 'left') %>%
-#   column_spec(1, background = 'FDEBD0') %>% 
-#   pack_rows('Demographics', 1, 20, indent = FALSE, label_row_css = "text-align: left; font-style: italic") %>%
-# pack_rows('COVID-19 Symptoms', 20, 22, indent = FALSE, label_row_css = "text-align: left; font-style: italic")
-
-```
-
-
-```{r}
-description_articles %>% 
-  as_tibble() %>% 
-  separate_elements() %>% 
-  flextable() %>%
-  flextable::save_as_docx(path = "output_tables/articles_information_table.docx")
-```
-
-```{r}
-tableby2word(description_articles,
-             "output_tables/articles_information_table.docx",
-             title = "Articles description")
-```
-
 
 
 ## Plots
@@ -332,10 +357,14 @@ articles_level_df %>%
        x = "Journals",
        y = "Articles count")
 ```
+
 ### Publication date
 
-```{r Publication date}
-## Publication dates
+
+```{r Publication year }
+library(extrafont)
+loadfonts(device = "win")
+
 publication_date_df <- articles_level_df %>%
   select(pmid, edat) %>%
   mutate(publication_date = as_date(edat, format = "%Y/%m/%d %H:%M"),
@@ -346,21 +375,35 @@ publication_date_df <- articles_level_df %>%
                                       trunc(publication_date_s),
                                       trunc(publication_date_s) + 0.5)) %>%
   left_join(included_articles_info[, c("pmid", "doi")], by ="pmid")
+```
 
 
-publication_date_df %>%
+```{r Publication year plots}
+plot_publication_year <- publication_date_df %>%
   filter(publication_year < 2022) %>%
   group_by(publication_year) %>%
   summarise(count = n()) %>%
   ggplot(aes(x = publication_year, y = count)) +
-  geom_point() +
-  geom_line() +
-  geom_text(aes(label = count), nudge_y = 2.5, nudge_x = -0.05) +
-  scale_x_continuous(breaks = 2010:2022) +
-  labs(title = "MAIC/STC implementation: publications by years",
-       x = "Year",
-       y = "Publication counts")
+  geom_bar(stat = "identity", fill = "#1c2474") +
+  scale_x_continuous(breaks = seq(from = 2011, to = 2021, by = 2)) +
+  labs(title = NULL,
+       x = NULL,
+       y = NULL)
+# Saint-Malo
+plot_publication_year +
+  theme(axis.text = element_text(size = 20, face = "bold"), 
+        text = element_text("Goudy Old Style", face = "bold")) + 
+  annotate(geom = "text", x = 2015, y = 33, label = "Publication count per year", size = 9, family = "Goudy Old Style") 
+ggsave("C:/Users/aserret-larmande/Documents/these/research/articles_redaction/paic_methodological_review/Posters st-malo/figures/n_publications_years.png", height = 7, width = 20, unit = "cm")
+
+plot_publication_year + 
+    theme(axis.text = element_text(size = 12, face = "bold")) + 
+  labs(x = "Years", y = "Publication Count")
+ggsave("./figures/n_publications_years.png", height = 7, width = 20, unit = "cm")
+
+
 ```
+
 
 ```{r Intervals between articles received and accepted}
 publication_dates_df <- articles_level_df %>% mutate(
@@ -468,7 +511,7 @@ articles_level_df %>%
 
 ```{r}
 ties_w_pharma_df <- articles_level_df %>% 
-  select(positions, funding_source) %>% 
+  select(positions, funding_source, doi) %>% 
   mutate(ties_pharma = ifelse(grepl("Pharmaceutical", positions) | grepl("Pharmaceutical Industry", funding_source), TRUE, FALSE))
 
 ```
@@ -499,6 +542,7 @@ articles_level_df %>%
        title = "Mentioned of source of fundings", 
        y = "Count")
 ```
+
 ### Conditions
 
 ```{r fig.width=12, fig.height=10}
@@ -546,31 +590,67 @@ individual_studies_questions <- c(
   "ipd_yn", 
   "ct_yn", 
   "country_study",
-  "ct_phase", 
+  # "ct_phase", 
   "ct_arms"
 )
 
-description_individual_studies <- individual_study_df %>% 
+study_level_df <- individual_study_df %>% 
   mutate(answer = str_to_title(answer)) %>% 
   #TODO: fix this "Xx'
   filter(answer != "Xx") %>%
   pivot_wider(names_from = questions, values_from = answer) %>% 
-  mutate(ct_arms = ifelse(ct_arms == "??", NA, ct_arms)) %>% 
-  select(all_of(individual_studies_questions)) %>% 
-  tableby( ~ ., data = .) 
+  mutate(ct_arms = ifelse(ct_arms == "??", NA, ct_arms), 
+         ct_phase = str_split(ct_phase, ",") %>% map(~ str_squish(.x)), 
+         country_study = country_study %>% 
+           replace_in_vec(c("Unknown" = NA)) %>%
+           fct_infreq() %>% 
+           grouping_last_levels(5, "Others")) %>% 
+  unnest_longer(ct_phase) %>%
+  arrange(ct_phase) %>% 
+  mutate(filler = TRUE, 
+         ct_arms = ifelse(ct_yn == "Yes" & is.na(ct_arms), "Unknown", ct_arms),
+         ct_phase = ifelse(ct_yn == "Yes" & is.na(ct_phase), "Unknown", ct_phase)) %>%
+  pivot_wider(names_from = ct_phase, values_from = filler, values_fill = FALSE) %>% 
+  rename(
+    "Phase 1" = "1", 
+    "Phase 2" = "2", 
+    "Phase 3" = "3",
+    "Phase 4" = "4",
+    "Phase unknown" = "Unknown",
+    "Phase: NA" = `NA`) %>% 
+  set_labels(c("Country where the clinical trial/observational study was conducted (international if more than one" = "Country"))
+
+description_individual_studies <- study_level_df %>% 
+  select(all_of(c(individual_studies_questions, 
+                  "Phase 1", "Phase 2", "Phase 3", "Phase 4", "Phase unknown", "Phase: NA"))) %>% 
+  tableby(ipd_yn ~ ., data = .) 
 ```
 
 ```{r}
-summary(description_individual_studies)
+summary(description_individual_studies, term.name = TRUE)
 ```
 
 ```{r}
-tableby2word(description_individual_studies, "output_tables/description_individual_studies.docx")
+tableby_to_flextable(description_individual_studies, Yes, No, Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue::glue("Total (n = {nrow(study_level_df)})"), 
+                               "Yes" = "IPD", 
+                               "No" = "Aggregated data")) %>%
+  # align(j = 2, part = "header", align = "center") %>% 
+  save_as_docx(path = file.path(article_table_path, "description_individual_studies.docx"))
+# tableby2word(description_individual_studies,file.path(article_table_path, "description_individual_studies.docx"))
 ```
+
 
 # Comparison level
 
 ## DM comparisons df
+
+```{r Renaming answers}
+comparison_level_df <- comparison_level_df %>% 
+  mutate(paic_type = ifelse(paic_type == "Multilevel network meta-regression", "ML-NMR", paic_type))
+```
+
 
 ```{r data management to determine IPD/nonIPD treatments}
 ttt_df <- paic_results %>% 
@@ -602,30 +682,28 @@ stopifnot(
 
 ```{r Finding out similar comparisons, include=FALSE}
 
-ipd_non_ipd_df <- ttt_df %>%
-  distinct(doi, treatment_name, n_itc, ipd_yn) %>% 
-  left_join(distinct(
-    ttt_mapped[, c("treatment_name", "first", "second", "third", "car_t_cells")])
-  ) %>% 
-  pivot_wider(id_cols = c(doi, n_itc), names_from = c("ipd_yn"), values_from = "first") %>% 
-  left_join(articles_level_df[, c("doi", "concept_name_ICD10 Hierarchy")], by = "doi") %>% 
-  distinct(doi, Yes, No, `concept_name_ICD10 Hierarchy`) %>% 
-  rename(condition = `concept_name_ICD10 Hierarchy`)
-
-inverted_ipd <- ipd_non_ipd_df %>% 
-  mutate(Yes_temp = No, No = Yes, Yes = Yes_temp) %>% 
-  select(doi_inv = doi, Yes, No, condition)
-
-same_comparisons <- inverted_ipd %>%
-  inner_join(ipd_non_ipd_df,
-             by = c("Yes", "No", "condition")) %>% 
-  select(doi, doi_inv, everything()) %>% 
-  filter(doi != doi_inv) %>% 
-  rowwise() %>% 
-  mutate(doi_pair = list(sort(c(doi, doi_inv)))) %>%
-  ungroup() %>% 
-  distinct(doi_pair, Yes, No, condition) %>% 
-  unnest_wider(doi_pair, names_sep = "_")
+# ipd_non_ipd_df <- ttt_df %>%
+#   distinct(doi, treatment_name, n_itc, ipd_yn) %>% 
+#   left_join(distinct(ttt_mapped)) %>% 
+#   pivot_wider(id_cols = c(doi, n_itc), names_from = c("ipd_yn"), values_from = "") %>% 
+#   left_join(articles_level_df[, c("doi", "concept_name_ICD10 Hierarchy")], by = "doi") %>% 
+#   distinct(doi, Yes, No, `concept_name_ICD10 Hierarchy`) %>% 
+#   rename(condition = `concept_name_ICD10 Hierarchy`)
+# 
+# inverted_ipd <- ipd_non_ipd_df %>% 
+#   mutate(Yes_temp = No, No = Yes, Yes = Yes_temp) %>% 
+#   select(doi_inv = doi, Yes, No, condition)
+# 
+# same_comparisons <- inverted_ipd %>%
+#   inner_join(ipd_non_ipd_df,
+#              by = c("Yes", "No", "condition")) %>% 
+#   select(doi, doi_inv, everything()) %>% 
+#   filter(doi != doi_inv) %>% 
+#   rowwise() %>% 
+#   mutate(doi_pair = list(sort(c(doi, doi_inv)))) %>%
+#   ungroup() %>% 
+#   distinct(doi_pair, Yes, No, condition) %>% 
+#   unnest_wider(doi_pair, names_sep = "_")
 
 ```
 
@@ -661,11 +739,11 @@ wide_sample_size_df <- comparison_level_df %>%
          ss_nonipd_yn = ifelse(is.na(ss_total_nonipd) & is.na(ss_ttt_nonipd), "No", "Yes"), 
          ss_adjusted_yn = ifelse(is.na(ss_adjusted_ttt_ipd) & is.na(ss_adjusted_total_ipd), "No", "Yes"),
          reduction_ess_percent = ifelse(paic_type == "MAIC", (1 - rapport_adjusted_total) * 100, NA)) %>% 
-  select(-anchored_yn, -paic_type)
+  select(-paic_type)
 
 long_sample_size_df <- wide_sample_size_df %>% 
-  select(-doi, -n_itc, -ss_ipd_yn, -ss_nonipd_yn, -ss_adjusted_yn) %>% 
-  pivot_longer(cols = everything()) %>% 
+  select(-ss_ipd_yn, -ss_nonipd_yn, -ss_adjusted_yn, -anchored_yn) %>% 
+  pivot_longer(cols = !c(doi, n_itc)) %>% 
   mutate(ipd_yn = case_when(
     grepl("total", name) ~ "Total",
     grepl("_ipd_", name) | grepl("ess_", name) ~ "IPD", 
@@ -677,14 +755,15 @@ long_sample_size_df <- wide_sample_size_df %>%
     grepl("rapport", name) ~ "Rapport", 
     grepl("adjusted", name) ~ "Adjusted (ESS)",
     TRUE ~ "Original")
-  )
+  ) %>% 
+  left_join(comparison_level_df[, c("doi", "n_itc", "paic_type")])
 
 ```
 
 
 ```{r DM correct specification}
 stopifnot(all(unique(comparison_level_df$anchored_yn) %in% c("Yes", "No")))
-stopifnot(all(unique(comparison_level_df$paic_type) %in% c("MAIC", "STC", "Multilevel network meta-regression")))
+stopifnot(all(unique(comparison_level_df$paic_type) %in% c("MAIC", "STC", "ML-NMR")))
 stopifnot(all(unique(comparison_level_df$tem_yn) %in% c("Yes", "No discussion (in the main text) of the status of treatment-effect modifiers of the variables")))
 model_specification_df <- comparison_level_df %>% 
   select(doi, n_itc, paic_type, anchored_yn, tem_yn, pf_yn) %>% 
@@ -692,27 +771,31 @@ model_specification_df <- comparison_level_df %>%
            if_else(anchored_yn == "No", 
                    case_when( # Unanchored
                      tem_yn == "Yes" & pf_yn == "Yes" ~ "Yes", 
-                     tem_yn == "Yes" & pf_yn == "No" ~ "No inclusion of PF",
-                     str_starts(tem_yn, "No discussion") & str_starts(tem_yn, "No discussion") ~ "No discussion of the status of PF or TEM", 
+                     tem_yn == "Yes" & pf_yn == "No" ~ "Unanchored: No inclusion of PF",
+                     str_starts(tem_yn, "No discussion") & str_starts(tem_yn, "No discussion") ~ "No mention of covariates' effects", 
                      TRUE ~ NA_character_
                    ), if_else( # Anchored
                      paic_type == "MAIC", 
                      case_when(
-                       pf_yn == "Yes" ~ "Inclusion of prognostic factors",
-                       str_starts(pf_yn, "No discussion") & tem_yn == "Yes" ~ "Inclusion of PF or instrumental variables",
+                       pf_yn == "Yes" ~ "Anchored MAIC: inclusion of PF",
+                       str_starts(pf_yn, "No discussion") & tem_yn == "Yes" ~ "Anchored MAIC: inclusion of PF",
                        pf_yn == "No" & tem_yn == "Yes" ~ "Yes", 
-                       str_starts(tem_yn, "No discussion") & str_starts(tem_yn, "No discussion") ~ "No discussion of the status of PF or TEM", 
+                       str_starts(tem_yn, "No discussion") & str_starts(tem_yn, "No discussion") ~ "No mention of covariates' effects", 
                        TRUE ~ NA_character_),
                      case_when( # STC or MLNMR
                        tem_yn == "Yes" ~ "Yes",
-                       tem_yn == "No discussion (in the main text) of the status of treatment-effect modifiers of the variables" ~ "No discussion of the status of PF or TEM", 
+                       tem_yn == "No discussion (in the main text) of the status of treatment-effect modifiers of the variables" ~ "No mention of covariates' effects", 
                        TRUE ~ NA_character_
                      )
                    )
            )
   ) %>% 
   select(doi, n_itc, correct_adjustment) %>% 
-  mutate(correct_adjustment = as.factor(correct_adjustment) %>% relevel("Yes"))
+  mutate(correct_adjustment = factor(correct_adjustment,
+                                     levels = c("Yes",
+                                                "Anchored MAIC: inclusion of PF",
+                                                "Unanchored: No inclusion of PF",
+                                                "No mention of covariates' effects"))) 
 stopifnot(all(!is.na(model_specification_df$correct_adjustment)))
 ```
 
@@ -737,11 +820,17 @@ variables_selection_df <- comparison_level_df %>%
                                  function(x) any(grepl("assessed in the ipd dataset", x, fixed = TRUE))), 
          imbalance = sapply(variables_selection_justification,
                             function(x) any(grepl("statistical imbalanced between", x, fixed = TRUE))),
-         justification_char = case_when(
-           expertise | literature ~ "Expert opinion and/or literature based", 
-           imbalance | statistics_ipd ~ "Incorrect (statistics-based only)", 
-           TRUE ~ "No justification"
-         )
+         justification_char = if_else(expertise | literature, # Medical 
+                                      if_else(!(imbalance | statistics_ipd), # Not statistical
+                                              "A priori medical based only", 
+                                              "Partly statistical based"), 
+                                      if_else(imbalance | statistics_ipd, # Statistical
+                                              "Only statistical based", 
+                                              "No justification")
+         ) %>% factor(levels = c("A priori medical based only",
+                                 "Partly statistical based",
+                                 "Only statistical based",
+                                 "No justification")), 
   ) %>% 
   select(-variables_selection_justification)
 
@@ -780,7 +869,8 @@ covariates_adjustment_df <- comparison_level_df %>%
          history = `disease history`, 
          performance_score = `performance score`) %>% 
   mutate(comorbidities = if_else(others & !adjustment_geographical, TRUE, comorbidities)) %>% 
-  select(-covariates_names, -adjustment_geographical)
+  mutate(across(c(adjustment_geographical, age, sex, others, comorbidities, past_treatments, race_ethnicity, history, performance_score), .fns = ~ ifelse(is.na(covariates_names), NA, .x))) %>% 
+  select(-covariates_names, -adjustment_geographical, -none)
 ```
 
 ```{r DM contrast effect}
@@ -808,18 +898,15 @@ comparison_level_df <- comparison_level_df %>%
 
 
 
-
-
 ```{r DM comparison level df}
 comparison_level_df_dm <- comparison_level_df %>% 
-  left_join(ttt_mapped[, c("treatment_name", "first")],
-            by = c("treatment_name_ipd" = "treatment_name")) %>% 
-  rename(act_ipd = first) %>% 
-  left_join(ttt_mapped[, c("treatment_name", "first")],
-            by = c("treatment_name_nonipd" = "treatment_name")) %>% 
-  rename(act_nonipd = first) %>% 
-  mutate(across(c(act_ipd, act_nonipd), 
-                .fns = ~ grouping_last_levels(fct_infreq(.x), 5)), 
+  # left_join(ttt_df) %>% 
+  # rename(atc_nonipd_first = first, 
+  #        atc_nonipd_second = second, 
+  #        atc_nonipd_third = third) %>% 
+  mutate(
+    # across(c(atc_ipd_first, atc_nonipd_first), 
+    #             .fns = ~ grouping_last_levels(fct_infreq(.x), 5)), 
          paic_type = fct_infreq(paic_type), 
          anchored_yn = factor(anchored_yn, levels = c("Yes", "No")),
          covariates_n = as.numeric(covariates_n), 
@@ -829,7 +916,7 @@ comparison_level_df_dm <- comparison_level_df %>%
          perc_change_effect = abs(contrast_effect_unadjusted_value - contrast_effect_adjusted_value) * 100 / abs(contrast_effect_unadjusted_value)
   ) %>% 
   # Dropping variables referring to sample sizes
-  select(doi, n_itc, !any_of(names(wide_sample_size_df))) %>% 
+  select(doi, n_itc, anchored_yn, !any_of(names(wide_sample_size_df))) %>% 
   # Adding sample size DM
   left_join(wide_sample_size_df) %>% 
   left_join(model_specification_df) %>% 
@@ -837,8 +924,6 @@ comparison_level_df_dm <- comparison_level_df %>%
   left_join(covariates_adjustment_df) %>% 
   set_labels(swap_names_values(renaming_questions_list))
 ```
-
-
 
 
 ```{r DM: adjustment level data frame}
@@ -861,6 +946,9 @@ adjustment_level_df <- comparison_level_df %>%
 left_side_outcome <- adjustment_level_df %>% 
   filter(contrast_effect_direction == "Numerator if ratio, or left side if difference")
 
+na_outcome <- adjustment_level_df %>% 
+  filter(is.na(contrast_effect_direction))
+
 right_side_outcome <- adjustment_level_df %>% 
   filter(contrast_effect_direction == "Denominator if ratio, or rightside if difference") %>% 
   mutate(across(c(lb_ci, ub_ci, effect),
@@ -873,7 +961,8 @@ right_side_outcome <- adjustment_level_df %>%
          lb_ci = lb_ci_temp, 
          lb_ci_temp = NULL)
 
-adjustment_level_df <- bind_rows(left_side_outcome, right_side_outcome) %>%
+
+adjustment_level_df <- bind_rows(left_side_outcome, right_side_outcome, na_outcome) %>%
   select(-contrast_effect_direction) %>%
 # Creating binary variable distinguishing estimates beneficial for IPD:
   mutate(benefit_ipd = case_when(
@@ -885,27 +974,231 @@ adjustment_level_df <- bind_rows(left_side_outcome, right_side_outcome) %>%
 ```
 
 
+```{r DM linking individual studies with comparison level df}
+
+comparison_study_level_df <- comparison_level_df_dm %>% 
+  pivot_longer(cols = c(studies_number_ipd, studies_number_nonipd), 
+               names_to = "study_number_type", 
+               values_to = "study_number") %>% 
+  mutate(study_number = str_split(study_number, pattern = ";")) %>% 
+  select(doi, n_itc, study_number_type, study_number) %>% 
+  unnest_longer(study_number) %>% 
+  left_join(study_level_df %>% select(-n_itc), by = c("doi", "study_number"))
+
+# check that IPD information from comparison_level_df_dm and study_level_df is consistent
+with(comparison_study_level_df, table(study_number_type, ipd_yn))
+
+count_studies_per_itc <- comparison_study_level_df %>%
+  group_by(doi, n_itc, ipd_yn) %>% 
+  summarise(count = n()) %>% 
+  pivot_wider(names_from = ipd_yn, values_from = count) %>% 
+  ungroup()
+
+count_studies_per_itc %>%
+  rowwise() %>% 
+  mutate(n_studies = sum(Yes, No)) %>% 
+  ungroup() %>% 
+  count(n_studies)
+
+
+comparison_level_df_dm %>% 
+  count(paic_form)
+
+```
+
+
+## Treatment levels: results 
+
+#### DM treatments
+
+```{r, DM treatments}
+ttt_level_df <- comparison_level_df %>% 
+  select(doi, n_itc, treatment_name_ipd, treatment_name_nonipd) %>%
+  pivot_longer(cols = c(treatment_name_nonipd, treatment_name_ipd), 
+               names_to = "type", 
+               names_prefix = "treatment_name_", 
+               values_to = "treatment_name") %>% 
+  left_join(ttt_mapped) %>% 
+  mutate(
+    atc_third = case_when(
+      !is.na(`concept_name_ancestor_ATC 3rd`) ~ `concept_name_ancestor_ATC 3rd`, 
+      !is.na(others) ~ others, 
+      TRUE ~ "No ATC 3rd level code"
+  ), 
+    atc_fourth = case_when(
+      !is.na(`concept_name_ancestor_ATC 4th`) ~ `concept_name_ancestor_ATC 4th`, 
+      !is.na(others) ~ others, 
+      TRUE ~ "No ATC 4th level code"
+  ), 
+  atc_second = case_when(
+    !is.na(`concept_name_ancestor_ATC 2nd`) ~ `concept_name_ancestor_ATC 2nd`, 
+    !is.na(others) ~ others, 
+    TRUE ~ "No ATC 2nd level code"
+  )) %>% 
+  # group_by(type) %>% 
+  mutate(ttt_group = grouping_last_levels(fct_infreq(atc_third), 6, grouping_label = "Other treatments") %>%
+           str_to_title()) %>% 
+  rowwise() %>% 
+  mutate(mab = 
+           # use concept_name here, instead of treatment_parsed, to avoid having redundant count
+           # for the treatments that haven't been parsed correctly
+           str_detect(concept_name, "mab;") |
+           # this last part of the regex doesn't happen to be necessary because all the mab are detected from their prefix name
+           any(sapply(X = c(`concept_name_ancestor_ATC 3rd`, `concept_name_ancestor_ATC 4th`, `concept_name_ancestor_ATC 2nd`),
+                      FUN = function(x) str_detect(x, regex("monoclonal", ignore_case = TRUE))), na.rm = TRUE)
+  ) %>% 
+  ungroup() %>% 
+  mutate(mab = replace_na(mab, FALSE))
+
+```
+
+
+
+```{r}
+results_ttt <- ttt_level_df %>%
+  mutate(ttt_group = fct_infreq(ttt_group) %>% fct_relevel("Other Treatments", after = Inf)) %>% 
+  set_labels(value = c("ttt_group" = "Treatment group (ATC 3rd level)", 
+                       "car_t_cells" = "CAR-T Cells therapy", 
+                       "mab" = "Monoclonal antibodies")) %>% 
+  tableby(type ~ ttt_group + car_t_cells + mab, data = .) 
+```
+
+
+```{r}
+results_ttt %>% 
+  tableby_to_flextable(ipd, nonipd, Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("ipd" = glue("IPD (n={n_ipd})", n_ipd = sum(ttt_level_df$type == "ipd")),
+                               "nonipd" = glue("Aggregated data (n={n_nonipd})", n_nonipd = sum(ttt_level_df$type == "nonipd")),
+                               "Total" = glue("Total (n={total})", total = nrow(ttt_level_df)))) %>% 
+  save_as_docx(path = file.path(article_table_path, "results_ttt.docx"))
+```
+
+```{r}
+ttt_level_df %>% 
+  left_join(articles_level_df[, c("doi", "publication_year")]) %>% 
+  filter(publication_year >= 2017) %>% 
+  group_by(doi) %>% 
+  summarize(mab = any(mab)) %>% 
+  count(mab)
+```
+
+
+```{r Studying CAR-T cells}
+
+ttt_level_df %>% 
+  left_join(articles_level_df) %>%
+  group_by(doi, publication_year) %>%
+  summarise(mab = any(mab), .groups = "drop") %>% 
+  mutate(mab = factor(mab, levels = c(FALSE, TRUE), labels = c("No", "Yes"))) %>% 
+  group_by(publication_year, mab) %>% 
+  summarise(count = n()) %>%
+  mutate(perc = count / sum(count) * 100) %>% {
+    ggplot(data = ., aes(x = publication_year, y = count)) +
+      geom_bar(aes(fill = mab), stat = "identity") +
+      #TODO: to fix, but removing the 'unknown' fill argument breaks the code
+      geom_text(aes(fill = mab, label = paste0(format(perc, digits = 1, nsmall = 1), "%")),
+                 position = position_stack(vjust = 0.5),
+                 size = 3,
+                 color = "white",
+                 show.legend = FALSE) + 
+      geom_label(data = group_by(., publication_year) %>% summarise(count = sum(count)), 
+                 aes(label = count, 
+                     y = count + 1),
+                 size = 3, color = "black", show.legend = FALSE) +
+      scale_x_continuous(breaks = seq(from = 2011, to = 2022, by = 1)) +
+      labs(title = NULL,
+           x = NULL,
+           y = NULL, 
+           fill = "Involves MAB"
+      ) +
+      theme(legend.position = "bottom")
+  }
+
+  
+ggsave(file.path(article_figure_path, "article_mab_per_year.png"), height = 15, width = 20, units = "cm")
+
+```
+
+
+
+
 ## Comparison level: methods
 
 ### Description comparisons
 
-
-```{r, results='asis'}
+```{r }
 description_comparisons <- comparison_level_df_dm %>%
-  select(paic_type, anchored_yn, act_ipd, act_nonipd, outcome_variable_type) %>% 
-  tableby(~ ., data = ., control = ) 
+  select(paic_type, anchored_yn, outcome_variable_type) %>% 
+  set_labels(value = c("anchored_yn" = "Anchored comparison")) %>%
+  tableby(~ ., data = .)
 ```
+
+
 
 ```{r}
-tableby2word(description_comparisons, "output_tables/description_comparison.docx")
+description_comparisons %>% 
+  tableby_to_flextable(Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue::glue("Total (n = {nrow(comparison_level_df_dm)})"))) %>% 
+  line_spacing(i = NULL, j = NULL, space = 1, part = "body") %>% 
+  line_spacing(i = NULL, j = NULL, space = 2, part = "header") %>% 
+  flextable::save_as_docx(path = file.path(article_table_path, "description_comparison.docx"))
+# tableby2word(description_comparisons, file.path(article_table_path, "description_comparison.docx"))
 ```
+
+#### Date and anchored/unanchored aspects
+
+```{r}
+comparison_level_df_dm %>% 
+  left_join(publication_date_df[, c("doi", "publication_year")]) %>% 
+  mutate(anchored_yn = factor(anchored_yn, levels = c("No", "Yes"), labels = c("Unanchored", "Anchored"))) %>% 
+  # filter(publication_year < 2022) %>%
+  group_by(publication_year, anchored_yn) %>%
+  summarise(count = n()) %>%
+  # group_by(publication_year) %>% 
+  mutate(perc = count / sum(count) * 100) %>% {
+    ggplot(data = ., aes(x = publication_year, y = count)) +
+      geom_bar(aes(fill = anchored_yn), stat = "identity") +
+      geom_label(aes(fill = anchored_yn, label = paste0(format(perc, digits = 1, nsmall = 1), "%")),
+                 position = position_stack(vjust = 0.5),
+                 size = 3,
+                 color = "white",
+                 show.legend = FALSE) + 
+      geom_label(data = group_by(., publication_year) %>% summarise(count = sum(count)), 
+                 aes(label = count, 
+                     y = count + 3),
+                 size = 3, color = "black", show.legend = FALSE) +
+      scale_x_continuous(breaks = seq(from = 2011, to = 2022, by = 1)) +
+      labs(title = NULL,
+           x = NULL,
+           y = NULL, 
+           fill = NULL
+      )
+  }
+
+ggsave(filename = file.path(article_figure_path, "publication_year_anchored_yn.png"), height = 15, width = 20, units = "cm")
+
+```
+
+```{r Proportion of anchored-unanchored comparison before-since 2019}
+comparison_level_df_dm %>% 
+left_join(publication_date_df[, c("doi", "publication_year")]) %>%
+  mutate(publication_date = ifelse(publication_year < 2019, "before 2019", "since 2019")) %>%
+  group_by(publication_date, anchored_yn) %>% summarise(count = n()) %>% mutate(perc = count / sum(count))
+
+```
+
 
 ### Correct model adjustment
 
 ```{r}
+
 correct_adjustment <- comparison_level_df_dm %>% 
   select(paic_type, anchored_yn, correct_adjustment) %>% 
-  tableby(paic_type ~ correct_adjustment, data = ., strata = anchored_yn, 
+  set_labels(value = c("correct_adjustment" = "Adequate variables selection", 
+                       "anchored_yn" = "Anchored")) %>% 
+  tableby(paic_type ~ correct_adjustment, data = ., 
           control = tableby.control(cat.droplevels = TRUE))
 ```
 
@@ -914,7 +1207,16 @@ summary(correct_adjustment)
 ```
 
 ```{r}
-tableby2word(correct_adjustment, "output_tables/correct_adjustment.docx")
+correct_adjustment %>%
+  tableby_to_flextable(Total) %>%
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue::glue("Total (n = {nrow(comparison_level_df_dm)})"))) %>%
+  line_spacing(i = NULL, j = NULL, space = 1, part = "body") %>%
+  line_spacing(i = NULL, j = NULL, space = 2, part = "header") %>% 
+  flextable::save_as_docx(path = file.path(article_table_path,  "correct_adjustment.docx"))
+
+
+# tableby2word(correct_adjustment, "/correct_adjustment.docx")
 ```
 
 
@@ -924,6 +1226,9 @@ tableby2word(correct_adjustment, "output_tables/correct_adjustment.docx")
 variables_justification <- comparison_level_df_dm %>% 
   select(no_justification, expertise, literature, statistics_ipd,
          imbalance, justification_char, anchored_yn) %>% 
+  set_labels(c("no_justification" = "No justification", "expertise" = "Expertise", 
+               "literature" = "Literature", "statistics_ipd" = "Statistical effect in the IPD dataset",
+               "imbalance" = "Imbalance", "justification_char" = "Covariates justification")) %>% 
   tableby( anchored_yn ~ ., data = .)
 ```
 
@@ -932,7 +1237,12 @@ summary(variables_justification)
 ```
 
 ```{r}
-tableby2word(variables_justification, "output_tables/variables_justification.docx")
+variables_justification %>% 
+  tableby_to_flextable(Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue::glue("Total (n = {nrow(comparison_level_df_dm)})"))) %>% 
+  flextable::save_as_docx(path = file.path(article_table_path, "variables_justification.docx"))
+# tableby2word(variables_justification, "/variables_justification.docx")
 ```
 
 
@@ -940,19 +1250,121 @@ tableby2word(variables_justification, "output_tables/variables_justification.doc
 
 ```{r}
 main_methods <- comparison_level_df_dm %>%
-  left_join(articles_level_df[, c("doi", "systematic_review_yn")]) %>% 
-  select(systematic_review_yn, primary_outcome_yn, ss_ipd_yn, ss_nonipd_yn, ss_adjusted_yn) %>% 
-  tableby( ~ ., data = .) 
+  left_join(articles_level_df[, c("doi", "systematic_review_yn", "publication_date", "methodologist_yn")] %>% 
+              mutate(before_2018 = publication_date < as.Date("2018-01-01"))) %>% 
+  mutate(primary_outcome_yn = replace_in_vec(
+    primary_outcome_yn, 
+    c("No primary outcome defined, or multiple primary outcomes without any clear distinction between them" = "No"))) %>% 
+  select(systematic_review_yn, paic_type, primary_outcome_yn, ss_ipd_yn, ss_nonipd_yn, ss_adjusted_yn) %>% 
+  set_labels(value = c("ss_ipd_yn" = "IPD", 
+                       "ss_nonipd_yn" = "Non IPD", 
+                       "ss_adjusted_yn" = "Adjusted", 
+                       "systematic_review_yn" = "Systematic review", 
+                       "primary_outcome_yn" = "Primary outcome")) %>% 
+  tableby( ~ ., data = .)
+
+```
+
+
+```{r}
+main_methods %>% 
+  tableby_to_flextable(Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue::glue("Total (n = {nrow(comparison_level_df_dm)})"))) %>% 
+  flextable::save_as_docx(path = file.path(article_table_path, "main_methods.docx"))
+```
+
+### Sample Size comparison 
+
+```{r}
+wide_sample_size_df %>%
+  left_join(comparison_level_df_dm[, c("doi", "n_itc", "paic_type")]) %>% 
+  set_labels(c(ss_total_ipd = "IPD SS",
+             ss_total_nonipd = "Aggregated SS", 
+             ss_adjusted_total_ipd = "Adjusted SS", 
+             difference_adjusted_total = "IPD-adjusted SS Difference", 
+             rapport_adjusted_total = "Rapport IPD/adjusted SS", 
+             reduction_ess_percent = "Reduction Percentage ESS")) %>% 
+  mutate(reduction_ess_percent = round(reduction_ess_percent, 1)) %>% 
+  tableby( paic_type ~ ss_total_ipd + ss_total_nonipd + ss_adjusted_total_ipd + reduction_ess_percent,
+           data = ., numeric.stats = c("Nmiss", "meansd", "median", "range", "q1q3")) %>% 
+  tableby_to_flextable(MAIC, STC, `ML-NMR`, Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c(
+    "Total" = glue("Total (n = {nrow(comparison_level_df_dm)})"), 
+    "MAIC" = glue("MAIC (n = {sum(comparison_level_df_dm$paic_type == 'MAIC')})"), 
+    "STC" = glue("STC (n = {sum(comparison_level_df_dm$paic_type == 'STC')})"), 
+    "ML-NMR" = glue("ML-NMR (n = {sum(comparison_level_df_dm$paic_type == 'ML-NMR')})"))) %>% 
+  flextable::save_as_docx(path = file.path(article_table_path, "sample_size.docx"))
+
+```
+
+### Combining main methodological aspects (table summary Saint Malo)
+
+
+```{r}
+df_main_methods <- main_methods %>%
+  dm_tableby(Total) %>% 
+  fill(variable) %>% 
+  mutate(modalities = ifelse(variable %in% c("IPD", "Non IPD", "Adjusted") & modalities == "Yes", 
+                             variable, 
+                             modalities), 
+         variable = ifelse(variable %in% c("IPD", "Non IPD", "Adjusted"), "Sample size reporting", variable),
+         variable = ifelse(duplicated(variable), NA, variable), 
+         across(everything(), .fns = replace_na, replace = "")
+  ) %>% 
+  filter(variable != "" | !modalities %in% c("", "No")) 
+```
+
+
+
+```{r}
+df_variables_justification <- variables_justification %>% 
+  dm_tableby(Total) %>% 
+  fill(variable) %>% 
+  mutate(modalities = case_when(
+    modalities == "TRUE" ~ "Yes", 
+    modalities == "FALSE" ~ "No", 
+    TRUE ~ modalities)) %>% 
+  filter(is.na(modalities) | modalities != "No", 
+         variable == "Covariates justification") %>% 
+  mutate(variable = ifelse(duplicated(variable), NA, variable), 
+         across(everything(), .fns = replace_na, replace = "")
+  )  
+
+```
+
+
+```{r}
+df_correct_adjustment <- correct_adjustment %>% 
+  dm_tableby(Total) %>% 
+  fill(variable) %>% 
+  mutate(variable = ifelse(duplicated(variable), NA, variable), 
+         across(everything(), .fns = replace_na, replace = "")
+  )  
 ```
 
 ```{r}
-summary(main_methods)
+df_poster <- bind_rows(df_main_methods, df_variables_justification, df_correct_adjustment)
+indic_hlines <- which(df_poster$variable != "") 
+# indic_hlines <- indic_hlines[2: length(indic_hlines)]
+ncols <- ncol(df_poster)
+df_poster %>% 
+  mutate(variable = ifelse(variable == "", NA, variable)) %>% 
+  fill(variable, .direction = "down") %>% 
+  filter(modalities != "") %>% 
+  kbl(format = "latex", booktabs = TRUE, col.names = NULL) %>%
+    kable_styling(latex_options = c("basic"),
+                  position = "left", 
+                  font_size = 8) %>%
+  column_spec(1, width = "12em", bold = TRUE) %>%
+  column_spec(2, width = "17em") %>%
+  column_spec(3, width = "5em") %>% 
+  collapse_rows(columns = 1, latex_hline = "major") %>% 
+  row_spec(1, hline_after = TRUE) %>%
+  add_header_above(c("Count (%)" = 3), align = 'r')
 ```
 
-
-```{r}
-tableby2word(main_methods, "output_tables/main_methods.docx")
-```
 
 ### Secondary methodological aspects
 
@@ -969,7 +1381,11 @@ summary(secondary_methods)
 ```
 
 ```{r}
-tableby2word(secondary_methods, "output_tables/secondary_methods.docx")
+secondary_methods %>% 
+  tableby_to_flextable(Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue("Total (n={nrow(comparison_level_df_dm)})"))) %>% 
+  save_as_docx(secondary_methods, path = file.path(article_table_path, "secondary_methods.docx"))
 ```
 
 
@@ -978,8 +1394,9 @@ tableby2word(secondary_methods, "output_tables/secondary_methods.docx")
 ```{r}
 adjustment_variables <- covariates_adjustment_df %>% 
   left_join(comparison_level_df_dm[, c("doi", "n_itc", "covariates_n")]) %>%
-  select(-doi, -n_itc) %>% 
-  tableby( ~ ., data = .)
+  select(covariates_n, everything(), -doi, -n_itc) %>% 
+  mutate(across(where(is.logical), .fns = ~ ifelse(.x == TRUE, "Yes", "No"))) %>% 
+  tableby( ~ ., data = ., control = tableby.control(numeric.stats = c("Nmiss", "median", "q1q3", "range", "meansd")))
 ```
 
 ```{r}
@@ -987,41 +1404,69 @@ adjustment_variables %>% summary()
 ```
 
 ```{r}
-tableby2word(adjustment_variables, "output_tables/adjustment_variables.docx")
+adjustment_variables %>% 
+  set_labels(c("age" = "Age", "sex" = "Sex", "others" = "Others",
+               "history" = "Medical history", "comorbidities" = "Comorbidities", 
+               "performance_score" = "Performance score",
+               "past_treatments" = "Past Treatments",
+               "race_ethnicity" = "Race/Ethnicity")) %>% 
+  tableby_to_flextable(Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue("Total (n={nrow(covariates_adjustment_df)})"))) %>% 
+  save_as_docx(path = file.path(article_table_path, "adjustment_variables.docx"))
 ```
 
+
+
+
 ## Comparisons level: results
+
 
 ### Results at the comparison level
 
 ```{r}
 results_tableby <- comparison_level_df_dm %>% 
-  select(unadjusted_yn, adjusted_yn, reduction_ess_percent, weights_yn, 
+  select(unadjusted_yn, adjusted_yn, weights_yn, outcome_variable_type, contrast_effect_type,
          reduction_ess_percent, perc_change_effect) %>% 
+  mutate(across(where(is.logical), .fn = ~ ifelse(.x == TRUE, "Yes", "No"))) %>% 
+  set_labels(value = c("unadjusted_yn" = "Reporting an unadjusted effect size", 
+                       "adjusted_yn" = "Reporting an adjusted effect size", 
+                       "reduction_ess_percent" = "ESS reduction percentage (MAIC)", 
+                       "perc_change_effect" = "Effect size change in percentage")) %>% 
   tableby( ~ ., data = ., 
-           control = tableby.control(numeric.stats = c("median", "q1q3","range", "meansd")))
-summary(results_tableby)
+           control = tableby.control(numeric.stats = c("Nmiss", "median", "q1q3","range", "meansd")))
+summary(results_tableby, text = TRUE)
 ```
 
 ```{r}
-tableby2word(results_tableby, "output_tables/results_tableby.docx")
+results_tableby %>% 
+  tableby_to_flextable(Total) %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue("Total (n={nrow(comparison_level_df_dm)})"))) %>% 
+  save_as_docx(path = file.path(article_table_path, "results_tableby.docx"))
 ```
 
 ### Results at the adjustment level
 
 ```{r Adjustment level results}
 adjustment_level_tableby <- adjustment_level_df %>% 
-  select(adjustment, significant, benefit_ipd) %>% 
-  tableby(adjustment ~ benefit_ipd, data = ., strata = significant)
+  filter(adjustment == "adjusted") %>% 
+  mutate(significant = ifelse(is.na(effect) | is.na(significant), "Unknown", significant)) %>% 
+  select(significant, benefit_ipd) %>% 
+  set_labels(value = c("benefit_ipd" = "Benefit IPD")) %>% 
+  tableby(significant ~ benefit_ipd, data = .)
 ```
 
 ```{r}
 adjustment_level_tableby %>% 
-  summary()
-```
-
-```{r}
-tableby2word(adjustment_level_tableby, "output_tables/adjustement_level.docx")
+  tableby_to_flextable("Unknown", "FALSE", "TRUE", "Total") %>% 
+  format_flextable() %>% 
+  set_header_labels(values = c("FALSE" = "Not statistically significant", 
+                               "TRUE" = "Statistically significant",
+                               "Total" = "Total")) %>% 
+  # merge_v(j = 1, target = "strata.term") %>% 
+  save_as_docx(path = file.path(article_table_path, "adjustement_level.docx"))
+  
 ```
 
 ## Figures 
@@ -1034,8 +1479,8 @@ ttt_df %>%
   #TODO: fix the NA issue
   filter(!is.na(ipd_yn)) %>% 
   distinct(doi, n_itc, treatment_name, ipd_yn) %>% 
-  left_join(distinct(ttt_mapped[, c("answer", "first", "second", "third", "car_t_cells")]),
-            by = c("treatment_name" = "answer")) %>%
+  left_join(distinct(ttt_mapped[, c("treatment_name", "first", "second", "third", "car_t_cells")]),
+            by = "treatment_name") %>%
   group_by(ipd_yn) %>% 
   count(first) %>% 
   ggplot(aes(x = reorder(first, n), y = n, label = n)) +
@@ -1058,21 +1503,22 @@ sample_size_labels <- c(
   Rapport = "Rapport ESS/Original",
   Difference = "Difference Original - ESS", 
   Original = "Original Sample Size", 
-  ESS = "ESS"
+  `Adjusted (ESS)` = "ESS"
 )
 
 long_sample_size_df %>% 
-  filter(paic_type %in% c("MAIC"), 
-         ipd_yn == "Total") %>%
-  mutate(sample_size_type = factor(sample_size_type, levels = c("Original", "ESS", "Difference", "Rapport"))) %>% 
-  # filter(ipd_yn == "Total") %>% 
+  filter(ipd_yn == "Total", 
+         paic_type == "MAIC") %>%
+  mutate(sample_size_type = factor(sample_size_type,
+                                   levels = c("Original", "Adjusted (ESS)", "Difference", "Rapport"), 
+                                   labels = c("Original Sample Size", "ESS", "Difference Original - ESS", 
+                                              "Rapport ESS/Original"))) %>% 
   ggplot(aes(x = 1, y = value)) +
   geom_violin() + 
   geom_jitter(width = 0.2) + 
   facet_wrap(~ sample_size_type,
              scales = "free",
-             ncol = 4, 
-             labeller = labeller( sample_size_type = sample_size_labels)) +
+             ncol = 4) +
   theme(legend.position = "bottom", legend.direction = "horizontal", axis.ticks =  element_blank()) +
   labs(title = "Sample Size Reduction in MAIC", 
        y = "Sample Size", 
@@ -1081,23 +1527,21 @@ long_sample_size_df %>%
 ```
 
 
-
 ### Outcomes 
 
-
 ```{r, results='asis'}
-
 funded_pharma <- general_information_df %>% select(doi, )
-wide_methodo_results  %>% 
-  mutate(across(.cols = c(outcome_short_name, primary_outcome_name), 
+
+comparison_level_df  %>% 
+  mutate(across(.cols = c(outcome_short_name, outcome_name), 
                 .fns = stringr::str_to_title)
   ) %>% 
-  add_count(primary_outcome_name, name = "primary_outcome_name_n") %>% 
-  mutate(primary_outcome_name = forcats::fct_reorder(primary_outcome_name,
-                                                     primary_outcome_name_n, 
-                                                     .desc = TRUE)) %>% 
+  add_count(outcome_name, name = "outcome_name_n") %>% 
+  mutate(outcome_name = forcats::fct_reorder(outcome_name,
+                                             outcome_name_n, 
+                                             .desc = TRUE)) %>% 
  # TODO : fix missing outcome name 
-  tableby( primary_outcome_yn ~  primary_outcome_type + outcome_short_name,
+  tableby( primary_outcome_yn ~  outcome_variable_type + outcome_short_name,
            data = .) %>% 
   summary()
 ```
@@ -1105,13 +1549,13 @@ wide_methodo_results  %>%
 ### Treatment effect estimates
 
 ```{r, eval = FALSE}
-wide_results_outcome %>%
+adjustment_level_df %>%
   #TODO: see what is the best to do with contrast == NA
-  filter(!is.na(contrast)) %>%
+  filter(!is.na(contrast_effect_type)) %>%
   ggplot(aes(x = adjustment, y = effect, color = significant)) +
   geom_jitter(width = 0.1) +
   geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
-  facet_wrap(~ contrast, scales = "free_y") +
+  facet_wrap(~ contrast_effect_type, scales = "free_y") +
   scale_y_continuous(trans = "log10") +
   labs(title = "Treatment contrast effects: point estimates",
        subtitle = "IPD is numerator for rates/ratio, left side differences",
@@ -1123,24 +1567,23 @@ wide_results_outcome %>%
 ```
 
 ```{r}
-wide_results_outcome %>% 
+adjustment_level_df %>% 
   left_join(ties_w_pharma_df, by = "doi") %>% 
-  filter(adjustment == "adjusted", significant == "TRUE", ties_pharma, !benefit_ipd) %>% 
-  View()
+  filter(adjustment == "adjusted", significant == "TRUE", ties_pharma, !benefit_ipd)
 ```
 
 
 ## Results benefit IPD
 ```{r, results='asis'}
-wide_results_outcome %>% 
+adjustment_level_df %>% 
   left_join(ties_w_pharma_df, by = "doi") %>% 
   tableby(benefit_ipd ~ significant, strata = adjustment, data = .) %>% 
   summary(title = "Treatment point estimate benefits IPD") 
 ```
 
 ```{r, fig.width=14, fig.height=12}
-outcomes_df <- wide_results_outcome %>% 
-  select(doi, n_itc, adjustment, contrast, direction_benefit, outcome_short_name, effect_cutoff, significant, benefit_ipd, effect) %>% 
+outcomes_df <- adjustment_level_df %>% 
+  select(doi, n_itc, adjustment, contrast_effect_type, direction_benefit, outcome_short_name, effect_cutoff, significant, benefit_ipd, effect) %>% 
   filter(!is.na(effect)) %>% 
   # Creating a variable where a beneficial effect for IPD is always inferior to threshold
   mutate(effect_benefit = case_when(
@@ -1154,8 +1597,8 @@ outcomes_df <- wide_results_outcome %>%
     is.na(significant) ~ "Unknown")) 
 
 num_comparison_df <- outcomes_df %>% 
-  distinct(n_itc, doi, contrast) %>% 
-  group_by(contrast) %>% 
+  distinct(n_itc, doi, contrast_effect_type) %>% 
+  group_by(contrast_effect_type) %>% 
   mutate(num_comparison = 1:n()) %>% 
   ungroup()
 
@@ -1166,12 +1609,12 @@ outcomes_df <- outcomes_df %>%
 
 ```{r, fig.width=14, fig.height=12}
 labelling_data <- data.frame(
-  contrast = unique(outcomes_df$contrast), 
+  contrast_effect_type = unique(outcomes_df$contrast_effect_type), 
   left_side = "Favors IPD", 
   right_side = "Favors non-IPD"
 ) %>%
-  left_join(distinct(outcomes_df, contrast, effect_cutoff)) %>% 
-  left_join(summarise(group_by(outcomes_df[, c("contrast", "effect", "num_comparison")], contrast),
+  left_join(distinct(outcomes_df, contrast_effect_type, effect_cutoff)) %>% 
+  left_join(summarise(group_by(outcomes_df[, c("contrast_effect_type", "effect", "num_comparison")], contrast_effect_type),
                       left_x = min(effect), 
                       right_x = max(effect), 
                       max_num_comparison = max(num_comparison)))
@@ -1185,7 +1628,7 @@ outcomes_df %>%
   geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black") +
   # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
   scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
-  facet_wrap(~ contrast, scales = "free") + 
+  facet_wrap(~ contrast_effect_type, scales = "free") + 
   labs(title = "PAITC treatment effects point estimates", 
        subtitle = "Left side of vertical dashed line favors IPD", 
        color = "5% significance level", 
@@ -1220,7 +1663,7 @@ outcomes_df %>%
  geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
   # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
   # scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
-  facet_wrap( ~ contrast, scales = "free", ncol = 1) + 
+  facet_wrap( ~ contrast_effect_type, scales = "free", ncol = 1) + 
   coord_flip() + 
   labs(title = "PAITC treatment effects point estimates", 
        subtitle = "Left side of vertical dashed line favors IPD treatment", 
@@ -1245,17 +1688,17 @@ outcomes_df %>%
 plot_layout <- outcomes_df %>%   
   left_join(
     wide_sample_size_df %>% 
-      mutate(n_ipd_total = ifelse(anchored_yn == "Yes", n_ipd_total/2, n_ipd_total)) %>% 
-      select(doi, n_itc, n_ipd_total), 
+      mutate(ss_total_ipd = ifelse(anchored_yn == "Yes", ss_total_ipd/2, ss_total_ipd)) %>% 
+      select(doi, n_itc, ss_total_ipd), 
     by = c("doi", "n_itc")
   ) %>% 
   filter(adjustment == "adjusted", 
-         contrast == "Rates/ratio") %>% 
-  mutate(contrast = factor(contrast, 
-                           levels = c("Difference", "Rates/ratio"), 
-                           labels = c("Mesure de l'effet : différence absolue", 
-                                      "Mesure de l'effet : rates/ratio"))) %>% 
-  ggplot(aes(x = effect_benefit, y = n_ipd_total, color = significant_char)) + 
+         contrast_effect_type == "Rates/ratio") %>% 
+  mutate(contrast_effect_type = factor(contrast_effect_type, 
+                                       levels = c("Difference", "Rates/ratio"), 
+                                       labels = c("Mesure de l'effet : différence absolue", 
+                                                  "Mesure de l'effet : rates/ratio"))) %>% 
+  ggplot(aes(x = effect_benefit, y = ss_total_ipd, color = significant_char)) + 
   scale_x_continuous(trans = "log10",
                      breaks = c(0.01, 0.1, 1, 10, 100),
                      labels = c("0,01", "0,1", "1", "10", "100")) +
@@ -1263,47 +1706,62 @@ plot_layout <- outcomes_df %>%
   scale_color_manual(labels = c("Yes" = "Oui", "No" = "Non", "Unknown" = "Inconnu"),
                        limits = c("Yes", "No", "Unknown"), 
                        values = c("Yes" = "#E84646", "No" = "#65ADC2", "Unknown" = "#233B43")) +
-  labs(title = "Estimation de l'effet de traitement, ajustée via PAIC (rapports et ratio)", 
-       subtitle = "Côté gauche de la ligne verticale en pointillée montre un effet en faveur du traitement \navec données individuelles", 
-       color = "Effet statistiquement \nsignificatif (alpha = 5%)", 
-       y = "Taille échantillon bras traitement données ind.", 
-       x = "\nTaille d'effet") +
-  theme(legend.position = "bottom",
-        axis.title = element_text(size = 10),
-        legend.title = element_text(size = 10),
-        plot.subtitle = element_text(size = 10, face = c("bold.italic")), 
-        plot.title = element_text(size = 13),
-        legend.box.just = "top",
-        legend.box = "vertical") + 
+  # labs(title = "Estimation de l'effet de traitement, ajustée via PAIC (rapports et ratio)", 
+  #      subtitle = "Côté gauche de la ligne verticale en pointillée montre un effet en faveur du traitement \navec données individuelles", 
+  #      color = "Effet statistiquement \nsignificatif (alpha = 5%)", 
+  #      y = "Taille échantillon bras traitement données ind.", 
+  #      x = "\nTaille d'effet") +
+  # theme(legend.position = "bottom",
+  #       axis.title = element_text(size = 10),
+  #       legend.title = element_text(size = 10),
+  #       plot.subtitle = element_text(size = 10, face = c("bold.italic")), 
+  #       plot.title = element_text(size = 13),
+  #       legend.box.just = "top",
+  #       legend.box = "vertical") + 
   guides(shape = guide_legend(override.aes = list(color = "black"))) +
   geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black")
 
 ```
 
+```{r Publication Saint-Malo}
 
-```{r}
 plot_layout +
-  geom_point() +
+  geom_point(size = 3) +
+  scale_color_manual(values = c("No" = "#1c2474", "Yes" = "#ec342b", "Unknown" ="#bbbdd3")) +
+  # scale_color_manual(values = c("No" = "#1055A4", "Yes" = "#ec342b", "Unknown" ="#bbbdd3")) +
   coord_cartesian(xlim = c(0.01, 100), ylim = c(20, NA), clip = "off", expand = TRUE) +
-  annotate("text", label = "\nFavorise données agrégées", x = 10, y = 9, size = 3) +
-  geom_segment(aes(x = 1.2, xend = 90, y = 9, yend = 9),
+  annotate("text", label = "\n\nFavors aggregated data", x = 13, y = 8, size = 5) +
+  geom_segment(aes(x = 1.2, xend = 90, y = 2.75, yend = 2.75),
                size = 0.7,
                arrow = arrow(length = unit(0.2,"cm")),
                inherit.aes = FALSE) +
-  annotate("text", label = "\nFavorise données individuelles", x = 0.1, y = 9, size = 3) +
-  geom_segment(aes(x = 0.82, xend = 0.011, y = 9, yend = 9),
+  annotate("text", label = "\n\nFavors IPD", x = 0.15, y = 8, size = 5) +
+  geom_segment(aes(x = 0.82, xend = 0.011, y = 2.75, yend = 2.75),
                size = 0.7,
                arrow = arrow(length = unit(0.2,"cm")),
                inherit.aes = FALSE) +
-    theme(legend.position = "bottom",
-        axis.title = element_text(size = 10),
-        legend.title = element_text(size = 10),
-        plot.subtitle = element_blank(), 
-        plot.title = element_text(size = 13),
+  theme(axis.title = element_text(size = 14),
+        axis.text = element_text(size = 16),
+        legend.title = element_text(size = 13),
+        legend.text = element_text(size = 13),
+        plot.title = element_text(size = 14),
+        plot.subtitle = element_text(size = 15, face = "bold.italic"),
+        legend.position = "bottom",
         legend.box.just = "top",
-        legend.box = "vertical")
+        legend.box = "vertical", 
+        # text = element_text(family = "Goudy Old Style", face = "bold")
+        ) +
+  # labs(title = "PAIC adjusted treatment effect", 
+  labs(title = NULL, 
+       subtitle = "Rates and ratio only", 
+       y = "IPD treatment arm sample size",
+       x = "Effect size\n", 
+       color = latex2exp::TeX(sprintf(r'(Significant ($\alpha = 0.05$) )'), 
+                              bold = TRUE), 
+       ) 
 
-ggsave("funnel_plot_ratio.jpg")
+ggsave("C:/Users/aserret-larmande/Documents/these/research/articles_redaction/paic_methodological_review/Posters st-malo/figures/scatter_plot.png", width = 20, height = 10, unit = "cm")
+ggsave("C:/Users/aserret-larmande/Documents/these/research/articles_redaction/paic_methodological_review/figures/ratio_treatment_effect.png", width = 20, height = 10, unit = "cm")
 ```
 
 
@@ -1320,7 +1778,7 @@ ggsave("test.png")
 ```{r}
 outcomes_df %>% 
   filter(adjustment == "adjusted") %>% 
-  mutate(contrast = factor(contrast, 
+  mutate(contrast_effect_type = factor(contrast_effect_type, 
                            levels = c("Difference", "Rates/ratio"), 
                            labels = c("Mesure de l'effet : différence absolue", 
                                       "Mesure de l'effet : rates/ratio"))) %>% 
@@ -1333,7 +1791,7 @@ outcomes_df %>%
   geom_hline(aes(yintercept = effect_cutoff), linetype = "dashed", color = "black") +
   # geom_blank(aes(y = max_num_comparison * 1.1, x = 3), inherit.aes = FALSE, data = labelling_data) +
   # scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) +
-  facet_wrap( ~ contrast, scales = "free", ncol = 1) + 
+  facet_wrap( ~ contrast_effect_type, scales = "free", ncol = 1) + 
   coord_flip() + 
   scale_color_discrete(labels = c("Non", "Inconnu", "Oui")) + 
   labs(title = "Estimation de l'effet de traitement, ajustée via PAITC", 
@@ -1356,13 +1814,13 @@ ggsave(filename = "boxplot_effet_fr.png")
 outcomes_plot <- outcomes_df %>% 
   # select(num_comparison, contrast, effect_cutoff, adjustment, effect) %>% 
   # Keeping only data with both unadjusted and adjusted effect
-  pivot_wider(id_cols = c(num_comparison, contrast),
+  pivot_wider(id_cols = c(num_comparison, contrast_effect_type),
               names_from = adjustment,
               values_from = effect) %>%
   filter(!is.na(adjusted) & ! is.na(unadjusted)) %>%
   pivot_longer(cols = c("adjusted", "unadjusted"), names_to = "adjustment", values_to = "effect") %>% 
-  left_join(outcomes_df[, c("num_comparison", "contrast", "adjustment", "significant_char", "effect_cutoff")], 
-            by = c("num_comparison", "contrast", "adjustment")) %>% 
+  left_join(outcomes_df[, c("num_comparison", "contrast_effect_type", "adjustment", "significant_char", "effect_cutoff")], 
+            by = c("num_comparison", "contrast_effect_type", "adjustment")) %>% 
   ggplot() + 
   geom_point(aes(y = num_comparison,
              color = significant_char, 
@@ -1374,7 +1832,7 @@ outcomes_plot <- outcomes_df %>%
              group = num_comparison), size = 0.5, color = "darkgrey", linetype = 1) +
   geom_vline(aes(xintercept = effect_cutoff), linetype = "dashed", color = "black") +
   scale_color_manual(values = c("Yes" = "#cc0000", "No" = "#000000", "Unknown" = "#D9D9D9")) + 
-  facet_wrap(~ contrast, scales = "free") + 
+  facet_wrap(~ contrast_effect_type, scales = "free") + 
   # facet_zoom(xlim = c(-2, 2)) +
   labs(title = "PAITC: distance between adjusted and not-adjusted treatment effects point estimates", 
        subtitle = "Vertical dashed lines represent absence of treatment effect difference",
