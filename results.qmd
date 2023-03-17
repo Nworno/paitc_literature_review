@@ -334,6 +334,88 @@ tableby_to_flextable(description_articles, Yes, `Not mentioned`, Total) %>%
 ```
 
 
+```{r Journaux valides Sorbonne}
+
+valid_journals <- read_delim("data/journals/list_sorbonne.txt", delim = "\\n") %>% 
+  set_names("journal_title") %>% 
+  separate(col = "journal_title", sep = "\\t", into = c("long_name", "short_name")) %>% 
+  mutate(across(.fns = tolower))
+
+journals_titles <- distinct(articles_level_df, journal_title, jt) %>% 
+  mutate(across(.fns = tolower))
+init <- journals_titles %>% 
+  semi_join(valid_journals, by = c("journal_title" = "short_name"))
+
+init_long <- journals_titles %>% 
+  semi_join(valid_journals, by = c("jt" = "long_name"))
+
+white_list <- bind_rows(init, init_long) %>%
+  distinct() %>% 
+  # adding manually identified articles to the list
+  bind_rows(tibble(
+    journal_title = c("ejc suppl", "oncologist"), 
+    jt = c("ejc supplements : ejc : official journal of eortc, european organization for  research and treatment of cancer ... [et al.]", 
+    "the oncologist"))) %>% 
+  mutate(in_sorbonne_list = TRUE)
+
+black_list <- anti_join(journals_titles, white_list)
+
+articles_level_df %>% 
+  mutate(jt = tolower(jt)) %>% 
+  select(doi, jt) %>% 
+  left_join(white_list[ ,c("jt", "in_sorbonne_list")]) %>% 
+  count(in_sorbonne_list)
+
+```
+
+```{r IF}
+journals_if <- read_csv("data/journals/JCR2020_CompleteList.csv", col_types = c(.default = "c")) %>% 
+  select(journal_title_long = `Full Journal Title`, 
+         IF = `Journal Impact Factor`) %>% 
+  mutate(IF = as.numeric(str_trim(IF)), 
+         journal_title_long = tolower(journal_title_long))
+
+df_journal_title <- articles_level_df %>% 
+  mutate(journal_title_long = tolower(jt)) %>% 
+  distinct(journal_title_long, is) %>% 
+  left_join(journals_if)
+
+test <- read_csv("data/journals/journals_IF_2020_modified.csv")
+
+write_csv(df_journal_title, "data/journals/journals_IF_2020_modified.csv")
+```
+
+
+```{r IF}
+journals_if <- read_csv("data/journals/journals_IF_2020_modified.csv")  %>% 
+  # because some have several ISSN notations
+  distinct(journal_title_long, IF)
+
+journals_if %>% count(is.na(IF))
+journals_if %>% summarise(mean_if = mean(IF, na.rm = TRUE),
+                          median_if = median(IF, na.rm = TRUE), 
+                          q1 = quantile(IF, 0.25, na.rm = TRUE),
+                          q3 = quantile(IF, 0.75, na.rm = TRUE), 
+                          min = min(IF, na.rm = TRUE),
+                          max = max(IF, na.rm = TRUE)
+)
+articles_level_df %>% 
+  mutate(jt = tolower(jt)) %>% 
+  left_join(
+  journals_if, by = c("jt" = "journal_title_long")) %>% 
+  select(doi, jt, IF) %>% 
+  mutate(jt = stringr::str_to_sentence(jt)) %>% 
+  summarise(median_if = median(IF, na.rm = TRUE),
+            mean_if = mean(IF, na.rm = TRUE), 
+            min_if = min(IF, na.rm = TRUE), 
+            max_if = max(IF, na.rm = TRUE), 
+            n_missing = sum(is.na(IF)), 
+            q1 = quantile(IF, 0.25, na.rm = TRUE),
+            q3 = quantile(IF, 0.75, na.rm = TRUE)
+  )
+```
+
+
 ## Plots
 
 ### Journals
@@ -360,7 +442,6 @@ articles_level_df %>%
 
 ### Publication date
 
-
 ```{r Publication year }
 library(extrafont)
 loadfonts(device = "win")
@@ -375,6 +456,28 @@ publication_date_df <- articles_level_df %>%
                                       trunc(publication_date_s),
                                       trunc(publication_date_s) + 0.5)) %>%
   left_join(included_articles_info[, c("pmid", "doi")], by ="pmid")
+```
+
+
+```{r}
+articles_level_df %>% 
+  # filter(publication_year < 2022) %>%
+  group_by(publication_year) %>%
+  summarise(count = n()) %>%
+  ggplot(aes(x = publication_year, y = count)) +
+  geom_bar(stat = "identity") +
+  geom_label(aes(label = count, y = count + 2),
+             size = 3,
+             show.legend = FALSE) + 
+  scale_x_continuous(breaks = seq(from = 2011, to = 2022, by = 1)) +
+  labs(title = NULL,
+       x = NULL,
+       y = NULL, 
+       fill = NULL
+  )
+
+ggsave(filename = file.path(article_figure_path, "publication_year_articles.png"), height = 15, width = 20, units = "cm")
+
 ```
 
 
@@ -926,6 +1029,29 @@ comparison_level_df_dm <- comparison_level_df %>%
 ```
 
 
+
+```{r Exploration of contrast effects}
+comparison_level_df_dm %>% 
+  group_by(contrast_effect_type, outcome_variable_type) %>% 
+  count() %>% 
+  pivot_wider(names_from = outcome_variable_type, 
+              values_from = n)
+
+comparison_level_df_dm %>% 
+  filter(outcome_variable_type == "Binary (eg rates)", 
+         contrast_effect_type == "Rates/ratio difference") 
+
+comparison_level_df_dm %>% 
+  tableby(outcome_variable_type ~ contrast_effect_type, strata = paic_type, 
+          data = .) %>% 
+  tableby_to_flextable(`Binary (eg rates)`, `Continuous (count, mean, ...)`, `Time-to-event`, Total) %>%
+  format_flextable() %>% 
+  set_header_labels(values = c("Total" = glue::glue("Total (n = {nrow(comparison_level_df_dm)})"))) %>%
+  line_spacing(i = NULL, j = NULL, space = 1, part = "body") %>%
+  line_spacing(i = NULL, j = NULL, space = 2, part = "header") %>% 
+  flextable::save_as_docx(path = file.path(article_table_path,  "outcomes.docx"))
+```
+
 ```{r DM: adjustment level data frame}
 adjustment_level_df <- comparison_level_df %>% 
   select(doi, n_itc, contrast_effect_type, contrast_effect_direction,
@@ -1263,6 +1389,23 @@ main_methods <- comparison_level_df_dm %>%
                        "primary_outcome_yn" = "Primary outcome")) %>% 
   tableby( ~ ., data = .)
 
+# same but essentially to get information stratified before/after 2018
+comparison_level_df_dm %>%
+  left_join(articles_level_df[, c("doi", "systematic_review_yn", "publication_date", "methodologist_yn")] %>% 
+              mutate(before_2018 = publication_date < as.Date("2017-06-01"))) %>% 
+  mutate(primary_outcome_yn = replace_in_vec(
+    primary_outcome_yn, 
+    c("No primary outcome defined, or multiple primary outcomes without any clear distinction between them" = "No"))) %>% 
+  select(systematic_review_yn, paic_type, primary_outcome_yn, ss_ipd_yn, ss_nonipd_yn, ss_adjusted_yn, before_2018) %>% 
+  set_labels(value = c("ss_ipd_yn" = "IPD", 
+                       "ss_nonipd_yn" = "Non IPD", 
+                       "ss_adjusted_yn" = "Adjusted", 
+                       "systematic_review_yn" = "Systematic review", 
+                       "primary_outcome_yn" = "Primary outcome")) %>% 
+  tableby( paic_type ~ ., data = ., strata = before_2018) %>% 
+  summary(text = TRUE)
+
+
 ```
 
 
@@ -1298,6 +1441,8 @@ wide_sample_size_df %>%
   flextable::save_as_docx(path = file.path(article_table_path, "sample_size.docx"))
 
 ```
+
+
 
 ### Combining main methodological aspects (table summary Saint Malo)
 
